@@ -1,17 +1,19 @@
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
+import { getProfile } from "@/sanity/sanity.query";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const profile = await getProfile();
+
   return (
     <main className="flex h-full items-center justify-center border px-32 py-10">
-      <Image src="/profile_pic.png" width={500} height={500} />
+      {profile && (
+        <Image src={profile?.profileImage?.image} width={500} height={500} />
+      )}
       <div className="space-y-4">
-        <TitleText text="Turning Ideas Into Beautiful Websites" />
-        <TypingText
-          text="I'm a web developer from Myanmar"
-          styles={"font-medium text-lg"}
-        />
+        <TitleText text={profile?.headline} />
+        <TypingText text={profile?.bio} styles={"font-medium text-lg"} />
         <p className="text-xl leading-8">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat
           nihil mollitia totam consequuntur molestias ut voluptas quasi aliquid
