@@ -1,13 +1,15 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
+import TitleText from "@/components/TitleText";
+import TypingText from "@/components/TypingText";
 import Image from "next/image";
 
 const About = () => {
   return (
     <main className="flex w-full flex-col items-center justify-center gap-16 px-32 py-8">
-      <h1 className="text-5xl font-bold">About Me</h1>
+      <TitleText text={"About Me"} />
       <div className="grid w-full grid-cols-12 gap-16">
         <div className="col-span-5 flex flex-col items-start justify-start">
-          <h2 className="text-2xl font-semibold">Web Developer from Myanmar</h2>
+          <TypingText text={"I'm a web developer from Myanmar"} />
           <p className="text-xl font-medium leading-8">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
             atque aperiam earum aliquid! Vero assumenda ut eligendi ad
