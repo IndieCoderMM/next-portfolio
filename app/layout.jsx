@@ -7,7 +7,7 @@ const mont = Montserrat({
 });
 
 export const metadata = {
-  title: "Hein Thant Oo",
+  title: "Hein Thant | Web Developer",
   description: "Web Developer from Myanmar",
 };
 

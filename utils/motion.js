@@ -51,3 +51,22 @@ export const fadeIn = (direction, type, delay, duration) => ({
     },
   },
 });
+
+export const sphereVariant = (direction, delay, duration) => ({
+  hidden: {
+    x: direction === "left" ? -300 : 300,
+    rotate: 120,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    rotate: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      delay,
+      duration,
+      ease: "easeIn",
+    },
+  },
+});

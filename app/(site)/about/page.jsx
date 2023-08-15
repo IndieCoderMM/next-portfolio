@@ -1,21 +1,24 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
-import { getProfile, getProjects, getSkills } from "@/sanity/sanity.query";
+import { getProfile, getSkills } from "@/sanity/sanity.query";
+import SkillSection from "@/sections/SkillSection";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+
+export const metadata = {
+  title: "Hein Thant | About Me",
+};
 
 const About = async () => {
   const profile = await getProfile();
   const skills = await getSkills();
-  console.log(skills);
 
   return (
     <main className="paddings w-full">
       <section className="innerWidth yPaddings mx-auto">
-        <TitleText text={"About Me"} styles="text-center mb-8" />
+        <TitleText text={profile?.headline} styles="text-center mb-8" />
         <div className="yPaddings grid w-full grid-cols-12 gap-16">
           <div className="col-span-5 flex flex-col items-start justify-start">
             <TypingText
@@ -80,7 +83,7 @@ const About = async () => {
           )}
         </div>
       </section>
-      <Skills skills={skills} />
+      <SkillSection skills={skills} />
       <Experience />
     </main>
   );

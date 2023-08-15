@@ -1,19 +1,19 @@
-import TitleText from "@/components/TitleText";
-import TypingText from "@/components/TypingText";
-import { getProfile } from "@/sanity/sanity.query";
 import Image from "next/image";
 
-export default async function Home() {
+import { getProfile } from "@/sanity/sanity.query";
+
+import TitleText from "@/components/TitleText";
+import TypingText from "@/components/TypingText";
+
+const Home = async () => {
   const profile = await getProfile();
 
   return (
     <main className="yPaddings min-h-full">
-      <section className="innerWidth mx-auto flex items-center justify-center">
-        {profile && (
-          <Image src={profile?.profileImage?.url} width={500} height={500} />
-        )}
+      <section className="interWidth mx-auto flex items-center justify-center">
+        {profile && <Image src="/welcome.svg" width={500} height={500} />}
         <div className="space-y-4">
-          <TitleText text={profile?.headline} />
+          <TitleText text={"Hello, I'm Hein Thant"} />
           <TypingText text={profile?.bio} styles={"font-medium text-lg"} />
           <p className="text-xl leading-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
@@ -40,4 +40,6 @@ export default async function Home() {
       </section>
     </main>
   );
-}
+};
+
+export default Home;

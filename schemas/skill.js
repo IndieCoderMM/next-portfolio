@@ -1,7 +1,3 @@
-import { defineField } from "sanity";
-
-const skill = defineField("skill");
-
 export default {
   name: "skills",
   title: "Skills",
@@ -13,6 +9,20 @@ export default {
       type: "string",
       description: "Name of the skill group",
       validation: (rule) => rule.required(),
+    },
+    {
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      description: "Upload a cover image for this skill group",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
     },
     {
       name: "list",

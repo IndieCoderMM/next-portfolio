@@ -20,14 +20,16 @@ export async function getProfile() {
 
 export async function getProjects() {
   return client.fetch(
-    groq`*[_type == "project"]{
-      _id,
+    groq`*[_type == "project"] | order(developedAt desc){
+      "id": _id,
       name,
       tagline,
+      developedAt,
+      tags,
       "slug": slug.current,
       liveURL,
       githubURL,
-      "coverImage": coverImage.asset->url,
+      "imageURL": coverImage.asset->url,
       description,
       stack,
     }`,
@@ -36,10 +38,11 @@ export async function getProjects() {
 
 export async function getSkills() {
   return client.fetch(
-    groq`*[_type == "skills"]{
-      _id,
+    groq`*[_type == "skills"] | order(_createdAt asc) {
+      "id": _id,
       title,
-      list[] { name, "logo": logo.asset->url },
+      "imageURL": coverImage.asset->url,
+      list[] { name, "logoURL": logo.asset->url },
     }`,
   );
 }

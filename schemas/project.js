@@ -59,6 +59,19 @@ const project = {
       of: [{ type: "block" }],
     },
     {
+      name: "developedAt",
+      title: "Developed At",
+      type: "datetime",
+      description: "Add the date when this project was developed",
+    },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      description: "Add the tags for this project",
+      of: [{ type: "string" }],
+    },
+    {
       name: "stack",
       title: "Stack",
       type: "array",
