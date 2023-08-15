@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 
 // Define prop types for Project
 export const ProjectProps = PropTypes.shape({
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   imageURL: PropTypes.string.isRequired,
   githubURL: PropTypes.string.isRequired,
