@@ -2,8 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-html, 
-body, 
+html,
+body,
 :root {
   height: 100%;
+}
+
+.innerWidth {
+  @apply w-full 2xl:max-w-[1280px];
+}
+
+.interWidth {
+  @apply w-[100%] lg:w-[80%];
+}
+
+.paddings {
+  @apply px-6 py-12 sm:p-16;
+}
+
+.yPaddings {
+  @apply py-12 sm:py-16;
+}
+
+.xPaddings {
+  @apply px-6 sm:px-16;
+}
+
+.topPaddings {
+  @apply pt-12 sm:pt-16;
+}
+
+.bottomPaddings {
+  @apply pb-12 sm:pb-16;
 }

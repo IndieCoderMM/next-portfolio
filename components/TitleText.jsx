@@ -4,14 +4,14 @@ import { textVariant } from "@/utils/motion";
 
 const TitleText = ({ text, styles = "" }) => {
   return (
-    <motion.h1
+    <motion.h2
       variants={textVariant}
       initial="hidden"
       whileInView="show"
       className={`text-lg font-bold text-dark md:text-7xl ${styles}`}
     >
       {text}
-    </motion.h1>
+    </motion.h2>
   );
 };
 

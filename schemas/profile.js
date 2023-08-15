@@ -86,29 +86,39 @@ const profile = {
         columns: 2,
       },
     },
-    // Array of skills with logo and name
     {
-      name: "skills",
-      title: "Skills",
-      type: "array",
-      of: [
+      name: "metrics",
+      title: "Metrics",
+      type: "object",
+      description: "Add metrics to your profile",
+      fields: [
         {
-          type: "object",
-          fields: [
-            {
-              name: "name",
-              title: "Name",
-              type: "string",
-            },
-            {
-              name: "logo",
-              title: "Logo",
-              type: "image",
-              options: { hotspot: true },
-            },
-          ],
+          name: "frontEnd",
+          title: "Front-End Projects",
+          type: "number",
+          initialValue: 0,
+          description: "Number of front end projects you have worked on",
+        },
+        {
+          name: "fullStack",
+          title: "Full-Stack Projects",
+          type: "number",
+          initialValue: 0,
+          description: "Number of full-stack projects you have worked on",
+        },
+        {
+          name: "experience",
+          title: "Years of Experience",
+          type: "number",
+          initialValue: 0,
+          description: "Number of years of experience you have",
         },
       ],
+      options: {
+        collapsed: false,
+        collapsible: true,
+        columns: 2,
+      },
     },
   ],
 };

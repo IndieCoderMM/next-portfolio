@@ -12,8 +12,8 @@ export async function getProfile() {
       email,
       about,
       "resumeURL": resumeURL.asset->url,
-      socials,
-      skills,
+      socials {github, linkedin, twitter},
+      metrics {frontEnd, fullStack, experience}
     }[0]`,
   );
 }
@@ -30,6 +30,16 @@ export async function getProjects() {
       "coverImage": coverImage.asset->url,
       description,
       stack,
+    }`,
+  );
+}
+
+export async function getSkills() {
+  return client.fetch(
+    groq`*[_type == "skills"]{
+      _id,
+      title,
+      list[] { name, "logo": logo.asset->url },
     }`,
   );
 }

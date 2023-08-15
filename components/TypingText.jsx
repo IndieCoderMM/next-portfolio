@@ -9,6 +9,7 @@ const TypingText = ({ text, styles }) => {
       variants={textContainer}
       className={styles}
       initial="hidden"
+      viewport={{ once: true, amount: 0.25 }}
       whileInView="show"
     >
       {Array.from(text).map((letter, idx) => (

@@ -1,50 +1,87 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
+import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
+import { getProfile, getProjects, getSkills } from "@/sanity/sanity.query";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
-const About = () => {
+const About = async () => {
+  const profile = await getProfile();
+  const skills = await getSkills();
+  console.log(skills);
+
   return (
-    <main className="flex w-full flex-col items-center justify-center gap-16 px-32 py-8">
-      <TitleText text={"About Me"} />
-      <div className="grid w-full grid-cols-12 gap-16">
-        <div className="col-span-5 flex flex-col items-start justify-start">
-          <TypingText text={"I'm a web developer from Myanmar"} />
-          <p className="text-xl font-medium leading-8">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
-            atque aperiam earum aliquid! Vero assumenda ut eligendi ad
-            praesentium nulla neque. Aspernatur reprehenderit vitae dolore
-            dicta? Error ab cum facilis animi exercitationem ipsum fugit tenetur
-            velit, consectetur odit facere similique numquam perspiciatis sunt
-            hic iusto rerum! Soluta tempore iste excepturi!
-          </p>
-        </div>
-        <div className="col-span-4 flex flex-col items-start justify-start rounded-2xl border-2 border-dark bg-light p-8">
-          <Image src="/profile_pic.png" width={500} height={500} />
-        </div>
-        <div className="col-span-3 flex flex-col items-end justify-between">
-          <div className="flex flex-col items-end justify-center">
-            <span className="inline-block text-7xl font-bold">
-              <AnimatedNumber value={40} />+
-            </span>
-            <h3 className="text-xl font-medium text-dark/75">
-              Projects Completed
-            </h3>
+    <main className="paddings w-full">
+      <section className="innerWidth yPaddings mx-auto">
+        <TitleText text={"About Me"} styles="text-center mb-8" />
+        <div className="yPaddings grid w-full grid-cols-12 gap-16">
+          <div className="col-span-5 flex flex-col items-start justify-start">
+            <TypingText
+              text={"I'm a web developer from Myanmar"}
+              styles={"font-semibold text-lg"}
+            />
+            <div className="flex flex-col gap-4 leading-relaxed text-dark">
+              <PortableText
+                value={profile?.about}
+                components={{
+                  marks: {
+                    link: ({ value, children }) => (
+                      <a
+                        href={value?.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-primary underline"
+                      >
+                        {children}
+                      </a>
+                    ),
+                  },
+                }}
+              />
+            </div>
           </div>
-          <div className="flex flex-col items-end justify-center">
-            <span className="inline-block text-7xl font-bold">40+</span>
-            <h3 className="text-xl font-medium text-dark/75">
-              Projects Completed
-            </h3>
+          <div className="col-span-4 flex flex-col items-start justify-start rounded-2xl border-2 border-dark bg-light p-8">
+            <Image
+              src={profile?.profileImage.url}
+              width={500}
+              height={500}
+              alt="profile"
+            />
           </div>
-          <div className="flex flex-col items-end justify-center">
-            <span className="inline-block text-7xl font-bold">40+</span>
-            <h3 className="text-xl font-medium text-dark/75">
-              Projects Completed
-            </h3>
-          </div>
+          {profile?.metrics && (
+            <div className="col-span-3 flex flex-col items-end justify-between">
+              <div className="flex flex-col items-end justify-center">
+                <span className="inline-block text-7xl font-bold">
+                  <AnimatedNumber value={profile?.metrics?.frontEnd} />+
+                </span>
+                <p className="text-xl font-medium text-dark/75">
+                  Front-end Projects
+                </p>
+              </div>
+              <div className="flex flex-col items-end justify-center">
+                <span className="inline-block text-7xl font-bold">
+                  <AnimatedNumber value={profile?.metrics?.fullStack} />+
+                </span>
+                <p className="text-xl font-medium text-dark/75">
+                  Full-stack Projects
+                </p>
+              </div>
+              <div className="flex flex-col items-end justify-center">
+                <span className="inline-block text-7xl font-bold">
+                  <AnimatedNumber value={profile?.metrics?.experience} />+
+                </span>
+                <p className="text-xl font-medium text-dark/75">
+                  Years of Experience
+                </p>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
+      </section>
+      <Skills skills={skills} />
+      <Experience />
     </main>
   );
 };

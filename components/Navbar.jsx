@@ -1,19 +1,23 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Logo from './Logo';
-import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
+import Link from "next/link";
+import Logo from "./Logo";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
-import { GitHubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from './Icons';
+import { GitHubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./Icons";
 
-const CustomLink = ({ href, title, className = '' }) => {
+const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link href={href} className={`${className} group relative`}>
       {title}
-      <span className={`${pathname === href ? 'w-full' : 'w-0'} h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300`}>
+      <span
+        className={`${
+          pathname === href ? "w-full" : "w-0"
+        } ease absolute -bottom-0.5 left-0 inline-block h-[1px] bg-dark transition-[width] duration-300 group-hover:w-full`}
+      >
         &nbsp;
       </span>
     </Link>
@@ -22,28 +26,54 @@ const CustomLink = ({ href, title, className = '' }) => {
 
 const Navbar = () => {
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between">
-      <nav>
-        <CustomLink href="/" title="Home" className="ml-8" />
-        <CustomLink href="/about" title="About" className="ml-8" />
-        <CustomLink href="/projects" title="Projects" className="ml-8" />
-        <CustomLink href="/contact" title="Contact" className="ml-8" />
-      </nav>
-      <nav className="flex items-center justify-center flex-wrap">
-        <motion.a href="/" target="_blank" whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 ml-3">
-          <GitHubIcon />
-        </motion.a>
-        <motion.a href="/" target="_blank" whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 ml-3">
-          <LinkedInIcon />
-        </motion.a>
-        <motion.a href="/" target="_blank" whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 ml-3">
-          <TwitterIcon />
-        </motion.a>
-        <motion.a href="/" target="_blank" whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 ml-3">
-          <PinterestIcon />
-        </motion.a>
-      </nav>
-      <div className="absolute top-2 left-1/2 -translate-x-1/2">
+    <header className="xPaddings  w-full py-8 font-medium">
+      <div className="innerWidth mx-auto flex items-center justify-between">
+        <nav>
+          <CustomLink href="/" title="Home" className="ml-8" />
+          <CustomLink href="/about" title="About" className="ml-8" />
+          <CustomLink href="/projects" title="Projects" className="ml-8" />
+          <CustomLink href="/contact" title="Contact" className="ml-8" />
+        </nav>
+        <nav className="flex flex-wrap items-center justify-center">
+          <motion.a
+            href="/"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            className="ml-3 w-6"
+          >
+            <GitHubIcon />
+          </motion.a>
+          <motion.a
+            href="/"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            className="ml-3 w-6"
+          >
+            <LinkedInIcon />
+          </motion.a>
+          <motion.a
+            href="/"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            className="ml-3 w-6"
+          >
+            <TwitterIcon />
+          </motion.a>
+          <motion.a
+            href="/"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            className="ml-3 w-6"
+          >
+            <PinterestIcon />
+          </motion.a>
+        </nav>
+      </div>
+      <div className="absolute left-1/2 top-2 -translate-x-1/2">
         <Logo />
       </div>
     </header>
