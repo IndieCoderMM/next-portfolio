@@ -1,14 +1,14 @@
-import Footer from "@/components/Footer";
 import HireMe from "@/components/HireMe";
 import Navbar from "@/components/Navbar";
+import { getProfile } from "@/sanity/sanity.query";
 import React from "react";
 
-const PageLayout = ({ children }) => {
+const PageLayout = async ({ children }) => {
+  const { socials, email } = await getProfile();
   return (
     <>
-      <Navbar />
+      <Navbar socials={socials} />
       {children}
-      <Footer />
       <HireMe />
     </>
   );

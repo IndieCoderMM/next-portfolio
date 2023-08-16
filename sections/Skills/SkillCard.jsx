@@ -14,7 +14,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       onClick={handleClick}
       className={`relative ${
         isActive ? "flex-[10] lg:flex-[3.5]" : "flex-[2] lg:flex-[1.5]"
-      } shadow-400 flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
+      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark shadow-400 transition-[flex] duration-700 ease-out lg:h-[500px]`}
     >
       <img
         src={skill.imageURL}
@@ -22,8 +22,8 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
         className="absolute hidden h-full w-full rounded-[24px] object-cover lg:block"
       />
       {!isActive ? (
-        <div className="glassBackground relative z-0 h-full w-full">
-          <h3 className="absolute left-10 whitespace-nowrap font-bold text-dark lg:bottom-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+        <div className="glassBackground relative z-0 h-full w-full dark:bg-black/50">
+          <h3 className="absolute left-10 whitespace-nowrap font-bold text-dark  dark:text-light lg:bottom-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skill?.title}
           </h3>
           <ul className="absolute bottom-0 right-0 top-4 flex flex-row-reverse items-end gap-1 p-2 md:left-1/2 lg:flex-col-reverse">
@@ -34,7 +34,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 animate="show"
                 key={index}
               >
-                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-primary/10">
+                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-dark/10 dark:bg-light/50">
                   <Image
                     src={item.logoURL}
                     width={30}

@@ -1,4 +1,5 @@
 "use client";
+import { LinkArrow } from "@/components/Icons";
 import { ProjectProps } from "@/propTypes";
 import { slideIn } from "@/utils/motion";
 import { motion } from "framer-motion";
@@ -17,6 +18,12 @@ const ProjectCard = ({ project }) => {
         <h3 className="text-center font-medium text-dark dark:text-light">
           {project.name}
         </h3>
+        <Link
+          href={`/projects/${project.slug}`}
+          className="absolute right-1 top-1 block h-8 w-8 md:hidden"
+        >
+          <LinkArrow />
+        </Link>
       </div>
       <motion.div
         initial="hidden"
@@ -29,7 +36,7 @@ const ProjectCard = ({ project }) => {
           loading="lazy"
           src={project.imageURL}
           alt={project.name}
-          className="h-full w-full object-cover object-top"
+          className="h-auto w-full object-cover object-top"
         />
         <motion.div
           variants={slideIn("up", "tween", 0, 0.5)}
@@ -53,9 +60,9 @@ const ProjectCard = ({ project }) => {
           </ul>
           <Link
             href={`/projects/${project.slug}`}
-            className="rounded-full border-2 border-primary px-8 py-2 text-center text-sm font-medium text-light transition-colors hover:bg-primary hover:text-light md:text-lg"
+            className="rounded-full border-2 border-primary px-8 py-2 text-center text-sm font-semibold text-light transition-colors hover:bg-primary hover:text-light md:text-lg"
           >
-            View project &gt;
+            View project &#8594;
           </Link>
         </motion.div>
       </motion.div>

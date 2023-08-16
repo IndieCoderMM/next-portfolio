@@ -1,4 +1,5 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
+import Footer from "@/components/Footer";
 import RichText from "@/components/RichText";
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
@@ -29,7 +30,7 @@ const About = async () => {
               <RichText value={profile?.about} />
             </div>
           </div>
-          <div className="shadow-400 col-span-6 hidden h-fit flex-col items-start justify-start rounded-2xl border-2 border-dark p-8 md:flex lg:col-span-4">
+          <div className="col-span-6 hidden h-fit flex-col items-start justify-start rounded-2xl border-2 border-dark p-8 shadow-400 md:flex lg:col-span-4">
             <Image
               src={profile?.profileImage.url}
               width={500}
@@ -69,6 +70,7 @@ const About = async () => {
       </section>
       <Skills skills={skills} />
       <Experience />
+      <Footer />
     </main>
   );
 };

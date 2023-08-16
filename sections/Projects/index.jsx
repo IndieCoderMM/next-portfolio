@@ -7,10 +7,8 @@ const FilterTag = ({ tag, active, changeActive }) => (
   <li
     onClick={changeActive}
     className={`${
-      active
-        ? "bg-primary text-white"
-        : "bg-white text-dark dark:bg-dark dark:text-light"
-    } cursor-pointer rounded-md border border-primary p-1 capitalize transition-colors hover:bg-primary hover:text-white dark:hover:bg-primary md:px-4 md:py-2`}
+      active ? "bg-primary text-white" : "bg-white text-dark"
+    } btn `}
   >
     {tag}
   </li>
@@ -33,8 +31,8 @@ const Projects = ({ projects, tags }) => {
   }, [activeFilter]);
 
   return (
-    <>
-      <ul className="mb-8 flex flex-wrap justify-center gap-2">
+    <section className="yPaddings w-full">
+      <ul className="mb-8 hidden flex-wrap justify-center gap-2 md:flex">
         <FilterTag
           tag="all"
           active={activeFilter === "all"}
@@ -54,7 +52,7 @@ const Projects = ({ projects, tags }) => {
           <ProjectCard key={project.id} project={project} />
         ))}
       </section>
-    </>
+    </section>
   );
 };
 
