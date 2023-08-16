@@ -8,7 +8,7 @@ const FilterTag = ({ tag, active, changeActive }) => (
     onClick={changeActive}
     className={`${
       active ? "bg-primary text-white" : "bg-white text-dark"
-    } cursor-pointer rounded-md px-4 py-2 capitalize transition-colors hover:bg-primary hover:text-white`}
+    } cursor-pointer rounded-md p-1 capitalize transition-colors hover:bg-primary hover:text-white md:px-4 md:py-2`}
   >
     {tag}
   </li>
@@ -47,7 +47,7 @@ const ProjectsSection = ({ projects, tags }) => {
           />
         ))}
       </ul>
-      <section className="flex flex-wrap gap-4">
+      <section className="flex w-full flex-wrap justify-center gap-4">
         {activeProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

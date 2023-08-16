@@ -1,10 +1,10 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 import Experience from "@/components/Experience";
+import RichText from "@/components/RichText";
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
 import { getProfile, getSkills } from "@/sanity/sanity.query";
 import SkillSection from "@/sections/SkillSection";
-import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
 export const metadata = {
@@ -26,23 +26,7 @@ const About = async () => {
               styles={"font-semibold text-lg"}
             />
             <div className="flex flex-col gap-4 leading-relaxed text-dark">
-              <PortableText
-                value={profile?.about}
-                components={{
-                  marks: {
-                    link: ({ value, children }) => (
-                      <a
-                        href={value?.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-primary underline"
-                      >
-                        {children}
-                      </a>
-                    ),
-                  },
-                }}
-              />
+              <RichText value={profile?.about} />
             </div>
           </div>
           <div className="col-span-4 flex flex-col items-start justify-start rounded-2xl border-2 border-dark bg-light p-8">

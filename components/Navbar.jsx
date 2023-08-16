@@ -26,13 +26,13 @@ const CustomLink = ({ href, title, className = "" }) => {
 
 const Navbar = () => {
   return (
-    <header className="xPaddings  w-full py-8 font-medium">
+    <header className="w-full py-8 font-medium">
       <div className="innerWidth mx-auto flex items-center justify-between">
-        <nav>
-          <CustomLink href="/" title="Home" className="ml-8" />
-          <CustomLink href="/about" title="About" className="ml-8" />
-          <CustomLink href="/projects" title="Projects" className="ml-8" />
-          <CustomLink href="/contact" title="Contact" className="ml-8" />
+        <nav className="space-x-8 text-lg">
+          <CustomLink href="/" title="Home" />
+          <CustomLink href="/about" title="About" />
+          <CustomLink href="/projects" title="Projects" />
+          <CustomLink href="/contact" title="Contact" />
         </nav>
         <nav className="flex flex-wrap items-center justify-center">
           <motion.a

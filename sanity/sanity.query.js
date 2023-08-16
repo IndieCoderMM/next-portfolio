@@ -36,6 +36,25 @@ export async function getProjects() {
   );
 }
 
+export async function getProject(slug) {
+  return client.fetch(
+    groq`*[_type == "project" && slug.current == $slug]{
+      "id": _id,
+      name,
+      tagline,
+      developedAt,
+      tags,
+      "slug": slug.current,
+      liveURL,
+      githubURL,
+      "imageURL": coverImage.asset->url,
+      description,
+      stack,
+    }[0]`,
+    { slug },
+  );
+}
+
 export async function getSkills() {
   return client.fetch(
     groq`*[_type == "skills"] | order(_createdAt asc) {
