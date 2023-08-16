@@ -4,16 +4,18 @@ import { getProfile } from "@/sanity/sanity.query";
 
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
+import { DownloadIcon } from "@/components/Icons";
 
 const Home = async () => {
   const profile = await getProfile();
 
   return (
-    <main className="paddings min-h-full">
+    <main className="paddings">
       <section className="interWidth mx-auto flex items-center justify-center">
         {profile && (
           <Image
             src="/welcome.svg"
+            alt=""
             width={500}
             height={500}
             className="hidden lg:block"
@@ -27,20 +29,24 @@ const Home = async () => {
             fugiat nihil mollitia totam consequuntur molestias ut voluptas quasi
             aliquid sunt!
           </p>
-          <div className="flex items-center gap-8">
-            {/* Create link to download resume */}
+          <div className="flex items-center gap-8 pt-8">
             <a
-              href="/"
-              className="blockBtn bg-light px-4 py-2 text-lg font-bold text-dark md:px-8 md:text-2xl"
+              href={`${profile?.resumeURL}?dl=${profile.fullName.replaceAll(
+                " ",
+                "_",
+              )}_CV.pdf`}
+              className="primaryBtn gap-2 border border-primary bg-light px-4 py-2 text-lg font-medium text-primary transition-colors duration-150 hover:bg-primary hover:text-white md:px-8 md:text-2xl"
             >
-              Resume
+              <div className="h-8 w-8">
+                <DownloadIcon />
+              </div>
+              <span>Get My CV</span>
             </a>
-            {/* Create link to contact page */}
             <a
-              href="/"
-              className="blockBtn bg-light px-4 py-2 text-lg font-bold text-dark md:px-8 md:text-2xl"
+              href="/projects"
+              className="btn bg-light px-4 py-2 text-lg font-bold text-dark/90 hover:text-primary md:px-8 md:text-2xl"
             >
-              Contact
+              See Projects &#8594;
             </a>
           </div>
         </div>

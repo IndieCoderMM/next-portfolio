@@ -22,7 +22,7 @@ const Skills = ({ skills }) => {
         className="flex w-full flex-col gap-8"
       >
         <TitleText text="Skills" styles="text-center mb-4" />
-        <div className="flex min-h-[60vh] w-full flex-col gap-4 lg:flex-row lg:items-center">
+        <div className="flex min-h-screen w-full flex-col gap-4 lg:min-h-[60vh] lg:flex-row lg:items-center">
           {skills?.map((skill, index) => (
             <SkillCard
               key={skill.id}

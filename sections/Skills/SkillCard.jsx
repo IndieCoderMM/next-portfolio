@@ -13,8 +13,8 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       onClick={handleClick}
       className={`relative ${
-        isActive ? "flex-[10] lg:flex-[3.5]" : "flex-[2] lg:flex-[1.5]"
-      } shadow-400 flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
+        isActive ? "flex-[6] lg:flex-[3.5]" : "flex-[2] lg:flex-[1.5]"
+      } flex h-auto min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark shadow-400 transition-[flex] duration-700 ease-out lg:h-[500px]`}
     >
       <img
         src={skill.imageURL}
@@ -22,11 +22,11 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
         className="absolute hidden h-full w-full rounded-[24px] object-cover lg:block"
       />
       {!isActive ? (
-        <div className="glassBackground relative z-0 h-full w-full">
-          <h3 className="absolute left-10 whitespace-nowrap font-bold text-dark lg:bottom-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+        <div className="glassBackground relative z-0 h-full w-full dark:bg-black/50">
+          <h3 className="absolute left-0 top-0 z-10 whitespace-nowrap rounded-sm font-bold text-dark dark:text-light lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skill?.title}
           </h3>
-          <ul className="absolute bottom-0 right-0 top-4 flex flex-row-reverse items-end gap-1 p-2 md:left-1/2 lg:flex-col-reverse">
+          <ul className="bottom-0 right-0 top-4 flex flex-wrap gap-1 p-2 md:left-1/2 lg:absolute lg:flex-col-reverse lg:items-end">
             {skill?.list.map((item, index) => (
               <motion.li
                 variants={sphereVariant("right", index * 0.3, 1)}
@@ -34,7 +34,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 animate="show"
                 key={index}
               >
-                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-primary/10">
+                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-dark/10 dark:bg-light/50">
                   <Image
                     src={item.logoURL}
                     width={30}
@@ -62,12 +62,13 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 key={idx}
                 className="flex flex-col items-center justify-center text-center"
               >
-                <div className="flex h-[80px] w-[80px] items-center justify-center rounded-full bg-light">
+                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full lg:h-[80px] lg:w-[80px] lg:bg-light">
                   <Image
                     src={item.logoURL}
                     width={50}
                     height={50}
                     alt={item.name}
+                    className="object-contain"
                   />
                 </div>
                 <p className="text-sm text-light">{item.name}</p>

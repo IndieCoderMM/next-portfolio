@@ -36,12 +36,12 @@ body,
   @apply pb-12 sm:pb-16;
 }
 
-.roundedBtn {
-  @apply shadow-400 active:shadow-200 flex cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-200  active:translate-x-[2px] active:translate-y-[2px]  md:min-w-[120px];
+.primaryBtn {
+  @apply flex cursor-pointer items-center justify-center rounded-md border-2 transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-black active:shadow-sm md:min-w-[120px];
 }
 
 .btn {
-  @apply cursor-pointer rounded-md border border-black border-opacity-10 bg-white px-4 py-2 font-semibold text-black shadow-sm transition-all duration-200 hover:translate-y-[-1px] hover:border-opacity-60 hover:text-gray-600 hover:shadow-md focus:border-opacity-60 active:bg-gray-100 active:text-gray-600 active:shadow-sm;
+  @apply cursor-pointer rounded-md border border-black border-opacity-10 px-4 py-2 font-semibold shadow-sm transition-all duration-200 hover:translate-y-[-2px] hover:border-opacity-60 hover:shadow-md focus:border-opacity-60 active:shadow-sm;
 }
 
 .blockBtn {

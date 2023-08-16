@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 import {
+  BlogIcon,
   GitHubIcon,
   LinkedInIcon,
   MoonIcon,
@@ -32,34 +33,34 @@ const CustomLink = ({ href, title, className = "" }) => {
   );
 };
 
-const Navbar = () => {
+const Navbar = ({ socials }) => {
   const [mode, setMode] = useThemeSwitcher();
 
   return (
     <header className="w-full py-8 font-medium">
-      <div className="innerWidth mx-auto flex items-center justify-between">
+      <div className="innerWidth mx-auto hidden items-center justify-between p-2 md:flex">
         <nav className="space-x-8 text-lg">
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
-          <CustomLink href="/projects" title="Projects" />
+          <CustomLink href="/projects" title="Portfolio" />
           <CustomLink href="/contact" title="Contact" />
         </nav>
         <nav className="flex flex-wrap items-center justify-center">
           <motion.a
-            href="/"
+            href={socials.github}
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-3 w-6"
+            className="ml-3 w-9"
           >
             <GitHubIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href={socials.linkedin}
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-3 w-6"
+            className="ml-3 w-9"
           >
             <LinkedInIcon />
           </motion.a>
@@ -68,18 +69,9 @@ const Navbar = () => {
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-3 w-6"
+            className="ml-3 w-9"
           >
-            <TwitterIcon />
-          </motion.a>
-          <motion.a
-            href="/"
-            target="_blank"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            className="ml-3 w-6"
-          >
-            <PinterestIcon />
+            <BlogIcon />
           </motion.a>
 
           <button

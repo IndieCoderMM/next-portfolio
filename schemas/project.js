@@ -59,6 +59,13 @@ const project = {
       of: [{ type: "block" }],
     },
     {
+      name: "solution",
+      title: "Solution",
+      type: "array",
+      description: "Write a full description about the solution you provided",
+      of: [{ type: "block" }],
+    },
+    {
       name: "developedAt",
       title: "Developed At",
       type: "datetime",
