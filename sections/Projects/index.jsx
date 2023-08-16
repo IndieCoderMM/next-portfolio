@@ -1,20 +1,22 @@
 "use client";
 
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
 
 const FilterTag = ({ tag, active, changeActive }) => (
   <li
     onClick={changeActive}
     className={`${
-      active ? "bg-primary text-white" : "bg-white text-dark"
-    } cursor-pointer rounded-md p-1 capitalize transition-colors hover:bg-primary hover:text-white md:px-4 md:py-2`}
+      active
+        ? "bg-primary text-white"
+        : "bg-white text-dark dark:bg-dark dark:text-light"
+    } cursor-pointer rounded-md border border-primary p-1 capitalize transition-colors hover:bg-primary hover:text-white dark:hover:bg-primary md:px-4 md:py-2`}
   >
     {tag}
   </li>
 );
 
-const ProjectsSection = ({ projects, tags }) => {
+const Projects = ({ projects, tags }) => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeProjects, setActiveProjects] = useState(projects);
 
@@ -56,4 +58,4 @@ const ProjectsSection = ({ projects, tags }) => {
   );
 };
 
-export default ProjectsSection;
+export default Projects;

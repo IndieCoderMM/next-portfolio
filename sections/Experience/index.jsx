@@ -2,7 +2,7 @@
 import { useScroll, motion } from "framer-motion";
 import { useRef } from "react";
 import LiIcon from "./LiIcon";
-import TitleText from "./TitleText";
+import TitleText from "@/components/TitleText";
 
 const Details = ({
   position,
@@ -51,7 +51,7 @@ const Experience = () => {
             scaleY: scrollYProgress,
           }}
           ref={ref}
-          className="absolute left-9 top-0 h-full w-[4px] origin-top bg-dark"
+          className="absolute left-9 top-0 h-full w-[4px] origin-top bg-dark dark:bg-primary"
         />
         <ul className="ml-4 flex w-full flex-col items-start justify-between space-y-8">
           <Details

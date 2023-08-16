@@ -9,29 +9,36 @@ const Home = async () => {
   const profile = await getProfile();
 
   return (
-    <main className="yPaddings min-h-full">
+    <main className="paddings min-h-full">
       <section className="interWidth mx-auto flex items-center justify-center">
-        {profile && <Image src="/welcome.svg" width={500} height={500} />}
+        {profile && (
+          <Image
+            src="/welcome.svg"
+            width={500}
+            height={500}
+            className="hidden lg:block"
+          />
+        )}
         <div className="space-y-4">
           <TitleText text={"Hello, I'm Hein Thant"} />
           <TypingText text={profile?.bio} styles={"font-medium text-lg"} />
-          <p className="text-xl leading-8">
+          <p className="leading-relaxed md:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             fugiat nihil mollitia totam consequuntur molestias ut voluptas quasi
             aliquid sunt!
           </p>
-          <div className="flex">
+          <div className="flex items-center gap-8">
             {/* Create link to download resume */}
             <a
               href="/"
-              className="rounded-full bg-dark px-8 py-4 text-xl font-medium text-light"
+              className="blockBtn bg-light px-4 py-2 text-lg font-bold text-dark md:px-8 md:text-2xl"
             >
               Resume
             </a>
             {/* Create link to contact page */}
             <a
               href="/"
-              className="rounded-full bg-light px-8 py-4 text-xl font-medium text-dark"
+              className="blockBtn bg-light px-4 py-2 text-lg font-bold text-dark md:px-8 md:text-2xl"
             >
               Contact
             </a>

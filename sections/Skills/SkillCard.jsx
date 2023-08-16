@@ -14,21 +14,26 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       onClick={handleClick}
       className={`relative ${
         isActive ? "flex-[10] lg:flex-[3.5]" : "flex-[2] lg:flex-[1.5]"
-      } flex h-[450px] min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out`}
+      } shadow-400 flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
     >
       <img
         src={skill.imageURL}
         alt=""
-        className="absolute h-full w-full rounded-[24px] object-cover"
+        className="absolute hidden h-full w-full rounded-[24px] object-cover lg:block"
       />
       {!isActive ? (
         <div className="glassBackground relative z-0 h-full w-full">
-          <h3 className="absolute left-10 whitespace-nowrap text-sm font-bold text-dark lg:bottom-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+          <h3 className="absolute left-10 whitespace-nowrap font-bold text-dark lg:bottom-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skill?.title}
           </h3>
-          <ul className="absolute bottom-0 left-1/2 right-0 top-0 flex flex-col-reverse items-end gap-1 p-2">
+          <ul className="absolute bottom-0 right-0 top-4 flex flex-row-reverse items-end gap-1 p-2 md:left-1/2 lg:flex-col-reverse">
             {skill?.list.map((item, index) => (
-              <li key={index}>
+              <motion.li
+                variants={sphereVariant("right", index * 0.3, 1)}
+                initial="hidden"
+                animate="show"
+                key={index}
+              >
                 <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-primary/10">
                   <Image
                     src={item.logoURL}
@@ -38,7 +43,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                   />
                 </div>
                 <p className="sr-only">{item.name}</p>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
@@ -47,7 +52,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
           variants={fadeIn("up", "tween", 0.5, 0.5)}
           initial="hidden"
           animate="show"
-          className="absolute bottom-0 left-0 right-0 flex w-full flex-col justify-start gap-8 bg-dark/60 p-4"
+          className="absolute bottom-0 left-0 right-0 flex h-full w-full flex-col justify-start gap-8 bg-dark/60 p-4 lg:h-auto"
         >
           <h3 className="text-3xl font-bold text-light">{skill?.title}</h3>
           <ul className="flex flex-wrap items-start justify-center gap-4">

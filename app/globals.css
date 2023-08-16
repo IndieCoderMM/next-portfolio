@@ -36,6 +36,43 @@ body,
   @apply pb-12 sm:pb-16;
 }
 
+.roundedBtn {
+  @apply shadow-400 active:shadow-200 flex cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-200  active:translate-x-[2px] active:translate-y-[2px]  md:min-w-[120px];
+}
+
+.btn {
+  @apply cursor-pointer rounded-md border border-black border-opacity-10 bg-white px-4 py-2 font-semibold text-black shadow-sm transition-all duration-200 hover:translate-y-[-1px] hover:border-opacity-60 hover:text-gray-600 hover:shadow-md focus:border-opacity-60 active:bg-gray-100 active:text-gray-600 active:shadow-sm;
+}
+
+.blockBtn {
+  @apply flex items-center justify-center rounded-md font-mono transition-all duration-100 ease-in md:min-w-[120px];
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+}
+
+.blockBtn:focus {
+  box-shadow:
+    #d6d6e7 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+}
+
+.blockBtn:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.blockBtn:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 .glassBackground {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);

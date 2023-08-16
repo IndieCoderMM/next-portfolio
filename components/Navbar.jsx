@@ -5,7 +5,15 @@ import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-import { GitHubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./Icons";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  MoonIcon,
+  PinterestIcon,
+  SunIcon,
+  TwitterIcon,
+} from "./Icons";
+import useThemeSwitcher from "./hooks/useThemeSwitcher";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -16,7 +24,7 @@ const CustomLink = ({ href, title, className = "" }) => {
       <span
         className={`${
           pathname === href ? "w-full" : "w-0"
-        } ease absolute -bottom-0.5 left-0 inline-block h-[1px] bg-dark transition-[width] duration-300 group-hover:w-full`}
+        } ease absolute -bottom-0.5 left-0 inline-block h-[3px] rounded-full bg-primary transition-[width] duration-300 group-hover:w-full`}
       >
         &nbsp;
       </span>
@@ -25,6 +33,8 @@ const CustomLink = ({ href, title, className = "" }) => {
 };
 
 const Navbar = () => {
+  const [mode, setMode] = useThemeSwitcher();
+
   return (
     <header className="w-full py-8 font-medium">
       <div className="innerWidth mx-auto flex items-center justify-between">
@@ -71,6 +81,20 @@ const Navbar = () => {
           >
             <PinterestIcon />
           </motion.a>
+
+          <button
+            onClick={() =>
+              setMode((mode) => (mode === "dark" ? "light" : "dark"))
+            }
+            type="button"
+            className="ml-3 flex h-8 w-8 items-center justify-center rounded-full "
+          >
+            {mode === "dark" ? (
+              <SunIcon className={"text-yellow-500"} />
+            ) : (
+              <MoonIcon className={"text-yellow-500"} />
+            )}
+          </button>
         </nav>
       </div>
       <div className="absolute left-1/2 top-2 -translate-x-1/2">

@@ -14,7 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${mont.variable} bg-light font-mont`}>{children}</body>
+      <body
+        className={`${mont.variable} bg-light font-mont dark:bg-dark dark:text-light`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

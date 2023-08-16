@@ -9,7 +9,7 @@ import TitleText from "../../components/TitleText";
 import SkillCard from "./SkillCard";
 import { SkillGroupProps } from "@/propTypes";
 
-const SkillSection = ({ skills }) => {
+const Skills = ({ skills }) => {
   const [active, setActive] = useState(0);
 
   return (
@@ -22,7 +22,7 @@ const SkillSection = ({ skills }) => {
         className="flex w-full flex-col gap-8"
       >
         <TitleText text="Skills" styles="text-center mb-4" />
-        <div className="flex min-h-[60vh] w-full flex-col items-center gap-4 lg:flex-row">
+        <div className="flex min-h-[60vh] w-full flex-col gap-4 lg:flex-row lg:items-center">
           {skills?.map((skill, index) => (
             <SkillCard
               key={skill.id}
@@ -38,8 +38,8 @@ const SkillSection = ({ skills }) => {
   );
 };
 
-SkillSection.propTypes = {
+Skills.propTypes = {
   skills: PropTypes.arrayOf(SkillGroupProps).isRequired,
 };
 
-export default SkillSection;
+export default Skills;

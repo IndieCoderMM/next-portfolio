@@ -1,6 +1,6 @@
 import TitleText from "@/components/TitleText";
 import { getProjects } from "@/sanity/sanity.query";
-import ProjectsSection from "@/sections/ProjectsSection";
+import Projects from "@/sections/Projects";
 
 // get all unique tags from projects
 const getUniqueTags = (projects) => [
@@ -19,7 +19,7 @@ const ProjectsPage = async () => {
     <main className="paddings">
       <section className="innerWidth mx-auto">
         <TitleText text="My Projects" styles="text-center mb-8" />
-        <ProjectsSection projects={projects} tags={tags} />
+        <Projects projects={projects} tags={tags} />
       </section>
     </main>
   );

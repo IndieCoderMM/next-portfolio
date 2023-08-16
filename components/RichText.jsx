@@ -5,6 +5,11 @@ const RichText = ({ value }) => {
     <PortableText
       value={value}
       components={{
+        block: ({ children }) => (
+          <div className="leading-relaxed text-dark dark:text-light">
+            {children}
+          </div>
+        ),
         marks: {
           link: ({ value, children }) => (
             <a
