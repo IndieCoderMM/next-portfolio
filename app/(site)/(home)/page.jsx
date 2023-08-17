@@ -22,24 +22,30 @@ const Home = async () => {
             className="hidden lg:block"
           />
         )}
-        <div className="space-y-4">
-          <TitleText text={"Hello, I'm Hein Thant"} />
-          <TypingText text={profile?.bio} styles={"font-medium text-lg"} />
-          <p className="leading-relaxed md:text-xl">
+        <div className="space-y-4 whitespace-break-spaces ">
+          <TitleText
+            text={"Hello, I'm Hein Thant"}
+            styles="text-center md:text-left"
+          />
+          <TypingText
+            text={profile?.bio}
+            styles={"font-medium text-sm md:text-xl text-center md:text-left"}
+          />
+          <p className="text-center leading-relaxed md:text-left md:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             fugiat nihil mollitia totam consequuntur molestias ut voluptas quasi
             aliquid sunt!
           </p>
-          <div className="flex items-center gap-8 pt-8">
+          <div className="flex w-full flex-col items-center gap-8 pt-8 lg:flex-row">
             <a
               href={`${profile?.resumeURL}?dl=${profile.fullName.replaceAll(
                 " ",
                 "_",
               )}_CV.pdf`}
-              className="w-full max-w-[200px]"
+              className="w-full max-w-[250px] flex-1"
             >
               <CustomButton>
-                <div className="flex items-center justify-center gap-2 text-lg text-white">
+                <div className="flex w-full items-center justify-center gap-2 text-lg font-semibold text-white md:text-2xl">
                   <div className="h-8 w-8">
                     <DownloadIcon />
                   </div>

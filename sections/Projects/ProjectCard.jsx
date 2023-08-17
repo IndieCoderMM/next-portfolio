@@ -30,10 +30,12 @@ const ProjectCard = ({ project }) => {
         whileHover="show"
         className="relative h-full w-full overflow-hidden"
       >
+        {/* // TODO Optimize images  */}
         <Image
           width={500}
-          height={280}
-          loading="lazy"
+          height={300}
+          quality={100}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           src={project.imageURL}
           alt={project.name}
           className="h-auto w-full object-cover object-top"

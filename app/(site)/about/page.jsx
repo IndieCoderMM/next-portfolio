@@ -38,7 +38,7 @@ const About = async () => {
             </div>
           </div>
           <div className="col-span-full flex flex-col items-center gap-4 self-center lg:col-span-3 xl:col-span-2">
-            <div className=" flex flex-col items-center justify-center rounded-2xl border-2 border-dark bg-light shadow-400 ">
+            <div className="flex w-full flex-col items-center justify-center rounded-2xl border-2 border-dark bg-light shadow-400 ">
               <Image
                 src={profile?.profileImage.url}
                 width={500}
@@ -52,7 +52,7 @@ const About = async () => {
                 href={profile?.resumeURL}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full"
+                className="flex w-full items-center justify-center"
               >
                 <CustomButton>
                   <span className="block w-full text-lg font-semibold text-light md:text-xl">
@@ -64,7 +64,7 @@ const About = async () => {
                 href={profile?.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full"
+                className="flex w-full items-center justify-center"
               >
                 <CustomButton>
                   <span className="block w-full text-lg font-semibold text-light md:text-xl">
@@ -76,7 +76,7 @@ const About = async () => {
                 href={`mailto:${profile?.email}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full"
+                className="flex w-full items-center justify-center"
               >
                 <CustomButton>
                   <span className="block w-full text-lg font-semibold text-light md:text-xl">
@@ -88,7 +88,7 @@ const About = async () => {
                 href={profile?.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full"
+                className="flex w-full items-center justify-center"
               >
                 <CustomButton>
                   <span className="block w-full text-lg font-semibold text-light md:text-xl">
