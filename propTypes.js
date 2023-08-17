@@ -5,7 +5,7 @@ export const ProjectProps = PropTypes.shape({
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
-  description: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.arrayOf(PropTypes.object).isRequired,
   imageURL: PropTypes.string.isRequired,
   githubURL: PropTypes.string.isRequired,
   liveURL: PropTypes.string.isRequired,

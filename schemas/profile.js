@@ -15,7 +15,7 @@ const profile = {
       name: "headline",
       title: "Headline",
       type: "string",
-      description: "A short description of yourself",
+      description: "A short description of your work",
       validation: (rule) => rule.required().min(40).max(80),
     }),
     {
@@ -63,7 +63,7 @@ const profile = {
       fields: [
         {
           name: "github",
-          title: "Github",
+          title: "GitHub",
           type: "url",
           initialValue: "https://github.com/",
         },
@@ -74,10 +74,16 @@ const profile = {
           initialValue: "https://linkedin.com/in/",
         },
         {
-          name: "twitter",
-          title: "Twitter",
+          name: "blog",
+          title: "Blog",
           type: "url",
-          initialValue: "https://twitter.com/",
+          initialValue: "https://",
+        },
+        {
+          name: "leetcode",
+          title: "LeetCode",
+          type: "url",
+          initialValue: "https://",
         },
       ],
       options: {
@@ -85,6 +91,53 @@ const profile = {
         collapsible: true,
         columns: 2,
       },
+    },
+    {
+      name: "experiences",
+      title: "Experiences",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "company",
+              title: "Company",
+              type: "string",
+            },
+            {
+              name: "website",
+              title: "Website",
+              type: "url",
+            },
+            {
+              name: "location",
+              title: "Location",
+              type: "string",
+            },
+            {
+              name: "startDate",
+              title: "Start Date",
+              type: "date",
+            },
+            {
+              name: "endDate",
+              title: "End Date",
+              type: "date",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "text",
+            },
+          ],
+        },
+      ],
     },
     {
       name: "metrics",
