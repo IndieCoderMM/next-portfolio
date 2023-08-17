@@ -1,3 +1,4 @@
+import CustomButton from "@/components/CustomButton";
 import { BackArrow, GitHubIcon, LinkArrow } from "@/components/Icons";
 import RichText from "@/components/RichText";
 import { getProject, getProjects } from "@/sanity/sanity.query";
@@ -70,7 +71,7 @@ const ProjectDetail = async (props) => {
         </div>
         <Link
           href="/projects"
-          className="btn fixed bottom-8 right-8 flex items-center gap-2 bg-white"
+          className="btn fixed bottom-8 right-8 flex items-center gap-2 dark:border-light"
         >
           <div className="h-5 w-6">
             <BackArrow />

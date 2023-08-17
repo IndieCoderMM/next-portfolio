@@ -5,6 +5,7 @@ import { getProfile } from "@/sanity/sanity.query";
 import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
 import { DownloadIcon } from "@/components/Icons";
+import CustomButton from "@/components/CustomButton";
 
 const Home = async () => {
   const profile = await getProfile();
@@ -35,16 +36,20 @@ const Home = async () => {
                 " ",
                 "_",
               )}_CV.pdf`}
-              className="primaryBtn gap-2 border border-primary bg-light px-4 py-2 text-lg font-medium text-primary transition-colors duration-150 hover:bg-primary hover:text-white md:px-8 md:text-2xl"
+              className="w-full max-w-[200px]"
             >
-              <div className="h-8 w-8">
-                <DownloadIcon />
-              </div>
-              <span>Get My CV</span>
+              <CustomButton>
+                <div className="flex items-center justify-center gap-2 text-lg text-white">
+                  <div className="h-8 w-8">
+                    <DownloadIcon />
+                  </div>
+                  <span>Get My CV</span>
+                </div>
+              </CustomButton>
             </a>
             <a
               href="/projects"
-              className="btn bg-light px-4 py-2 text-lg font-bold text-dark/90 hover:text-primary md:px-8 md:text-2xl"
+              className="btn px-4 py-2 text-lg font-bold text-dark/90 hover:text-primary dark:text-light md:px-8 md:text-2xl"
             >
               See Projects &#8594;
             </a>
