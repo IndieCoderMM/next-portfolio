@@ -16,7 +16,7 @@ const RichText = ({ value }) => {
               href={value?.href}
               target="_blank"
               rel="noreferrer"
-              className="text-primary underline"
+              className="font-medium text-primary underline"
             >
               {children}
             </a>
