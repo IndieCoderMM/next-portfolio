@@ -112,7 +112,7 @@ const ContactForm = () => {
         )}
         <div className="mt-10">
           <CustomButton type="submit">
-            <span className="w-full text-xl font-semibold">
+            <span className="w-full text-xl font-semibold text-light">
               {current !== "message"
                 ? "Next"
                 : status === "submitting"

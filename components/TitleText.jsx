@@ -8,7 +8,7 @@ const TitleText = ({ text, styles = "" }) => {
       variants={textVariant}
       initial="hidden"
       whileInView="show"
-      className={`text-3xl font-bold text-dark dark:text-light md:text-5xl ${styles}`}
+      className={`text-3xl font-bold text-dark dark:text-light md:text-5xl lg:text-7xl ${styles}`}
     >
       {text}
     </motion.h2>

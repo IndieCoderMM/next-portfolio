@@ -12,25 +12,27 @@ const Home = async () => {
 
   return (
     <main className="paddings">
-      <section className="interWidth mx-auto flex items-center justify-center">
+      <section className="interWidth mx-auto flex flex-col items-center justify-center md:flex-row">
         {profile && (
           <Image
             src="/welcome.svg"
             alt=""
             width={500}
             height={500}
-            className="hidden lg:block"
+            className="order-last object-cover md:order-first"
           />
         )}
-        <div className="space-y-4 whitespace-break-spaces ">
+        <div className="w-full space-y-4">
           <TitleText
             text={"Hello, I'm Hein Thant"}
             styles="text-center md:text-left"
           />
+
           <TypingText
             text={profile?.bio}
             styles={"font-medium text-sm md:text-xl text-center md:text-left"}
           />
+
           <p className="text-center leading-relaxed md:text-left md:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             fugiat nihil mollitia totam consequuntur molestias ut voluptas quasi

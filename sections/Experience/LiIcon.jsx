@@ -10,7 +10,7 @@ const LiIcon = () => {
   return (
     <figure
       ref={ref}
-      className="absolute left-0 rotate-90 stroke-dark dark:stroke-primary"
+      className="absolute -left-4 -translate-y-8 rotate-90 stroke-dark dark:stroke-primary md:left-11"
     >
       <svg
         width={75}

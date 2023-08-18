@@ -13,10 +13,10 @@ const Details = ({
   work,
 }) => {
   return (
-    <li className="mx-auto flex w-[60%] flex-col items-center justify-between">
+    <li className="mx-auto w-[80%] flex-col items-center justify-between md:w-[60%]">
       <LiIcon />
       <div>
-        <h3 className="text-2xl font-bold capitalize ">
+        <h3 className="text-xl font-bold capitalize lg:text-2xl ">
           {position}&nbsp;
           <a
             href={companyLink}
@@ -45,15 +45,15 @@ const Experience = () => {
   return (
     <section className="yPaddings">
       <TitleText text="Experience" styles="text-center" />
-      <div className="interWidth relative mx-auto mb-64 mt-32">
+      <div className="interWidth relative mx-auto my-20 lg:mb-64 lg:mt-32">
         <motion.div
           style={{
             scaleY: scrollYProgress,
           }}
           ref={ref}
-          className="absolute left-9 top-0 h-full w-[4px] origin-top bg-dark dark:bg-primary"
+          className="absolute left-5 top-0 h-full w-[4px] origin-top bg-dark dark:bg-primary md:left-20"
         />
-        <ul className="ml-4 flex w-full flex-col items-start justify-between space-y-8">
+        <ul className=" ml-4 flex w-full flex-col items-start justify-between space-y-8">
           <Details
             position="Software Engineer"
             companyName="Google"

@@ -29,15 +29,17 @@ const About = async () => {
         <TitleText text={profile?.headline} styles="text-center mb-12" />
         <TypingText
           text={"Biography"}
-          styles={"font-semibold uppercase text-xl mb-8"}
+          styles={
+            "font-semibold uppercase text-lg md:text-xl lg:text-2xl mb-2 lg:mb-8"
+          }
         />
-        <div className=" grid w-full gap-16 md:grid-cols-8">
+        <div className=" grid w-full gap-4 md:grid-cols-8 md:gap-8">
           <div className="col-span-full flex flex-col items-start justify-start pt-4 lg:col-span-5 xl:col-span-4">
-            <div className="flex flex-col gap-4 text-lg leading-relaxed text-dark">
+            <div className="flex flex-col gap-4 leading-relaxed text-dark md:text-lg">
               <RichText value={profile?.about} />
             </div>
           </div>
-          <div className="col-span-full flex flex-col items-center gap-4 self-center lg:col-span-3 xl:col-span-2">
+          <div className="col-span-full hidden flex-col items-center gap-4 self-center lg:col-span-3 lg:flex xl:col-span-2">
             <div className="flex w-full flex-col items-center justify-center rounded-2xl border-2 border-dark bg-light shadow-400 ">
               <Image
                 src={profile?.profileImage.url}
@@ -99,12 +101,12 @@ const About = async () => {
             </div>
           </div>
 
-          <div className="col-span-full flex items-center justify-between xl:col-span-2 xl:flex-col xl:items-end">
+          <div className="col-span-full flex flex-wrap items-start justify-between xl:col-span-2 xl:flex-col xl:items-end">
             <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-              <span className="inline-block text-2xl font-bold text-primary lg:text-7xl">
+              <span className="inline-block text-3xl font-bold text-primary lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.frontEnd} />+
               </span>
-              <p className="text-lg font-medium text-dark/75 dark:text-light md:text-xl">
+              <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
                 Front-end Projects
               </p>
             </div>
@@ -112,7 +114,7 @@ const About = async () => {
               <span className="inline-block text-3xl font-bold text-primary lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.fullStack} />+
               </span>
-              <p className="text-xl font-medium text-dark/75 dark:text-light">
+              <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
                 Full-stack Projects
               </p>
             </div>
@@ -120,7 +122,7 @@ const About = async () => {
               <span className="inline-block text-3xl font-bold text-primary lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.experience} />+
               </span>
-              <p className="text-xl font-medium text-dark/75 dark:text-light">
+              <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
                 Years of Experience
               </p>
             </div>

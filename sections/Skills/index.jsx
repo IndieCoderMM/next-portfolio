@@ -13,7 +13,7 @@ const Skills = ({ skills }) => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="innerWidth yPaddings mx-auto">
+    <section className="innerWidth yPaddings mx-auto mt-10">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
