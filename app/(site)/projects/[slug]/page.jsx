@@ -15,51 +15,58 @@ const ProjectDetail = async (props) => {
   return (
     <main className="paddings">
       <section className="innerWidth mx-auto">
-        <h2 className="mb-4 text-7xl font-bold">{project.name}</h2>
-        <h3 className="mb-8 text-3xl font-semibold">{project.tagline}</h3>
-        <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
+        <h2 className="mb-4 text-2xl font-bold md:text-5xl">{project.name}</h2>
+        <h3 className="mb-4 text-lg font-semibold md:text-2xl">
+          {project.tagline}
+        </h3>
+        <div className="flex items-center justify-between gap-4 py-4">
           <a
             href={project.liveURL}
             target="_blank"
             rel="noreferrer"
-            className="blockBtn w-full max-w-[300px] gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark md:w-auto md:px-8 md:text-xl"
+            className="blockBtn w-autogap-2 bg-white p-3 font-semibold text-dark md:px-8"
           >
-            <div className="flex h-8 w-8 items-center justify-center">
+            <div className="flex h-6 w-6 items-center justify-center md:h-8 md:w-8">
               <LinkArrow />
             </div>
-            Visit Website
+            <span className="hidden text-xl  md:inline-block">
+              Visit Website
+            </span>
           </a>
           <a
             href={project.githubURL}
             target="_blank"
             rel="noreferrer"
-            className="blockBtn w-full max-w-[300px] gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark md:w-auto md:px-8 md:text-xl"
+            className="blockBtn w-auto gap-2 bg-white p-3 font-semibold text-dark md:px-8 "
           >
-            <div className="flex h-8 w-8 items-center justify-center">
+            <div className="flex h-6 w-6 items-center justify-center md:h-8 md:w-8">
               <GitHubIcon />
             </div>
 
-            <span>View Code</span>
+            <span className="hidden text-xl md:inline-block">View Code</span>
           </a>
         </div>
         <div className="mb-8">
           <Image
-            width={0}
-            height={0}
+            width={500}
+            height={500}
+            loading="lazy"
             src={project.imageURL}
             alt={project.name}
             sizes="100vw"
-            className="w-full object-contain"
+            className="h-auto w-full object-contain"
           />
         </div>
         <div className="mb-8">
-          <h4 className="mb-4 text-2xl font-semibold uppercase">
+          <h4 className="mb-4 text-lg font-semibold uppercase md:text-2xl">
             About this project
           </h4>
           <RichText value={project.description} />
         </div>
         <div className="mb-8">
-          <h4 className="mb-4 text-2xl font-semibold">Technologies</h4>
+          <h4 className="mb-4 text-lg font-semibold md:text-2xl">
+            Technologies
+          </h4>
           <p className="mb-4">This project was built using:</p>
           <ul className="list-inside list-disc">
             {project.stack.map((tech) => (

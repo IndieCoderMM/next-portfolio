@@ -36,7 +36,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 animate="show"
                 key={index}
               >
-                <div className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-dark/10 p-1 dark:bg-light/50 lg:h-[50px] lg:w-[50px]">
+                <div className="flex h-[35px] w-[35px] items-center justify-center overflow-hidden rounded-full bg-dark/10 p-1 dark:bg-light/50 lg:h-[50px] lg:w-[50px]">
                   <Image
                     src={item.logoURL}
                     width={30}

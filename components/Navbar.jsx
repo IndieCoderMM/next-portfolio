@@ -67,7 +67,9 @@ const Navbar = ({ socials }) => {
       <button
         type="button"
         onClick={() => setIsMenuOpen((prev) => !prev)}
-        className="fixed left-4 top-4 z-50 h-9 w-9 lg:hidden"
+        className={`${
+          isMenuOpen ? "" : "bg-white/50 backdrop-blur-md dark:bg-black/10"
+        } fixed left-2 top-2 z-[99] flex h-12 w-12 flex-col items-center justify-center rounded-full lg:hidden`}
       >
         <span
           className={`${
@@ -141,73 +143,85 @@ const Navbar = ({ socials }) => {
       </div>
       {/* // Mobile Menu */}
       {isMenuOpen ? (
-        <div className="fixed bottom-0 left-0 right-0 top-0 z-30 grid items-center bg-light/70 backdrop-blur-md dark:bg-dark/75">
-          <nav className="flex flex-col items-center justify-center space-y-4">
-            <MobileLink
-              closeMenu={() => setIsMenuOpen(false)}
-              href="/"
-              title="Home"
-            />
-            <MobileLink
-              closeMenu={() => setIsMenuOpen(false)}
-              href="/about"
-              title="About"
-            />
-            <MobileLink
-              closeMenu={() => setIsMenuOpen(false)}
-              href="/projects"
-              title="Portfolio"
-            />
-            <MobileLink
-              closeMenu={() => setIsMenuOpen(false)}
-              href="/contact"
-              title="Contact"
-            />
-          </nav>
-          <nav className="flex flex-wrap items-center justify-center gap-3">
-            <motion.a
-              href={socials.github}
-              target="_blank"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-10 rounded-full bg-light dark:text-dark"
-            >
-              <GitHubIcon />
-            </motion.a>
-            <motion.a
-              href={socials.linkedin}
-              target="_blank"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-10 rounded-md bg-white"
-            >
-              <LinkedInIcon />
-            </motion.a>
-            <motion.a
-              href="/"
-              target="_blank"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-10 rounded-full"
-            >
-              <BlogIcon />
-            </motion.a>
+        <motion.div
+          initial={{ scale: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, x: "0", y: "0" }}
+          transition={{
+            duration: 0.25,
+            type: "spring",
+            ease: "easeIn",
+          }}
+          className="fixed -left-1 -top-1 z-50 min-w-[80%] rounded-br-[900px] bg-light pb-20 pt-8 shadow backdrop-blur-md dark:bg-dark"
+        >
+          <div className="mx-auto flex w-[80%] flex-col">
+            <nav className="mb-4 flex items-center justify-center gap-3">
+              <motion.a
+                href={socials.github}
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-8 rounded-full bg-light dark:text-dark"
+              >
+                <GitHubIcon />
+              </motion.a>
+              <motion.a
+                href={socials.linkedin}
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-8 rounded-md bg-white"
+              >
+                <LinkedInIcon />
+              </motion.a>
+              <motion.a
+                href="/"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-8 rounded-full"
+              >
+                <BlogIcon />
+              </motion.a>
 
-            <button
-              onClick={() =>
-                setMode((mode) => (mode === "dark" ? "light" : "dark"))
-              }
-              type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-light p-1 dark:bg-dark"
-            >
-              {mode === "dark" ? (
-                <SunIcon className={"text-yellow-500"} />
-              ) : (
-                <MoonIcon className={"text-yellow-500"} />
-              )}
-            </button>
-          </nav>
-        </div>
+              <button
+                onClick={() =>
+                  setMode((mode) => (mode === "dark" ? "light" : "dark"))
+                }
+                type="button"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-light p-1 dark:bg-dark"
+              >
+                {mode === "dark" ? (
+                  <SunIcon className={"text-yellow-500"} />
+                ) : (
+                  <MoonIcon className={"text-yellow-500"} />
+                )}
+              </button>
+            </nav>
+
+            <nav className="ml-8 flex flex-1 flex-col items-start space-y-4">
+              <MobileLink
+                closeMenu={() => setIsMenuOpen(false)}
+                href="/"
+                title="Home"
+              />
+              <MobileLink
+                closeMenu={() => setIsMenuOpen(false)}
+                href="/about"
+                title="About"
+              />
+              <MobileLink
+                closeMenu={() => setIsMenuOpen(false)}
+                href="/projects"
+                title="Portfolio"
+              />
+              <MobileLink
+                closeMenu={() => setIsMenuOpen(false)}
+                href="/contact"
+                title="Contact"
+              />
+            </nav>
+          </div>
+        </motion.div>
       ) : null}
     </header>
   );

@@ -54,49 +54,33 @@ const About = async () => {
                 href={profile?.resumeURL}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center"
+                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
-                <CustomButton>
-                  <span className="block w-full text-lg font-semibold text-light md:text-xl">
-                    My Resume
-                  </span>
-                </CustomButton>
+                <span>My Resume</span>
               </a>
               <a
                 href={profile?.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center"
+                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
-                <CustomButton>
-                  <span className="block w-full text-lg font-semibold text-light md:text-xl">
-                    GitHub
-                  </span>
-                </CustomButton>
+                <span>GitHub</span>
               </a>
               <a
                 href={`mailto:${profile?.email}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center"
+                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
-                <CustomButton>
-                  <span className="block w-full text-lg font-semibold text-light md:text-xl">
-                    Email
-                  </span>
-                </CustomButton>
+                <span>Email</span>
               </a>
               <a
                 href={profile?.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center"
+                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
-                <CustomButton>
-                  <span className="block w-full text-lg font-semibold text-light md:text-xl">
-                    LinkedIn
-                  </span>
-                </CustomButton>
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>
