@@ -36,7 +36,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 animate="show"
                 key={index}
               >
-                <div className="flex h-[35px] w-[35px] items-center justify-center overflow-hidden rounded-full bg-dark/10 p-1 dark:bg-light/50 lg:h-[50px] lg:w-[50px]">
+                <div className="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-full bg-dark/10 p-1 dark:bg-light/50 lg:h-[50px] lg:w-[50px]">
                   <Image
                     src={item.logoURL}
                     width={30}
@@ -67,7 +67,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 key={idx}
                 className="flex flex-col items-center justify-center text-center"
               >
-                <div className="flex items-center justify-center overflow-hidden rounded-full bg-light p-1 lg:h-[80px] lg:w-[80px]">
+                <div className="flex h-[40px] w-[40px] items-center justify-center overflow-hidden rounded-full bg-light p-1 lg:h-[80px] lg:w-[80px]">
                   <Image
                     src={item.logoURL}
                     width={50}

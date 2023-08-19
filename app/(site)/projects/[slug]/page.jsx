@@ -1,6 +1,7 @@
 import CustomButton from "@/components/CustomButton";
 import { BackArrow, GitHubIcon, LinkArrow } from "@/components/Icons";
 import RichText from "@/components/RichText";
+import Transition from "@/components/Transition";
 import { getProject, getProjects } from "@/sanity/sanity.query";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +15,7 @@ const ProjectDetail = async (props) => {
   const project = await getProject(props.params.slug);
   return (
     <main className="paddings">
+      <Transition />
       <section className="innerWidth mx-auto">
         <h2 className="mb-4 text-2xl font-bold md:text-5xl">{project.name}</h2>
         <h3 className="mb-4 text-lg font-semibold md:text-2xl">

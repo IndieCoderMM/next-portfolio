@@ -6,12 +6,14 @@ import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
 import { DownloadIcon } from "@/components/Icons";
 import CustomButton from "@/components/CustomButton";
+import Transition from "@/components/Transition";
 
 const Home = async () => {
   const profile = await getProfile();
 
   return (
     <main className="paddings">
+      <Transition />
       <section className="interWidth mx-auto flex flex-col items-center justify-center md:flex-row">
         {profile && (
           <Image

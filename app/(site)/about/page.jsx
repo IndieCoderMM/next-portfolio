@@ -9,6 +9,7 @@ import {
 } from "@/components/Icons";
 import RichText from "@/components/RichText";
 import TitleText from "@/components/TitleText";
+import Transition from "@/components/Transition";
 import TypingText from "@/components/TypingText";
 import { getProfile, getSkills } from "@/sanity/sanity.query";
 import Experience from "@/sections/Experience";
@@ -25,6 +26,7 @@ const About = async () => {
 
   return (
     <main className="paddings w-full">
+      <Transition />
       <section className="innerWidth mx-auto">
         <TitleText text={profile?.headline} styles="text-center mb-12" />
         <TypingText

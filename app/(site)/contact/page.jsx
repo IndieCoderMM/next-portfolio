@@ -1,9 +1,11 @@
 import TitleText from "@/components/TitleText";
+import Transition from "@/components/Transition";
 import ContactForm from "@/sections/ContactForm";
 
 const ContactPage = () => {
   return (
     <main className="paddings">
+      <Transition />
       <section className="innerWidth mx-auto">
         <TitleText text="Contact Me" styles="mb-8" />
         <div className="interWidth">

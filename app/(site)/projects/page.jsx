@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import { GitHubIcon } from "@/components/Icons";
 import TitleText from "@/components/TitleText";
+import Transition from "@/components/Transition";
 import TypingText from "@/components/TypingText";
 import { getProfile, getProjects } from "@/sanity/sanity.query";
 import Projects from "@/sections/Projects";
@@ -22,6 +23,7 @@ const ProjectsPage = async () => {
   const tags = getUniqueTags(projects);
   return (
     <main className="paddings">
+      <Transition />
       <section className="innerWidth mx-auto">
         <TitleText text="My Recent Work" styles="text-center mb-8" />
         <p className="text-center text-xl font-medium">
