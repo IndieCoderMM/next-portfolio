@@ -5,15 +5,7 @@ import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-import {
-  BlogIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  MoonIcon,
-  PinterestIcon,
-  SunIcon,
-  TwitterIcon,
-} from "./Icons";
+import { BlogIcon, GitHubIcon, LinkedInIcon, MoonIcon, SunIcon } from "./Icons";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -151,9 +143,9 @@ const Navbar = ({ socials }) => {
             type: "spring",
             ease: "easeIn",
           }}
-          className="fixed -left-1 -top-1 z-50 min-w-[80%] rounded-br-[900px] bg-light pb-20 pt-8 shadow backdrop-blur-md dark:bg-dark"
+          className="fixed -left-1 -top-1 z-50 min-w-[250px] rounded-br-[900px] bg-light pb-20 pr-8 pt-4 shadow backdrop-blur-md dark:bg-dark"
         >
-          <div className="mx-auto flex w-[80%] flex-col">
+          <div className="flex flex-col pl-20">
             <nav className="mb-4 flex items-center justify-center gap-3">
               <motion.a
                 href={socials.github}
@@ -198,7 +190,7 @@ const Navbar = ({ socials }) => {
               </button>
             </nav>
 
-            <nav className="ml-8 flex flex-1 flex-col items-start space-y-4">
+            <nav className="flex flex-1 flex-col items-start space-y-4">
               <MobileLink
                 closeMenu={() => setIsMenuOpen(false)}
                 href="/"

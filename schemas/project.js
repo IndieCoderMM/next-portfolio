@@ -59,10 +59,11 @@ const project = {
       of: [{ type: "block" }],
     },
     {
-      name: "solution",
-      title: "Solution",
+      name: "development",
+      title: "Development",
       type: "array",
-      description: "Write a full description about the solution you provided",
+      description:
+        "Write a full description about the development of this project",
       of: [{ type: "block" }],
     },
     {

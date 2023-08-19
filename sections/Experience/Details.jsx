@@ -15,7 +15,7 @@ const Details = ({
     <li className="mx-auto w-[80%] flex-col items-center justify-between md:w-[60%]">
       <LiIcon />
       <div>
-        <h3 className="text-xl font-bold capitalize lg:text-2xl ">
+        <h3 className="font-bold capitalize sm:text-lg md:text-xl lg:text-2xl ">
           {title}&nbsp;
           {website ? (
             <a
@@ -30,10 +30,15 @@ const Details = ({
             <span className="text-primary">@{company}</span>
           )}
         </h3>
-        <span className="font-medium capitalize text-dark/50">
-          {startDate} - {endDate || "present"} | {location}
-        </span>
-        <p className="text-dark/75 dark:text-light/75">{description}</p>
+        <div className="text-sm font-medium capitalize text-dark/50 md:text-lg">
+          <span>
+            {startDate} - {endDate || "present"}
+          </span>
+          {location && <span> • {location}</span>}
+        </div>
+        <p className="text-sm text-dark/75 dark:text-light/75 md:text-lg">
+          {description}
+        </p>
       </div>
     </li>
   );

@@ -51,6 +51,12 @@ const profile = {
       of: [{ type: "block" }],
     },
     {
+      name: "description",
+      title: "Description",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
       name: "resumeURL",
       title: "Upload Resume",
       type: "file",

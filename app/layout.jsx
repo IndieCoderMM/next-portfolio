@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 const mont = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont",
+  display: "swap",
 });
 
 export const metadata = {

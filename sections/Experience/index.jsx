@@ -14,8 +14,12 @@ const Experience = ({ experiences }) => {
   });
   return (
     <section className="yPaddings">
-      <TitleText text="Experience" styles="text-center" />
-      <div className="interWidth relative mx-auto my-20 lg:mb-64 lg:mt-32">
+      <TitleText text="Experience" styles="text-center mb-8" />
+      <p className="mb-4 text-center text-xl font-medium">
+        My professional experience so far. I&apos;m excited to see what the
+        future holds.
+      </p>
+      <div className="interWidth relative mx-auto my-20 lg:my-32">
         <motion.div
           style={{
             scaleY: scrollYProgress,

@@ -21,7 +21,11 @@ const Skills = ({ skills }) => {
         viewport={{ once: true, amount: 0.25 }}
         className="flex w-full flex-col gap-8"
       >
-        <TitleText text="Skills" styles="text-center mb-4" />
+        <TitleText text="Skills" styles="text-center mb-2" />
+        <p className="mb-4 text-center text-xl font-medium">
+          These are the technologies I&apos;ve worked with. I&apos;m always open
+          to learning new things.
+        </p>
         <div className="flex min-h-screen w-full flex-col gap-4 lg:min-h-[60vh] lg:flex-row lg:items-center">
           {skills?.map((skill, index) => (
             <SkillCard

@@ -13,10 +13,8 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       onClick={handleClick}
       className={`relative ${
-        isActive
-          ? "flex-[10] overflow-auto lg:flex-[3.5]"
-          : "flex-[2] lg:flex-[1.5]"
-      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark shadow-400 transition-[flex] duration-700 ease-out lg:h-[500px]`}
+        isActive ? "flex-1 lg:flex-[3.5]" : "lg:flex-[1.5]"
+      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
     >
       <img
         src={skill.imageURL}
@@ -24,8 +22,8 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
         className="absolute h-full w-full object-cover"
       />
       {!isActive ? (
-        <div className="lg:glass relative z-0 w-full self-stretch p-2 dark:bg-black/25">
-          <h3 className="left-0 z-10 whitespace-nowrap rounded-sm font-bold text-dark dark:text-light lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+        <div className="relative z-0 w-full self-stretch bg-light dark:bg-dark">
+          <h3 className="left-0 z-10 whitespace-nowrap rounded-sm text-center text-3xl font-bold text-dark dark:text-light lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skill?.title}
           </h3>
           <ul className=" bottom-0 right-0 top-4 flex flex-wrap gap-1 p-2 md:left-1/2 lg:absolute lg:flex-col-reverse lg:items-end">
@@ -36,7 +34,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
                 animate="show"
                 key={index}
               >
-                <div className="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-full bg-dark/10 p-1 dark:bg-light/50 lg:h-[50px] lg:w-[50px]">
+                <div className="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-full bg-dark/10 p-1 dark:bg-light/50 md:h-[50px] md:w-[50px]">
                   <Image
                     src={item.logoURL}
                     width={30}
@@ -60,14 +58,14 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
           <h3 className="text-lg font-bold text-light md:text-3xl">
             {skill?.title}
           </h3>
-          <ul className="flex flex-wrap items-start justify-center gap-4">
+          <ul className="flex flex-wrap items-start justify-center gap-2 md:gap-4">
             {skill?.list.map((item, idx) => (
               <motion.li
                 variants={sphereVariant("left", idx * 0.3, 1.5)}
                 key={idx}
                 className="flex flex-col items-center justify-center text-center"
               >
-                <div className="flex h-[40px] w-[40px] items-center justify-center overflow-hidden rounded-full bg-light p-1 lg:h-[80px] lg:w-[80px]">
+                <div className="flex h-[50px] w-[50px] items-center justify-center overflow-hidden rounded-full bg-light p-1 md:h-[80px] md:w-[80px]">
                   <Image
                     src={item.logoURL}
                     width={50}

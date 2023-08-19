@@ -6,16 +6,26 @@ const Footer = async () => {
   return (
     <footer className="yPaddings">
       <div className="innerWidth mx-auto space-y-4 text-center">
-        <h3 className="text-3xl font-bold">Let's Connect</h3>
+        <h3 className="text-2xl font-bold md:text-3xl">Let's Connect</h3>
         <blockquote className="leading-relaxed md:text-lg">
           <p>Wanna get in touch or talk about a project?</p>
           <p>
             Feel free to contact me via email at{" "}
-            <a href={`mailto:${email}`}>{email}</a>
+            <a
+              href={`mailto:${email}`}
+              className="text-primary underline-offset-2 hover:underline"
+            >
+              {email}
+            </a>
           </p>
           <p>
             Or send a message using the form at the{" "}
-            <Link href="/contact">Contact Page</Link>
+            <Link
+              href="/contact"
+              className="text-primary underline-offset-2 hover:underline"
+            >
+              Contact Page
+            </Link>
           </p>
         </blockquote>
       </div>

@@ -13,7 +13,7 @@ const StateButton = ({ children, handleClick }) => {
         exit="exit"
         type="button"
         onClick={handleClick}
-        className="flex items-center gap-2 rounded-sm bg-dark/10 px-4 py-1 transition hover:brightness-110 dark:bg-[#333]"
+        className="flex items-center gap-2 rounded-md border bg-gray-100 px-4 py-1 transition hover:brightness-105 dark:bg-[#333]"
       >
         {children}
       </motion.button>

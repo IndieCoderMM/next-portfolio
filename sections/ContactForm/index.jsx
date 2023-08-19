@@ -4,6 +4,7 @@ import CustomButton from "@/components/CustomButton";
 import { useRef, useState } from "react";
 import StateButton from "./StateButton";
 import Field from "./Field";
+import { BellIcon, MailIcon, UserIcon, WriteIcon } from "@/components/Icons";
 
 const ContactForm = () => {
   const [current, setCurrent] = useState("name");
@@ -59,27 +60,27 @@ const ContactForm = () => {
 
   return (
     <div className="w-full">
-      <div className="mb-10 flex min-h-[100px] flex-wrap items-center gap-2 overflow-hidden">
+      <div className="mb-4 flex min-h-[100px] flex-wrap items-center gap-2 overflow-hidden">
         {form.name && (
           <StateButton handleClick={() => setCurrent("name")}>
-            <div className="flex  h-8 w-8 items-center justify-center rounded-md">
-              😎
+            <div className="flex  h-8 w-8 items-center justify-center rounded-md text-primary dark:text-light">
+              <UserIcon />
             </div>
             <span>{form.name}</span>
           </StateButton>
         )}
         {form.email && (
           <StateButton handleClick={() => setCurrent("email")}>
-            <div className="flex  h-8 w-8 items-center justify-center rounded-md">
-              📧
+            <div className="flex  h-8 w-8 items-center justify-center rounded-md  text-primary dark:text-light">
+              <MailIcon />
             </div>
             <p>{form.email}</p>
           </StateButton>
         )}
         {notification && (
           <StateButton handleClick={() => setNotification("")}>
-            <div className="flex  h-8 w-8 items-center justify-center rounded-md">
-              🔔
+            <div className="flex  h-8 w-8 items-center justify-center rounded-md  text-primary dark:text-light">
+              <BellIcon />
             </div>
             <p>{notification}</p>
           </StateButton>
@@ -91,7 +92,8 @@ const ContactForm = () => {
             name="name"
             value={form.name}
             handleChange={handleChange}
-            placeholder="Tell me your name"
+            placeholder="Let me know your name"
+            icon={UserIcon}
           />
         )}
         {current === "email" && (
@@ -99,7 +101,8 @@ const ContactForm = () => {
             name="email"
             value={form.email}
             handleChange={handleChange}
-            placeholder="Your email address"
+            placeholder="Enter your email address"
+            icon={MailIcon}
           />
         )}
         {current === "message" && (
@@ -107,7 +110,8 @@ const ContactForm = () => {
             name="message"
             value={form.message}
             handleChange={handleChange}
-            placeholder="Your message"
+            placeholder="Write your awesome message here"
+            icon={WriteIcon}
           />
         )}
         <div className="mt-10">

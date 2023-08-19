@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
         </h3>
         <Link
           href={`/projects/${project.slug}`}
-          className="absolute right-1 top-1 block h-8 w-8 md:hidden"
+          className="absolute right-1 top-1 block h-8 w-8 text-dark/50 dark:text-light/50 md:hidden"
         >
           <LinkArrow />
         </Link>
@@ -38,7 +38,7 @@ const ProjectCard = ({ project }) => {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           src={project.imageURL}
           alt={project.name}
-          className="h-auto w-full object-cover object-top"
+          className="h-auto min-h-[200px] w-full object-fill object-top md:object-cover"
         />
         <motion.div
           variants={slideIn("up", "tween", 0, 0.5)}
