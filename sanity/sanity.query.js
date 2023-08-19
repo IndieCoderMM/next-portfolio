@@ -13,7 +13,8 @@ export async function getProfile() {
       about,
       "resumeURL": resumeURL.asset->url,
       socials {github, linkedin, twitter},
-      metrics {frontEnd, fullStack, experience}
+      metrics {frontEnd, fullStack, experience},
+      experiences[] { _id, title, company, website, location, startDate, endDate, description},
     }[0]`,
   );
 }

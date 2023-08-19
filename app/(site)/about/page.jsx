@@ -116,7 +116,11 @@ const About = async () => {
         </div>
       </section>
       <Skills skills={skills} />
-      <Experience />
+      <Experience
+        experiences={profile?.experiences.sort(
+          (a, b) => new Date(b.startDate) - new Date(a.startDate),
+        )}
+      />
       <Footer />
     </main>
   );

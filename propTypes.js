@@ -26,3 +26,14 @@ export const SkillGroupProps = PropTypes.shape({
   imageURL: PropTypes.string.isRequired,
   list: PropTypes.arrayOf(SkillProps).isRequired,
 });
+
+// Define prop types for experience
+export const ExperienceProps = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
+  description: PropTypes.arrayOf(PropTypes.object).isRequired,
+});
