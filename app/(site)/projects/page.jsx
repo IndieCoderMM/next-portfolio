@@ -1,5 +1,9 @@
 import Footer from "@/components/Footer";
-import { GitHubIcon } from "@/components/Icons";
+import {
+  GitHubIcon,
+  GitHubOutlineIcon,
+  MessageOutlineIcon,
+} from "@/components/Icons";
 import TitleText from "@/components/TitleText";
 import Transition from "@/components/Transition";
 import TypingText from "@/components/TypingText";
@@ -38,20 +42,29 @@ const ProjectsPage = async () => {
           .
         </p>
         <Projects projects={projects} tags={tags} />
-        <div className="flex w-full items-center justify-center py-4">
+      </section>
+      <section className="innerWidth mx-auto">
+        <div className="interWidth yPaddings mx-auto flex flex-col items-center justify-center gap-4">
+          <h3 className="text-center text-2xl font-semibold">
+            Interested in working together?
+          </h3>
+          <p className="text-center text-lg font-medium">
+            I'm open to new opportunities! Whether you've got a project in mind,
+            need some assistance, or just want to say hello, feel free to reach
+            out.
+          </p>
           <a
-            href={socials.github}
-            target="_blank"
-            rel="noreferrer"
-            className="group flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-2 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-12 md:py-4 md:text-lg"
+            href="/contact"
+            className="group mt-8 flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-1 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-2 md:text-lg"
           >
             <div className="h-8 w-8">
-              <GitHubIcon className={`text-primary group-hover:text-white`} />
+              <MessageOutlineIcon />
             </div>
-            See More on GitHub
+            Start a Conversation
           </a>
         </div>
       </section>
+
       <Footer />
     </main>
   );

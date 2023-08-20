@@ -63,26 +63,26 @@ const ContactForm = () => {
       <div className="mb-4 flex min-h-[100px] flex-wrap items-center gap-2 overflow-hidden">
         {form.name && (
           <StateButton handleClick={() => setCurrent("name")}>
-            <div className="flex  h-8 w-8 items-center justify-center rounded-md text-primary dark:text-light">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
               <UserIcon />
             </div>
-            <span>{form.name}</span>
+            <p className="text-sm">{form.name}</p>
           </StateButton>
         )}
         {form.email && (
           <StateButton handleClick={() => setCurrent("email")}>
-            <div className="flex  h-8 w-8 items-center justify-center rounded-md  text-primary dark:text-light">
+            <div className="flexx h-7 w-7 items-center justify-center rounded-md  text-primary dark:text-light">
               <MailIcon />
             </div>
-            <p>{form.email}</p>
+            <p className="text-sm">{form.email}</p>
           </StateButton>
         )}
         {notification && (
           <StateButton handleClick={() => setNotification("")}>
-            <div className="flex  h-8 w-8 items-center justify-center rounded-md  text-primary dark:text-light">
+            <div className="flexx h-7 w-7 items-center justify-center rounded-md  text-primary dark:text-light">
               <BellIcon />
             </div>
-            <p>{notification}</p>
+            <p className="text-sm">{notification}</p>
           </StateButton>
         )}
       </div>
@@ -116,7 +116,7 @@ const ContactForm = () => {
         )}
         <div className="mt-10">
           <CustomButton type="submit">
-            <span className="w-full text-xl font-semibold text-light">
+            <span className="w-full text-xl font-semibold uppercase text-light">
               {current !== "message"
                 ? "Next"
                 : status === "submitting"

@@ -31,7 +31,7 @@ const Home = async () => {
 
           <p className="text-xl font-bold leading-relaxed">{profile?.bio}</p>
 
-          <div className="text-lg font-medium leading-relaxed">
+          <div className="text-lg font-medium leading-loose">
             <RichText value={profile?.description} />
           </div>
 

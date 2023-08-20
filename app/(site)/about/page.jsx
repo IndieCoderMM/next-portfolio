@@ -4,8 +4,10 @@ import Footer from "@/components/Footer";
 import {
   BlogIcon,
   GitHubIcon,
+  GridIcon,
   LinkArrow,
   LinkedInIcon,
+  MessageOutlineIcon,
 } from "@/components/Icons";
 import RichText from "@/components/RichText";
 import TitleText from "@/components/TitleText";
@@ -56,7 +58,7 @@ const About = async () => {
                 href={profile?.resumeURL}
                 target="_blank"
                 rel="noreferrer"
-                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
+                className="btn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
                 <span>My Resume</span>
               </a>
@@ -64,7 +66,7 @@ const About = async () => {
                 href={profile?.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
+                className="btn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
                 <span>GitHub</span>
               </a>
@@ -72,7 +74,7 @@ const About = async () => {
                 href={`mailto:${profile?.email}`}
                 target="_blank"
                 rel="noreferrer"
-                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
+                className="btn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
                 <span>Email</span>
               </a>
@@ -80,7 +82,7 @@ const About = async () => {
                 href={profile?.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="blockBtn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
+                className="btn w-full gap-2 bg-white px-4 py-3 text-lg font-semibold text-dark  md:px-8 md:text-xl"
               >
                 <span>LinkedIn</span>
               </a>
@@ -121,6 +123,26 @@ const About = async () => {
           (a, b) => new Date(b.startDate) - new Date(a.startDate),
         )}
       />
+      <section className="innerWidth mx-auto">
+        <div className="interWidth yPaddings mx-auto flex flex-col items-center justify-center gap-4">
+          <h3 className="text-center text-2xl font-bold md:text-3xl">
+            Want to see my work?
+          </h3>
+          <p className="text-center text-lg font-medium">
+            Explore my portfolio to see the projects I've built. Get a firsthand
+            look at my skills and creativity.
+          </p>
+          <a
+            href="/projects"
+            className="group mt-8 flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-1 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-2 md:text-lg"
+          >
+            <div className="h-8 w-8">
+              <GridIcon />
+            </div>
+            <span>View Portfolio</span>
+          </a>
+        </div>
+      </section>
       <Footer />
     </main>
   );

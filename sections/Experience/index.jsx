@@ -14,8 +14,8 @@ const Experience = ({ experiences }) => {
   });
   return (
     <section className="yPaddings">
-      <TitleText text="Experience" styles="text-center mb-8" />
-      <p className="mb-4 text-center text-xl font-medium">
+      <TitleText text="Experience" styles="text-center mb-8 md:mb-10" />
+      <p className="mb-4 text-center font-medium md:text-xl">
         My professional experience so far. I&apos;m excited to see what the
         future holds.
       </p>

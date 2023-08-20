@@ -14,7 +14,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       onClick={handleClick}
       className={`relative ${
         isActive ? "flex-1 lg:flex-[3.5]" : "lg:flex-[1.5]"
-      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
+      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out dark:border-light lg:h-[500px]`}
     >
       <img
         src={skill.imageURL}
@@ -22,8 +22,8 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
         className="absolute h-full w-full object-cover"
       />
       {!isActive ? (
-        <div className="relative z-0 w-full self-stretch bg-light dark:bg-dark">
-          <h3 className="left-0 z-10 whitespace-nowrap rounded-sm text-center text-3xl font-bold text-dark dark:text-light lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+        <div className="relative z-0 w-full self-stretch bg-light/70 backdrop-blur-sm dark:bg-dark/50">
+          <h3 className="left-0 z-10 whitespace-nowrap rounded-sm text-center text-3xl font-bold text-dark  lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skill?.title}
           </h3>
           <ul className=" bottom-0 right-0 top-4 flex flex-wrap gap-1 p-2 md:left-1/2 lg:absolute lg:flex-col-reverse lg:items-end">

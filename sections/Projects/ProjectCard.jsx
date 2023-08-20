@@ -36,13 +36,16 @@ const ProjectCard = ({ project }) => {
           height={300}
           quality={100}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+          placeholder="blur"
+          loading="lazy"
+          blurDataURL="/loading-placeholder.gif"
           src={project.imageURL}
           alt={project.name}
           className="h-auto min-h-[200px] w-full object-fill object-top md:object-cover"
         />
         <motion.div
           variants={slideIn("up", "tween", 0, 0.5)}
-          className="absolute bottom-0 left-0 right-0 top-0 hidden w-full flex-col items-center justify-center gap-4 overflow-hidden bg-dark/75 p-2 md:flex"
+          className="absolute bottom-0 left-0 right-0 top-0 hidden w-full flex-col items-center justify-center gap-4 overflow-hidden bg-primary/90 p-2 md:flex"
         >
           <p className="text-center font-semibold text-light md:text-lg">
             {project.tagline}
@@ -62,7 +65,7 @@ const ProjectCard = ({ project }) => {
           </ul>
           <Link
             href={`/projects/${project.slug}`}
-            className="rounded-full border-2 border-primary px-8 py-2 text-center text-sm font-semibold text-light transition-colors hover:bg-primary hover:text-light md:text-lg"
+            className="rounded-full border-2 border-light px-8 py-2 text-center text-sm font-semibold text-light transition-colors hover:bg-light hover:text-primary md:text-lg"
           >
             View project &#8594;
           </Link>

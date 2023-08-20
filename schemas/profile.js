@@ -86,10 +86,10 @@ const profile = {
           initialValue: "https://",
         },
         {
-          name: "leetcode",
-          title: "LeetCode",
+          name: "whatsapp",
+          title: "WhatsApp",
           type: "url",
-          initialValue: "https://",
+          initialValue: "https://wa.me/",
         },
       ],
       options: {

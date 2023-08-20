@@ -5,7 +5,15 @@ import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-import { BlogIcon, GitHubIcon, LinkedInIcon, MoonIcon, SunIcon } from "./Icons";
+import {
+  BlogIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MoonIcon,
+  SunIcon,
+  WhatsAppIcon,
+  WhatsAppIcon2,
+} from "./Icons";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -92,7 +100,7 @@ const Navbar = ({ socials }) => {
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-3 w-9"
+            className="ml-3 h-10 w-10 rounded-full bg-white text-dark"
           >
             <GitHubIcon />
           </motion.a>
@@ -106,7 +114,16 @@ const Navbar = ({ socials }) => {
             <LinkedInIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href={socials.whatsapp}
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            className="ml-3 w-10 rounded-full text-green-500"
+          >
+            <WhatsAppIcon />
+          </motion.a>
+          <motion.a
+            href={socials.blog}
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -136,11 +153,10 @@ const Navbar = ({ socials }) => {
       {/* // Mobile Menu */}
       {isMenuOpen ? (
         <motion.div
-          initial={{ scale: 0, x: "-50%", y: "-50%" }}
-          animate={{ scale: 1, x: "0", y: "0" }}
+          initial={{ scale: 0, x: "-50%", y: "-50%", opacity: 0 }}
+          animate={{ scale: 1, x: "0", y: "0", opacity: 1 }}
           transition={{
             duration: 0.25,
-            type: "spring",
             ease: "easeIn",
           }}
           className="fixed -left-1 -top-1 z-50 min-w-[250px] rounded-br-[900px] bg-light pb-20 pr-8 pt-4 shadow backdrop-blur-md dark:bg-dark"
@@ -166,7 +182,16 @@ const Navbar = ({ socials }) => {
                 <LinkedInIcon />
               </motion.a>
               <motion.a
-                href="/"
+                href={socials.whatsapp}
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-10 rounded-full  text-green-500"
+              >
+                <WhatsAppIcon />
+              </motion.a>
+              <motion.a
+                href={socials.blog}
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}

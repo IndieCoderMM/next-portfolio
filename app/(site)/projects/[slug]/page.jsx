@@ -58,8 +58,11 @@ const ProjectDetail = async (props) => {
           </div>
           <Image
             width={500}
-            height={500}
+            height={300}
             loading="lazy"
+            quality={100}
+            placeholder="blur"
+            blurDataURL="/loading-placeholder.gif"
             src={project.imageURL}
             alt={project.name}
             sizes="100vw"

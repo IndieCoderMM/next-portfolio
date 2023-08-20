@@ -36,7 +36,7 @@ const Details = ({
           </span>
           {location && <span> • {location}</span>}
         </div>
-        <p className="text-sm text-dark/75 dark:text-light/75 md:text-lg">
+        <p className="text-sm text-dark dark:text-light md:text-lg">
           {description}
         </p>
       </div>
