@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { CircularText } from "./Icons";
 
 const HireMe = () => {
@@ -10,7 +11,7 @@ const HireMe = () => {
         />
         <Link
           href="/contact"
-          className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-dark p-2 text-center text-sm font-semibold leading-3 text-light shadow-md transition-colors hover:bg-primary hover:text-white dark:bg-light dark:text-dark dark:hover:bg-primary dark:hover:text-white lg:h-24 lg:w-24 lg:text-xl"
+          className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full  bg-dark p-2 text-center text-sm font-semibold leading-3 text-light shadow-md transition-colors hover:ring hover:ring-primary hover:brightness-110 dark:bg-light dark:text-dark  lg:h-24 lg:w-24 lg:text-xl"
         >
           Hire Me
         </Link>

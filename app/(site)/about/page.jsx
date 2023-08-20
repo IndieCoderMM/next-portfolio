@@ -38,12 +38,12 @@ const About = async () => {
           }
         />
         <div className=" grid w-full gap-4 md:grid-cols-8 md:gap-8">
-          <div className="col-span-full flex flex-col items-start justify-start pt-4 lg:col-span-5 xl:col-span-4">
+          <div className="col-span-full flex flex-col items-start justify-start pt-4 lg:col-span-6">
             <div className="flex flex-col gap-4 leading-relaxed text-dark md:text-lg">
               <RichText value={profile?.about} />
             </div>
           </div>
-          <div className="col-span-full hidden flex-col items-center gap-4 self-center lg:col-span-3 lg:flex xl:col-span-2">
+          {/* <div className="col-span-full hidden flex-col items-center gap-4 self-center lg:col-span-3 lg:flex xl:col-span-2">
             <div className="flex w-full flex-col items-center justify-center rounded-2xl border-2 border-dark bg-light/60 shadow-400 ">
               <Image
                 src={profile?.profileImage.url}
@@ -87,9 +87,9 @@ const About = async () => {
                 <span>LinkedIn</span>
               </a>
             </div>
-          </div>
+          </div> */}
 
-          <div className="col-span-full flex flex-wrap items-start justify-between xl:col-span-2 xl:flex-col xl:items-end">
+          <div className="col-span-full flex flex-wrap items-start justify-between lg:col-span-2 lg:flex-col lg:items-end">
             <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
               <span className="inline-block text-3xl font-bold text-primary lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.frontEnd} />+
@@ -134,7 +134,7 @@ const About = async () => {
           </p>
           <a
             href="/projects"
-            className="group mt-8 flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-1 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-2 md:text-lg"
+            className="group mt-8 flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-2 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-4 md:text-lg"
           >
             <div className="h-8 w-8">
               <GridIcon />

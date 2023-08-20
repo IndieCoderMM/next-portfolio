@@ -19,7 +19,7 @@ const ContactPage = async () => {
       <section className="innerWidth mx-auto">
         <TitleText text="Contact Me" styles="mb-8" />
         <div className="interWidth">
-          <p className="leading-relaxed text-dark/80 dark:text-light md:text-lg lg:text-xl">
+          <p className="font-medium leading-relaxed text-dark/80 dark:text-light md:text-lg lg:text-xl">
             Got a cool project idea or just want to drop a friendly hello? Go
             ahead and send me a message using the awesome form below. Can't wait
             to hear from you!

@@ -101,7 +101,7 @@ const ProjectDetail = async (props) => {
         </div>
         <Link
           href="/projects"
-          className="btn fixed bottom-1 right-1 flex items-center gap-2 bg-light/70 px-2 py-1 shadow-md backdrop-blur-sm transition-colors hover:brightness-110 dark:border-light dark:bg-dark/70 md:bottom-8 md:right-8"
+          className="btn fixed bottom-4 right-4 flex items-center gap-2 bg-light/70 px-2 py-1 shadow-md backdrop-blur-sm transition-colors hover:brightness-110 dark:border-light dark:bg-dark/70 md:bottom-8 md:right-8"
         >
           <div className="h-5 w-6">
             <BackArrow />

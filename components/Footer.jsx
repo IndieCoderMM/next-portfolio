@@ -9,12 +9,16 @@ import {
   WhatsAppIcon,
   WhatsAppIcon2,
 } from "./Icons";
+import Image from "next/image";
 
 const Footer = async () => {
   const { email, socials } = await getProfile();
   return (
     <footer className="yPaddings mt-20 border-t border-dark/20 dark:border-light/20">
-      <div className="mt-10 flex flex-col items-center justify-center gap-10">
+      <div className="mt-4 flex flex-col items-center justify-center gap-10">
+        <Link href="/" className="relative flex items-center justify-center">
+          <Image src="/logo.png" alt="logo" width={70} height={70} />
+        </Link>
         <h3 className="text-lg font-semibold md:text-2xl">
           Making the web a better place
         </h3>
