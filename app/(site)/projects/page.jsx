@@ -1,15 +1,13 @@
 import Footer from "@/components/Footer";
-import {
-  GitHubIcon,
-  GitHubOutlineIcon,
-  MessageOutlineIcon,
-} from "@/components/Icons";
+import { MessageOutlineIcon } from "@/components/Icons";
 import TitleText from "@/components/TitleText";
 import Transition from "@/components/Transition";
-import TypingText from "@/components/TypingText";
 import { getProfile, getProjects } from "@/sanity/sanity.query";
 import Projects from "@/sections/Projects";
-import Link from "next/link";
+
+export const metadata = {
+  title: "Projects by Hein Thant Oo - Full Stack Developer",
+};
 
 // get all unique tags from projects
 const getUniqueTags = (projects) => [

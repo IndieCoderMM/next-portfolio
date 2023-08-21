@@ -10,7 +10,7 @@ import Experience from "@/sections/Experience";
 import Skills from "@/sections/Skills";
 
 export const metadata = {
-  title: "Hein Thant | About Me",
+  title: "About Me - Hein Thant Oo | Full Stack Developer",
 };
 
 const About = async () => {

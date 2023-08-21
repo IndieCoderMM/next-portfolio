@@ -10,6 +10,10 @@ import Transition from "@/components/Transition";
 import { getProfile } from "@/sanity/sanity.query";
 import ContactForm from "@/sections/ContactForm";
 
+export const metadata = {
+  title: "Contact Me - Hein Thant Oo | Full Stack Developer",
+};
+
 const ContactPage = async () => {
   const { email, socials } = await getProfile();
   return (

@@ -7,6 +7,10 @@ import { getProject, getProjects } from "@/sanity/sanity.query";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Projects - Hein Thant Oo | Full Stack Developer",
+};
+
 export const generateStaticParams = async () => {
   const projects = await getProjects();
   return projects.map((project) => ({ slug: project.slug }));
