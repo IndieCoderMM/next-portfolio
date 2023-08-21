@@ -26,14 +26,15 @@ const Home = async () => {
           />
         </div>
 
-        <div className="w-full space-y-4">
-          <TitleText text={"Hi, I'm Hein Thant"} styles="" />
+        <div className="flex-1 space-y-4">
+          <TitleText text={profile?.bio} />
 
-          <p className="text-xl font-bold leading-relaxed">{profile?.bio}</p>
+          <TypingText
+            text={"Hi, I'm Hein Thant. Nice to see you here!"}
+            styles="whitespace-break-spaces text-xl md:text-3xl font-semibold leading-relaxed text-dark/60 dark:text-light/70"
+          />
 
-          <div className="text-lg font-medium leading-loose">
-            <RichText value={profile?.description} />
-          </div>
+          <RichText value={profile?.description} styles={" md:text-lg"} />
 
           <div className="flex w-full flex-col items-center gap-8 pt-8 lg:flex-row">
             <a
@@ -54,9 +55,22 @@ const Home = async () => {
             </a>
             <a
               href="/projects"
-              className="btn px-4 py-2 text-lg font-bold text-dark/90 hover:text-primary dark:text-light md:px-8 md:text-2xl"
+              className="borderAnimate group relative flex w-full max-w-[250px] flex-1 items-center justify-center overflow-hidden px-4 py-2 text-lg font-medium tracking-wide underline transition-all duration-300 hover:tracking-tight hover:text-primary hover:no-underline md:px-8 md:py-4 md:text-2xl "
             >
-              See Projects &#8594;
+              <svg>
+                <rect
+                  x="0"
+                  y="0"
+                  fill="none"
+                  width="100%"
+                  height="100%"
+                  className="stroke-primary dark:stroke-primary"
+                />
+              </svg>
+              See Projects
+              <span className="absolute right-0 translate-x-full font-bold transition-all duration-300 ease-in-out group-hover:translate-x-[-4px]">
+                &#8594;
+              </span>
             </a>
           </div>
         </div>

@@ -28,27 +28,27 @@ const ProjectDetail = async (props) => {
             href={project.liveURL}
             target="_blank"
             rel="noreferrer"
-            className="blockBtn w-autogap-2 bg-white p-2 font-semibold text-dark md:px-8"
+            className="blockBtn w-auto gap-2 bg-primary px-4 py-2 font-semibold uppercase text-dark md:px-6 md:py-3"
           >
-            <div className="hidden h-6 w-6 items-center justify-center md:flex md:h-8 md:w-8">
+            <div className="flex h-6 w-6 items-center justify-center md:h-8 md:w-8">
               <LinkArrow />
             </div>
-            <span className="md:text-xl">Visit Website</span>
+            <span className="hidden md:inline-block">Visit Website</span>
           </a>
           <a
             href={project.githubURL}
             target="_blank"
             rel="noreferrer"
-            className="blockBtn w-auto gap-2 bg-white p-2 font-semibold text-dark md:px-8 "
+            className="blockBtn w-auto gap-2 bg-primary px-4 py-2 font-semibold uppercase text-dark md:px-6 md:py-3"
           >
-            <div className="hidden h-6 w-6 items-center justify-center md:flex md:h-8 md:w-8">
+            <div className="flex h-6 w-6 items-center justify-center md:h-8 md:w-8">
               <GitHubIcon />
             </div>
 
-            <span className="md:text-xl">View Code</span>
+            <span className="hidden md:inline-block">View Code</span>
           </a>
         </div>
-        <div className="mb-8 overflow-hidden rounded-md bg-light shadow-md">
+        <div className="mb-8 overflow-hidden rounded-md bg-light shadow-xl">
           <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 md:p-2">
             <div className="flex gap-1">
               <span className="h-3 w-3 rounded-full bg-red-500 lg:h-5 lg:w-5"></span>

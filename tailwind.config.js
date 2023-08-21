@@ -24,9 +24,7 @@ module.exports = {
         "spin-slow": "spin 8s linear infinite",
       },
       boxShadow: {
-        200: "2px 2px 0px 0px rgba(0,0,0)",
-        400: "4px 4px 0px 0px rgba(0,0,0)",
-        600: "6px 6px 0px 0px rgba(0,0,0)",
+        btn: "0 0 0 3px transparent, 0 6px 20px rgba(18, 18, 18, .1) ",
       },
     },
   },

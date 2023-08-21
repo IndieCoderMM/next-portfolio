@@ -14,7 +14,7 @@ const TypingText = ({ text, styles }) => {
     >
       {Array.from(text).map((letter, idx) => (
         <motion.span variants={textVariant} key={idx}>
-          {letter === " " ? "\u00A0" : letter}
+          {letter === " " ? " " : letter}
         </motion.span>
       ))}
     </motion.p>

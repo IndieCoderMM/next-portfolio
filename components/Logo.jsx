@@ -6,13 +6,13 @@ const Logo = () => {
     <div className="mt-2 flex items-center justify-center">
       <Link
         href="/"
-        className="flex items-center justify-center overflow-hidden rounded-full border-2 border-dark bg-white p-0.5 transition ease-in-out hover:scale-110"
+        className="flex items-center justify-center overflow-hidden rounded-full border-2 border-transparent bg-light p-0.5 transition-all duration-200 ease-in-out hover:translate-y-[-2px] hover:border-primary hover:shadow-lg dark:border-light dark:bg-dark dark:hover:border-primary"
       >
         <Image
           src="/logo.png"
           alt="logo"
-          width={50}
-          height={50}
+          width={70}
+          height={70}
           className="object-contain"
         />
       </Link>

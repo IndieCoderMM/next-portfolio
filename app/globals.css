@@ -28,24 +28,16 @@ body,
   @apply px-6 sm:px-16;
 }
 
-.topPaddings {
-  @apply pt-12 sm:pt-16;
-}
-
-.bottomPaddings {
-  @apply pb-12 sm:pb-16;
-}
-
-.primaryBtn {
-  @apply flex cursor-pointer items-center justify-center rounded-md border-2 transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-black active:shadow-sm md:min-w-[120px];
-}
-
 .btn {
   @apply cursor-pointer rounded-md border border-black border-opacity-10 px-4 py-2 shadow-sm transition-all duration-200 hover:translate-y-[-2px] hover:border-opacity-60 hover:shadow-md focus:border-opacity-60 active:shadow-sm;
 }
 
+.outlineBtn {
+  @apply flex items-center justify-center gap-2 border-2 border-primary px-4 py-2 text-center text-lg font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-4 md:text-xl;
+}
+
 .blockBtn {
-  @apply flex items-center justify-center rounded-md font-mono transition-all duration-100 ease-in md:min-w-[120px];
+  @apply flex items-center justify-center rounded-md bg-white text-dark transition-all duration-100 ease-in md:min-w-[120px];
   box-shadow:
     rgba(45, 35, 66, 0.4) 0 2px 4px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
@@ -73,6 +65,25 @@ body,
   transform: translateY(2px);
 }
 
-.glass {
-  @apply bg-white/25 backdrop-blur-sm;
+.borderAnimate > svg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.borderAnimate > svg > rect {
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 0, 422;
+  stroke-dashoffset: 0;
+  transition: all 0.35s linear;
+}
+
+.borderAnimate:hover > svg > rect {
+  stroke-dasharray: 422, 0;
+  stroke-width: 5;
+  stroke-dashoffset: 50;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }

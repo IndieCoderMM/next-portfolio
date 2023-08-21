@@ -123,10 +123,7 @@ const About = async () => {
             Explore my portfolio to see the projects I've built. Get a firsthand
             look at my skills and creativity.
           </p>
-          <a
-            href="/projects"
-            className="group mt-8 flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-2 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-4 md:text-lg"
-          >
+          <a href="/projects" className="outlineBtn mt-8 rounded-full">
             <div className="h-8 w-8">
               <GridIcon />
             </div>

@@ -66,6 +66,7 @@ const Navbar = ({ socials }) => {
     <header className="relative w-full py-8 font-medium">
       <button
         type="button"
+        aria-label="Toggle Menu"
         onClick={() => setIsMenuOpen((prev) => !prev)}
         className={`${
           isMenuOpen ? "" : "bg-white/50 backdrop-blur-md dark:bg-black/10"

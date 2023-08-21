@@ -53,10 +53,7 @@ const ProjectsPage = async () => {
             need some assistance, or just want to say hello, feel free to reach
             out.
           </p>
-          <a
-            href="/contact"
-            className="group mt-8 flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-2 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light md:px-8 md:py-4 md:text-lg"
-          >
+          <a href="/contact" className="outlineBtn mt-8 rounded-full">
             <div className="h-8 w-8">
               <MessageOutlineIcon />
             </div>
