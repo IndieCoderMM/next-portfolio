@@ -11,7 +11,7 @@ import { getProfile } from "@/sanity/sanity.query";
 import ContactForm from "@/sections/ContactForm";
 
 export const metadata = {
-  title: "Contact Me - Hein Thant Oo | Full Stack Developer",
+  title: "Contact Hein Thant Oo - Full Stack Developer | Portfolio",
 };
 
 const ContactPage = async () => {

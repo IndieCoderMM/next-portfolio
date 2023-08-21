@@ -1,13 +1,11 @@
 import { getProfile } from "@/sanity/sanity.query";
 import Link from "next/link";
 import {
-  BlogIcon,
   BlogSmallIcon,
   EmailOutlineIcon,
   GitHubOutlineIcon,
   LinkedInOutlineIcon,
   WhatsAppIcon,
-  WhatsAppIcon2,
 } from "./Icons";
 import Image from "next/image";
 

@@ -1,4 +1,3 @@
-import CustomButton from "@/components/CustomButton";
 import Footer from "@/components/Footer";
 import { BackArrow, GitHubIcon, LinkArrow } from "@/components/Icons";
 import RichText from "@/components/RichText";
@@ -8,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Projects - Hein Thant Oo | Full Stack Developer",
+  title: "Projects by Hein Thant Oo - Full Stack Developer | Portfolio",
 };
 
 export const generateStaticParams = async () => {

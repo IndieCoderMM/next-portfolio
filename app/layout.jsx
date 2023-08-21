@@ -9,7 +9,7 @@ const mont = Montserrat({
 });
 
 export const metadata = {
-  title: "Hein Thant Oo - Full Stack Web Developer",
+  title: "Hein Thant Oo - Full Stack Web Developer | Portfolio",
   description:
     "Explore the web development projects and skills of Hein Thant, specializing in React, Redux, JavaScript, full-stack and UI/UX.",
 };

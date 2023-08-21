@@ -18,8 +18,10 @@ const Home = async () => {
       <section className="interWidth mx-auto flex flex-col items-center justify-center xl:flex-row">
         <div className="order-last xl:order-first">
           <Image
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             src="/welcome.svg"
-            alt=""
+            alt="man waving hand illustration"
             width={500}
             height={500}
             className=" h-auto w-full object-contain "
@@ -45,7 +47,7 @@ const Home = async () => {
               className="w-full max-w-[250px] flex-1"
             >
               <CustomButton>
-                <div className="flex w-full items-center justify-center gap-2 text-lg font-semibold text-white md:text-2xl">
+                <div className="flex w-full items-center justify-center gap-2 text-lg font-semibold text-light md:text-2xl">
                   <div className="h-8 w-8">
                     <DownloadIcon />
                   </div>
@@ -68,7 +70,7 @@ const Home = async () => {
                 />
               </svg>
               See Projects
-              <span className="absolute right-0 translate-x-full font-bold transition-all duration-300 ease-in-out group-hover:translate-x-[-4px]">
+              <span className="-translate-x-full font-bold opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
                 &#8594;
               </span>
             </a>

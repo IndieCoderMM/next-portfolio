@@ -6,7 +6,7 @@ import { getProfile, getProjects } from "@/sanity/sanity.query";
 import Projects from "@/sections/Projects";
 
 export const metadata = {
-  title: "Projects by Hein Thant Oo - Full Stack Developer",
+  title: "Projects by Hein Thant Oo - Full Stack Developer | Portfolio",
 };
 
 // get all unique tags from projects

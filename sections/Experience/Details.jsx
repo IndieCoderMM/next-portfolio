@@ -1,6 +1,5 @@
+import formatDate from "@/utils/formatDate";
 import LiIcon from "./LiIcon";
-import { ExperienceProps } from "@/propTypes";
-import RichText from "@/components/RichText";
 
 const Details = ({
   title,
@@ -32,7 +31,8 @@ const Details = ({
         </h3>
         <div className="text-sm font-medium capitalize text-dark/50 md:text-lg">
           <span>
-            {startDate} - {endDate || "present"}
+            {formatDate(startDate)} -{" "}
+            {endDate ? formatDate(endDate) : "present"}
           </span>
           {location && <span> • {location}</span>}
         </div>

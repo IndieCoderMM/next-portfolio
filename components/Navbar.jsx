@@ -12,7 +12,6 @@ import {
   MoonIcon,
   SunIcon,
   WhatsAppIcon,
-  WhatsAppIcon2,
 } from "./Icons";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import { useState } from "react";
@@ -150,6 +149,7 @@ const Navbar = ({ socials }) => {
       </div>
       <div className="absolute left-1/2 top-2 -translate-x-1/2">
         <Logo />
+        <h1 className="sr-only">Hein Thant Oo | Full Stack Developer</h1>
       </div>
       {/* // Mobile Menu */}
       {isMenuOpen ? (

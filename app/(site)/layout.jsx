@@ -4,7 +4,7 @@ import { getProfile } from "@/sanity/sanity.query";
 import React from "react";
 
 const PageLayout = async ({ children }) => {
-  const { socials, email } = await getProfile();
+  const { socials } = await getProfile();
   return (
     <>
       <Navbar socials={socials} />

@@ -16,10 +16,12 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
         isActive ? "flex-1 lg:flex-[3.5]" : "lg:flex-[1.5]"
       } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out dark:border-light lg:h-[500px]`}
     >
-      <img
+      <Image
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
         src={skill.imageURL}
         alt=""
-        className="absolute h-full w-full object-cover"
+        className="absolute object-cover"
       />
       {!isActive ? (
         <div className="relative z-0 w-full self-stretch bg-light/70 backdrop-blur-sm dark:bg-dark/50">
