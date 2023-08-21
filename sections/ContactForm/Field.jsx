@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Field = ({ name, value, placeholder, handleChange, icon: Icon }) => {
   return (
-    <div className=" w-full overflow-hidden border-b border-dark py-2 text-xl dark:border-light">
+    <div className="w-full overflow-hidden border-b border-dark py-2 text-lg dark:border-light md:text-xl">
       <label className="sr-only">{name}</label>
       <motion.div
         variants={fadeIn("up", "spring", 0, 0.2)}

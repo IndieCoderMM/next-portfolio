@@ -15,7 +15,7 @@ export async function getProfile() {
       "resumeURL": resumeURL.asset->url,
       socials {github, linkedin, whatsapp, blog},
       metrics {frontEnd, fullStack, experience},
-      experiences[] { _id, title, company, website, location, startDate, endDate, description},
+      experiences[] { title, company, website, location, startDate, endDate, description},
     }[0]`,
   );
 }

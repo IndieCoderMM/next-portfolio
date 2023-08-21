@@ -1,14 +1,6 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
-import CustomButton from "@/components/CustomButton";
 import Footer from "@/components/Footer";
-import {
-  BlogIcon,
-  GitHubIcon,
-  GridIcon,
-  LinkArrow,
-  LinkedInIcon,
-  MessageOutlineIcon,
-} from "@/components/Icons";
+import { GridIcon } from "@/components/Icons";
 import RichText from "@/components/RichText";
 import TitleText from "@/components/TitleText";
 import Transition from "@/components/Transition";
@@ -16,7 +8,6 @@ import TypingText from "@/components/TypingText";
 import { getProfile, getSkills } from "@/sanity/sanity.query";
 import Experience from "@/sections/Experience";
 import Skills from "@/sections/Skills";
-import Image from "next/image";
 
 export const metadata = {
   title: "Hein Thant | About Me",

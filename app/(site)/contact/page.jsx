@@ -4,7 +4,6 @@ import {
   GitHubOutlineIcon,
   LinkedInOutlineIcon,
   WhatsAppIcon,
-  WhatsAppIcon2,
 } from "@/components/Icons";
 import TitleText from "@/components/TitleText";
 import Transition from "@/components/Transition";
@@ -27,14 +26,13 @@ const ContactPage = async () => {
           <ContactForm />
         </div>
       </section>
-      <section className="innerWidth yPaddings mx-auto space-y-4">
+      <section className="innerWidth yPaddings mx-auto mb-10 space-y-4">
         <h3 className="text-lg font-semibold md:text-2xl">
           Let's Stay Connected!
         </h3>
         <p className="interWidth font-medium text-dark/75 dark:text-light md:text-lg">
           Connect with me on GitHub and LinkedIn, explore my blog for insights,
-          or simply reach out via email or WhatsApp. Looking forward to
-          connecting!
+          or simply reach out via email or WhatsApp.
         </p>
         <div className="flex flex-wrap items-center gap-4">
           <a

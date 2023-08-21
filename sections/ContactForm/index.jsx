@@ -1,10 +1,16 @@
 "use client";
 
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import CustomButton from "@/components/CustomButton";
-import { useRef, useState } from "react";
+import { BellIcon, MailIcon, UserIcon, WriteIcon } from "@/components/Icons";
 import StateButton from "./StateButton";
 import Field from "./Field";
-import { BellIcon, MailIcon, UserIcon, WriteIcon } from "@/components/Icons";
+
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
 const ContactForm = () => {
   const [current, setCurrent] = useState("name");
@@ -43,18 +49,35 @@ const ContactForm = () => {
       }
       setCurrent("message");
     } else {
-      // TODO Submit form
       if (form.message.length === 0) {
         setNotification("Message cannot be empty");
         return;
       }
-      console.log(form);
       setStatus("submitting");
-      setTimeout(() => {
-        setStatus("success");
-        setForm((form) => ({ ...form, message: "" }));
-        setNotification("Message sent successfully!");
-      }, 2000);
+
+      // Send email
+      emailjs
+        .send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          {
+            ...form,
+            from_name: form.name,
+          },
+          USER_ID,
+        )
+        .then(
+          (result) => {
+            setStatus("success");
+            setForm((form) => ({ ...form, message: "" }));
+            setNotification("Message sent successfully!");
+          },
+          (error) => {
+            setStatus("error");
+            setNotification("Something went wrong!");
+            console.log(error.text);
+          },
+        );
     }
   };
 
@@ -66,7 +89,7 @@ const ContactForm = () => {
             <div className="flex h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
               <UserIcon />
             </div>
-            <p className="text-sm">{form.name}</p>
+            <p className="text-xs md:text-sm">{form.name}</p>
           </StateButton>
         )}
         {form.email && (
@@ -74,7 +97,7 @@ const ContactForm = () => {
             <div className="flexx h-7 w-7 items-center justify-center rounded-md  text-primary dark:text-light">
               <MailIcon />
             </div>
-            <p className="text-sm">{form.email}</p>
+            <p className="text-xs md:text-sm">{form.email}</p>
           </StateButton>
         )}
         {notification && (
@@ -82,7 +105,7 @@ const ContactForm = () => {
             <div className="flexx h-7 w-7 items-center justify-center rounded-md  text-primary dark:text-light">
               <BellIcon />
             </div>
-            <p className="text-sm">{notification}</p>
+            <p className="text-xs md:text-sm">{notification}</p>
           </StateButton>
         )}
       </div>
