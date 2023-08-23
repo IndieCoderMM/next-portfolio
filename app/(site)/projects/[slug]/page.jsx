@@ -92,7 +92,7 @@ const ProjectDetail = async (props) => {
         <h3 className="mb-4 text-lg font-semibold md:text-2xl xl:text-3xl">
           {project.tagline}
         </h3>
-        <div className="relative mb-14 overflow-hidden rounded-md bg-light shadow-xl">
+        <div className="relative mb-14 bg-light shadow-xl">
           <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 md:p-2">
             <div className="flex gap-1 p-1">
               <span className="h-3 w-3 rounded-full bg-red-500 lg:h-6 lg:w-6"></span>
@@ -100,7 +100,7 @@ const ProjectDetail = async (props) => {
               <span className="h-3 w-3 rounded-full bg-green-500 lg:h-6 lg:w-6"></span>
             </div>
           </div>
-          <Slider className="w-full" bullets={false} infinite={false}>
+          <Slider className="w-full" infinite={false}>
             <Image
               width={width}
               height={height}
