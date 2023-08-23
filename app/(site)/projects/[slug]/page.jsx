@@ -212,6 +212,7 @@ const ProjectDetail = async (props) => {
           "Want to see this project in action? Visit the live website now and explore its full functionality."
         }
         buttonText={"Visit Website"}
+        external
       />
       <Footer />
     </main>

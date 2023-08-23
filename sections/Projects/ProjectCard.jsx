@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="relative flex h-fit w-full flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-fit md:max-w-[800px] lg:h-[350px] lg:max-w-[550px]">
+    <div className="relative flex h-fit w-full flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-fit md:max-w-[800px] lg:h-[340px] lg:max-w-[540px]">
       {/* On mobile make the card clickable */}
       <Link
         href={`/projects/${project.slug}`}

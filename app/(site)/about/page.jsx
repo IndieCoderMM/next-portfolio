@@ -1,4 +1,5 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { GridIcon } from "@/components/Icons";
 import RichText from "@/components/RichText";
@@ -82,7 +83,7 @@ const About = async () => {
 
           <div className="col-span-full flex flex-wrap items-start justify-between lg:col-span-2 lg:flex-col lg:items-end">
             <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-              <span className="dark:text-primaryDark inline-block text-3xl font-bold text-primary lg:text-7xl">
+              <span className="inline-block text-3xl font-bold text-primary dark:text-primaryDark lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.frontEnd} />+
               </span>
               <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
@@ -90,7 +91,7 @@ const About = async () => {
               </p>
             </div>
             <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-              <span className="dark:text-primaryDark inline-block text-3xl font-bold text-primary lg:text-7xl">
+              <span className="inline-block text-3xl font-bold text-primary dark:text-primaryDark lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.fullStack} />+
               </span>
               <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
@@ -98,7 +99,7 @@ const About = async () => {
               </p>
             </div>
             <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-              <span className="dark:text-primaryDark inline-block text-3xl font-bold text-primary lg:text-7xl">
+              <span className="inline-block text-3xl font-bold text-primary dark:text-primaryDark lg:text-7xl">
                 <AnimatedNumber value={profile?.metrics?.experience} />+
               </span>
               <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
@@ -114,23 +115,15 @@ const About = async () => {
           (a, b) => new Date(b.startDate) - new Date(a.startDate),
         )}
       />
-      <section className="innerWidth mx-auto">
-        <div className="interWidth yPaddings mx-auto flex flex-col items-center justify-center gap-4">
-          <h3 className="text-center text-2xl font-bold md:text-3xl">
-            Want to see my work?
-          </h3>
-          <p className="text-center text-lg font-medium">
-            Explore my portfolio to see the projects I've built. Get a firsthand
-            look at my skills and creativity.
-          </p>
-          <a href="/projects" className="outlineBtn mt-8 rounded-full">
-            <div className="h-8 w-8">
-              <GridIcon />
-            </div>
-            <span>View Portfolio</span>
-          </a>
-        </div>
-      </section>
+      <CTA
+        title={"Want to see my work?"}
+        text={
+          "Explore my portfolio to see the projects I've built. Get a firsthand look at my skills and creativity."
+        }
+        href={"/projects"}
+        buttonText={"View Portfolio"}
+        icon={GridIcon}
+      />
       <Footer />
     </main>
   );
