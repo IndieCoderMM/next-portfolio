@@ -3,8 +3,8 @@ import { LinkArrow } from "@/components/Icons";
 import { ProjectProps } from "@/propTypes";
 import { slideIn } from "@/utils/motion";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
+import CoverImage from "./CoverImage";
 
 const ProjectCard = ({ project }) => {
   return (
@@ -31,17 +31,12 @@ const ProjectCard = ({ project }) => {
         className="relative h-full w-full overflow-hidden"
       >
         {/* // TODO Optimize images  */}
-        <Image
-          width={500}
-          height={300}
-          quality={100}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-          placeholder="blur"
-          loading="lazy"
-          blurDataURL="/loading-placeholder.gif"
+        <CoverImage
           src={project.imageURL}
+          placeholder={project.placeholderURL}
           alt={project.name}
-          className="h-auto min-h-[200px] w-full object-fill object-top md:object-cover"
+          width={project.width}
+          height={project.height}
         />
         <motion.div
           variants={slideIn("up", "tween", 0, 0.5)}

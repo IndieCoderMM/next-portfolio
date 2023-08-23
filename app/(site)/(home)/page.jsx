@@ -57,7 +57,7 @@ const Home = async () => {
             </a>
             <a
               href="/projects"
-              className="borderAnimate group relative flex w-full max-w-[250px] flex-1 items-center justify-center overflow-hidden px-4 py-2 text-lg font-medium tracking-wide underline transition-all duration-300 hover:tracking-tight hover:text-primary hover:no-underline md:px-8 md:py-4 md:text-2xl "
+              className="borderAnimate dark:hover:text-primaryDark dark:active:bg-primaryDark group relative flex w-full max-w-[250px] flex-1 items-center justify-center overflow-hidden px-4 py-2 text-lg font-medium tracking-wide underline transition-all duration-300 hover:tracking-tight hover:text-primary hover:no-underline active:bg-primary active:text-white dark:active:text-dark md:px-8 md:py-4 md:text-2xl "
             >
               <svg>
                 <rect
@@ -66,7 +66,7 @@ const Home = async () => {
                   fill="none"
                   width="100%"
                   height="100%"
-                  className="stroke-primary dark:stroke-primary"
+                  className="dark:stroke-primaryDark stroke-primary"
                 />
               </svg>
               See Projects

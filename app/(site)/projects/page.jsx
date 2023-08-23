@@ -1,9 +1,11 @@
+import { getProfile, getProjects } from "@/sanity/sanity.query";
+
 import Footer from "@/components/Footer";
-import { MessageOutlineIcon } from "@/components/Icons";
 import TitleText from "@/components/TitleText";
 import Transition from "@/components/Transition";
-import { getProfile, getProjects } from "@/sanity/sanity.query";
 import Projects from "@/sections/Projects";
+import getPlaceholder from "@/utils/getPlaceholder";
+import { MessageOutlineIcon } from "@/components/Icons";
 
 export const metadata = {
   title: "Projects by Hein Thant Oo - Full Stack Developer | Portfolio",
@@ -23,6 +25,18 @@ const ProjectsPage = async () => {
   const { socials } = await getProfile();
   const projects = await getProjects();
   const tags = getUniqueTags(projects);
+
+  const projectsWithPlaceholder = await Promise.all(
+    projects.map(async (project) => {
+      const {
+        base64: placeholderURL,
+        width,
+        height,
+      } = await getPlaceholder(project.imageURL);
+      return { ...project, placeholderURL, width, height };
+    }),
+  );
+
   return (
     <main className="paddings">
       <Transition />
@@ -39,7 +53,7 @@ const ProjectsPage = async () => {
           </a>
           .
         </p>
-        <Projects projects={projects} tags={tags} />
+        <Projects projects={projectsWithPlaceholder} tags={tags} />
       </section>
       <section className="innerWidth mx-auto">
         <div className="interWidth yPaddings mx-auto flex flex-col items-center justify-center gap-4">

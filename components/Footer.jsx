@@ -23,31 +23,41 @@ const Footer = async () => {
         <div className="flex w-full flex-wrap items-center justify-center gap-4">
           <a
             href={socials.github}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            title="GitHub"
+            aria-label="GitHub"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <GitHubOutlineIcon />
           </a>
           <a
             href={socials.linkedin}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            title="LinkedIn"
+            aria-label="LinkedIn"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <LinkedInOutlineIcon />
           </a>
           <a
             href={email}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            title="Email"
+            aria-label="Email"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <EmailOutlineIcon />
           </a>
           <a
             href={socials.whatsapp}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            title="WhatsApp"
+            aria-label="WhatsApp"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <WhatsAppIcon />
           </a>
           <a
             href={socials.blog}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            title="Blog"
+            aria-label="Blog"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <BlogSmallIcon />
           </a>
@@ -60,19 +70,21 @@ const Footer = async () => {
               You can reach me via email at{" "}
               <a
                 href={`mailto:${email}`}
-                className="font-medium text-primary underline-offset-2 hover:underline hover:brightness-110"
+                className="dark:text-primaryDark font-medium text-primary underline-offset-2 hover:underline hover:brightness-110"
               >
-                {email}.
+                {email}
               </a>
+              .
             </p>
             <p>
               Or send me a message using the form at the{" "}
               <Link
                 href="/contact"
-                className="font-medium text-primary underline-offset-2 hover:underline hover:brightness-110"
+                className="dark:text-primaryDark font-medium text-primary underline-offset-2 hover:underline hover:brightness-110"
               >
                 Contact Page
               </Link>
+              .
             </p>
           </blockquote>
         </div>
