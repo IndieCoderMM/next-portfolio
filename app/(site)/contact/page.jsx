@@ -42,35 +42,35 @@ const ContactPage = async () => {
           <a
             href={socials.github}
             aria-label="github"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <GitHubOutlineIcon />
           </a>
           <a
             href={socials.linkedin}
             aria-label="linkedin"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <LinkedInOutlineIcon />
           </a>
           <a
-            href={socials.blog}
-            aria-label="blog"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
-          >
-            <BlogSmallIcon />
-          </a>
-          <a
-            href={email}
+            href={`mailto:${email}`}
             aria-label="email"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <EmailOutlineIcon />
           </a>
           <a
+            href={socials.blog}
+            aria-label="blog"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+          >
+            <BlogSmallIcon />
+          </a>
+          <a
             href={socials.whatsapp}
             aria-label="whatsapp"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <WhatsAppIcon />
           </a>

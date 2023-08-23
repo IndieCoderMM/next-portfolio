@@ -25,7 +25,7 @@ const Footer = async () => {
             href={socials.github}
             title="GitHub"
             aria-label="GitHub"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <GitHubOutlineIcon />
           </a>
@@ -33,15 +33,15 @@ const Footer = async () => {
             href={socials.linkedin}
             title="LinkedIn"
             aria-label="LinkedIn"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <LinkedInOutlineIcon />
           </a>
           <a
-            href={email}
+            href={`mailto:${email}`}
             title="Email"
             aria-label="Email"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <EmailOutlineIcon />
           </a>
@@ -49,7 +49,7 @@ const Footer = async () => {
             href={socials.whatsapp}
             title="WhatsApp"
             aria-label="WhatsApp"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <WhatsAppIcon />
           </a>
@@ -57,7 +57,7 @@ const Footer = async () => {
             href={socials.blog}
             title="Blog"
             aria-label="Blog"
-            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
+            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
           >
             <BlogSmallIcon />
           </a>
@@ -70,7 +70,7 @@ const Footer = async () => {
               You can reach me via email at{" "}
               <a
                 href={`mailto:${email}`}
-                className="dark:text-primaryDark font-medium text-primary underline-offset-2 hover:underline hover:brightness-110"
+                className="font-medium text-primary underline-offset-2 hover:underline hover:brightness-110 dark:text-primaryDark"
               >
                 {email}
               </a>
@@ -80,7 +80,7 @@ const Footer = async () => {
               Or send me a message using the form at the{" "}
               <Link
                 href="/contact"
-                className="dark:text-primaryDark font-medium text-primary underline-offset-2 hover:underline hover:brightness-110"
+                className="font-medium text-primary underline-offset-2 hover:underline hover:brightness-110 dark:text-primaryDark"
               >
                 Contact Page
               </Link>

@@ -8,7 +8,8 @@ import Image from "next/image";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="relative flex w-full max-w-[500px] flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-[300px]">
+    <div className="relative flex h-fit w-full flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-fit md:max-w-[800px] lg:h-[350px] lg:max-w-[550px]">
+      {/* On mobile make the card clickable */}
       <Link
         href={`/projects/${project.slug}`}
         className="absolute bottom-0 left-0 right-0 top-0 z-[99] md:hidden"
@@ -34,7 +35,7 @@ const ProjectCard = ({ project }) => {
           priority
           quality={100}
           placeholder="blur"
-          className="h-auto w-full object-top"
+          className="h-auto w-full object-top lg:h-full lg:object-fill"
           src={project.imageURL}
           blurDataURL={project.placeholderURL}
           alt={project.name}
