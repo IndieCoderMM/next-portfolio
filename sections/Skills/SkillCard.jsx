@@ -14,7 +14,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       onClick={handleClick}
       className={`relative ${
         isActive ? "flex-1 lg:flex-[3.5]" : "lg:flex-[1.5]"
-      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out dark:border-light lg:h-[500px]`}
+      }  flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
     >
       <Image
         fill
@@ -55,7 +55,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
           variants={fadeIn("up", "tween", 0.5, 0.5)}
           initial="hidden"
           animate="show"
-          className="absolute bottom-0 left-0 right-0 flex h-full w-full flex-col justify-start gap-8 bg-dark/60 p-4 lg:h-auto"
+          className="absolute bottom-0 left-0 right-0 flex h-full w-full flex-col justify-start gap-8 bg-dark/75 p-4 dark:bg-dark/90 lg:h-auto"
         >
           <h3 className="text-lg font-bold text-light md:text-3xl">
             {skill?.title}

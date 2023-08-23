@@ -7,8 +7,10 @@ const FilterTag = ({ tag, active, changeActive }) => (
   <li
     onClick={changeActive}
     className={`${
-      active ? "bg-primary text-white" : "bg-white text-dark"
-    } btn font-medium`}
+      active
+        ? "dark:bg-primaryDark bg-primary text-white dark:text-dark"
+        : "bg-light text-dark"
+    } btn font-medium capitalize`}
   >
     {tag}
   </li>

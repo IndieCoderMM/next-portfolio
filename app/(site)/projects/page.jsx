@@ -47,7 +47,7 @@ const ProjectsPage = async () => {
           <a
             href={socials.github}
             target="_blank"
-            className="text-primary underline-offset-2 hover:underline"
+            className="dark:text-primaryDark text-primary underline-offset-2 hover:underline hover:brightness-110"
           >
             GitHub
           </a>

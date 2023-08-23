@@ -25,7 +25,7 @@ const Experience = ({ experiences }) => {
             scaleY: scrollYProgress,
           }}
           ref={ref}
-          className="absolute left-5 top-0 h-full w-[4px] origin-top bg-dark dark:bg-primary md:left-20"
+          className="dark:bg-primaryDark absolute left-5 top-0 h-full w-[4px] origin-top bg-dark md:left-20"
         />
         <ul className=" ml-4 flex w-full flex-col items-start justify-between space-y-8">
           {experiences.map((experience, index) => (

@@ -21,12 +21,14 @@ const Details = ({
               href={website}
               target="_blank"
               rel="noreferrer"
-              className="text-primary"
+              className="dark:text-primaryDark text-primary"
             >
               @{company}
             </a>
           ) : (
-            <span className="text-primary">@{company}</span>
+            <span className="dark:text-primaryDark text-primary">
+              @{company}
+            </span>
           )}
         </h3>
         <div className="text-sm font-medium capitalize text-dark/50 md:text-lg">

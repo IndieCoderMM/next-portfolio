@@ -41,31 +41,36 @@ const ContactPage = async () => {
         <div className="flex flex-wrap items-center gap-4">
           <a
             href={socials.github}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            aria-label="github"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <GitHubOutlineIcon />
           </a>
           <a
             href={socials.linkedin}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            aria-label="linkedin"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <LinkedInOutlineIcon />
           </a>
           <a
             href={socials.blog}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            aria-label="blog"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <BlogSmallIcon />
           </a>
           <a
             href={email}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            aria-label="email"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <EmailOutlineIcon />
           </a>
           <a
             href={socials.whatsapp}
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white"
+            aria-label="whatsapp"
+            className="dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:hover:text-dark"
           >
             <WhatsAppIcon />
           </a>

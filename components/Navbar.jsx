@@ -26,7 +26,7 @@ const CustomLink = ({ href, title, className = "" }) => {
       <span
         className={`${
           pathname === href ? "w-full" : "w-0"
-        } ease absolute -bottom-0.5 left-0 inline-block h-[3px] rounded-full bg-primary transition-[width] duration-300 group-hover:w-full`}
+        } ease dark:bg-primaryDark absolute -bottom-0.5 left-0 inline-block h-[3px] rounded-full bg-primary transition-[width] duration-300 group-hover:w-full`}
       ></span>
     </Link>
   );
@@ -97,6 +97,7 @@ const Navbar = ({ socials }) => {
         <nav className="flex flex-wrap items-center justify-center">
           <motion.a
             href={socials.github}
+            aria-label="github"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -106,6 +107,7 @@ const Navbar = ({ socials }) => {
           </motion.a>
           <motion.a
             href={socials.linkedin}
+            aria-label="linkedin"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -115,6 +117,7 @@ const Navbar = ({ socials }) => {
           </motion.a>
           <motion.a
             href={socials.whatsapp}
+            aria-label="whatsapp"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -124,6 +127,7 @@ const Navbar = ({ socials }) => {
           </motion.a>
           <motion.a
             href={socials.blog}
+            aria-label="blog"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -137,6 +141,7 @@ const Navbar = ({ socials }) => {
               setMode((mode) => (mode === "dark" ? "light" : "dark"))
             }
             type="button"
+            aria-label="Toggle Theme"
             className="ml-3 flex h-8 w-8 items-center justify-center rounded-full "
           >
             {mode === "dark" ? (
@@ -167,6 +172,7 @@ const Navbar = ({ socials }) => {
               <motion.a
                 href={socials.github}
                 target="_blank"
+                aria-label="github"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-8 rounded-full bg-light dark:text-dark"
@@ -176,6 +182,7 @@ const Navbar = ({ socials }) => {
               <motion.a
                 href={socials.linkedin}
                 target="_blank"
+                aria-label="linkedin"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-8 rounded-md bg-white"
@@ -185,6 +192,7 @@ const Navbar = ({ socials }) => {
               <motion.a
                 href={socials.whatsapp}
                 target="_blank"
+                aria-label="whatsapp"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 rounded-full  text-green-500"
@@ -194,6 +202,7 @@ const Navbar = ({ socials }) => {
               <motion.a
                 href={socials.blog}
                 target="_blank"
+                aria-label="blog"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-8 rounded-full"
@@ -206,6 +215,7 @@ const Navbar = ({ socials }) => {
                   setMode((mode) => (mode === "dark" ? "light" : "dark"))
                 }
                 type="button"
+                aria-label="Toggle Theme"
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-light p-1 dark:bg-dark"
               >
                 {mode === "dark" ? (

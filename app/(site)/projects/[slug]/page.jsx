@@ -28,15 +28,27 @@ const ProjectDetail = async (props) => {
     <main className="paddings">
       <Transition />
       <section className="innerWidth mx-auto">
-        <header className="flex items-center justify-between gap-2">
-          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+        <header className="relative mt-10 md:mt-4">
+          <h2 className="mb-4 text-xl font-bold md:text-5xl xl:text-6xl">
             {project.name}
           </h2>
+          {/* Breadcumb */}
+          <div className="absolute bottom-full flex items-center gap-2 text-sm font-medium text-dark dark:text-light md:text-lg">
+            <Link
+              href="/projects"
+              className="dark:hover:text-primaryDark hover:text-primary hover:underline"
+            >
+              Projects
+            </Link>
+            <span>/</span>
+            <span>{project.name}</span>
+          </div>
+
           <a
             href={project.liveURL}
             target="_blank"
             rel="noreferrer"
-            className="borderAnimate dark:hover:text-primaryDark dark:active:bg-primaryDark relative flex items-center justify-center p-2 underline transition-all hover:text-primary hover:no-underline active:bg-primary active:text-white md:px-4 md:py-2"
+            className="borderAnimate dark:hover:text-primaryDark dark:active:bg-primaryDark absolute bottom-full right-0 flex items-center justify-center p-2 underline transition-all hover:text-primary hover:no-underline active:bg-primary active:text-white dark:active:text-dark md:px-4 md:py-2"
           >
             <svg>
               <rect
@@ -56,34 +68,9 @@ const ProjectDetail = async (props) => {
             </div>
           </a>
         </header>
-        <h3 className="mb-4 text-lg font-semibold md:text-2xl">
+        <h3 className="mb-4 text-lg font-semibold md:text-2xl xl:text-3xl">
           {project.tagline}
         </h3>
-        {/* <div className="flex items-center justify-between gap-4 py-4">
-          <a
-            href={project.liveURL}
-            target="_blank"
-            rel="noreferrer"
-            className="blockBtn w-auto gap-2 bg-primary px-4 py-2 font-semibold uppercase text-dark md:px-6 md:py-3"
-          >
-            <div className="flex h-6 w-6 items-center justify-center md:h-8 md:w-8">
-              <LinkArrow />
-            </div>
-            <span className="hidden md:inline-block">Visit Website</span>
-          </a>
-          <a
-            href={project.githubURL}
-            target="_blank"
-            rel="noreferrer"
-            className="blockBtn w-auto gap-2 bg-primary px-4 py-2 font-semibold uppercase text-dark md:px-6 md:py-3"
-          >
-            <div className="flex h-6 w-6 items-center justify-center md:h-8 md:w-8">
-              <GitHubIcon />
-            </div>
-
-            <span className="hidden md:inline-block">View Code</span>
-          </a>
-        </div> */}
         <div className="relative mb-8 overflow-hidden rounded-md bg-light shadow-xl">
           <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 md:p-2">
             <div className="flex gap-1 p-1">
@@ -101,7 +88,7 @@ const ProjectDetail = async (props) => {
             src={project.imageURL}
             alt={project.name}
             sizes="100vw"
-            className="h-auto min-h-[200px] w-full object-contain"
+            className="h-auto w-full object-contain"
           />
           {/* Github badge */}
           <svg
@@ -110,7 +97,7 @@ const ProjectDetail = async (props) => {
             height="80"
             viewBox="0 0 250 250"
             fill="#f5f5f5"
-            class="absolute right-0 top-0"
+            className="absolute right-0 top-0 h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
           >
             <a
               title="View Source"
@@ -130,24 +117,24 @@ const ProjectDetail = async (props) => {
           </svg>
         </div>
         <div className="mb-8">
-          <h4 className="mb-4 text-xl font-semibold uppercase md:text-3xl">
+          <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             About this project
           </h4>
-          <div className="text-lg md:text-xl">
+          <div className="md:text-lg">
             <RichText value={project.description} />
           </div>
         </div>
 
         <div className="mb-8">
-          <h4 className="mb-4 text-xl font-semibold uppercase md:text-3xl">
+          <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             Development Process
           </h4>
-          <div className="text-lg md:text-xl">
+          <div className=" md:text-lg">
             <RichText value={project.development} />
           </div>
         </div>
         <div className="mb-8 text-lg md:text-xl">
-          <h4 className="mb-4 text-xl font-semibold md:text-3xl">
+          <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             Technologies
           </h4>
           <p className="mb-4">This project was built using:</p>
@@ -168,6 +155,28 @@ const ProjectDetail = async (props) => {
           </div>
           <span className="hidden md:inline-block">Back</span>
         </Link>
+      </section>
+      <section className="innerWidth mx-auto">
+        <div className="interWidth yPaddings mx-auto flex flex-col items-center justify-center gap-4">
+          <h3 className="text-center text-2xl font-semibold capitalize">
+            See it Live
+          </h3>
+          <p className="text-center text-lg font-medium">
+            Want to see this project in action? Visit the live website now and
+            explore all its full functionality.
+          </p>
+          <a
+            href={project.liveURL}
+            target="_blank"
+            rel="noreferrer"
+            className="outlineBtn mt-8 rounded-full"
+          >
+            <div className="h-8 w-8">
+              <LinkArrow />
+            </div>
+            Visit Website
+          </a>
+        </div>
       </section>
       <Footer />
     </main>

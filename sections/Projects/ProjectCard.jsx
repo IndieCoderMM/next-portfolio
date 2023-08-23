@@ -4,11 +4,17 @@ import { ProjectProps } from "@/propTypes";
 import { slideIn } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import CoverImage from "./CoverImage";
+import Image from "next/image";
 
 const ProjectCard = ({ project }) => {
   return (
     <div className="flex w-full max-w-[500px] cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-[300px]">
+      <Link
+        href={`/projects/${project.slug}`}
+        className="absolute bottom-0 left-0 right-0 top-0 md:hidden"
+      >
+        <span className="sr-only">View project {project.name} details</span>
+      </Link>
       <div className="relative w-full bg-gray-300/70 p-2 dark:bg-gray-700">
         <div className="absolute left-2 top-1/2 flex -translate-y-1/2 gap-1">
           <span className="h-4 w-4 rounded-full bg-red-500"></span>
@@ -18,22 +24,18 @@ const ProjectCard = ({ project }) => {
         <h3 className="text-center font-medium text-dark dark:text-light">
           {project.name}
         </h3>
-        <Link
-          href={`/projects/${project.slug}`}
-          className="absolute right-1 top-1 block h-8 w-8 text-dark/50 dark:text-light/50 md:hidden"
-        >
-          <LinkArrow />
-        </Link>
       </div>
       <motion.div
         initial="hidden"
         whileHover="show"
         className="relative h-full w-full overflow-hidden"
       >
-        {/* // TODO Optimize images  */}
-        <CoverImage
+        <Image
+          quality={100}
+          placeholder="blur"
+          className="h-auto w-full object-top"
           src={project.imageURL}
-          placeholder={project.placeholderURL}
+          blurDataURL={project.placeholderURL}
           alt={project.name}
           width={project.width}
           height={project.height}

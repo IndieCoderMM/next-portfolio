@@ -7,7 +7,7 @@ const RichText = ({ value, styles }) => {
       components={{
         block: ({ children }) => (
           <div
-            className={`${styles} font-medium leading-loose text-dark dark:text-light`}
+            className={`${styles} leading-loose text-dark dark:text-light md:text-lg`}
           >
             {children}
           </div>
@@ -18,7 +18,7 @@ const RichText = ({ value, styles }) => {
               href={value?.href}
               target="_blank"
               rel="noreferrer"
-              className="font-semibold text-primary underline transition-all duration-300 hover:text-primary/70 hover:no-underline"
+              className="dark:text-primaryDark font-medium text-primary underline transition-all duration-300 hover:no-underline hover:brightness-110"
             >
               {children}
             </a>
