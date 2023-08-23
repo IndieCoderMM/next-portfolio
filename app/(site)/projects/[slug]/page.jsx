@@ -27,19 +27,23 @@ const ProjectDetail = async (props) => {
     height,
   } = await getPlaceholder(project.coverImg.url);
 
-  const screenshots = project.screenshots?.map((screenshot) => (
-    <Image
-      width={width}
-      height={height}
-      quality={100}
-      placeholder="blur"
-      blurDataURL={placeholderURL}
-      src={screenshot.url}
-      alt={`Screenshot of ${project.name}`}
-      sizes="100vw"
-      className="h-full w-full object-fill"
-    />
-  ));
+  const screenshots =
+    project.screenshots.length > 0
+      ? project.screenshots.map((screenshot) => (
+          <Image
+            key={screenshot.url}
+            width={width}
+            height={height}
+            quality={100}
+            placeholder="blur"
+            blurDataURL={placeholderURL}
+            src={screenshot.url}
+            alt={`Screenshot of ${project.name}`}
+            sizes="100vw"
+            className="h-full w-full object-fill"
+          />
+        ))
+      : [];
 
   return (
     <main className="paddings">
@@ -108,7 +112,7 @@ const ProjectDetail = async (props) => {
               sizes="100vw"
               className="h-full w-full object-fill"
             />
-            {screenshots}
+            {...screenshots}
           </Slider>
           {/* Github badge */}
           <svg

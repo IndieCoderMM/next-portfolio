@@ -7,7 +7,7 @@ export const ProjectProps = PropTypes.shape({
   tagline: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.object).isRequired,
   development: PropTypes.arrayOf(PropTypes.object).isRequired,
-  imageURL: PropTypes.string.isRequired,
+  coverImg: PropTypes.object.isRequired,
   githubURL: PropTypes.string.isRequired,
   liveURL: PropTypes.string.isRequired,
   stack: PropTypes.arrayOf(PropTypes.string).isRequired,
