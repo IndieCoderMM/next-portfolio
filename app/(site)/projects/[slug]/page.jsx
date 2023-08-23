@@ -28,7 +28,7 @@ const ProjectDetail = async (props) => {
   } = await getPlaceholder(project.coverImg.url);
 
   const screenshots =
-    project.screenshots.length > 0
+    project.screenshots?.length > 0
       ? project.screenshots.map((screenshot) => (
           <Image
             key={screenshot.url}
@@ -100,7 +100,7 @@ const ProjectDetail = async (props) => {
               <span className="h-3 w-3 rounded-full bg-green-500 lg:h-6 lg:w-6"></span>
             </div>
           </div>
-          <Slider className="w-full" bullets={false}>
+          <Slider className="w-full" bullets={false} infinite={false}>
             <Image
               width={width}
               height={height}
