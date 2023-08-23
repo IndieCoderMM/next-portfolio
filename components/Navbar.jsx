@@ -26,7 +26,7 @@ const CustomLink = ({ href, title, className = "" }) => {
       <span
         className={`${
           pathname === href ? "w-full" : "w-0"
-        } ease dark:bg-primaryDark absolute -bottom-0.5 left-0 inline-block h-[3px] rounded-full bg-primary transition-[width] duration-300 group-hover:w-full`}
+        } ease absolute -bottom-0.5 left-0 inline-block h-[3px] rounded-full bg-primary transition-[width] duration-300 group-hover:w-full dark:bg-primaryDark`}
       ></span>
     </Link>
   );
@@ -74,17 +74,17 @@ const Navbar = ({ socials }) => {
         <span
           className={`${
             isMenuOpen ? "translate-y-1 rotate-45" : "-translate-y-1.5"
-          } block h-0.5 w-8 rounded-md bg-dark transition-all duration-300 ease-out dark:bg-light`}
+          } block h-0.5 w-8 rounded-md bg-dark transition-all duration-100 ease-out dark:bg-light`}
         ></span>
         <span
           className={`${
             isMenuOpen ? "opacity-0" : "opacity-100"
-          } my-0.5 block h-0.5 w-8 rounded-md bg-dark  transition-all duration-300 ease-out dark:bg-light`}
+          } my-0.5 block h-0.5 w-8 rounded-md bg-dark  transition-all duration-100 ease-out dark:bg-light`}
         ></span>
         <span
           className={`${
             isMenuOpen ? "-translate-y-1 -rotate-45" : "translate-y-1.5"
-          } block h-0.5 w-8 rounded-md bg-dark transition-all duration-300 ease-out dark:bg-light`}
+          } block h-0.5 w-8 rounded-md bg-dark transition-all duration-100 ease-out dark:bg-light`}
         ></span>
       </button>
       <div className="innerWidth mx-auto hidden items-center justify-between p-2 lg:flex">

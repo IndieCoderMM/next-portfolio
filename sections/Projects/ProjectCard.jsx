@@ -8,10 +8,10 @@ import Image from "next/image";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="flex w-full max-w-[500px] cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-[300px]">
+    <div className="relative flex w-full max-w-[500px] flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-[300px]">
       <Link
         href={`/projects/${project.slug}`}
-        className="absolute bottom-0 left-0 right-0 top-0 md:hidden"
+        className="absolute bottom-0 left-0 right-0 top-0 z-[99] md:hidden"
       >
         <span className="sr-only">View project {project.name} details</span>
       </Link>
@@ -31,6 +31,7 @@ const ProjectCard = ({ project }) => {
         className="relative h-full w-full overflow-hidden"
       >
         <Image
+          priority
           quality={100}
           placeholder="blur"
           className="h-auto w-full object-top"
