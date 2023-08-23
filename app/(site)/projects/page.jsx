@@ -33,7 +33,7 @@ const ProjectsPage = async () => {
         base64: placeholderURL,
         width,
         height,
-      } = await getPlaceholder(project.imageURL);
+      } = await getPlaceholder(project.coverImg.url);
       return { ...project, placeholderURL, width, height };
     }),
   );

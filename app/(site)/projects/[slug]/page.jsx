@@ -25,28 +25,21 @@ const ProjectDetail = async (props) => {
     base64: placeholderURL,
     width,
     height,
-  } = await getPlaceholder(project.imageURL);
+  } = await getPlaceholder(project.coverImg.url);
 
-  const images = [
-    {
-      url: project.imageURL,
-      alt: project.name,
-      width: 1920,
-      height: 1080,
-    },
-    {
-      url: project.imageURL,
-      alt: project.name,
-      width: 1920,
-      height: 1080,
-    },
-    {
-      url: project.imageURL,
-      alt: project.name,
-      width: 1920,
-      height: 1080,
-    },
-  ];
+  const screenshots = project.screenshots?.map((screenshot) => (
+    <Image
+      width={width}
+      height={height}
+      quality={100}
+      placeholder="blur"
+      blurDataURL={placeholderURL}
+      src={screenshot.url}
+      alt={`Screenshot of ${project.name}`}
+      sizes="100vw"
+      className="h-full w-full object-fill"
+    />
+  ));
 
   return (
     <main className="paddings">
@@ -103,40 +96,19 @@ const ProjectDetail = async (props) => {
               <span className="h-3 w-3 rounded-full bg-green-500 lg:h-6 lg:w-6"></span>
             </div>
           </div>
-          <Slider infinite={false} className="w-full" bullets={false}>
+          <Slider className="w-full" bullets={false}>
             <Image
               width={width}
               height={height}
               quality={100}
               placeholder="blur"
               blurDataURL={placeholderURL}
-              src={project.imageURL}
-              alt={project.name}
+              src={project.coverImg.url}
+              alt={project.coverImg.alt}
               sizes="100vw"
               className="h-full w-full object-fill"
             />
-            <Image
-              width={width}
-              height={height}
-              quality={100}
-              placeholder="blur"
-              blurDataURL={placeholderURL}
-              src={project.imageURL}
-              alt={project.name}
-              sizes="100vw"
-              className="h-full w-full object-fill"
-            />
-            <Image
-              width={width}
-              height={height}
-              quality={100}
-              placeholder="blur"
-              blurDataURL={placeholderURL}
-              src={project.imageURL}
-              alt={project.name}
-              sizes="100vw"
-              className="h-full w-full object-fill"
-            />
+            {screenshots}
           </Slider>
           {/* Github badge */}
           <svg
@@ -145,7 +117,7 @@ const ProjectDetail = async (props) => {
             height="80"
             viewBox="0 0 250 250"
             fill="#f5f5f5"
-            className="absolute right-0 top-0 z-50 h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
+            className="absolute right-0 top-0 z-50 h-20 w-20 fill-white md:h-24 md:w-24 lg:h-28 lg:w-28"
           >
             <a
               title="View Source"
@@ -153,14 +125,21 @@ const ProjectDetail = async (props) => {
               target="_blank"
               rel="noreferrer"
               className="group"
+              aria-label="View Source"
             >
               <path
                 d="M0 0l115 115h15l12 27 108 108V0z"
                 fill="#fff"
-                className="fill-green-500"
+                className="fill-green-500 transition group-hover:fill-black"
               ></path>
-              <path d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16"></path>
-              <path d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+              <path
+                className="fill-white"
+                d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16"
+              ></path>
+              <path
+                className="fill-white"
+                d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"
+              ></path>
             </a>
           </svg>
         </div>

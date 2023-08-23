@@ -31,10 +31,9 @@ export async function getProjects() {
       "slug": slug.current,
       liveURL,
       githubURL,
-      "imageURL": coverImage.asset->url,
+      "coverImg": { "url": coverImage.asset->url, "alt": coverImage.alt },
       description,
       development,
-
       stack,
     }`,
   );
@@ -51,7 +50,8 @@ export async function getProject(slug) {
       "slug": slug.current,
       liveURL,
       githubURL,
-      "imageURL": coverImage.asset->url,
+      "coverImg": { "url": coverImage.asset->url, "alt": coverImage.alt },
+      screenshots[] { "url": asset->url },
       description,
       development,
       stack,

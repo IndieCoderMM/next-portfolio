@@ -162,6 +162,7 @@ const Navbar = ({ socials }) => {
           initial={{ scale: 0, x: "-50%", y: "-50%", opacity: 0 }}
           animate={{ scale: 1, x: "0", y: "0", opacity: 1 }}
           transition={{
+            type: "spring",
             duration: 0.25,
             ease: "easeIn",
           }}
