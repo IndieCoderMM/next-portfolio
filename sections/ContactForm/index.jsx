@@ -38,19 +38,19 @@ const ContactForm = () => {
     e.preventDefault();
     if (current === "name") {
       if (form.name.length === 0) {
-        setNotification("Name cannot be empty");
+        setNotification("Your Name, please!");
         return;
       }
       setCurrent("email");
     } else if (current === "email") {
       if (form.email.length === 0) {
-        setNotification("Email cannot be empty");
+        setNotification("I need your email to contact back!");
         return;
       }
       setCurrent("message");
     } else {
       if (form.message.length === 0) {
-        setNotification("Message cannot be empty");
+        setNotification("Message missing! Let's chat.");
         return;
       }
       setStatus("submitting");
@@ -70,7 +70,7 @@ const ContactForm = () => {
           (result) => {
             setStatus("success");
             setForm((form) => ({ ...form, message: "" }));
-            setNotification("Message sent successfully!");
+            setNotification("Awesome! I've got your message.");
           },
           (error) => {
             setStatus("error");
@@ -139,7 +139,11 @@ const ContactForm = () => {
         )}
         <div className="mt-10">
           <CustomButton type="submit">
-            <span className="w-full text-xl font-semibold uppercase text-light">
+            <span
+              className={`w-full text-xl font-semibold uppercase text-light ${
+                status === "submitting" ? "animate-pulse" : ""
+              }`}
+            >
               {current !== "message"
                 ? "Next"
                 : status === "submitting"

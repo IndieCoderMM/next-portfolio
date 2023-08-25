@@ -15,8 +15,8 @@ const Home = async () => {
   return (
     <main className="paddings">
       <Transition />
-      <section className="interWidth mx-auto flex flex-col items-center justify-center xl:flex-row">
-        <div className="order-last xl:order-first">
+      <section className="interWidth mx-auto flex flex-col items-center justify-center 2xl:flex-row">
+        <div className="order-last 2xl:order-first">
           <Image
             priority
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -33,7 +33,7 @@ const Home = async () => {
 
           <TypingText
             text={"Hi, I'm Hein Thant. Nice to see you here!"}
-            styles="whitespace-break-spaces text-xl md:text-3xl font-semibold leading-relaxed text-dark/60 dark:text-light/70"
+            styles="whitespace-break-spaces text-xl md:text-3xl font-semibold leading-relaxed text-dark/90 dark:text-light/90"
           />
 
           <RichText value={profile?.description} styles={" md:text-lg"} />
@@ -57,7 +57,7 @@ const Home = async () => {
             </a>
             <a
               href="/projects"
-              className="borderAnimate dark:hover:text-primaryDark dark:active:bg-primaryDark group relative flex w-full max-w-[250px] flex-1 items-center justify-center overflow-hidden px-4 py-2 text-lg font-medium tracking-wide underline transition-all duration-300 hover:tracking-tight hover:text-primary hover:no-underline active:bg-primary active:text-white dark:active:text-dark md:px-8 md:py-4 md:text-2xl "
+              className="borderAnimate group relative flex w-full max-w-[250px] flex-1 items-center justify-center overflow-hidden px-4 py-2 text-lg font-medium tracking-wide underline transition-all duration-300 hover:tracking-tight hover:text-primary hover:no-underline active:bg-primary active:text-white dark:hover:text-primaryDark dark:active:bg-primaryDark dark:active:text-dark md:px-8 md:py-4 md:text-2xl "
             >
               <svg>
                 <rect
@@ -66,7 +66,7 @@ const Home = async () => {
                   fill="none"
                   width="100%"
                   height="100%"
-                  className="dark:stroke-primaryDark stroke-primary"
+                  className="stroke-primary dark:stroke-primaryDark"
                 />
               </svg>
               See Projects

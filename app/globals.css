@@ -33,7 +33,7 @@ body,
 }
 
 .outlineBtn {
-  @apply dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark flex items-center justify-center gap-2 border-2 border-primary px-4 py-2 text-center text-lg font-semibold text-primary transition-colors hover:bg-primary hover:text-light dark:hover:text-dark md:px-8 md:py-4 md:text-xl;
+  @apply flex items-center justify-center gap-2 border-2 border-primary px-4 py-2 text-center text-lg font-semibold text-primary transition-colors hover:bg-primary hover:text-light dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark md:px-8 md:py-4 md:text-xl;
 }
 
 .blockBtn {

@@ -27,23 +27,9 @@ const ProjectDetail = async (props) => {
     height,
   } = await getPlaceholder(project.coverImg.url);
 
-  const screenshots =
-    project.screenshots?.length > 0
-      ? project.screenshots.map((screenshot) => (
-          <Image
-            key={screenshot.url}
-            width={width}
-            height={height}
-            quality={100}
-            placeholder="blur"
-            blurDataURL={placeholderURL}
-            src={screenshot.url}
-            alt={`Screenshot of ${project.name}`}
-            sizes="100vw"
-            className="h-full w-full object-fill"
-          />
-        ))
-      : [];
+  const screenshots = Array.isArray(project.screenshots)
+    ? project.screenshots
+    : [];
 
   return (
     <main className="paddings">
@@ -92,7 +78,7 @@ const ProjectDetail = async (props) => {
         <h3 className="mb-4 text-lg font-semibold md:text-2xl xl:text-3xl">
           {project.tagline}
         </h3>
-        <div className="relative mb-14 bg-light shadow-xl">
+        <div className="relative mb-14 bg-light shadow-sm md:shadow-xl">
           <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 md:p-2">
             <div className="flex gap-1 p-1">
               <span className="h-3 w-3 rounded-full bg-red-500 lg:h-6 lg:w-6"></span>
@@ -100,19 +86,16 @@ const ProjectDetail = async (props) => {
               <span className="h-3 w-3 rounded-full bg-green-500 lg:h-6 lg:w-6"></span>
             </div>
           </div>
-          <Slider className="w-full" infinite={false}>
-            <Image
-              width={width}
-              height={height}
-              quality={100}
-              placeholder="blur"
-              blurDataURL={placeholderURL}
-              src={project.coverImg.url}
-              alt={project.coverImg.alt}
-              sizes="100vw"
-              className="h-full w-full object-fill"
-            />
-            {...screenshots}
+          <Slider infinite={false}>
+            {[project.coverImg, ...screenshots].map((image, index) => (
+              <div key={index} className="h-full w-full">
+                <img
+                  src={image.url}
+                  alt={`${project.name} screenshot ${index + 1}`}
+                  className="h-full w-full object-fill"
+                />
+              </div>
+            ))}
           </Slider>
           {/* Github badge */}
           <svg
@@ -164,7 +147,7 @@ const ProjectDetail = async (props) => {
             <RichText value={project.development} />
           </div>
         </div>
-        <div className="mb-8 text-lg md:text-xl">
+        <div className="mb-8 md:text-lg">
           <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             Technologies
           </h4>

@@ -16,13 +16,13 @@ const ProjectCard = ({ project }) => {
       >
         <span className="sr-only">View project {project.name} details</span>
       </Link>
-      <div className="relative w-full bg-gray-300/70 p-2 dark:bg-gray-700">
+      <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 lg:p-2">
         <div className="absolute left-2 top-1/2 flex -translate-y-1/2 gap-1">
-          <span className="h-4 w-4 rounded-full bg-red-500"></span>
-          <span className="h-4 w-4 rounded-full bg-yellow-500"></span>
-          <span className="h-4 w-4 rounded-full bg-green-500"></span>
+          <span className="h-3 w-3 rounded-full bg-red-500 lg:h-6 lg:w-6"></span>
+          <span className="h-3 w-3 rounded-full bg-yellow-500 lg:h-6 lg:w-6"></span>
+          <span className="h-3 w-3 rounded-full bg-green-500 lg:h-6 lg:w-6"></span>
         </div>
-        <h3 className="text-center font-medium text-dark dark:text-light">
+        <h3 className="text-center text-sm font-medium text-dark dark:text-light lg:text-lg">
           {project.name}
         </h3>
       </div>

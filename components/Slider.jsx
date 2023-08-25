@@ -7,11 +7,7 @@ import "react-awesome-slider/dist/custom-animations/fold-out-animation.css";
 const Slider = ({ children, ...props }) => {
   return (
     <AwesomeSlider {...props} animation="foldOutAnimation">
-      {children.map((c, index) => (
-        <div key={index} className="h-full w-full bg-blue-500">
-          {c}
-        </div>
-      ))}
+      {children}
     </AwesomeSlider>
   );
 };
