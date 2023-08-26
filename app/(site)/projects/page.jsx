@@ -1,10 +1,10 @@
 import { getProfile, getProjects } from "@/sanity/sanity.query";
+import getPlaceholder from "@/utils/getPlaceholder";
+
+import Projects from "@/sections/Projects";
 
 import Footer from "@/components/Footer";
 import TitleText from "@/components/TitleText";
-import Transition from "@/components/Transition";
-import Projects from "@/sections/Projects";
-import getPlaceholder from "@/utils/getPlaceholder";
 import { MessageOutlineIcon } from "@/components/Icons";
 import CTA from "@/components/CTA";
 
@@ -40,7 +40,6 @@ const ProjectsPage = async () => {
 
   return (
     <main className="paddings">
-      <Transition />
       <section className="innerWidth mx-auto ">
         <TitleText text="My Recent Work" styles="text-center mb-8" />
         <p className="text-center text-xl font-medium">

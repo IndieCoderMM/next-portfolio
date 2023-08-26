@@ -1,9 +1,12 @@
 "use client";
-import { useScroll, motion } from "framer-motion";
+
 import { useRef } from "react";
-import TitleText from "@/components/TitleText";
+import { useScroll, motion } from "framer-motion";
 import PropTypes from "prop-types";
+
 import { ExperienceProps } from "@/propTypes";
+
+import TitleText from "@/components/TitleText";
 import Details from "./Details";
 
 const Experience = ({ experiences }) => {
@@ -25,7 +28,7 @@ const Experience = ({ experiences }) => {
             scaleY: scrollYProgress,
           }}
           ref={ref}
-          className="dark:bg-primaryDark absolute left-5 top-0 h-full w-[4px] origin-top bg-dark md:left-20"
+          className="absolute left-5 top-0 h-full w-[4px] origin-top bg-dark dark:bg-primaryDark md:left-20"
         />
         <ul className=" ml-4 flex w-full flex-col items-start justify-between space-y-8">
           {experiences.map((experience, index) => (

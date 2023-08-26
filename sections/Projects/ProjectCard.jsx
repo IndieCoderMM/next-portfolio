@@ -1,10 +1,10 @@
 "use client";
-import { LinkArrow } from "@/components/Icons";
-import { ProjectProps } from "@/propTypes";
-import { slideIn } from "@/utils/motion";
-import { motion } from "framer-motion";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { slideIn } from "@/utils/motion";
+import { ProjectProps } from "@/propTypes";
 
 const ProjectCard = ({ project }) => {
   return (

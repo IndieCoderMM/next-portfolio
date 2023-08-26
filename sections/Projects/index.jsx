@@ -1,14 +1,14 @@
 "use client";
 
-import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
+import ProjectCard from "./ProjectCard";
 
 const FilterTag = ({ tag, active, changeActive }) => (
   <li
     onClick={changeActive}
     className={`${
       active
-        ? "dark:bg-primaryDark bg-primary text-white dark:text-dark"
+        ? "bg-primary text-white dark:bg-primaryDark dark:text-dark"
         : "bg-light text-dark"
     } btn font-medium capitalize`}
   >

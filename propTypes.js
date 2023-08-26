@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 
-// Define prop types for Project
 export const ProjectProps = PropTypes.shape({
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -14,13 +13,11 @@ export const ProjectProps = PropTypes.shape({
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
-// Define prop types for skill
 export const SkillProps = PropTypes.shape({
   name: PropTypes.string.isRequired,
   logoURL: PropTypes.string.isRequired,
 });
 
-// Define prop types for skill
 export const SkillGroupProps = PropTypes.shape({
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -28,7 +25,6 @@ export const SkillGroupProps = PropTypes.shape({
   list: PropTypes.arrayOf(SkillProps).isRequired,
 });
 
-// Define prop types for experience
 export const ExperienceProps = PropTypes.shape({
   title: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,

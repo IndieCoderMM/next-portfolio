@@ -1,5 +1,3 @@
-import React from "react";
-
 const CustomButton = ({ children, onClick, type = "button" }) => {
   return (
     <button

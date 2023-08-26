@@ -1,5 +1,5 @@
-import { fadeIn } from "@/utils/motion";
 import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/motion";
 
 const Field = ({ name, value, placeholder, handleChange, icon: Icon }) => {
   return (

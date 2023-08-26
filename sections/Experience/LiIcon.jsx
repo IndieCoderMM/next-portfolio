@@ -1,5 +1,5 @@
-import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 
 const LiIcon = () => {
   const ref = useRef(null);
@@ -10,7 +10,7 @@ const LiIcon = () => {
   return (
     <figure
       ref={ref}
-      className="dark:stroke-primaryDark absolute -left-4 -translate-y-8 rotate-90 stroke-dark md:left-11"
+      className="absolute -left-4 -translate-y-8 rotate-90 stroke-dark dark:stroke-primaryDark md:left-11"
     >
       <svg
         width={75}
@@ -22,7 +22,7 @@ const LiIcon = () => {
           cx={75}
           cy={50}
           r={20}
-          className="dark:stroke-primaryDark fill-none stroke-primary stroke-1"
+          className="fill-none stroke-primary stroke-1 dark:stroke-primaryDark"
         />
         <motion.circle
           cx={75}
@@ -37,7 +37,7 @@ const LiIcon = () => {
           cx={75}
           cy={50}
           r={10}
-          className="dark:fill-primaryDark animate-pulse fill-primary stroke-1"
+          className="animate-pulse fill-primary stroke-1 dark:fill-primaryDark"
         />
       </svg>
     </figure>

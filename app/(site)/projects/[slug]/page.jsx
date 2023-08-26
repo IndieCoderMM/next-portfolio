@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getProject, getProjects } from "@/sanity/sanity.query";
+import getPlaceholder from "@/utils/getPlaceholder";
+
 import Footer from "@/components/Footer";
 import { BackArrow, LinkArrow } from "@/components/Icons";
 import RichText from "@/components/RichText";
-import Transition from "@/components/Transition";
-import { getProject, getProjects } from "@/sanity/sanity.query";
-import getPlaceholder from "@/utils/getPlaceholder";
 import Slider from "@/components/Slider";
 import CTA from "@/components/CTA";
 
@@ -33,7 +33,6 @@ const ProjectDetail = async (props) => {
 
   return (
     <main className="paddings">
-      <Transition />
       <section className="innerWidth mx-auto">
         <header className="relative mt-10 md:mt-4">
           <h2 className="mb-4 text-xl font-bold md:text-5xl xl:text-6xl">

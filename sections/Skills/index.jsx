@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { SkillGroupProps } from "@/propTypes";
 
 import { staggerContainer } from "@/utils/motion";
 import TitleText from "../../components/TitleText";
 import SkillCard from "./SkillCard";
-import { SkillGroupProps } from "@/propTypes";
 
 const Skills = ({ skills }) => {
   const [active, setActive] = useState(0);

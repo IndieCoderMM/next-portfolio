@@ -6,7 +6,6 @@ import {
   WhatsAppIcon,
 } from "@/components/Icons";
 import TitleText from "@/components/TitleText";
-import Transition from "@/components/Transition";
 import { getProfile } from "@/sanity/sanity.query";
 import ContactForm from "@/sections/ContactForm";
 
@@ -18,7 +17,6 @@ const ContactPage = async () => {
   const { email, socials } = await getProfile();
   return (
     <main className="paddings">
-      <Transition />
       <section className="innerWidth mx-auto">
         <TitleText text="Contact Me" styles="mb-8" />
         <div className="interWidth">

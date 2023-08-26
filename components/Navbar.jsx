@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "./Logo";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
+import useThemeSwitcher from "./hooks/useThemeSwitcher";
+
+import Logo from "./Logo";
 import {
   BlogIcon,
   GitHubIcon,
@@ -13,9 +16,6 @@ import {
   SunIcon,
   WhatsAppIcon,
 } from "./Icons";
-import useThemeSwitcher from "./hooks/useThemeSwitcher";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();

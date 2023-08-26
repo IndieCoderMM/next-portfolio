@@ -1,7 +1,7 @@
 "use client";
 
-import { textContainer, textVariant } from "@/utils/motion";
 import { motion } from "framer-motion";
+import { textContainer, textVariant } from "@/utils/motion";
 
 const TypingText = ({ text, styles }) => {
   return (

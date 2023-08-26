@@ -1,9 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import Image from "next/image";
-
 import { fadeIn, sphereVariant } from "@/utils/motion";
 import { SkillGroupProps } from "@/propTypes";
 

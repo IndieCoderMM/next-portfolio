@@ -6,7 +6,6 @@ import TitleText from "@/components/TitleText";
 import TypingText from "@/components/TypingText";
 import { DownloadIcon } from "@/components/Icons";
 import CustomButton from "@/components/CustomButton";
-import Transition from "@/components/Transition";
 import RichText from "@/components/RichText";
 
 const Home = async () => {
@@ -14,7 +13,6 @@ const Home = async () => {
 
   return (
     <main className="paddings">
-      <Transition />
       <section className="interWidth mx-auto flex flex-col items-center justify-center 2xl:flex-row">
         <div className="order-last 2xl:order-first">
           <Image
