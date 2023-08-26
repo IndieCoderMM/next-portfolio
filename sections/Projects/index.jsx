@@ -49,7 +49,7 @@ const Projects = ({ projects, tags }) => {
           />
         ))}
       </ul>
-      <section className="flex w-full flex-wrap justify-center gap-4">
+      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-3">
         {activeProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

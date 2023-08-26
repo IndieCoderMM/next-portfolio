@@ -3,12 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { slideIn } from "@/utils/motion";
+import { fadeIn, slideIn } from "@/utils/motion";
 import { ProjectProps } from "@/propTypes";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="relative flex h-fit w-full flex-col overflow-hidden rounded-lg bg-white shadow-md md:h-fit md:max-w-[800px] xl:h-[340px] xl:max-w-[540px]">
+    <div className="relative flex w-full flex-col overflow-hidden rounded-lg bg-white shadow-md lg:min-h-[300px]">
       {/* On mobile make the card clickable */}
       <Link
         href={`/projects/${project.slug}`}
@@ -18,9 +18,9 @@ const ProjectCard = ({ project }) => {
       </Link>
       <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 lg:p-2">
         <div className="absolute left-2 top-1/2 flex -translate-y-1/2 gap-1">
-          <span className="h-3 w-3 rounded-full bg-red-500 lg:h-6 lg:w-6"></span>
-          <span className="h-3 w-3 rounded-full bg-yellow-500 lg:h-6 lg:w-6"></span>
-          <span className="h-3 w-3 rounded-full bg-green-500 lg:h-6 lg:w-6"></span>
+          <span className="h-3 w-3 rounded-full bg-red-500 lg:h-5 lg:w-5"></span>
+          <span className="h-3 w-3 rounded-full bg-yellow-500 lg:h-5 lg:w-5"></span>
+          <span className="h-3 w-3 rounded-full bg-green-500 lg:h-5 lg:w-5"></span>
         </div>
         <h3 className="text-center text-sm font-medium text-dark dark:text-light lg:text-lg">
           {project.name}
@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
           priority
           quality={100}
           placeholder="blur"
-          className="h-auto w-full object-top xl:h-full xl:object-fill"
+          className="h-auto w-full md:h-full md:object-fill"
           src={project.coverImg.url}
           blurDataURL={project.placeholderURL}
           alt={project.coverImg.alt}
@@ -43,8 +43,8 @@ const ProjectCard = ({ project }) => {
           height={project.height}
         />
         <motion.div
-          variants={slideIn("up", "tween", 0, 0.5)}
-          className="absolute bottom-0 left-0 right-0 top-0 hidden w-full flex-col items-center justify-center gap-4 overflow-hidden bg-primary/90 p-2 md:flex"
+          variants={fadeIn("down", "tween", 0, 0.3)}
+          className="absolute bottom-full left-0 right-0 top-0 hidden h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-primary/90 p-2 md:flex"
         >
           <p className="text-center font-semibold text-light md:text-lg">
             {project.tagline}

@@ -27,7 +27,9 @@ const Home = async () => {
         </div>
 
         <div className="flex-1 space-y-4">
-          <TitleText text={profile?.bio} />
+          <h2 className="text-3xl font-bold leading-normal text-dark dark:text-light md:text-5xl lg:text-6xl">
+            {profile?.bio}
+          </h2>
 
           <TypingText
             text={"Hi, I'm Hein Thant. Nice to see you here!"}

@@ -88,7 +88,10 @@ const ProjectDetail = async (props) => {
           <Slider infinite={false}>
             {[project.coverImg, ...screenshots].map((image, index) => (
               <div key={index} className="h-full w-full">
-                <img
+                <Image
+                  priority
+                  width={width}
+                  height={height}
                   src={image.url}
                   alt={`${project.name} screenshot ${index + 1}`}
                   className="h-full w-full object-fill"
@@ -133,8 +136,8 @@ const ProjectDetail = async (props) => {
           <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             About this project
           </h4>
-          <div className="md:text-lg">
-            <RichText value={project.description} />
+          <div>
+            <RichText value={project.description} styles="lg:text-xl" />
           </div>
         </div>
 
@@ -142,11 +145,11 @@ const ProjectDetail = async (props) => {
           <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             Development Process
           </h4>
-          <div className=" md:text-lg">
-            <RichText value={project.development} />
+          <div>
+            <RichText value={project.development} styles={"lg:text-xl"} />
           </div>
         </div>
-        <div className="mb-8 md:text-lg">
+        <div className="mb-8 md:text-lg lg:text-xl">
           <h4 className="mb-4 text-lg font-semibold uppercase md:text-xl lg:text-3xl">
             Technologies
           </h4>
