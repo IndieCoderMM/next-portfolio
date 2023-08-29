@@ -6,7 +6,7 @@ const Logo = () => {
     <div className="flex items-center justify-center">
       <Link
         href="/"
-        className="flex items-center justify-center overflow-hidden rounded-full border-2 border-transparent bg-light p-0.5 transition-all duration-200 ease-in-out hover:translate-y-[-2px] hover:border-primary hover:shadow-lg dark:border-light dark:bg-dark dark:hover:border-primary"
+        className="flex items-center justify-center overflow-hidden rounded-full border-2 border-transparent bg-light p-0.5 transition-all duration-200 ease-in-out hover:translate-y-[-2px] hover:border-primary hover:shadow-lg dark:border-light  dark:hover:border-primary"
       >
         <Image
           src="/logo.png"

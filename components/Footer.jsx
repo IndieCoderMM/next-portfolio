@@ -14,7 +14,10 @@ const Footer = async () => {
   return (
     <footer className="yPaddings mt-20 border-t border-dark/20 dark:border-light/20">
       <div className="mt-4 flex flex-col items-center justify-center gap-10">
-        <Link href="/" className="relative flex items-center justify-center">
+        <Link
+          href="/"
+          className="relative flex items-center justify-center overflow-hidden rounded-lg bg-light"
+        >
           <Image src="/logo.png" alt="logo" width={70} height={70} />
         </Link>
         <h3 className="text-lg font-semibold md:text-2xl">
