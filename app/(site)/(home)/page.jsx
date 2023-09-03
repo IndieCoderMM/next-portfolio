@@ -23,9 +23,9 @@ const Home = async () => {
 
   return (
     <>
-      <main className="">
-        <section className="paddings interWidth mx-auto flex flex-col items-center justify-center 2xl:flex-row">
-          <div className="">
+      <main className="w-full">
+        <section className="paddings interWidth mx-auto flex flex-col items-center justify-center gap-8 2xl:flex-row">
+          <div>
             <Image
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -37,14 +37,14 @@ const Home = async () => {
             />
           </div>
 
-          <div className="flex-1 space-y-4 px-8 py-4">
-            <h2 className="text-3xl font-bold leading-normal text-dark dark:text-light md:text-5xl lg:text-6xl">
+          <div className="flex-1 space-y-4">
+            <h2 className="text-2xl font-bold leading-normal text-dark dark:text-light md:text-5xl lg:text-6xl">
               {profile?.bio}
             </h2>
 
             <TypingText
               text={"Hi, I'm Hein Thant. Nice to see you here!"}
-              styles="whitespace-break-spaces text-xl md:text-3xl font-semibold leading-relaxed text-dark/90 dark:text-light/90"
+              styles="whitespace-break-spaces text-lg md:text-3xl font-semibold leading-relaxed text-dark/90 dark:text-light/90"
             />
 
             <RichText value={profile?.description} styles={" md:text-xl"} />
@@ -58,11 +58,13 @@ const Home = async () => {
                 className="w-full max-w-[250px] flex-1"
               >
                 <CustomButton>
-                  <div className="flex w-full items-center justify-center gap-2 text-lg font-semibold text-light md:text-2xl">
+                  <div className="flex w-full items-center justify-center gap-1 text-lg text-light">
                     <div className="h-8 w-8">
                       <DownloadIcon />
                     </div>
-                    <span>Get My CV</span>
+                    <span className="text-lg font-semibold md:text-2xl">
+                      Get My CV
+                    </span>
                   </div>
                 </CustomButton>
               </a>
@@ -94,7 +96,7 @@ const Home = async () => {
           height={150}
           src="/wave.svg"
           alt=""
-          className="w-full bg-transparent object-cover"
+          className="mb-[-1px] w-full bg-transparent"
         />
         <Services />
         <Image
@@ -103,7 +105,7 @@ const Home = async () => {
           height={150}
           src="/wave-down.svg"
           alt=""
-          className="w-full bg-transparent"
+          className="mt-[-1px] w-full bg-transparent"
         />
       </main>
       <footer className="xPaddings pb-8 sm:pb-12">

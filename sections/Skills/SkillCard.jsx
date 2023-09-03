@@ -24,7 +24,7 @@ const SkillCard = ({ skill, index, isActive, handleClick }) => {
       />
       {!isActive ? (
         <div className="relative z-20 w-full self-stretch bg-light/70 backdrop-blur-sm dark:bg-dark/50">
-          <h3 className="left-0 whitespace-nowrap rounded-sm text-center text-3xl font-bold text-dark dark:text-light  lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+          <h3 className="left-0 whitespace-nowrap rounded-sm text-center text-2xl font-bold text-dark dark:text-light  lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skill?.title}
           </h3>
           <ul className=" bottom-0 right-0 top-4 flex flex-wrap gap-1 p-2 md:left-1/2 lg:absolute lg:flex-col-reverse lg:items-end">

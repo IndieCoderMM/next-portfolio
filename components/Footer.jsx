@@ -19,7 +19,7 @@ const Footer = async () => {
         height={150}
         src="/wave3.svg"
         alt=""
-        className="w-full bg-transparent"
+        className="mb-[-1px] w-full bg-transparent"
       />
       <footer className="xPaddings bg-primary pb-12 text-light sm:pb-16">
         <div className="flex flex-col items-center justify-center gap-10">
@@ -29,7 +29,7 @@ const Footer = async () => {
           >
             <Image src="/logo.png" alt="logo" width={70} height={70} />
           </Link>
-          <h3 className="text-lg font-semibold md:text-2xl">
+          <h3 className="text-lg font-semibold capitalize md:text-2xl">
             Making the web a better place
           </h3>
           <div className="flex w-full flex-wrap items-center justify-center gap-4">

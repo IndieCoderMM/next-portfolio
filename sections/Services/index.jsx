@@ -2,6 +2,7 @@ import TitleText from "@/components/TitleText";
 import ServiceCard from "./ServiceCard";
 import ServiceBar from "./ServiceBar";
 import ServicesGrid from "./ServicesGrid";
+import Image from "next/image";
 
 const ServiceData = [
   {
@@ -48,7 +49,7 @@ const ServiceData = [
 
 const Services = () => {
   return (
-    <section className="paddings w-full bg-primary">
+    <section className="paddings relative w-full bg-primary">
       <div className="innerWidth mx-auto mb-[150px] flex flex-col gap-10 xl:flex-row">
         <div className="flex flex-1 flex-col gap-4 xl:order-last">
           {ServiceData.map((service, index) => (

@@ -69,7 +69,7 @@ const About = async () => {
           height={100}
           src="/wave1.svg"
           alt=""
-          className="w-full bg-transparent"
+          className="mb-[-1px] w-full bg-transparent"
         />
         <Skills skills={skills} />
         <Image
@@ -78,7 +78,7 @@ const About = async () => {
           height={150}
           src="/wave-down.svg"
           alt=""
-          className="w-full bg-transparent"
+          className="mt-[-1px] w-full bg-transparent"
         />
         <Experience
           experiences={profile?.experiences.sort(

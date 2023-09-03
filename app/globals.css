@@ -54,33 +54,66 @@ body,
   @apply flex items-center justify-center gap-2 border-2 border-primary px-4 py-2 text-center text-lg font-semibold text-primary transition-colors hover:bg-primary hover:text-light dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark md:px-8 md:py-4 md:text-xl;
 }
 
-.blockBtn {
-  @apply flex items-center justify-center rounded-md bg-white text-dark transition-all duration-100 ease-in md:min-w-[120px];
-  box-shadow:
-    rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
-    #d6d6e7 0 -3px 0 inset;
+.primaryBtn {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  cursor: pointer;
+  user-select: none;
+  outline-offset: 4px;
 }
 
-.blockBtn:focus {
-  box-shadow:
-    #d6d6e7 0 0 0 1.5px inset,
-    rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
-    #d6d6e7 0 -3px 0 inset;
-}
-
-.blockBtn:hover {
-  box-shadow:
-    rgba(45, 35, 66, 0.4) 0 4px 8px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
-    #d6d6e7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.blockBtn:active {
-  box-shadow: #d6d6e7 0 3px 7px inset;
+.primaryBtn > span:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
   transform: translateY(2px);
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 500ms ease-out;
+}
+
+.primaryBtn:hover > span:nth-child(1) {
+  transform: translateY(4px);
+  transition-duration: 200ms;
+}
+
+.primaryBtn:active > span:nth-child(1) {
+  transform: translateY(1px);
+  transition-duration: 30ms;
+}
+
+.primaryBtn > span:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, #3e35b1, #4f46e5, #3e35b1);
+}
+
+.primaryBtn > div {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  transform: translateY(-4px);
+  border-radius: 0.75rem;
+  background: #6262f9;
+  padding: 12px 20px;
+  transition: all 500ms;
+}
+
+.primaryBtn:hover > div {
+  transform: translateY(-6px);
+  transition-duration: 250ms;
+}
+
+.primaryBtn:active > div {
+  transform: translateY(-2px);
+  transition-duration: 30ms;
 }
 
 .borderAnimate > svg {
@@ -145,5 +178,5 @@ body,
 
 .serviceCard:hover > div:first-child {
   opacity: 0;
-  transform: translateY(-180px) rotateY(90deg);
+  transform: translateY(-180px) rotateX(90deg);
 }

@@ -4,7 +4,15 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import CustomButton from "@/components/CustomButton";
-import { BellIcon, MailIcon, UserIcon, WriteIcon } from "@/components/Icons";
+import {
+  BackArrow,
+  BellIcon,
+  DownloadIcon,
+  MailIcon,
+  PlaneIcon,
+  UserIcon,
+  WriteIcon,
+} from "@/components/Icons";
 import StateButton from "./StateButton";
 import Field from "./Field";
 
@@ -139,17 +147,27 @@ const ContactForm = () => {
         )}
         <div className="mt-10">
           <CustomButton type="submit">
-            <span
-              className={`w-full text-xl font-semibold uppercase text-light ${
-                status === "submitting" ? "animate-pulse" : ""
-              }`}
-            >
-              {current !== "message"
-                ? "Next"
-                : status === "submitting"
-                ? "Sending..."
-                : "Send"}
-            </span>
+            <div className="flex w-full items-center justify-center gap-4 text-lg text-light">
+              <span
+                className={`text-xl font-semibold uppercase text-light ${
+                  status === "submitting" ? "animate-pulse" : ""
+                }`}
+              >
+                {current !== "message"
+                  ? "Next"
+                  : status === "submitting"
+                  ? "Sending..."
+                  : "Send"}
+              </span>
+              <div className="h-8 w-8">
+                {" "}
+                {current !== "message" ? (
+                  <BackArrow className="rotate-180" />
+                ) : (
+                  <PlaneIcon />
+                )}
+              </div>
+            </div>
           </CustomButton>
         </div>
       </form>

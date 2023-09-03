@@ -6,7 +6,7 @@ const Field = ({ name, value, placeholder, handleChange, icon: Icon }) => {
     <div className="w-full overflow-hidden border-b border-dark py-2 text-lg dark:border-light md:text-xl">
       <label className="sr-only">{name}</label>
       <motion.div
-        variants={fadeIn("up", "spring", 0, 0.2)}
+        variants={fadeIn("up", "spring", 0, 0.3)}
         initial="hidden"
         animate="show"
         className="flex w-full items-center gap-3"
