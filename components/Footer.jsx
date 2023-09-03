@@ -21,7 +21,7 @@ const Footer = async () => {
         alt=""
         className="mb-[-1px] w-full bg-transparent"
       />
-      <footer className="xPaddings bg-primary pb-12 text-light sm:pb-16">
+      <footer className="xPaddings bg-primary pb-12 text-white sm:pb-16">
         <div className="flex flex-col items-center justify-center gap-10">
           <Link
             href="/"
@@ -76,13 +76,13 @@ const Footer = async () => {
           </div>
           <div className="flex flex-col items-center justify-center space-y-4 pt-8 text-center">
             <h3 className="text-xl font-bold md:text-2xl">Connect with me</h3>
-            <blockquote className="leading-loose md:text-lg">
+            <blockquote className="leading-loose text-white md:text-lg">
               <p>Wanna get in touch or talk about a project?</p>
               <p>
                 You can reach me via email at{" "}
                 <a
                   href={`mailto:${email}`}
-                  className="font-medium text-white underline underline-offset-2 hover:brightness-110 "
+                  className="font-semibold text-white underline underline-offset-2 hover:brightness-110 "
                 >
                   {email}
                 </a>
@@ -92,7 +92,7 @@ const Footer = async () => {
                 Or send me a message using the form at the{" "}
                 <Link
                   href="/contact"
-                  className="font-medium text-white underline underline-offset-2 hover:brightness-110 "
+                  className="font-semibold text-white underline underline-offset-2 hover:brightness-110 "
                 >
                   Contact Page
                 </Link>

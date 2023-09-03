@@ -64,9 +64,9 @@ const Services = () => {
         <div className="flex w-full flex-1 flex-col">
           <TitleText
             text="What I do"
-            styles="mb-8 text-center text-light xl:text-left"
+            styles="mb-8 text-center text-white xl:text-left"
           />
-          <p className="w-full text-center text-lg leading-loose text-light xl:text-left xl:text-2xl">
+          <p className="w-full text-center text-lg leading-loose text-white xl:text-left xl:text-2xl">
             From creating{" "}
             <strong>
               responsive web applications to integrating API seamlessly

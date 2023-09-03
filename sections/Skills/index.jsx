@@ -21,8 +21,8 @@ const Skills = ({ skills }) => {
         viewport={{ once: true, amount: 0.25 }}
         className="innerWidth mx-auto flex w-full flex-col gap-8"
       >
-        <TitleText text="Skills" styles="text-center md:mb-2 text-light" />
-        <p className="mb-4 text-center font-medium text-light md:text-xl">
+        <TitleText text="Skills" styles="text-center md:mb-2 text-white" />
+        <p className="mb-4 text-center font-medium text-white md:text-xl">
           These are the technologies I&apos;ve worked with. I&apos;m always open
           to learning new things.
         </p>

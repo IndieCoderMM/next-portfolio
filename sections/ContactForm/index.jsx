@@ -147,9 +147,9 @@ const ContactForm = () => {
         )}
         <div className="mt-10">
           <CustomButton type="submit">
-            <div className="flex w-full items-center justify-center gap-4 text-lg text-light">
+            <div className="flex w-full items-center justify-center gap-4 text-lg text-white">
               <span
-                className={`text-xl font-semibold uppercase text-light ${
+                className={`text-xl font-semibold uppercase text-white ${
                   status === "submitting" ? "animate-pulse" : ""
                 }`}
               >

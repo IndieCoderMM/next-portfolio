@@ -5,10 +5,10 @@ const ServiceBar = ({ title, percentage, barStyles }) => {
   return (
     <div className="flex w-full flex-col gap-2 py-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-light lg:text-2xl">
+        <h2 className="text-lg font-semibold text-white lg:text-2xl">
           {title}
         </h2>
-        <div className="font-semibold text-light lg:text-xl">
+        <div className="font-semibold text-white lg:text-xl">
           <AnimatedNumber value={percentage} />%
         </div>
       </div>

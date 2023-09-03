@@ -58,7 +58,7 @@ const Home = async () => {
                 className="w-full max-w-[250px] flex-1"
               >
                 <CustomButton>
-                  <div className="flex w-full items-center justify-center gap-1 text-lg text-light">
+                  <div className="flex w-full items-center justify-center gap-1 text-lg text-white">
                     <div className="h-8 w-8">
                       <DownloadIcon />
                     </div>

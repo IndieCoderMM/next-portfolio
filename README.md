@@ -2,7 +2,9 @@
 
 This is my portfolio website, where I showcase my skills, projects, and developer experience.
 
-🔗 Check it out live: [www.heinthantoo.me](https://www.heinthantoo.me/)
+## 🚀 Visit Website: [www.heinthantoo.me](https://www.heinthantoo.me/)
+
+<img src="./screenshot.png" width="800px" >
 
 ## Stack
 
@@ -30,3 +32,9 @@ My portfolio was inspired by these amazing websites:
 - [SVGR](https://react-svgr.com/) - SVG to React Component
 - [CSS Buttons](https://getcssscan.com/css-buttons-examples) - CSS Button Examples
 - [Get Waves](https://getwaves.io/) - SVG Wave Generator
+
+
+## License
+
+This project is open source and available under the [MIT License](/LICENSE).
+
