@@ -15,6 +15,7 @@ import CustomButton from "@/components/CustomButton";
 import RichText from "@/components/RichText";
 import TitleText from "@/components/TitleText";
 import Services from "@/sections/Services";
+import SocialIcons from "@/components/SocialIcons";
 
 const Home = async () => {
   const profile = await getProfile();
@@ -46,7 +47,7 @@ const Home = async () => {
               styles="whitespace-break-spaces text-xl md:text-3xl font-semibold leading-relaxed text-dark/90 dark:text-light/90"
             />
 
-            <RichText value={profile?.description} styles={" md:text-lg"} />
+            <RichText value={profile?.description} styles={" md:text-xl"} />
 
             <div className="flex w-full flex-col items-center gap-8 pt-8 lg:flex-row">
               <a
@@ -106,43 +107,22 @@ const Home = async () => {
         />
       </main>
       <footer className="xPaddings pb-8 sm:pb-12">
-        <div className="interWidth mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between">
-          <p>Crafted by me &copy; {new Date().getFullYear()}</p>
-          <div className="flex flex-wrap items-center gap-4">
+        <div className="interWidth mx-auto flex flex-col items-center justify-center gap-8 md:justify-between lg:flex-row">
+          <p className="text-lg font-medium">
+            Crafted by me &copy; {new Date().getFullYear()}
+          </p>
+          <SocialIcons socials={socials} email={email} />
+          <div className="flex items-center justify-center gap-4">
             <a
-              href={socials.github}
-              aria-label="github"
-              className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+              href={profile.resumeURL}
+              target="_blank"
+              className="hover:underline"
             >
-              <GitHubOutlineIcon />
+              Resume
             </a>
-            <a
-              href={socials.linkedin}
-              aria-label="linkedin"
-              className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-            >
-              <LinkedInOutlineIcon />
-            </a>
-            <a
-              href={`mailto:${email}`}
-              aria-label="email"
-              className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-            >
-              <EmailOutlineIcon />
-            </a>
-            <a
-              href={socials.blog}
-              aria-label="blog"
-              className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-            >
-              <BlogSmallIcon />
-            </a>
-            <a
-              href={socials.whatsapp}
-              aria-label="whatsapp"
-              className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-            >
-              <WhatsAppIcon />
+            |
+            <a href="/sitemap.xml" target="_blank" className="hover:underline">
+              Sitemap
             </a>
           </div>
         </div>

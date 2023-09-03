@@ -37,7 +37,7 @@ const Footer = async () => {
               href={socials.github}
               title="GitHub"
               aria-label="GitHub"
-              className="h-12 w-12 rounded-full border-2 border-white p-2 text-white transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
+              className="h-12 w-12 rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
             >
               <GitHubOutlineIcon />
             </a>
@@ -45,7 +45,7 @@ const Footer = async () => {
               href={socials.linkedin}
               title="LinkedIn"
               aria-label="LinkedIn"
-              className="h-12 w-12 rounded-full border-2 border-white p-2 text-white transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
+              className="h-12 w-12 rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
             >
               <LinkedInOutlineIcon />
             </a>
@@ -53,7 +53,7 @@ const Footer = async () => {
               href={`mailto:${email}`}
               title="Email"
               aria-label="Email"
-              className="h-12 w-12 rounded-full border-2 border-white p-2 text-white transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
+              className="h-12 w-12 rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
             >
               <EmailOutlineIcon />
             </a>
@@ -61,7 +61,7 @@ const Footer = async () => {
               href={socials.whatsapp}
               title="WhatsApp"
               aria-label="WhatsApp"
-              className="h-12 w-12 rounded-full border-2 border-white p-2 text-white transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
+              className="h-12 w-12 rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
             >
               <WhatsAppIcon />
             </a>
@@ -69,7 +69,7 @@ const Footer = async () => {
               href={socials.blog}
               title="Blog"
               aria-label="Blog"
-              className="h-12 w-12 rounded-full border-2 border-white p-2 text-white transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
+              className="h-12 w-12 rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary "
             >
               <BlogSmallIcon />
             </a>
@@ -82,7 +82,7 @@ const Footer = async () => {
                 You can reach me via email at{" "}
                 <a
                   href={`mailto:${email}`}
-                  className="font-medium text-white underline-offset-2 hover:underline hover:brightness-110 "
+                  className="font-medium text-white underline underline-offset-2 hover:brightness-110 "
                 >
                   {email}
                 </a>
@@ -92,7 +92,7 @@ const Footer = async () => {
                 Or send me a message using the form at the{" "}
                 <Link
                   href="/contact"
-                  className="font-medium text-white underline-offset-2 hover:underline hover:brightness-110 "
+                  className="font-medium text-white underline underline-offset-2 hover:brightness-110 "
                 >
                   Contact Page
                 </Link>

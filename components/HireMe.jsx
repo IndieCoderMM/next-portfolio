@@ -11,7 +11,7 @@ const HireMe = () => {
         />
         <Link
           href="/contact"
-          className="ease absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-dark  p-2 text-center text-sm font-semibold leading-3 text-light shadow-md transition-all duration-300 hover:ring hover:ring-primary hover:brightness-110 dark:bg-light dark:text-dark dark:hover:ring-primaryDark lg:h-20 lg:w-20  xl:h-24 xl:w-24 xl:text-xl"
+          className="ease hover:ring-accent absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full  bg-dark p-2 text-center text-sm font-semibold leading-3 text-light shadow-md transition-all duration-300 hover:scale-105 hover:ring hover:brightness-110 dark:bg-light dark:text-dark lg:h-20 lg:w-20  xl:h-24 xl:w-24 xl:text-xl"
         >
           Hire Me
         </Link>

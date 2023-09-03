@@ -49,7 +49,7 @@ const Projects = ({ projects, tags }) => {
           />
         ))}
       </ul>
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <section className="grid w-full gap-4 md:grid-cols-2">
         {activeProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

@@ -5,6 +5,7 @@ import {
   LinkedInOutlineIcon,
   WhatsAppIcon,
 } from "@/components/Icons";
+import SocialIcons from "@/components/SocialIcons";
 import TitleText from "@/components/TitleText";
 import { getProfile } from "@/sanity/sanity.query";
 import ContactForm from "@/sections/ContactForm";
@@ -37,43 +38,7 @@ const ContactPage = async () => {
           Connect with me on GitHub and LinkedIn, explore my blog for insights,
           or simply reach out via email or WhatsApp.
         </p>
-        <div className="flex flex-wrap items-center gap-4">
-          <a
-            href={socials.github}
-            aria-label="github"
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-          >
-            <GitHubOutlineIcon />
-          </a>
-          <a
-            href={socials.linkedin}
-            aria-label="linkedin"
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-          >
-            <LinkedInOutlineIcon />
-          </a>
-          <a
-            href={`mailto:${email}`}
-            aria-label="email"
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-          >
-            <EmailOutlineIcon />
-          </a>
-          <a
-            href={socials.blog}
-            aria-label="blog"
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-          >
-            <BlogSmallIcon />
-          </a>
-          <a
-            href={socials.whatsapp}
-            aria-label="whatsapp"
-            className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
-          >
-            <WhatsAppIcon />
-          </a>
-        </div>
+        <SocialIcons email={email} socials={socials} />
       </section>
     </main>
   );

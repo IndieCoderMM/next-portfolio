@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body,
 :root {
@@ -119,14 +125,16 @@ body,
   box-shadow: 0 5px 20px 0px rgba(0, 81, 250, 0.1);
   transition: all 0.5s ease;
   z-index: 2;
+  height: 380px;
 }
 
 .serviceCard > div:last-child {
   opacity: 0;
-  transform: translateY(110px) rotateX(-90deg);
+  transform: translateY(190px) rotateX(-90deg);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transform-style: preserve-3d;
   transition: all 0.6s ease;
+  height: 380px;
   z-index: 1;
 }
 
@@ -137,5 +145,5 @@ body,
 
 .serviceCard:hover > div:first-child {
   opacity: 0;
-  transform: translateY(-110px) rotatey(90deg);
+  transform: translateY(-180px) rotateY(90deg);
 }
