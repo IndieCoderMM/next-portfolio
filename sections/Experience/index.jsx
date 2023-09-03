@@ -16,7 +16,7 @@ const Experience = ({ experiences }) => {
     offset: ["start end", "center start"],
   });
   return (
-    <section className="yPaddings">
+    <section className="xPaddings">
       <TitleText text="Experience" styles="text-center mb-8 md:mb-10" />
       <p className="mb-4 text-center font-medium md:text-xl">
         My professional experience so far. I&apos;m excited to see what the

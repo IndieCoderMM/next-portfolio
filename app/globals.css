@@ -8,6 +8,18 @@ body,
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2bc578;
+}
+
 .innerWidth {
   @apply w-full 2xl:max-w-[1280px];
 }
@@ -86,4 +98,44 @@ body,
   stroke-width: 5;
   stroke-dashoffset: 50;
   transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.borderAnimate:active > svg > rect {
+  stroke-dasharray: 422, 0;
+  stroke-width: 5;
+  stroke-dashoffset: 50;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Service Card Animations */
+
+.serviceCard {
+  perspective: 1000px;
+}
+
+.serviceCard > div:first-child {
+  opacity: 1;
+  transform: rotateX(0deg);
+  box-shadow: 0 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.serviceCard > div:last-child {
+  opacity: 0;
+  transform: translateY(110px) rotateX(-90deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.serviceCard:hover > div:last-child {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.serviceCard:hover > div:first-child {
+  opacity: 0;
+  transform: translateY(-110px) rotatey(90deg);
 }

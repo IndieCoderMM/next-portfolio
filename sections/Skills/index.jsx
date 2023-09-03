@@ -13,16 +13,16 @@ const Skills = ({ skills }) => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="innerWidth yPaddings mx-auto mt-10">
+    <section className="xPaddings bg-primary">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="flex w-full flex-col gap-8"
+        className="innerWidth mx-auto flex w-full flex-col gap-8"
       >
-        <TitleText text="Skills" styles="text-center md:mb-2" />
-        <p className="mb-4 text-center font-medium md:text-xl">
+        <TitleText text="Skills" styles="text-center md:mb-2 text-light" />
+        <p className="mb-4 text-center font-medium text-light md:text-xl">
           These are the technologies I&apos;ve worked with. I&apos;m always open
           to learning new things.
         </p>

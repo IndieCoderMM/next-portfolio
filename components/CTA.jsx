@@ -8,13 +8,11 @@ const CTA = ({
 }) => {
   return (
     <section className="innerWidth mx-auto">
-      <div className="interWidth yPaddings mx-auto flex flex-col items-center justify-center gap-4">
+      <div className="xPaddings flex flex-col items-center justify-center gap-4">
         <h3 className="text-center text-2xl font-semibold capitalize lg:text-4xl">
           {title}
         </h3>
-        <p className="innerWidth mx-auto text-center text-lg lg:text-xl">
-          {text}
-        </p>
+        <p className="innerWidth mx-auto text-center lg:text-xl">{text}</p>
         <a
           href={href}
           target={external ? "_blank" : "_self"}

@@ -8,7 +8,7 @@ import { ProjectProps } from "@/propTypes";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="relative flex w-full flex-col overflow-hidden rounded-lg bg-white shadow-md lg:min-h-[300px]">
+    <div className="relative flex w-full flex-col overflow-hidden rounded-md bg-white shadow-sm md:shadow-md lg:min-h-[300px]">
       {/* On mobile make the card clickable */}
       <Link
         href={`/projects/${project.slug}`}

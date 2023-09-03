@@ -8,6 +8,7 @@ import {
 import TitleText from "@/components/TitleText";
 import { getProfile } from "@/sanity/sanity.query";
 import ContactForm from "@/sections/ContactForm";
+import Image from "next/image";
 
 export const metadata = {
   title: "Contact Hein Thant Oo - Full Stack Developer | Portfolio",
@@ -16,8 +17,8 @@ export const metadata = {
 const ContactPage = async () => {
   const { email, socials } = await getProfile();
   return (
-    <main className="paddings">
-      <section className="innerWidth mx-auto">
+    <main className="w-full">
+      <section className="paddings innerWidth mx-auto">
         <TitleText text="Contact Me" styles="mb-8" />
         <div className="interWidth">
           <p className="font-medium leading-relaxed text-dark/80 dark:text-light md:text-lg lg:text-xl">
@@ -28,7 +29,7 @@ const ContactPage = async () => {
           <ContactForm />
         </div>
       </section>
-      <section className="innerWidth yPaddings mx-auto mb-10 space-y-4">
+      <section className="innerWidth paddings mx-auto space-y-4 pb-8">
         <h3 className="text-lg font-semibold md:text-2xl">
           Let's Stay Connected!
         </h3>

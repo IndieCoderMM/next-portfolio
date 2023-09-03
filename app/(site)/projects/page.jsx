@@ -39,8 +39,8 @@ const ProjectsPage = async () => {
   );
 
   return (
-    <main className="paddings">
-      <section className="innerWidth mx-auto ">
+    <main className="w-full">
+      <section className="paddings innerWidth mx-auto ">
         <TitleText text="My Recent Work" styles="text-center mb-8" />
         <p className="text-center text-xl font-medium">
           Here are some of my projects. Want to see more? Check out my{" "}
