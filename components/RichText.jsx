@@ -18,7 +18,7 @@ const RichText = ({ value, styles }) => {
               href={value?.href}
               target="_blank"
               rel="noreferrer"
-              className="dark:text-primaryDark font-medium text-primary underline transition-all duration-300 hover:no-underline hover:brightness-110"
+              className="font-semibold text-primary-800 underline transition-all duration-300 hover:no-underline hover:brightness-110 dark:text-primaryDark"
             >
               {children}
             </a>

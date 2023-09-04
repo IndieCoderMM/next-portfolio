@@ -4,7 +4,7 @@ import AnimatedNumber from "@/components/AnimatedNumber";
 const ServiceBar = ({ title, percentage, barStyles }) => {
   return (
     <div className="flex w-full flex-col gap-2 py-4">
-      <div className="flex items-center justify-between">
+      <div className="flex items-end justify-between">
         <h2 className="text-lg font-semibold text-white lg:text-2xl">
           {title}
         </h2>

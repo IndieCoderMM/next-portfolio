@@ -37,7 +37,7 @@ const About = async () => {
             </div>
             <div className="col-span-full flex flex-wrap items-start justify-between lg:col-span-2 lg:flex-col lg:items-end">
               <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-                <span className="inline-block text-3xl font-bold text-primary dark:text-primaryDark lg:text-7xl">
+                <span className="inline-block text-3xl font-bold text-primary-800 dark:text-primaryDark lg:text-7xl">
                   <AnimatedNumber value={profile?.metrics?.frontEnd} />+
                 </span>
                 <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
@@ -45,7 +45,7 @@ const About = async () => {
                 </p>
               </div>
               <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-                <span className="inline-block text-3xl font-bold text-primary dark:text-primaryDark lg:text-7xl">
+                <span className="inline-block text-3xl font-bold text-primary-800 dark:text-primaryDark lg:text-7xl">
                   <AnimatedNumber value={profile?.metrics?.fullStack} />+
                 </span>
                 <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">
@@ -53,7 +53,7 @@ const About = async () => {
                 </p>
               </div>
               <div className="flex flex-1 flex-col items-center justify-center lg:items-end">
-                <span className="inline-block text-3xl font-bold text-primary dark:text-primaryDark lg:text-7xl">
+                <span className="inline-block text-3xl font-bold text-primary-800 dark:text-primaryDark lg:text-7xl">
                   <AnimatedNumber value={profile?.metrics?.experience} />+
                 </span>
                 <p className="text-center text-sm font-medium text-dark/75 dark:text-light md:text-xl">

@@ -21,17 +21,17 @@ const Details = ({
               href={website}
               target="_blank"
               rel="noreferrer"
-              className="dark:text-primaryDark text-primary"
+              className="text-primary-800 dark:text-primaryDark"
             >
               @{company}
             </a>
           ) : (
-            <span className="dark:text-primaryDark text-primary">
+            <span className="text-primary-800 dark:text-primaryDark">
               @{company}
             </span>
           )}
         </h3>
-        <div className="text-sm font-medium capitalize text-dark/50 md:text-lg">
+        <div className="text-sm font-medium capitalize text-dark/80 md:text-lg">
           <span>
             {formatDate(startDate)} -{" "}
             {endDate ? formatDate(endDate) : "present"}

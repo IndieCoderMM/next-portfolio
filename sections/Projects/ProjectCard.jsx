@@ -44,7 +44,7 @@ const ProjectCard = ({ project }) => {
         />
         <motion.div
           variants={fadeIn("down", "tween", 0, 0.3)}
-          className="absolute bottom-full left-0 right-0 top-0 hidden h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-primary/90 p-2 md:flex"
+          className="absolute bottom-full left-0 right-0 top-0 hidden h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-primary-800/90 p-2 md:flex"
         >
           <p className="text-center font-semibold text-light md:text-lg">
             {project.tagline}
