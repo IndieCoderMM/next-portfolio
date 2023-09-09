@@ -90,7 +90,7 @@ const Navbar = ({ socials }) => {
             duration: 0.25,
             ease: "easeIn",
           }}
-          className="fixed -left-1 -top-1 z-50 min-w-[250px] rounded-br-[900px] bg-light pb-20 pr-8 pt-4 shadow backdrop-blur-md dark:bg-dark"
+          className="fixed -left-1 -top-1 z-[60] min-w-[250px] rounded-br-[900px] bg-light pb-20 pr-8 pt-4 shadow-md backdrop-blur-md dark:bg-[#3a3a3a]"
         >
           <div className="flex flex-col pl-20">
             <nav className="mb-4 flex items-center justify-center gap-3">

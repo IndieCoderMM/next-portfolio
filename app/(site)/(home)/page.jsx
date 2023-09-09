@@ -3,19 +3,13 @@ import Image from "next/image";
 import { getProfile } from "@/sanity/sanity.query";
 
 import TypingText from "@/components/TypingText";
-import {
-  BlogSmallIcon,
-  DownloadIcon,
-  EmailOutlineIcon,
-  GitHubOutlineIcon,
-  LinkedInOutlineIcon,
-  WhatsAppIcon,
-} from "@/components/Icons";
+import { DownloadIcon } from "@/components/Icons";
 import CustomButton from "@/components/CustomButton";
 import RichText from "@/components/RichText";
-import TitleText from "@/components/TitleText";
 import Services from "@/sections/Services";
 import SocialIcons from "@/components/SocialIcons";
+
+export const revalidate = 60 * 60 * 24; // 24 hours
 
 const Home = async () => {
   const profile = await getProfile();

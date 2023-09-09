@@ -29,6 +29,7 @@ My portfolio was inspired by these amazing websites:
 
 - [Undraw](https://undraw.co/) - Open source illustrations
 - [Iconify](https://iconify.design/) - Open source icons
+- [Flaticon](https://www.flaticon.com/) - Free icons
 - [SVGR](https://react-svgr.com/) - SVG to React Component
 - [CSS Buttons](https://getcssscan.com/css-buttons-examples) - CSS Button Examples
 - [Get Waves](https://getwaves.io/) - SVG Wave Generator

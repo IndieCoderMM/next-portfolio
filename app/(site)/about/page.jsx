@@ -14,6 +14,8 @@ export const metadata = {
   title: "About Hein Thant Oo - Full Stack Developer | Portfolio",
 };
 
+export const revalidate = 60 * 60 * 24; // 24 hours
+
 const About = async () => {
   const profile = await getProfile();
   const skills = await getSkills();

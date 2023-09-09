@@ -22,6 +22,8 @@ const getUniqueTags = (projects) => [
   ),
 ];
 
+export const revalidate = 60 * 60 * 24; // 24 hours
+
 const ProjectsPage = async () => {
   const { socials } = await getProfile();
   const projects = await getProjects();

@@ -12,7 +12,7 @@ const ProjectCard = ({ project }) => {
       {/* On mobile make the card clickable */}
       <Link
         href={`/projects/${project.slug}`}
-        className="absolute bottom-0 left-0 right-0 top-0 z-[99] md:hidden"
+        className="absolute bottom-0 left-0 right-0 top-0 z-50 md:hidden"
       >
         <span className="sr-only">View project {project.name} details</span>
       </Link>

@@ -1,15 +1,9 @@
-import {
-  BlogSmallIcon,
-  EmailOutlineIcon,
-  GitHubOutlineIcon,
-  LinkedInOutlineIcon,
-  WhatsAppIcon,
-} from "@/components/Icons";
 import SocialIcons from "@/components/SocialIcons";
 import TitleText from "@/components/TitleText";
 import { getProfile } from "@/sanity/sanity.query";
 import ContactForm from "@/sections/ContactForm";
-import Image from "next/image";
+
+export const revalidate = 60 * 60 * 24; // 24 hours
 
 export const metadata = {
   title: "Contact Hein Thant Oo - Full Stack Developer | Portfolio",
