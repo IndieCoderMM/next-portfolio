@@ -82,6 +82,7 @@ const Footer = async () => {
                 You can reach me via email at{" "}
                 <a
                   href={`mailto:${email}`}
+                  target="_blank"
                   className="font-semibold text-white underline underline-offset-2 hover:brightness-110 "
                 >
                   {email}
