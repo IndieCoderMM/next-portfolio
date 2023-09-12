@@ -17,7 +17,7 @@ const FilterDropdown = ({ tags, selected, setTagFilters, clearFilters }) => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[250px]" id="filter-dropdown">
+    <div className="relative w-full max-w-[200px]" id="filter-dropdown">
       {selected.length > 0 && (
         <span className="absolute right-0 top-0 flex h-7 w-7 -translate-y-1/3 translate-x-1/2 items-center justify-center rounded-full bg-primary text-xs text-white dark:bg-primaryDark dark:text-black">
           {selected.length}
@@ -29,11 +29,13 @@ const FilterDropdown = ({ tags, selected, setTagFilters, clearFilters }) => {
         className="flex w-full items-center justify-center rounded-md border border-gray-300 bg-transparent px-4 py-3 text-sm font-medium shadow-sm hover:border-gray-500 sm:text-base"
       >
         Filter By Tags
-        <ChevronUpIcon
+        <div
           className={`ml-2 h-5 w-5 transition-all ${
             expanded ? "rotate-0" : "rotate-180"
           }`}
-        />
+        >
+          <ChevronUpIcon />
+        </div>
       </button>
       <motion.div
         variants={{
@@ -59,7 +61,7 @@ const FilterDropdown = ({ tags, selected, setTagFilters, clearFilters }) => {
               <button
                 type="button"
                 onClick={() => clearFilters()}
-                className="flex w-full items-center justify-center rounded-md border border-gray-200 px-2 py-1 font-medium text-primary-800 hover:text-pink-700 dark:border-gray-700 dark:text-light dark:hover:text-pink-400"
+                className="flex w-full items-center justify-center rounded-md border border-gray-200 px-2 py-1 font-medium text-primary-800 hover:text-pink-700 dark:border-gray-500 dark:text-light dark:hover:text-pink-400"
               >
                 Clear <span className="ml-1 text-xl">&times;</span>
               </button>
