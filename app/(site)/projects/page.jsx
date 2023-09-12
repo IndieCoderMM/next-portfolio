@@ -41,35 +41,36 @@ const ProjectsPage = async () => {
   );
 
   return (
-    <main className="w-full">
-      <section className="paddings innerWidth mx-auto ">
-        <TitleText text="My Recent Work" styles="text-center mb-8" />
-        <p className="text-center text-xl font-medium">
-          Here are some of my projects. Want to see more? Check out my{" "}
-          <a
-            href={socials.github}
-            target="_blank"
-            className="font-semibold text-primary-800 underline-offset-2 hover:underline hover:brightness-110 dark:text-primaryDark"
-          >
-            GitHub
-          </a>
-          .
-        </p>
-        <Projects projects={projectsWithPlaceholder} tags={tags} />
-      </section>
+    <>
+      <main className="paddings w-full ">
+        <section className="innerWidth mx-auto ">
+          <TitleText text="My Recent Work" styles="text-center mb-8" />
+          <p className="text-center font-medium sm:text-lg md:text-xl">
+            Here are some of my projects. Want to see more? Check out my{" "}
+            <a
+              href={socials.github}
+              target="_blank"
+              className="font-semibold text-primary-800 underline-offset-2 hover:underline hover:brightness-110 dark:text-primaryDark"
+            >
+              GitHub
+            </a>
+            .
+          </p>
+          <Projects projects={projectsWithPlaceholder} tags={tags} />
+        </section>
 
-      <CTA
-        title={"Interested in working together?"}
-        text={
-          "I'm open to new opportunities! Whether you've got a project in mind, need some assistance, or just want to say hello, feel free to reach out."
-        }
-        href={"/contact"}
-        buttonText={"Start a Conversation"}
-        icon={MessageOutlineIcon}
-      />
-
+        <CTA
+          title={"Interested in working together?"}
+          text={
+            "I'm open to new opportunities! Whether you've got a project in mind, need some assistance, or just want to say hello, feel free to reach out."
+          }
+          href={"/contact"}
+          buttonText={"Start a Conversation"}
+          icon={MessageOutlineIcon}
+        />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 };
 

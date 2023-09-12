@@ -8,7 +8,7 @@ import { ProjectProps } from "@/propTypes";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="relative flex w-full flex-col overflow-hidden rounded-md bg-white shadow-sm md:shadow-md lg:min-h-[300px]">
+    <div className="relative flex w-full flex-col overflow-hidden rounded-md bg-white shadow-sm md:shadow-md">
       {/* On mobile make the card clickable */}
       <Link
         href={`/projects/${project.slug}`}
@@ -16,11 +16,11 @@ const ProjectCard = ({ project }) => {
       >
         <span className="sr-only">View project {project.name} details</span>
       </Link>
-      <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700 lg:p-2">
+      <div className="relative w-full bg-gray-300/70 p-1 dark:bg-gray-700">
         <div className="absolute left-2 top-1/2 flex -translate-y-1/2 gap-1">
-          <span className="h-3 w-3 rounded-full bg-red-500 lg:h-5 lg:w-5"></span>
-          <span className="h-3 w-3 rounded-full bg-yellow-500 lg:h-5 lg:w-5"></span>
-          <span className="h-3 w-3 rounded-full bg-green-500 lg:h-5 lg:w-5"></span>
+          <span className="h-3 w-3 rounded-full bg-red-500 lg:h-4 lg:w-4"></span>
+          <span className="h-3 w-3 rounded-full bg-yellow-500 lg:h-4 lg:w-4"></span>
+          <span className="h-3 w-3 rounded-full bg-green-500 lg:h-4 lg:w-4"></span>
         </div>
         <h3 className="text-center text-sm font-medium text-dark dark:text-light lg:text-lg">
           {project.name}
