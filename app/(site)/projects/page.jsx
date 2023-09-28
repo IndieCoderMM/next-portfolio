@@ -42,7 +42,7 @@ const ProjectsPage = async () => {
 
   return (
     <>
-      <main className="paddings w-full ">
+      <main className="paddings w-full">
         <section className="innerWidth mx-auto ">
           <TitleText text="My Recent Work" styles="text-center mb-8" />
           <p className="text-center font-medium sm:text-lg md:text-xl">
@@ -58,17 +58,16 @@ const ProjectsPage = async () => {
           </p>
           <Projects projects={projectsWithPlaceholder} tags={tags} />
         </section>
-
-        <CTA
-          title={"Interested in working together?"}
-          text={
-            "I'm open to new opportunities! Whether you've got a project in mind, need some assistance, or just want to say hello, feel free to reach out."
-          }
-          href={"/contact"}
-          buttonText={"Start a Conversation"}
-          icon={MessageOutlineIcon}
-        />
       </main>
+      <CTA
+        title={"Interested in working together?"}
+        text={
+          "I'm open to new opportunities! Whether you've got a project in mind, need some assistance, or just want to say hello, feel free to reach out."
+        }
+        href={"/contact"}
+        buttonText={"Start a Chat"}
+        icon={MessageOutlineIcon}
+      />
       <Footer />
     </>
   );

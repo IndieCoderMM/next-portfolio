@@ -29,7 +29,7 @@ const Footer = async () => {
           >
             <Image src="/logo.png" alt="logo" width={70} height={70} />
           </Link>
-          <h3 className="text-lg font-semibold capitalize md:text-2xl">
+          <h3 className="text-center text-lg font-semibold capitalize md:text-2xl">
             Making the web a better place
           </h3>
           <div className="flex w-full flex-wrap items-center justify-center gap-4">

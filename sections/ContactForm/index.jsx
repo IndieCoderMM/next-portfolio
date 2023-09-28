@@ -78,7 +78,7 @@ const ContactForm = () => {
           (result) => {
             setStatus("success");
             setForm((form) => ({ ...form, message: "" }));
-            setNotification("Awesome! I've got your message.");
+            setNotification("Great! I've got your message.");
           },
           (error) => {
             setStatus("error");

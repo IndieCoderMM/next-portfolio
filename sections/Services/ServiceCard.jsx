@@ -21,7 +21,7 @@ const ServiceCard = ({ index, title, description, icon }) => {
         <h2 className="text-center text-xl font-semibold">{title}</h2>
       </div>
       {/* Back Card */}
-      <div className="absolute left-0 top-0 flex w-full items-center justify-center rounded-md bg-white px-4 py-10 text-center font-medium leading-loose text-dark lg:text-lg">
+      <div className="absolute left-0 top-0 flex w-full items-center justify-center rounded-md bg-white p-4 text-center font-medium leading-loose text-dark sm:py-10 sm:text-lg">
         <p>{description}</p>
       </div>
     </motion.div>

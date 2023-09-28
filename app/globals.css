@@ -35,7 +35,7 @@ body,
 }
 
 .paddings {
-  @apply px-6 py-12 sm:p-16;
+  @apply px-2 py-12 sm:px-6 md:p-16;
 }
 
 .yPaddings {
@@ -51,7 +51,7 @@ body,
 }
 
 .outlineBtn {
-  @apply flex items-center justify-center gap-2 border-2 border-primary-800 px-4 py-2 text-center text-lg font-semibold text-primary-800 transition-colors hover:bg-primary-800 hover:text-light dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark md:px-8 md:py-4 md:text-xl;
+  @apply flex items-center justify-center gap-2 border-2 border-primary-800 px-8 py-2 text-center font-semibold text-primary-800 transition-colors hover:bg-primary-800 hover:text-light dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:text-lg md:px-10 md:py-3 md:text-xl;
 }
 
 .primaryBtn {

@@ -9,13 +9,13 @@ import {
 
 const SocialIcons = ({ email, socials }) => {
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center justify-center gap-4">
       <a
         href={socials.github}
         target="_blank"
         rel="noreferrer"
         aria-label="github"
-        className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+        className="h-10 w-10 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:h-12 sm:w-12"
       >
         <GitHubOutlineIcon />
       </a>
@@ -24,7 +24,7 @@ const SocialIcons = ({ email, socials }) => {
         aria-label="linkedin"
         target="_blank"
         rel="noreferrer"
-        className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+        className="h-10 w-10 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:h-12 sm:w-12"
       >
         <LinkedInOutlineIcon />
       </a>
@@ -33,7 +33,7 @@ const SocialIcons = ({ email, socials }) => {
         aria-label="email"
         target="_blank"
         rel="noreferrer"
-        className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+        className="h-10 w-10 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:h-12 sm:w-12"
       >
         <EmailOutlineIcon />
       </a>
@@ -42,7 +42,7 @@ const SocialIcons = ({ email, socials }) => {
         aria-label="blog"
         target="_blank"
         rel="noreferrer"
-        className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+        className="h-10 w-10 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:h-12 sm:w-12"
       >
         <BlogSmallIcon />
       </a>
@@ -51,7 +51,7 @@ const SocialIcons = ({ email, socials }) => {
         aria-label="whatsapp"
         target="_blank"
         rel="noreferrer"
-        className="h-12 w-12 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark"
+        className="h-10 w-10 rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:border-white hover:bg-primary hover:text-white dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:h-12 sm:w-12"
       >
         <WhatsAppIcon />
       </a>

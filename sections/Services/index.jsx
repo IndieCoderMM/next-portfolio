@@ -1,12 +1,11 @@
 import TitleText from "@/components/TitleText";
-import ServiceCard from "./ServiceCard";
 import ServiceBar from "./ServiceBar";
 import ServicesGrid from "./ServicesGrid";
-import Image from "next/image";
+import { UserIcon } from "@/components/Icons";
 
 const ServiceData = [
   {
-    title: "Web Application Development",
+    title: "Web App Development",
     proficiency: 100,
     description:
       "Crafting responsive and dynamic web applications tailored to your unique business needs. I specialize in using cutting-edge technologies like React, Next.js, and Redux to create seamless user experiences.",
@@ -31,15 +30,15 @@ const ServiceData = [
   },
   {
     title: "Backend Development",
-    proficiency: 80,
+    proficiency: 70,
     description:
       "Building robust server-side solutions using Node.js or Ruby on Rails. I design efficient APIs, implement authentication systems, and optimize database performance to ensure your application runs smoothly.",
     color: "bg-red-300",
     icon: "/icons/backend.png",
   },
   {
-    title: "Database Design & Management",
-    proficiency: 75,
+    title: "Database Management",
+    proficiency: 55,
     description:
       "Designing and optimizing databases to store, retrieve, and manage your data efficiently. I work with SQL and GraphQL databases, including PostgreSQL, GrafBase, and Firebase, ensuring data integrity and security.",
     color: "bg-sky-300",
@@ -75,6 +74,15 @@ const Services = () => {
             <strong>user-friendly design and robust backend development</strong>
             , I'm here to make your digital goals a reality.
           </p>
+          <a
+            href="/about"
+            className="mt-8 flex items-center justify-center gap-2 self-center rounded-full border-2 border-white px-4 py-2 text-center font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:text-lg md:px-8 md:py-3 md:text-xl xl:self-start"
+          >
+            <div className="h-8 w-8">
+              <UserIcon />
+            </div>
+            About Me
+          </a>
         </div>
       </div>
       <ServicesGrid services={ServiceData} />
