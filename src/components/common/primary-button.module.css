@@ -1,0 +1,61 @@
+.primaryBtn {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  cursor: pointer;
+  user-select: none;
+  outline-offset: 4px;
+}
+
+.primaryBtn>span:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(2px);
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 500ms ease-out;
+}
+
+.primaryBtn:hover>span:nth-child(1) {
+  transform: translateY(4px);
+  transition-duration: 200ms;
+}
+
+.primaryBtn:active>span:nth-child(1) {
+  transform: translateY(1px);
+  transition-duration: 30ms;
+}
+
+.primaryBtn>span:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, #3e35b1, #4f46e5, #3e35b1);
+}
+
+.primaryBtn>div {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  transform: translateY(-4px);
+  border-radius: 0.75rem;
+  background: #6262f9;
+  padding: 12px 20px;
+  transition: all 500ms;
+}
+
+.primaryBtn:hover>div {
+  transform: translateY(-6px);
+  transition-duration: 250ms;
+}
+
+.primaryBtn:active>div {
+  transform: translateY(-2px);
+  transition-duration: 30ms;
+}

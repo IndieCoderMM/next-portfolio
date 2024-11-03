@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+.innerWidth {
+  @apply w-full 2xl:max-w-[1280px];
+}
+
+.interWidth {
+  @apply w-[100%] lg:w-[80%];
+}
+
+.paddings {
+  @apply px-2 py-12 sm:px-6 md:p-16;
+}
