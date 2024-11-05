@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import styles from "./primary-button.module.css";
+import styles from "./style.module.css";
 
 const PrimaryButton = ({
   children,
