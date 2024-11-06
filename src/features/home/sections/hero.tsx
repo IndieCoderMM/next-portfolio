@@ -4,8 +4,8 @@ import { IconCalendarUp, IconDownload } from "@tabler/icons-react";
 
 const HeroSection = ({ profile }: { profile: Profile }) => {
   return (
-    <div className="w-full border border-t-0">
-      <section className="paddings interWidth mx-auto flex h-[80vh] flex-col items-center justify-center gap-8 border border-b-0 border-t-0 2xl:flex-row">
+    <div className="borderHr w-full">
+      <section className="paddings interWidth borderVr mx-auto flex h-[80vh] flex-col items-center justify-center gap-8 2xl:flex-row">
         <div className="flex flex-1 flex-col items-center justify-center space-y-4">
           <h2 className="mb-4 w-[80%] text-center text-2xl font-semibold leading-normal text-dark dark:text-light md:text-4xl lg:text-6xl">
             {profile?.bio}
@@ -17,7 +17,7 @@ const HeroSection = ({ profile }: { profile: Profile }) => {
 
           <div className="flex items-center justify-center gap-4 text-gray-500 dark:text-gray-300">
             <IconCalendarUp className="h-6 w-6" />
-            <p>Last Update: {new Date().toLocaleDateString()}</p>
+            <p>Last Update: 6/11/2024</p>
           </div>
 
           <div className="flex w-full flex-col items-center gap-8 pt-8 lg:flex-row lg:justify-center">

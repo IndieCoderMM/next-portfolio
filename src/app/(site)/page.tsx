@@ -1,8 +1,13 @@
 import Navbar from "@/components/layout/navbar";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import GridBackground from "@/components/ui/grid-background";
+import { LampDemo } from "@/components/ui/lamp";
 import { navLinks } from "@/config/navLinks";
-import HeroSection from "@/features/home/hero";
+import { services } from "@/config/services";
+import Footer from "@/features/home/sections/footer";
+import HeroSection from "@/features/home/sections/hero";
+import { ServiceSection } from "@/features/home/sections/service";
+import TechnologySection from "@/features/home/sections/technology";
 
 const profile = {
   bio: "I'm transforming concepts into seamless experiences.",
@@ -18,7 +23,10 @@ const HomePage = () => {
     <main className="flex w-full flex-col items-center justify-center">
       <Navbar />
       <HeroSection profile={profile} />
-
+      <TechnologySection />
+      <ServiceSection services={services} />
+      <Footer />
+      <LampDemo />
       <div className="fixed bottom-4">
         <FloatingDock items={navLinks} />
       </div>

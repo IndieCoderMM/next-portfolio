@@ -25,3 +25,11 @@ body,
 .paddings {
   @apply px-2 py-12 sm:px-6 md:p-16;
 }
+
+.borderHr {
+  @apply border border-x-0 border-neutral-300 dark:border-neutral-700;
+}
+
+.borderVr {
+  @apply border border-y-0 border-neutral-300 dark:border-neutral-700;
+}
