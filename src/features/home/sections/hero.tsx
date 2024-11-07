@@ -1,6 +1,5 @@
 import { PrimaryButton } from "@/components/common";
-import AnimatedLink from "@/components/common/animated-link";
-import { IconCalendarUp, IconDownload } from "@tabler/icons-react";
+import { IconCalendarUp, IconMessage } from "@tabler/icons-react";
 
 const HeroSection = ({ profile }: { profile: Profile }) => {
   return (
@@ -30,14 +29,13 @@ const HeroSection = ({ profile }: { profile: Profile }) => {
             >
               <PrimaryButton>
                 <div className="flex w-full items-center justify-center gap-1 text-lg text-white">
-                  <IconDownload className="h-7 w-7 text-white" />
+                  <IconMessage className="h-7 w-7 text-white" />
                   <span className="text-lg font-semibold md:text-2xl">
-                    Get My CV
+                    Say Hello
                   </span>
                 </div>
               </PrimaryButton>
             </a>
-            <AnimatedLink href="/projects" label="See Projects" />
           </div>
         </div>
       </section>

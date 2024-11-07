@@ -1,44 +1,47 @@
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconRouteAltLeft,
-  IconTerminal2,
+  IconBrain,
+  IconCode,
+  IconDeviceMobile,
+  IconPuzzle,
+  IconSchema,
+  IconServerCog,
 } from "@tabler/icons-react";
 
 export const services = [
   {
-    title: "Built for developers",
+    title: "Mobile App Development",
     description:
-      "Built for engineers, developers, dreamers, thinkers and doers.",
-    icon: <IconTerminal2 />,
+      "I specialize in building mobile apps for both Android and iOS platforms.",
+    icon: <IconDeviceMobile />,
   },
   {
-    title: "Ease of use",
+    title: "Full Stack Development",
     description:
-      "It's as easy as using an Apple, and as expensive as buying one.",
-    icon: <IconEaseInOut />,
+      "I can build full stack applications using the latest technologies.",
+    icon: <IconCode />,
   },
   {
-    title: "Pricing like no other",
+    title: "API Integration",
     description:
-      "Our prices are best in the market. No cap, no lock, no credit card required.",
-    icon: <IconCurrencyDollar />,
+      "Whether it's payment gateways, social media, or REST APIs, I make your app connect seamlessly.",
+    icon: <IconServerCog />,
   },
   {
-    title: "100% Uptime guarantee",
-    description: "We just cannot be taken down by anyone.",
-    icon: <IconCloud />,
+    title: "Software Architecture",
+    description:
+      "I can help you design and implement scalable software solutions.",
+    icon: <IconSchema />,
   },
   {
-    title: "Multi-tenant Architecture",
-    description: "You can simply share passwords instead of buying new seats",
-    icon: <IconRouteAltLeft />,
+    title: "Team Collaboration",
+    description:
+      "I can work with your team to deliver high quality software solutions.",
+    icon: <IconPuzzle />,
   },
   {
-    title: "Money back guarantee",
-    description: "If you donot like EveryAI, we will convince you to like us.",
-    icon: <IconAdjustmentsBolt />,
+    title: "Custom Solutions",
+    description:
+      "I can build custom software solutions tailored to your specific needs.",
+    icon: <IconBrain />,
   },
 ];

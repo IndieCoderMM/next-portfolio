@@ -1,4 +1,6 @@
-const Footer = () => {
+import AnimatedNumber from "@/components/common/animated-number";
+
+const Metrics = () => {
   return (
     <section className="w-full">
       <div className="interWidth borderVr sm:px-22 mx-auto px-14 py-10 sm:py-16 lg:px-32 lg:py-24">
@@ -15,9 +17,12 @@ const Footer = () => {
         <div className="mt-10 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24">
           <div>
             <h3 className="text-7xl font-bold">
+              <AnimatedNumber
+                value={6}
+                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+              />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
-                {" "}
-                6+{" "}
+                {"+"}
               </span>
             </h3>
             <p className="mt-4 text-xl font-medium text-gray-900">
@@ -30,9 +35,12 @@ const Footer = () => {
 
           <div>
             <h3 className="text-7xl font-bold">
+              <AnimatedNumber
+                value={4821}
+                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+              />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
-                {" "}
-                4821{" "}
+                {"+"}
               </span>
             </h3>
             <p className="mt-4 text-xl font-medium text-gray-900">
@@ -43,9 +51,12 @@ const Footer = () => {
 
           <div>
             <h3 className="text-7xl font-bold">
+              <AnimatedNumber
+                value={37}
+                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+              />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
-                {" "}
-                37+{" "}
+                {"+"}
               </span>
             </h3>
             <p className="mt-4 text-xl font-medium text-gray-900">
@@ -61,4 +72,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Metrics;
