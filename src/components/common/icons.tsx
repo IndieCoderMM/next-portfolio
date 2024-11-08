@@ -1,6 +1,4 @@
-import { PropsWithChildren, SVGProps } from "react";
-
-export const SunIcon = ({ className, ...rest }: { className?: string }) => (
+export const MoonIcon = ({ className, ...rest }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -178,7 +176,7 @@ export const SunIcon = ({ className, ...rest }: { className?: string }) => (
   </svg>
 );
 
-export const MoonIcon = ({ className, ...rest }: { className?: string }) => (
+export const SunIcon = ({ className, ...rest }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"

@@ -1,12 +1,11 @@
 import {
   IconBrandGithub,
-  IconBrandX,
-  IconExchange,
+  IconBrandLinkedin,
   IconHome,
-  IconNewSection,
+  IconMessageChatbot,
   IconTerminal2,
+  IconUser,
 } from "@tabler/icons-react";
-import Image from "next/image";
 
 export const navLinks = [
   {
@@ -14,35 +13,33 @@ export const navLinks = [
     icon: (
       <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/",
   },
-
   {
-    title: "Products",
+    title: "Who Am I",
+    icon: (
+      <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "/about",
+  },
+  {
+    title: "Works",
     icon: (
       <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/projects",
   },
   {
-    title: "Components",
+    title: "Say Hello",
     icon: (
-      <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconMessageChatbot className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/contact",
   },
   {
-    title: "Changelog",
+    title: "LinkedIn",
     icon: (
-      <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-
-  {
-    title: "Twitter",
-    icon: (
-      <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "#",
   },

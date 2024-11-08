@@ -1,6 +1,5 @@
-import ThemeButton from "@/features/home/theme-button";
 import { IconDownload } from "@tabler/icons-react";
-import { BorderButton } from "../ui/border-button";
+import ShimmerButton from "../ui/shimmer-button";
 
 const Navbar = () => {
   return (
@@ -9,14 +8,13 @@ const Navbar = () => {
         <h1 className="text-4xl font-bold text-primary">H</h1>
         <div className="flex items-center gap-4">
           <div className="">
-            <BorderButton>
-              <IconDownload className="h-5 w-5 font-bold text-primary group-hover:text-white" />
-              <span className="text-md goup-hover:text-white font-semibold text-primary md:text-lg">
+            <ShimmerButton>
+              <IconDownload className="h-5 w-5 font-bold text-white" />
+              <span className="text-md ml-4 font-semibold text-primary text-white md:text-lg">
                 Get My CV
               </span>
-            </BorderButton>
+            </ShimmerButton>
           </div>
-          <ThemeButton />
         </div>
       </div>
     </div>

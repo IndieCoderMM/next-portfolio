@@ -27,9 +27,17 @@ body,
 }
 
 .borderHr {
-  @apply border border-x-0 border-neutral-300 dark:border-neutral-700;
+  @apply border border-x-0 border-neutral-200 dark:border-neutral-700;
 }
 
 .borderVr {
-  @apply border border-y-0 border-neutral-300 dark:border-neutral-700;
+  @apply border border-y-0 border-neutral-200 dark:border-neutral-700;
+}
+
+.heartbeatBtn {
+  @apply flex items-center justify-center animate-buttonheartbeat rounded-md bg-primary px-4 py-1 text-sm font-semibold text-white;
+}
+
+.dashedBtn {
+  @apply flex items-center justify-center rounded-2xl border-2 border-dashed border-primary bg-white px-6 py-3 font-semibold uppercase text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[2px_4px_0px_#6262f9] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none;
 }

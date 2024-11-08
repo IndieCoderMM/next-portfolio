@@ -33,11 +33,26 @@ const config: Config = {
       },
       animation: {
         move: "move 5s linear infinite",
+        buttonheartbeat: "buttonheartbeat 2s infinite ease-in-out",
       },
       keyframes: {
         move: {
           "0%": { transform: "translateX(-200px)" },
           "100%": { transform: "translateX(200px)" },
+        },
+        buttonheartbeat: {
+          "0%": {
+            "box-shadow": '0 0 0 0 theme("colors.primary")',
+            transform: "scale(1)",
+          },
+          "50%": {
+            "box-shadow": '0 0 0 7px theme("colors.primary/0")',
+            transform: "scale(1.05)",
+          },
+          "100%": {
+            "box-shadow": '0 0 0 0 theme("colors.primary/0")',
+            transform: "scale(1)",
+          },
         },
       },
     },

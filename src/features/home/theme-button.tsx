@@ -13,9 +13,9 @@ const ThemeButton = () => {
       className="flex h-8 w-8 items-center justify-center rounded-full bg-white p-1 dark:bg-dark"
     >
       {mode === "dark" ? (
-        <SunIcon className={"text-yellow-500"} />
-      ) : (
         <MoonIcon className={"text-yellow-500"} />
+      ) : (
+        <SunIcon className={"text-yellow-500"} />
       )}
     </button>
   );
