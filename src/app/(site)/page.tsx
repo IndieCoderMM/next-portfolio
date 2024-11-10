@@ -1,5 +1,4 @@
 import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
 import { services } from "@/config/services";
 import HeroSection from "@/features/home/sections/hero";
 import Metrics from "@/features/home/sections/metrics";
@@ -12,7 +11,6 @@ const HomePage = () => {
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
-      <Navbar />
       <HeroSection profile={profile} />
       <TechnologySection />
       <ServiceSection services={services} />
