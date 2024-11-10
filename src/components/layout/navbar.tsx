@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className="">
             <ShimmerButton>
               <IconDownload className="h-5 w-5 font-bold text-white" />
-              <span className="text-md ml-4 font-semibold text-primary text-white md:text-lg">
+              <span className="text-md ml-4 font-semibold text-white md:text-lg">
                 Get My CV
               </span>
             </ShimmerButton>

@@ -13,6 +13,7 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@number-flow/react": "^0.3.0",
     "@radix-ui/react-hover-card": "^1.1.2",
     "@tabler/icons-react": "^3.21.0",

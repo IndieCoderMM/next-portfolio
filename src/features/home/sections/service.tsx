@@ -6,7 +6,7 @@ type Service = {
   icon: React.ReactNode;
 };
 
-export function ServiceSection({ services }: { services: Service[] }) {
+const ServiceSection = ({ services }: { services: Service[] }) => {
   return (
     <section className="borderHr w-full">
       <div className="interWidth relative z-10 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -16,7 +16,9 @@ export function ServiceSection({ services }: { services: Service[] }) {
       </div>
     </section>
   );
-}
+};
+
+export default ServiceSection;
 
 const Service = ({
   title,

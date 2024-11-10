@@ -23,7 +23,15 @@ export const textVariant = {
   },
 };
 
-export const staggerContainer = (staggerChildren, delayChildren) => ({
+type StaggerContainerProps = {
+  staggerChildren?: number;
+  delayChildren?: number;
+};
+
+export const staggerContainer = ({
+  staggerChildren,
+  delayChildren,
+}: StaggerContainerProps) => ({
   hidden: {},
   show: {
     transition: {
@@ -33,7 +41,19 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
   },
 });
 
-export const slideIn = (direction, type, delay, duration) => ({
+type SlideInProps = {
+  direction: "left" | "right" | "up" | "down";
+  type: string;
+  delay: number;
+  duration: number;
+};
+
+export const slideIn = ({
+  direction,
+  type,
+  delay,
+  duration,
+}: SlideInProps) => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "-100%" : direction === "down" ? "100%" : 0,
@@ -50,7 +70,14 @@ export const slideIn = (direction, type, delay, duration) => ({
   },
 });
 
-export const fadeIn = (direction, type, delay, duration) => ({
+type FadeInProps = {
+  direction: "left" | "right" | "up" | "down";
+  type: string;
+  delay: number;
+  duration: number;
+};
+
+export const fadeIn = ({ direction, type, delay, duration }: FadeInProps) => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
@@ -69,7 +96,17 @@ export const fadeIn = (direction, type, delay, duration) => ({
   },
 });
 
-export const sphereVariant = (direction, delay, duration) => ({
+type SphereVariantProps = {
+  direction: "left" | "right";
+  delay: number;
+  duration: number;
+};
+
+export const sphereVariant = ({
+  direction,
+  delay,
+  duration,
+}: SphereVariantProps) => ({
   hidden: {
     x: direction === "left" ? -300 : 300,
     rotate: 120,

@@ -225,7 +225,11 @@ function IconContainer({
           {icon}
         </motion.div>
         {isActive && (
-          <div className="absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg bg-primary brightness-110" />
+          <motion.div
+            layoutId="activeTab"
+            transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
+            className="absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg bg-primary brightness-110"
+          />
         )}
       </motion.div>
     </Link>
