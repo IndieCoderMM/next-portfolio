@@ -1,3 +1,5 @@
+import Heading from "@/components/common/heading";
+import { HighlightText } from "@/components/ui/highlight-text";
 import { cn } from "@/utils/cn";
 
 type Service = {
@@ -6,13 +8,33 @@ type Service = {
   icon: React.ReactNode;
 };
 
-const ServiceSection = ({ services }: { services: Service[] }) => {
+const ServiceSection = ({
+  heading,
+  services,
+}: {
+  heading: string;
+  services: Service[];
+}) => {
   return (
     <section className="borderHr w-full">
-      <div className="interWidth relative z-10 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <Service key={service.title} {...service} index={index} />
-        ))}
+      <div className="interWidth relative z-10 mx-auto">
+        <div className="borderVr py-10">
+          <Heading
+            as="h2"
+            className="text-center font-bold capitalize text-neutral-800 dark:text-neutral-100"
+          >
+            Skills you can rely on
+          </Heading>
+          <p className="mt-4 text-center text-lg text-neutral-800 dark:text-neutral-100 md:text-xl lg:mt-10 lg:text-2xl">
+            See what I offer and let&apos;s{" "}
+            <HighlightText>build something great together</HighlightText>
+          </p>
+        </div>
+        <div className="shadow-blur relative z-10 grid grid-cols-1 bg-white md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <Service key={service.title} {...service} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -54,7 +76,7 @@ const Service = ({
           {title}
         </span>
       </div>
-      <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
+      <p className="relative z-10 max-w-sm px-10 text-sm text-neutral-600 dark:text-neutral-300">
         {description}
       </p>
     </div>

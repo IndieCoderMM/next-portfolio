@@ -14,7 +14,10 @@ const HomePage = () => {
     <div className="relative flex w-full flex-col items-center justify-center">
       <HeroSection profile={profile} />
       <TechnologySection techs={techs} />
-      <ServiceSection services={services} />
+      <ServiceSection
+        services={services}
+        heading={"Bring your ideas to reality"}
+      />
       <Metrics />
       <Footer />
     </div>

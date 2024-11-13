@@ -1,11 +1,16 @@
-import { Tabs } from "@/components/ui/tabs";
-import { projectTabs } from "@/config/projectData";
+import ProjectTabs from "../components/project-tabs";
 
 const GallerySection = () => {
   return (
     <section className="borderHr w-full">
-      <div className="interWidth borderVr b relative mx-auto flex h-[80vh] w-full flex-col items-start justify-start [perspective:1000px]">
-        <Tabs tabs={projectTabs} />
+      <div className="interWidth borderVr mx-auto w-full">
+        <div className="w-full pb-12 pt-10">
+          <h1 className="mb-8 text-xl lg:text-6xl">My Projects</h1>
+          <p className="text-lg lg:text-2xl">
+            Here are some of the projects I have worked on.
+          </p>
+        </div>
+        <ProjectTabs />
       </div>
     </section>
   );

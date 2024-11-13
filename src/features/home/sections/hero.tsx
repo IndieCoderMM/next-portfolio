@@ -6,7 +6,7 @@ const HeroSection = ({ profile }: { profile: Profile }) => {
     <div className="borderHr w-full">
       <section className="paddings interWidth borderVr mx-auto flex h-[80vh] flex-col items-center justify-center gap-8 2xl:flex-row">
         <div className="flex flex-1 flex-col items-center justify-center space-y-4">
-          <h2 className="mb-4 w-[80%] text-center text-2xl font-semibold leading-normal text-dark dark:text-light md:text-4xl lg:text-6xl">
+          <h2 className="mb-4 w-[80%] text-center font-nunito text-2xl font-semibold leading-normal text-dark dark:text-light md:text-4xl lg:text-6xl">
             {profile?.bio}
           </h2>
 

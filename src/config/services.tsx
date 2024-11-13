@@ -1,47 +1,46 @@
 import {
-  IconBrain,
+  IconBrandOpenai,
+  IconBulb,
   IconCode,
   IconDeviceMobile,
   IconPuzzle,
   IconSchema,
-  IconServerCog,
 } from "@tabler/icons-react";
 
 export const services = [
   {
-    title: "Mobile App Development",
+    title: "Mobile Development",
     description:
-      "I specialize in building mobile apps for both Android and iOS platforms.",
+      "I build high-quality, cross-platform mobile apps for iOS and Android.",
     icon: <IconDeviceMobile />,
   },
   {
-    title: "Full Stack Development",
+    title: "Full Stack Solutions",
     description:
-      "I can build full stack applications using the latest technologies.",
+      "I deliver complete web solutions using REST API and MVC architecture.",
     icon: <IconCode />,
   },
   {
-    title: "API Integration",
+    title: "OpenAI Integration",
     description:
-      "Whether it's payment gateways, social media, or REST APIs, I make your app connect seamlessly.",
-    icon: <IconServerCog />,
+      "I integrate OpenAI to build smart AI-driven systems for content-based apps.",
+    icon: <IconBrandOpenai />,
   },
   {
-    title: "Software Architecture",
+    title: "Scalable Software",
     description:
-      "I can help you design and implement scalable software solutions.",
+      "I design robust architecture to support high user traffic, complex data flows, and reliable performance.",
     icon: <IconSchema />,
   },
   {
     title: "Team Collaboration",
     description:
-      "I can work with your team to deliver high quality software solutions.",
+      "I collaborate with cross-functional teams, guiding app development from concept to launch.",
     icon: <IconPuzzle />,
   },
   {
     title: "Custom Solutions",
-    description:
-      "I can build custom software solutions tailored to your specific needs.",
-    icon: <IconBrain />,
+    description: "I build efficient solutions tailored to your business needs.",
+    icon: <IconBulb />,
   },
 ];

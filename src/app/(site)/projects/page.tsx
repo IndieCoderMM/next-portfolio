@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/footer";
 import GallerySection from "@/features/projects/sections/gallery";
 
 const skillGroups: SkillGroup[] = [
@@ -26,6 +27,7 @@ const ProjectPage = () => {
   return (
     <div className="w-full">
       <GallerySection />
+      <Footer />
     </div>
   );
 };
