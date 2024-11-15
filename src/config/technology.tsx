@@ -4,7 +4,6 @@ import {
   IconBrandFirebase,
   IconBrandGit,
   IconBrandGooglePlay,
-  IconBrandMongodb,
   IconBrandMysql,
   IconBrandNextjs,
   IconBrandNodejs,
@@ -49,11 +48,6 @@ export const techs: Technology[] = [
     id: 7,
     title: "MySQL",
     icon: <IconBrandMysql className={iconClasses} />,
-  },
-  {
-    id: 8,
-    title: "MongoDB",
-    icon: <IconBrandMongodb className={iconClasses} />,
   },
   {
     id: 9,

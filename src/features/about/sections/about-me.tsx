@@ -1,3 +1,4 @@
+import { SectionContainer } from "@/components/layout/section";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { TypewriterText } from "@/components/ui/typewriter";
 import { aboutData } from "@/config/aboutData";
@@ -5,9 +6,9 @@ import ProfileCard from "../components/profile-card";
 
 const AboutMeSection = () => {
   return (
-    <section className="interWidth paddings mx-auto w-full">
+    <SectionContainer className="pt-10">
       <TypewriterText words={aboutData.title} />
-      <div className="grid grid-cols-12 py-10">
+      <div className="grid grid-cols-12 px-4 py-10 md:px-8 lg:px-12">
         <div className="col-span-12 md:col-span-6 lg:col-span-8">
           <div className="text-md my-10 leading-loose md:text-lg lg:text-xl">
             My coding journey began in 2020 when I started making simple games.
@@ -44,7 +45,7 @@ const AboutMeSection = () => {
           <ProfileCard />
         </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

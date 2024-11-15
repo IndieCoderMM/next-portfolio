@@ -30,7 +30,7 @@ export const FollowerPointer = () => {
   );
 };
 
-export const FollowerPointerDemo = ({
+export const FollowerPointerContainer = ({
   children,
   className,
   title,

@@ -25,7 +25,7 @@ const skillGroups: SkillGroup[] = [
 
 const ProjectPage = () => {
   return (
-    <div className="w-full">
+    <div className="relative w-full">
       <GallerySection />
       <Footer />
     </div>
