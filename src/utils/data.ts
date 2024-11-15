@@ -1,6 +1,6 @@
 export const getProfile = () => {
   const profile = {
-    bio: "Transforming ideas into seamless digital experiences",
+    bio: "Transforming 💡 ideas into seamless digital experiences 📈 ",
     description:
       "I'm a software engineer, a tech enthusiast, and a lifelong learner.",
     resumeURL:

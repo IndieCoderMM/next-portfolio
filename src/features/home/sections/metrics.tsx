@@ -1,20 +1,20 @@
 import AnimatedNumber from "@/components/common/animated-number";
+import Heading from "@/components/common/heading";
+import { SectionContainer } from "@/components/layout/section";
+import { IconMessage2 } from "@tabler/icons-react";
 
 const Metrics = () => {
   return (
-    <section className="w-full">
-      <div className="interWidth borderVr sm:px-22 mx-auto px-14 py-10 sm:py-16 lg:px-32 lg:py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Numbers tell our story
-          </h2>
-          <p className="mt-3 text-xl leading-relaxed text-gray-600 md:mt-8">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis.
+    <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent">
+      <div className="borderVr">
+        <div className="text-center">
+          <Heading as="h2">Proven Impact 📈 Through Numbers </Heading>
+          <p className="mt-4 text-center text-lg text-gray-500">
+            Here are some of the metrics that define my journey
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24">
+        <div className="mt-8 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-14">
           <div>
             <h3 className="text-7xl font-bold">
               <AnimatedNumber
@@ -26,17 +26,31 @@ const Metrics = () => {
               </span>
             </h3>
             <p className="mt-4 text-xl font-medium text-gray-900">
-              Years in business
+              Apps launched
             </p>
+            <p className="mt-0.5 text-base text-gray-500">In last 2 years</p>
+          </div>
+
+          <div>
+            <h3 className="text-7xl font-bold">
+              <AnimatedNumber
+                value={10}
+                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+              />
+              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
+                {"k+"}
+              </span>
+            </h3>
+            <p className="mt-4 text-xl font-medium text-gray-900">Downloads</p>
             <p className="mt-0.5 text-base text-gray-500">
-              Creating the successful path
+              Maintaining 4.5+ rating
             </p>
           </div>
 
           <div>
             <h3 className="text-7xl font-bold">
               <AnimatedNumber
-                value={4821}
+                value={3420}
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
               />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
@@ -44,31 +58,28 @@ const Metrics = () => {
               </span>
             </h3>
             <p className="mt-4 text-xl font-medium text-gray-900">
-              Projects delivered
-            </p>
-            <p className="mt-0.5 text-base text-gray-500">In last 6 years</p>
-          </div>
-
-          <div>
-            <h3 className="text-7xl font-bold">
-              <AnimatedNumber
-                value={37}
-                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
-              />
-              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
-                {"+"}
-              </span>
-            </h3>
-            <p className="mt-4 text-xl font-medium text-gray-900">
-              Team members
+              Codebase commits
             </p>
             <p className="mt-0.5 text-base text-gray-500">
               Working for your success
             </p>
           </div>
         </div>
+
+        <div className="inner-container mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
+          <Heading as="h3" className="text-lg md:text-xl lg:text-2xl">
+            Interested in collaborating with me?
+          </Heading>
+          <p className="text-md ld:text-xl font-medium">
+            I can translate these numbers into your project&apos;s success.
+          </p>
+          <button type="button" className="outline-button mt-8 rounded-full">
+            <IconMessage2 />
+            <span>Let's Chat</span>
+          </button>
+        </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

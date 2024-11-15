@@ -1,7 +1,7 @@
+import "@/styles/globals.css";
 import "easymde/dist/easymde.min.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 
 const nunito = localFont({
   src: "./fonts/NunitoVF.ttf",

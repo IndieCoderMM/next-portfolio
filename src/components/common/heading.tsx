@@ -13,7 +13,10 @@ const Heading = ({
 
   return (
     <HeadingElem
-      className={cn("font-nunito text-xl md:text-3xl lg:text-5xl", className)}
+      className={cn(
+        "text-center font-nunito text-xl font-bold capitalize text-neutral-800 dark:text-neutral-100 md:text-3xl lg:text-5xl",
+        className,
+      )}
     >
       {children}
     </HeadingElem>

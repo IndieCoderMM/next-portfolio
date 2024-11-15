@@ -1,6 +1,8 @@
 import Heading from "@/components/common/heading";
+import { SectionContainer } from "@/components/layout/section";
 import { HighlightText } from "@/components/ui/highlight-text";
 import { cn } from "@/utils/cn";
+import { IconRocket } from "@tabler/icons-react";
 
 type Service = {
   title: string;
@@ -16,27 +18,25 @@ const ServiceSection = ({
   services: Service[];
 }) => {
   return (
-    <section className="borderHr w-full">
-      <div className="interWidth relative z-10 mx-auto">
-        <div className="borderVr py-10">
-          <Heading
-            as="h2"
-            className="text-center font-bold capitalize text-neutral-800 dark:text-neutral-100"
-          >
-            Skills you can rely on
-          </Heading>
-          <p className="mt-4 text-center text-lg text-neutral-800 dark:text-neutral-100 md:text-xl lg:mt-10 lg:text-2xl">
-            See what I offer and let&apos;s{" "}
-            <HighlightText>build something great together</HighlightText>
-          </p>
-        </div>
-        <div className="shadow-blur relative z-10 grid grid-cols-1 bg-white md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <Service key={service.title} {...service} index={index} />
-          ))}
-        </div>
+    <SectionContainer className="bg-white">
+      <div className="borderVr mb-10 lg:mb-20">
+        <Heading as="h2">Skills you can rely on</Heading>
+        <p className="mt-4 text-center text-lg text-neutral-800 dark:text-neutral-100 md:text-xl lg:mt-10 lg:text-2xl">
+          See what I offer and let&apos;s{" "}
+          <HighlightText>build something great together</HighlightText>
+        </p>
       </div>
-    </section>
+      <div className="shadow-blur relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <Service key={service.title} {...service} index={index} />
+        ))}
+      </div>
+
+      <button type="button" className="outline-button mt-10 rounded-full">
+        <IconRocket />
+        <span>See Projects</span>
+      </button>
+    </SectionContainer>
   );
 };
 

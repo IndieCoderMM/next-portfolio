@@ -1,102 +1,244 @@
-import { getProfile } from "@/utils/data";
+import dayjs from "@/lib/dayjs";
 import {
-  IconBrandAndroid,
-  IconBrandBlogger,
   IconBrandGithub,
-  IconBrandGmail,
+  IconBrandLeetcode,
   IconBrandLinkedin,
-  IconBrandWhatsapp,
+  IconExternalLink,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
-const Footer = () => {
-  const { email, socials } = getProfile();
+const LastUpdate = () => {
+  return (
+    <a
+      href="https://github.com/indiecodermm/next-portfolio"
+      target="_blank"
+      rel="noreferrer nofollow"
+      className={"hover:underline"}
+    >
+      <span>see the recent update on GitHub</span>
+    </a>
+  );
+};
+
+interface FooterLinkProps {
+  title: string;
+  href: string;
+  label?: "new" | "soon";
+  isInternal?: boolean;
+}
+
+const FooterLink = ({
+  title,
+  href,
+  label = undefined,
+  isInternal = true,
+}: FooterLinkProps) => {
+  if (label === "soon") {
+    return (
+      <span className={"footer-link footer-link--soon"}>
+        {title}
+        <span className={"footer-link__label"}>{label}</span>
+      </span>
+    );
+  }
+
+  if (isInternal) {
+    return (
+      <Link href={href} className={"footer-link"}>
+        {title}
+        {label && <span className={"footer-link__label"}>{label}</span>}
+      </Link>
+    );
+  }
 
   return (
-    <>
-      <footer className="paddings w-full bg-primary pb-12 text-white sm:pb-16 lg:pb-32">
-        <div className="flex flex-col items-center justify-center gap-10">
-          <Link
-            href="/"
-            className="relative flex items-center justify-center overflow-hidden rounded-lg bg-light"
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer nofollow"
+      className={"footer-link"}
+    >
+      {title}
+      <IconExternalLink className={"h-3.5 w-3.5"} />
+      {label && <span className={"footer-link__label"}>{label}</span>}
+    </a>
+  );
+};
+
+interface FooterGroupProps {
+  title: string;
+  links: Array<FooterLinkProps>;
+}
+
+const FooterGroup = ({ title, links }: FooterGroupProps) => {
+  return (
+    <div className={"flex-1"}>
+      <div
+        className={"mb-2 px-2 text-[13px] text-slate-600 dark:text-slate-400"}
+      >
+        {title}
+      </div>
+      <ul className={"flex flex-col"}>
+        {links.map(({ title: linkTitle, href, label, isInternal }) => (
+          <li key={href}>
+            <FooterLink
+              title={linkTitle}
+              href={href}
+              label={label}
+              isInternal={isInternal}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const FooterDescription = () => {
+  return (
+    <div className={"max-w-[348px]"}>
+      <div className={"mb-3 text-[13px] text-slate-600 dark:text-slate-400"}>
+        About Me
+      </div>
+      <p className={"mb-4 font-normal leading-relaxed"}>
+        I am a self-taught developer who believes in the power of the internet
+        and the community.
+      </p>
+      <ul className={"-ml-2 flex gap-1"}>
+        <li>
+          <a
+            href="https://linkedin.com/in/hthantoo"
+            target="_blank"
+            rel="noreferrer nofollow"
+            className={"flex h-9 w-9 items-center justify-center"}
+            aria-label="My Twitter profile"
+            title="My Twitter profile"
           >
-            <IconBrandAndroid className="h-12 w-12 text-primary" />
-          </Link>
-          <h3 className="text-center text-lg font-semibold capitalize md:text-2xl">
-            Making the web a better place
-          </h3>
-          <div className="flex w-full flex-wrap items-center justify-center gap-4">
-            <a
-              href={socials.github}
-              title="GitHub"
-              aria-label="GitHub"
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary"
+            <IconBrandLinkedin className={"h-5 w-5"} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/indiecodermm"
+            target="_blank"
+            rel="noreferrer nofollow"
+            className={"flex h-9 w-9 items-center justify-center"}
+            aria-label="My GitHub profile"
+            title="My GitHub profile"
+          >
+            <IconBrandGithub className={"h-5 w-5"} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://leetcode.com/indiecodermm"
+            target="_blank"
+            rel="noreferrer nofollow"
+            className={"flex h-9 w-9 items-center justify-center"}
+            aria-label="My Leetcode profile"
+            title="My Leetcode profile"
+          >
+            <IconBrandLeetcode className={"h-5 w-5"} />
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer
+      className={
+        "dark:border-divider-dark mt-24 w-full border-light pt-16 text-sm text-slate-900 dark:text-slate-200"
+      }
+    >
+      <div className={"max-container"}>
+        <div className={"py-10 font-semibold"}>
+          <div className={"flex flex-col-reverse gap-16 lg:flex-row"}>
+            <div className={"flex-1"}>
+              <FooterDescription />
+            </div>
+            <div
+              className={
+                "-mx-2 flex flex-1 flex-col gap-8 sm:flex-row sm:justify-center sm:gap-16 lg:mx-0"
+              }
             >
-              <IconBrandGithub />
-            </a>
-            <a
-              href={socials.linkedin}
-              title="LinkedIn"
-              aria-label="LinkedIn"
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary"
-            >
-              <IconBrandLinkedin />
-            </a>
-            <a
-              href={`mailto:${email}`}
-              title="Email"
-              aria-label="Email"
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary"
-            >
-              <IconBrandGmail />
-            </a>
-            <a
-              href={socials.whatsapp}
-              title="WhatsApp"
-              aria-label="WhatsApp"
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary"
-            >
-              <IconBrandWhatsapp />
-            </a>
-            <a
-              href={socials.blog}
-              title="Blog"
-              aria-label="Blog"
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-light p-2 text-light transition hover:scale-110 hover:border-white hover:bg-white hover:text-primary"
-            >
-              <IconBrandBlogger />
-            </a>
-          </div>
-          <div className="flex flex-col items-center justify-center space-y-4 pt-8 text-center">
-            <h3 className="text-xl font-bold md:text-2xl">Connect with me</h3>
-            <blockquote className="leading-loose text-white md:text-lg">
-              <p>Wanna get in touch or talk about a project?</p>
-              <p>
-                You can reach me via email at{" "}
-                <a
-                  href={`mailto:${email}`}
-                  target="_blank"
-                  className="font-semibold text-white underline underline-offset-2 hover:brightness-110"
-                >
-                  {email}
-                </a>
-                .
-              </p>
-              <p>
-                Or send me a message using the form at the{" "}
-                <Link
-                  href="/contact"
-                  className="font-semibold text-white underline underline-offset-2 hover:brightness-110"
-                >
-                  Contact Page
-                </Link>
-                .
-              </p>
-            </blockquote>
+              <div className={"flex sm:gap-16"}>
+                <FooterGroup
+                  title="Work"
+                  links={[
+                    { title: "Contact", href: "/work/contact" },
+                    { title: "Experience", href: "/work/experience" },
+                    {
+                      title: "Services",
+                      href: "/work/services",
+                      label: "soon",
+                    },
+                    {
+                      title: "Skills and Tools",
+                      href: "/work/skills-and-tools",
+                    },
+                    { title: "Studio", href: "/work/studio" },
+                  ]}
+                />
+                <FooterGroup
+                  title="Learn"
+                  links={[
+                    {
+                      title: "Docs",
+                      href: "/docs",
+                    },
+                    {
+                      title: "Personal Blog",
+                      href: "/blog",
+                    },
+                    {
+                      title: "T.I.L",
+                      href: "/today-i-learned",
+                      label: "new",
+                    },
+                  ]}
+                />
+              </div>
+              <div className={"flex sm:gap-16"}>
+                <FooterGroup
+                  title="This Site"
+                  links={[
+                    {
+                      title: "Design Concept",
+                      href: "https://www.figma.com/community/file/1176392613303840973",
+                      isInternal: false,
+                    },
+                    {
+                      title: "Source Code",
+                      href: "https://github.com/indiecodermm/next-portfolio",
+                      isInternal: false,
+                    },
+                    {
+                      title: "Credits",
+                      href: "/credits",
+                    },
+                  ]}
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </>
+        <div
+          className={
+            "border-divider-light dark:border-divider-dark flex justify-between border-t py-6 text-xs"
+          }
+        >
+          <div className={"font-semibold"}>
+            &copy; {dayjs().format("YYYY")}, Hein Thant
+          </div>
+          <div className={"text-slate-500 dark:text-slate-400"}>
+            <LastUpdate />
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 
