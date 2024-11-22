@@ -7,12 +7,12 @@ const Navbar = () => {
     <div className="z-30 m-0 w-full border-0 p-0">
       <div className="max-container borderVr flex items-center justify-between p-4">
         <Link href="/" className="group flex items-baseline">
-          <div className="translate-y-1 rounded-lg bg-primary p-1 text-white transition duration-300 group-hover:translate-y-0.5 group-hover:shadow-sm">
+          <div className="translate-y-1 rounded-lg bg-primary p-1 text-white transition duration-300 group-hover:translate-y-0.5 group-hover:shadow-sm dark:bg-primaryDark">
             <IconCode className="h-5 w-5" />
           </div>
           <h1 className="font-nunito text-2xl font-bold tracking-[-0.08rem]">
-            <span className="text-dark">hein</span>
-            <span className="text-primary">Thant</span>
+            <span className="text-dark dark:text-light">hein</span>
+            <span className="text-primary dark:text-primaryDark">Thant</span>
           </h1>
         </Link>
         <div className="flex items-center gap-4">

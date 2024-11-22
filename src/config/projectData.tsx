@@ -64,3 +64,88 @@ export const projectTabs = [
     ),
   },
 ];
+
+export const products = [
+  {
+    title: "Metaversus",
+    link: "https://gomoonbeam.com",
+    thumbnail: "/screenshots/metaversus.png",
+  },
+  {
+    title: "Convoz",
+    link: "https://cursor.so",
+    thumbnail: "/screenshots/convoz.png",
+  },
+  {
+    title: "Billio",
+    link: "https://userogue.com",
+    thumbnail: "/screenshots/billio.png",
+  },
+
+  {
+    title: "GitDash",
+    link: "https://editorially.org",
+    thumbnail: "/screenshots/gitdash.png",
+  },
+  {
+    title: "Gamezon",
+    link: "https://tailwindmasterkit.com",
+    thumbnail: "/screenshots/gamezon.png",
+  },
+  {
+    title: "Billio",
+    link: "https://algochurn.com",
+    thumbnail: "/screenshots/billio.png",
+  },
+  {
+    title: "Metaversus",
+    link: "https://ui.aceternity.com",
+    thumbnail: "/screenshots/metaversus.png",
+  },
+  {
+    title: "Gamezon",
+    link: "https://tailwindmasterkit.com",
+    thumbnail: "/screenshots/gamezon.png",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://smartbridgetech.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://renderwork.studio",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
+  {
+    title: "GitDash",
+    link: "https://app.pixelperfect.quest",
+    thumbnail: "/screenshots/gitdash.png",
+  },
+  {
+    title: "Creme Digital",
+    link: "https://cremedigital.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+  },
+  {
+    title: "Golden Bells Academy",
+    link: "https://goldenbellsacademy.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+  },
+  {
+    title: "Invoker Labs",
+    link: "https://invoker.lol",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+  },
+  {
+    title: "E Free Invoice",
+    link: "https://efreeinvoice.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+  },
+];

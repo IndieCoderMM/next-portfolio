@@ -17,13 +17,13 @@
 }
 
 .borderBox {
-  @apply border-0 border-neutral-200 dark:border-neutral-700;
+  @apply border-neutral-200 dark:border-neutral-700;
 }
 
 .borderHr {
-  @apply border-0 border-x-0 border-neutral-200 dark:border-neutral-700;
+  @apply border-x-0 border-neutral-200 dark:border-neutral-700;
 }
 
 .borderVr {
-  @apply border-0 border-y-0 border-neutral-200 dark:border-neutral-700;
+  @apply border-y-0 border-neutral-200 dark:border-neutral-700;
 }

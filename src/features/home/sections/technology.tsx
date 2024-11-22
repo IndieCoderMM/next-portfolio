@@ -4,8 +4,11 @@ import React from "react";
 
 const TechnologySection = ({ techs }: { techs: Technology[] }) => {
   return (
-    <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white/50 via-white/90 to-white pt-0">
-      <div className="max-container borderVr flex flex-shrink-0 flex-row flex-wrap items-center justify-center gap-8 p-8">
+    <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white/50 via-white/90 to-white py-10">
+      <p className="lg:text-md mb-4 text-sm uppercase text-neutral-400 lg:mb-8">
+        These are the technologies I work with
+      </p>
+      <div className="borderVr inner-container flex flex-shrink-0 flex-row flex-wrap items-center justify-center gap-8">
         {techs.map((tech) => {
           return (
             <Container key={tech.id} className="text-neutral-400">
@@ -27,12 +30,7 @@ const Container = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div
-      className={cn(
-        `flex items-center justify-center rounded-full bg-[rgba(248,248,248,0.01)]`,
-        className,
-      )}
-    >
+    <div className={cn(`flex items-center justify-center`, className)}>
       {children}
     </div>
   );

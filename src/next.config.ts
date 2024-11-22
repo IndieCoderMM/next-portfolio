@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "assets.aceternity.com",
       },
+      {
+        hostname: "aceternity.com",
+      },
     ],
   },
 };

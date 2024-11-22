@@ -1,16 +1,25 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { IconMessage2 } from "@tabler/icons-react";
+import Image from "next/image";
 import ProjectTabs from "../components/project-tabs";
 
 const GallerySection = () => {
   return (
-    <SectionContainer className="bg-gradient-to-b from-white/30 via-white/80 to-white">
+    <SectionContainer className="bg-gradient-to-b from-white/30 via-white/80 to-white dark:bg-none">
       <div className="borderVr mx-auto w-full">
         <div className="w-full pb-12">
-          <Heading className="mb-8 text-left text-xl font-medium lg:text-6xl">
-            Code in Action 🚀
-          </Heading>
+          <div className="mb-8 flex items-center gap-10">
+            <Heading className="text-left text-xl font-medium lg:text-6xl">
+              Code in Action
+            </Heading>
+            <Image
+              src={"/assets/rocket.png"}
+              width={80}
+              height={80}
+              alt="rocket"
+            />
+          </div>
           <p className="text-lg font-light md:text-xl lg:text-3xl">
             Here are some of the cool projects that I've built.
           </p>

@@ -4,33 +4,7 @@ import { cn } from "@/utils/cn";
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-export const FollowerPointer = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  // Follow the mouse on whole page
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      x.set(e.clientX);
-      y.set(e.clientY);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-
-    document.body.style.cursor = "none";
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  return (
-    <AnimatePresence>
-      <FollowPointer x={x} y={y} />
-    </AnimatePresence>
-  );
-};
-
-export const FollowerPointerContainer = ({
+export const FollowerPointerCard = ({
   children,
   className,
   title,

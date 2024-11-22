@@ -2,7 +2,6 @@ import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { HighlightText } from "@/components/ui/highlight-text";
 import { cn } from "@/utils/cn";
-import { IconRocket } from "@tabler/icons-react";
 
 type Service = {
   title: string;
@@ -31,11 +30,6 @@ const ServiceSection = ({
           <Service key={service.title} {...service} index={index} />
         ))}
       </div>
-
-      <button type="button" className="outline-button mt-10 rounded-full">
-        <IconRocket />
-        <span>See Projects</span>
-      </button>
     </SectionContainer>
   );
 };
@@ -56,9 +50,10 @@ const Service = ({
   return (
     <div
       className={cn(
-        "group/feature relative flex flex-col py-10 dark:border-neutral-800 lg:border-r",
-        (index === 0 || index === 3) && "dark:border-neutral-800 lg:border-l",
-        index < 3 && "dark:border-neutral-800 lg:border-b",
+        "group/feature relative flex flex-col py-10 dark:border-neutral-800",
+        (index === 0 || index === 3) && "border-0 dark:border-neutral-800",
+        index < 3 && "border-b dark:border-neutral-800",
+        (index % 3 === 0 || index % 3 === 1) && "border-r",
       )}
     >
       {index < 3 && (

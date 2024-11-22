@@ -11,7 +11,7 @@ import {
   IconBrandRedux,
 } from "@tabler/icons-react";
 
-const iconClasses = "h-full w-full text-neutral-400 dark:text-neutral-700";
+const iconClasses = "h-full w-full text-neutral-400 dark:text-neutral-200";
 
 export const techs: Technology[] = [
   {

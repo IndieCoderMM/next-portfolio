@@ -1,3 +1,4 @@
+import AnimatedLink from "@/components/common/animated-link";
 import Heading from "@/components/common/heading";
 import { Tabs } from "@/components/ui/tabs";
 import { cn } from "@/utils/cn";
@@ -6,7 +7,10 @@ import {
   IconBrandGooglePlay,
   IconBrandOpenai,
   IconChartBar,
+  IconCode,
   IconDeviceMobile,
+  IconNote,
+  IconRocket,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
@@ -70,7 +74,7 @@ const TabContent = ({
   children,
 }: PropsWithChildren<{ title: string }>) => {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-lg border bg-white p-10">
+    <div className="relative h-full w-full overflow-hidden rounded-lg border bg-light p-10 dark:border-dark dark:bg-dark">
       <div className="flex items-center">
         <Heading
           as={"h2"}
@@ -84,13 +88,33 @@ const TabContent = ({
   );
 };
 
+const Button = ({
+  icon,
+  title,
+  subtitle,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+}) => {
+  return (
+    <button className="border-text flex items-center gap-[17px] rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:bg-light">
+      {icon}
+      <div className="flex flex-col items-start">
+        <span className="text-text text-sm font-medium">{subtitle}</span>
+        <p className="mb-2 text-lg font-medium leading-[20px]">{title}</p>
+      </div>
+    </button>
+  );
+};
+
 const projectTabs = [
   {
     title: "Mobile App",
     value: "mobile-app",
     content: (
       <TabContent title="Easy2Success">
-        <div className="grid grid-cols-12">
+        <div className="group grid grid-cols-12">
           <div className="col-span-5 pt-10">
             <p className="mb-4 leading-loose text-black lg:text-3xl">
               AI-Powered Personal Development & E-Learning App{" "}
@@ -104,29 +128,28 @@ const projectTabs = [
               <Chip text="Mobile" icon={IconDeviceMobile} color="blue" />
               <Chip text="Productivity" icon={IconChartBar} color="red" />
             </div>
-            <div className="mt-auto flex w-fit flex-col gap-4">
-              <button className="border-text flex items-center gap-[17px] rounded-md border px-6 py-2">
-                <IconBrandGooglePlay className="h-8 w-8" />
-                <div className="flex flex-col items-start">
-                  <span className="text-text text-[0.850rem] font-[500]">
-                    Get it on
-                  </span>
-                  <h3 className="mb-2 text-[1.5rem] font-[500] leading-[20px]">
-                    Google Play
-                  </h3>
-                </div>
-              </button>
-              <button className="border-text flex items-center gap-[17px] rounded-md border px-6 py-2">
-                <IconBrandAppstore className="h-8 w-8" />
-                <div className="flex flex-col items-start">
-                  <span className="text-text text-[0.850rem] font-[500]">
-                    Download on the
-                  </span>
-                  <h3 className="mb-2 text-[1.5rem] font-[500] leading-[20px]">
-                    App Store
-                  </h3>
-                </div>
-              </button>
+            <div className="flex">
+              <div className="mt-auto flex w-fit flex-col gap-4">
+                <Button
+                  icon={<IconBrandGooglePlay className="h-8 w-8" />}
+                  subtitle="Get it on"
+                  title={"Google Play"}
+                />
+                <Button
+                  icon={<IconBrandAppstore className="h-8 w-8" />}
+                  subtitle="Download on the"
+                  title={"App Store"}
+                />
+              </div>
+              <div className="ml-4 flex items-center self-end">
+                <a
+                  href="/projects/0"
+                  className="flex items-center p-2 text-lg text-primary opacity-0 transition duration-500 hover:underline group-hover:opacity-100 lg:text-xl"
+                >
+                  <IconNote className="text-primary" />
+                  Learn More
+                </a>
+              </div>
             </div>
           </div>
           <div className="col-span-7">
@@ -147,7 +170,7 @@ const projectTabs = [
     value: "web-app",
     content: (
       <TabContent title="Metaversus">
-        <div className="grid grid-cols-12">
+        <div className="group grid grid-cols-12">
           <div className="col-span-5 pt-10">
             <p className="mb-4 leading-loose text-black lg:text-3xl">
               Modern Product Landing Page{" "}
@@ -160,6 +183,21 @@ const projectTabs = [
               <Chip text="Mobile" icon={IconDeviceMobile} color="blue" />
               <Chip text="Productivity" icon={IconChartBar} color="red" />
             </div>
+            <div className="mt-auto flex w-fit flex-col justify-end gap-4">
+              <Button
+                icon={<IconRocket className="h-8 w-8" />}
+                subtitle="Visit"
+                title={"Live Website"}
+              />
+              <div className="flex items-center gap-10">
+                <Button
+                  icon={<IconCode className="h-8 w-8" />}
+                  subtitle="View"
+                  title={"Source Code"}
+                />
+                <AnimatedLink href={`/projects/${1}`} label={"Learn More"} />
+              </div>
+            </div>
           </div>
           <div className="relative col-span-7">
             <Image
@@ -167,14 +205,14 @@ const projectTabs = [
               alt="dummy image"
               width="300"
               height="1600"
-              className="relative z-10 object-contain shadow-lg"
+              className="relative z-10 translate-y-8 object-contain shadow-lg transition duration-300 group-hover:-translate-y-10"
             />
             <Image
               src="/screenshots/web-s2.png"
               alt="dummy image"
               width="300"
               height="1600"
-              className="absolute -top-40 right-0 object-contain"
+              className="absolute -top-40 right-0 -translate-y-10 object-contain shadow-lg transition duration-300 group-hover:translate-y-2"
             />
           </div>
         </div>
@@ -216,7 +254,7 @@ const ProjectTabs = () => {
       <Tabs
         tabs={projectTabs}
         contentClassName="mt-14"
-        activeTabClassName="bg-violet-200"
+        activeTabClassName="bg-violet-100"
       />
     </div>
   );
