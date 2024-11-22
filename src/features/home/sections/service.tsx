@@ -17,7 +17,7 @@ const ServiceSection = ({
   services: Service[];
 }) => {
   return (
-    <SectionContainer className="bg-white">
+    <SectionContainer className="bg-white dark:bg-transparent">
       <div className="borderVr mb-10 lg:mb-20">
         <Heading as="h2">Skills you can rely on</Heading>
         <p className="mt-4 text-center text-lg text-neutral-800 dark:text-neutral-100 md:text-xl lg:mt-10 lg:text-2xl">

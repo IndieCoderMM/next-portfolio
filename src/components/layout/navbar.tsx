@@ -18,8 +18,8 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <div className="">
             <SecondaryButton className="flex items-center justify-center">
-              <IconDownload className="h-5 w-5 font-bold text-primary group-hover:text-white" />
-              <span className="text-md ml-4 font-semibold text-primary group-hover:text-white md:text-lg">
+              <IconDownload className="h-5 w-5 font-bold text-primary group-hover:text-white dark:text-primaryDark" />
+              <span className="text-md ml-4 font-semibold text-primary group-hover:text-white dark:text-primaryDark md:text-lg">
                 Get My CV
               </span>
             </SecondaryButton>

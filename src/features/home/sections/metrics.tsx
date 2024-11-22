@@ -5,7 +5,7 @@ import { IconMessage2 } from "@tabler/icons-react";
 
 const Metrics = () => {
   return (
-    <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent">
+    <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
       <div className="borderVr">
         <div className="text-center">
           <Heading as="h2">Proven Impact 📈 Through Numbers </Heading>

@@ -4,7 +4,7 @@ import React from "react";
 
 const TechnologySection = ({ techs }: { techs: Technology[] }) => {
   return (
-    <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white/50 via-white/90 to-white py-10">
+    <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white/50 via-white/90 to-white py-10 dark:bg-none">
       <p className="lg:text-md mb-4 text-sm uppercase text-neutral-400 lg:mb-8">
         These are the technologies I work with
       </p>

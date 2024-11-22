@@ -78,7 +78,7 @@ const TabContent = ({
       <div className="flex items-center">
         <Heading
           as={"h2"}
-          className="text-left font-semibold text-primary lg:text-3xl"
+          className="text-left font-semibold text-primary dark:text-primaryDark lg:text-3xl"
         >
           {title}
         </Heading>
@@ -98,7 +98,7 @@ const Button = ({
   subtitle: string;
 }) => {
   return (
-    <button className="border-text flex items-center gap-[17px] rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:bg-light">
+    <button className="border-text flex items-center gap-[17px] rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:bg-light dark:bg-dark">
       {icon}
       <div className="flex flex-col items-start">
         <span className="text-text text-sm font-medium">{subtitle}</span>
@@ -116,9 +116,9 @@ const projectTabs = [
       <TabContent title="Easy2Success">
         <div className="group grid grid-cols-12">
           <div className="col-span-5 pt-10">
-            <p className="mb-4 leading-loose text-black lg:text-3xl">
+            <p className="mb-4 leading-loose text-black dark:text-white lg:text-3xl">
               AI-Powered Personal Development & E-Learning App{" "}
-              <span className="text-neutral-700">
+              <span className="text-neutral-700 dark:text-neutral-200">
                 empowering users through personalized learning and development
                 plans.
               </span>

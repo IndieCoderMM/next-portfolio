@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 const QuoteSection = () => {
   return (
-    <SectionContainer className="bg-white py-24">
+    <SectionContainer className="bg-white py-24 dark:bg-transparent">
       <blockquote
         className={clsx(
           "flex gap-2 pt-2 text-3xl text-slate-500",

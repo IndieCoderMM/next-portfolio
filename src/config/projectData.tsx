@@ -70,58 +70,69 @@ export const products = [
     title: "Metaversus",
     link: "https://gomoonbeam.com",
     thumbnail: "/screenshots/metaversus.png",
+    logo: "/assets/logos/logoipsum-223.svg",
   },
   {
     title: "Convoz",
     link: "https://cursor.so",
     thumbnail: "/screenshots/convoz.png",
+    logo: "/assets/logos/logoipsum-224.svg",
   },
   {
     title: "Billio",
     link: "https://userogue.com",
     thumbnail: "/screenshots/billio.png",
+    logo: "/assets/logos/logoipsum-245.svg",
   },
 
   {
     title: "GitDash",
     link: "https://editorially.org",
     thumbnail: "/screenshots/gitdash.png",
+    logo: "/assets/logos/logoipsum-247.svg",
   },
   {
     title: "Gamezon",
     link: "https://tailwindmasterkit.com",
     thumbnail: "/screenshots/gamezon.png",
+    logo: "/assets/logos/logoipsum-248.svg",
   },
   {
     title: "Billio",
     link: "https://algochurn.com",
     thumbnail: "/screenshots/billio.png",
+    logo: "/assets/logos/logoipsum-249.svg",
   },
   {
     title: "Metaversus",
     link: "https://ui.aceternity.com",
     thumbnail: "/screenshots/metaversus.png",
+    logo: "/assets/logos/logoipsum-292.svg",
   },
   {
     title: "Gamezon",
     link: "https://tailwindmasterkit.com",
     thumbnail: "/screenshots/gamezon.png",
+    logo: "/assets/logos/logoipsum-294.svg",
   },
   {
     title: "SmartBridge",
     link: "https://smartbridgetech.com",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    logo: "/assets/logos/logoipsum-295.svg",
   },
   {
     title: "Renderwork Studio",
     link: "https://renderwork.studio",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    logo: "/assets/logos/logoipsum-295.svg",
   },
   {
     title: "GitDash",
     link: "https://app.pixelperfect.quest",
+    logo: "/assets/logos/logoipsum-295.svg",
     thumbnail: "/screenshots/gitdash.png",
   },
   {
@@ -129,23 +140,29 @@ export const products = [
     link: "https://cremedigital.com",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    logo: "/assets/logos/logoipsum-296.svg",
   },
   {
     title: "Golden Bells Academy",
     link: "https://goldenbellsacademy.com",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+
+    logo: "/assets/logos/logoipsum-296.svg",
   },
   {
     title: "Invoker Labs",
     link: "https://invoker.lol",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+
+    logo: "/assets/logos/logoipsum-296.svg",
   },
   {
     title: "E Free Invoice",
     link: "https://efreeinvoice.com",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    logo: "/assets/logos/logoipsum-296.svg",
   },
 ];
