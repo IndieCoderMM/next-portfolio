@@ -1,4 +1,3 @@
-import AnimatedLink from "@/components/common/animated-link";
 import Heading from "@/components/common/heading";
 import { Tabs } from "@/components/ui/tabs";
 import { cn } from "@/utils/cn";
@@ -39,19 +38,19 @@ const Chip = ({
   className?: string;
 }) => {
   const bgColor = {
-    green: "bg-green-100",
-    blue: "bg-blue-100",
-    red: "bg-red-100",
+    green: "bg-green-100 dark:bg-green-900",
+    blue: "bg-blue-100 dark:bg-blue-900",
+    red: "bg-red-100 dark:bg-red-900",
   };
   const textColor = {
-    green: "text-green-700",
-    blue: "text-blue-700",
-    red: "text-red-700",
+    green: "text-green-700 dark:text-green-200",
+    blue: "text-blue-700 dark:text-blue-200",
+    red: "text-red-700 dark:text-red-200",
   };
   const iconColor = {
-    green: "text-green-500",
-    blue: "text-blue-500",
-    red: "text-red-500",
+    green: "text-green-500 dark:text-green-200",
+    blue: "text-blue-500 dark:text-blue-200",
+    red: "text-red-500 dark:text-red-200",
   };
 
   return (
@@ -98,7 +97,7 @@ const Button = ({
   subtitle: string;
 }) => {
   return (
-    <button className="border-text flex items-center gap-[17px] rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:bg-light dark:bg-dark">
+    <button className="border-text flex items-center gap-[17px] rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:brightness-110 dark:bg-dark">
       {icon}
       <div className="flex flex-col items-start">
         <span className="text-text text-sm font-medium">{subtitle}</span>
@@ -166,15 +165,15 @@ const projectTabs = [
     ),
   },
   {
-    title: "Web App",
+    title: "Product Landing",
     value: "web-app",
     content: (
       <TabContent title="Metaversus">
         <div className="group grid grid-cols-12">
           <div className="col-span-5 pt-10">
-            <p className="mb-4 leading-loose text-black lg:text-3xl">
+            <p className="mb-4 leading-loose text-black dark:text-white lg:text-3xl">
               Modern Product Landing Page{" "}
-              <span className="text-neutral-700">
+              <span className="text-neutral-700 dark:text-neutral-100">
                 with interactive 3D animations and parallax effects.
               </span>
             </p>
@@ -189,14 +188,11 @@ const projectTabs = [
                 subtitle="Visit"
                 title={"Live Website"}
               />
-              <div className="flex items-center gap-10">
-                <Button
-                  icon={<IconCode className="h-8 w-8" />}
-                  subtitle="View"
-                  title={"Source Code"}
-                />
-                <AnimatedLink href={`/projects/${1}`} label={"Learn More"} />
-              </div>
+              <Button
+                icon={<IconCode className="h-8 w-8" />}
+                subtitle="View"
+                title={"Source Code"}
+              />
             </div>
           </div>
           <div className="relative col-span-7">

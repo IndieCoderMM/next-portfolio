@@ -1,7 +1,8 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { IconMessage2 } from "@tabler/icons-react";
+import { IconBuildingCastle } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 import ProjectTabs from "../components/project-tabs";
 
 const GallerySection = () => {
@@ -29,16 +30,15 @@ const GallerySection = () => {
 
       <div className="inner-container mt-20 flex flex-col items-center gap-4 text-center lg:mt-32 lg:gap-8">
         <Heading as="h3" className="text-xl md:text-3xl lg:text-5xl">
-          Have a project 💡idea?
+          Wanna see fun projects instead?
         </Heading>
         <p className="ld:text-3xl font-medium md:text-xl">
-          Bring your idea into awesome digital experience with me. Ready to
-          innovate?
+          Join the fun side of the playground and checkout more projects.
         </p>
-        <button type="button" className="outline-button mt-8 rounded-full">
-          <IconMessage2 />
-          <span>Let's Chat</span>
-        </button>
+        <Link href="/playground" className="outline-button mt-8 rounded-full">
+          <IconBuildingCastle />
+          <span>Enter Playground</span>
+        </Link>
       </div>
     </SectionContainer>
   );

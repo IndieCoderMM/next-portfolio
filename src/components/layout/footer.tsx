@@ -5,7 +5,7 @@ import {
   IconBrandLinkedin,
   IconExternalLink,
 } from "@tabler/icons-react";
-import Link from "next/link";
+import LinkUnderline from "../common/link";
 
 const LastUpdate = () => {
   return (
@@ -37,17 +37,31 @@ const FooterLink = ({
     return (
       <span className={"footer-link footer-link--soon"}>
         {title}
-        <span className={"footer-link__label"}>{label}</span>
+        <span
+          className={
+            "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 dark:bg-green-900 dark:text-green-200"
+          }
+        >
+          {label}
+        </span>
       </span>
     );
   }
 
   if (isInternal) {
     return (
-      <Link href={href} className={"footer-link"}>
-        {title}
-        {label && <span className={"footer-link__label"}>{label}</span>}
-      </Link>
+      <div className="flex items-center gap-1">
+        <LinkUnderline href={href} className={"footer-link"} label={title} />
+        {label && (
+          <span
+            className={
+              "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 dark:bg-green-900 dark:text-green-200"
+            }
+          >
+            {label}
+          </span>
+        )}
+      </div>
     );
   }
 

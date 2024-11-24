@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/footer";
 import { services } from "@/config/services";
 import { techs } from "@/config/technology";
 import HeroSection from "@/features/home/sections/hero";
@@ -23,7 +22,6 @@ const HomePage = () => {
       <ProjectSection />
       <QuoteSection />
       <Metrics />
-      <Footer />
     </div>
   );
 };

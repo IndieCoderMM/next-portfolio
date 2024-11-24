@@ -143,9 +143,9 @@ const ContactForm = () => {
             icon={IconWritingSign}
           />
         )}
-        <div className="mt-10">
+        <div className="mt-10 flex justify-end">
           <PrimaryButton type="submit">
-            <div className="flex w-full items-center justify-center gap-4 text-lg text-white">
+            <div className="flex w-full items-center justify-center gap-1 text-lg text-white">
               <span
                 className={`text-xl font-semibold uppercase text-white ${
                   status === "submitting" ? "animate-pulse" : ""
@@ -157,8 +157,7 @@ const ContactForm = () => {
                     ? "Sending..."
                     : "Send"}
               </span>
-              <div className="h-8 w-8">
-                {" "}
+              <div className="h-8 w-8 translate-y-1">
                 {current !== "message" ? (
                   <IconArrowLeft className="rotate-180" />
                 ) : (

@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/footer";
 import GallerySection from "@/features/projects/sections/gallery";
 import ProjectGrid from "@/features/projects/sections/grid";
 
@@ -29,7 +28,6 @@ const ProjectPage = () => {
     <div className="relative w-full">
       <GallerySection />
       <ProjectGrid />
-      <Footer />
     </div>
   );
 };

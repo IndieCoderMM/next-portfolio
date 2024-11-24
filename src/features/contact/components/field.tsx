@@ -1,4 +1,6 @@
+import { cn } from "@/utils/cn";
 import { fadeIn } from "@/utils/motion";
+import { IconArrowDownLeft } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 type FieldProps = {
@@ -30,7 +32,7 @@ const Field = ({
         animate="show"
         className="flex w-full items-center gap-3"
       >
-        <div className="flex h-10 w-10 items-center justify-center rounded-md border bg-gray-100 p-1 text-primary dark:bg-[#333] dark:text-light">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border bg-gray-100 p-1 text-primary dark:bg-[#333] dark:text-light">
           <Icon />
         </div>
         <input
@@ -42,6 +44,18 @@ const Field = ({
           onChange={(e) => handleChange(e.target.name, e.target.value)}
           autoFocus
         />
+        {/* Enter button icon */}
+        <div
+          className={cn(
+            "flex items-center gap-2 rounded-md border border-neutral-300 bg-white p-1 opacity-100 transition-[opacity] duration-200 dark:bg-dark",
+            {
+              "opacity-0": value.length === 0,
+            },
+          )}
+        >
+          <IconArrowDownLeft />
+          <span className="pr-2 text-xs">Enter</span>
+        </div>
       </motion.div>
     </div>
   );

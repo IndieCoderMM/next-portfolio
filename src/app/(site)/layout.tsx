@@ -1,4 +1,5 @@
 import FloatingNav from "@/components/layout/floating-nav";
+import Footer from "@/components/layout/footer";
 import Navbar from "@/components/layout/navbar";
 import GridBackground from "@/components/ui/grid-background";
 import { PropsWithChildren } from "react";
@@ -10,6 +11,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       {children}
       <GridBackground />
       <FloatingNav />
+      <Footer />
     </main>
   );
 };

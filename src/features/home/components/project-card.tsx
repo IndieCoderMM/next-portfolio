@@ -19,7 +19,7 @@ const ProjectCard = ({
       </p>
       <a
         href={project.link}
-        className="flex items-center justify-center gap-2 rounded-lg bg-blue-100/50 p-2 text-blue-500 hover:brightness-105 dark:border dark:border-blue-500 dark:bg-dark"
+        className="mt-auto flex items-center justify-center gap-2 rounded-lg bg-blue-100/50 p-2 text-blue-500 hover:brightness-105 dark:border dark:border-blue-500 dark:bg-dark"
       >
         <IconExternalLink className="text-blue-500" />
         Visit Website

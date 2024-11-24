@@ -1,12 +1,19 @@
+import Heading from "@/components/common/heading";
+import { SectionContainer } from "@/components/layout/section";
 import ContactForm from "../components/form";
 
 const ConstactFormSection = () => {
   return (
-    <section className="borderHr w-full">
-      <div className="interWidth borderVr paddings mx-auto w-full">
+    <SectionContainer className="borderHr w-full">
+      <Heading className="mb-8">Contact Me 💌</Heading>
+      <p className="text-lg font-medium">
+        I'm always open to new projects, collaborations, or employment
+        opportunities.
+      </p>
+      <div className="borderVr paddings w-full max-w-3xl">
         <ContactForm />
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

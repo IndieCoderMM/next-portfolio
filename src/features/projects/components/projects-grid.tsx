@@ -1,6 +1,5 @@
 "use client";
 import Heading from "@/components/common/heading";
-import { IconRocket } from "@tabler/icons-react";
 import {
   motion,
   MotionValue,
@@ -45,7 +44,7 @@ export const ProjectsGrid = ({
       ref={ref}
       className="relative flex flex-col self-auto overflow-hidden antialiased"
     >
-      <div className="max-container pb-20 pt-20">
+      <div className="max-container pb-10 pt-10">
         <Heading as="h2">Recent Projects</Heading>
         <p className="mt-8 text-center text-base dark:text-neutral-200 md:text-xl">
           A collection of projects I've worked on recently.
@@ -69,14 +68,6 @@ export const ProjectsGrid = ({
           />
         ))}
       </motion.div>
-
-      <button
-        type="button"
-        className="outline-button my-10 self-center rounded-full"
-      >
-        <IconRocket />
-        <span>See More Projects</span>
-      </button>
     </div>
   );
 };
