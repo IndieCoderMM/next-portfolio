@@ -11,28 +11,6 @@ const profileSchema = defineType({
       type: "string",
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: "headline",
-      title: "Headline",
-      type: "string",
-      description: "A short description of your work",
-      validation: (rule) => rule.required().min(40).max(80),
-    }),
-    {
-      name: "profileImage",
-      title: "Profile Image",
-      type: "image",
-      description: "Upload a profile picture",
-      options: { hotspot: true },
-      fields: [
-        {
-          name: "alt",
-          title: "Alt",
-          type: "string",
-          description: "Describe the image for screen readers",
-        },
-      ],
-    },
     {
       name: "bio",
       title: "Bio",
@@ -51,15 +29,14 @@ const profileSchema = defineType({
       of: [{ type: "block" }],
     },
     {
-      name: "description",
-      title: "Description",
-      type: "array",
-      of: [{ type: "block" }],
-    },
-    {
       name: "resumeURL",
       title: "Upload Resume",
       type: "file",
+    },
+    {
+      name: "lastUpdated",
+      title: "Last Updated",
+      type: "date",
     },
     {
       name: "socials",
@@ -99,74 +76,34 @@ const profileSchema = defineType({
       },
     },
     {
-      name: "experiences",
-      title: "Experiences",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "title",
-              title: "Title",
-              type: "string",
-            },
-            {
-              name: "company",
-              title: "Company",
-              type: "string",
-            },
-            {
-              name: "website",
-              title: "Website",
-              type: "url",
-            },
-            {
-              name: "location",
-              title: "Location",
-              type: "string",
-            },
-            {
-              name: "startDate",
-              title: "Start Date",
-              type: "date",
-            },
-            {
-              name: "endDate",
-              title: "End Date",
-              type: "date",
-            },
-            {
-              name: "description",
-              title: "Description",
-              type: "text",
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: "metrics",
       title: "Metrics",
       type: "object",
       description: "Add metrics to your profile",
       fields: [
         {
-          name: "frontEnd",
-          title: "Front-End Projects",
+          name: "apps",
+          title: "Apps",
           type: "number",
           initialValue: 0,
-          description: "Number of front end projects you have worked on",
+          description: "Number of apps you have launched",
         },
         {
-          name: "fullStack",
-          title: "Full-Stack Projects",
+          name: "websites",
+          title: "Website",
           type: "number",
           initialValue: 0,
-          description: "Number of full-stack projects you have worked on",
+          description: "Number of websites you have launched",
         },
         {
-          name: "experience",
+          name: "users",
+          title: "Users",
+          type: "number",
+          initialValue: 0,
+          description: "How many users did you handle?",
+        },
+        {
+          name: "years",
           title: "Years of Experience",
           type: "number",
           initialValue: 0,

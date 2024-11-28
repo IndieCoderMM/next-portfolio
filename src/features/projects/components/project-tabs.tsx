@@ -73,7 +73,7 @@ const TabContent = ({
   children,
 }: PropsWithChildren<{ title: string }>) => {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-lg border bg-light p-10 dark:border-dark dark:bg-dark">
+    <div className="relative h-full w-full overflow-hidden rounded-lg border border-light bg-white p-10 shadow-sm dark:border-dark dark:bg-dark">
       <div className="flex items-center">
         <Heading
           as={"h2"}

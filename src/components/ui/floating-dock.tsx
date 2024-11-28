@@ -135,7 +135,7 @@ const FloatingDockDesktop = ({
             )
           }
           title={mode === "dark" ? "See the light" : "Embrace the dark"}
-          href="javascript:void(0)"
+          href=""
         />
       </button>
     </motion.div>
@@ -197,8 +197,13 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
+  const Elem = href ? Link : "div";
+
   return (
-    <Link href={href}>
+    <Elem
+      href={href ?? undefined}
+      target={href?.startsWith("http") ? "_blank" : "_self"}
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -232,6 +237,6 @@ function IconContainer({
           />
         )}
       </motion.div>
-    </Link>
+    </Elem>
   );
 }

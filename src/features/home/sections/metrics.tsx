@@ -1,15 +1,20 @@
 import AnimatedNumber from "@/components/common/animated-number";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
+import { ProfileQueryResult } from "@/sanity.types";
 import { IconMessage2 } from "@tabler/icons-react";
 
-const Metrics = () => {
+type Metrics = NonNullable<ProfileQueryResult>["metrics"] | undefined;
+
+const Metrics = ({ metrics }: { metrics: Metrics }) => {
+  let { apps, websites, users, years } = metrics ?? {};
+
   return (
     <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
       <div className="borderVr">
         <div className="text-center">
           <Heading as="h2">Proven Impact 📈 Through Numbers </Heading>
-          <p className="mt-4 text-center text-lg text-gray-500">
+          <p className="mt-4 text-center text-lg">
             Here are some of the metrics that define my journey
           </p>
         </div>
@@ -18,51 +23,43 @@ const Metrics = () => {
           <div>
             <h3 className="text-7xl font-bold">
               <AnimatedNumber
-                value={6}
+                value={apps ?? 0}
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
               />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
                 {"+"}
               </span>
             </h3>
-            <p className="mt-4 text-xl font-medium text-gray-900">
-              Apps launched
-            </p>
-            <p className="mt-0.5 text-base text-gray-500">In last 2 years</p>
+            <p className="mt-4 text-xl font-medium">Apps launched</p>
+            <p className="mt-0.5 text-base">In last {years ?? 0} years</p>
           </div>
 
           <div>
             <h3 className="text-7xl font-bold">
               <AnimatedNumber
-                value={10}
-                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
-              />
-              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
-                {"k+"}
-              </span>
-            </h3>
-            <p className="mt-4 text-xl font-medium text-gray-900">Downloads</p>
-            <p className="mt-0.5 text-base text-gray-500">
-              Maintaining 4.5+ rating
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-7xl font-bold">
-              <AnimatedNumber
-                value={3420}
+                value={websites ?? 0}
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
               />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
                 {"+"}
               </span>
             </h3>
-            <p className="mt-4 text-xl font-medium text-gray-900">
-              Codebase commits
-            </p>
-            <p className="mt-0.5 text-base text-gray-500">
-              Working for your success
-            </p>
+            <p className="mt-4 text-xl font-medium">Projects</p>
+            <p className="mt-0.5 text-base">Completed and delivered</p>
+          </div>
+
+          <div>
+            <h3 className="text-7xl font-bold">
+              <AnimatedNumber
+                value={users ?? 0}
+                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+              />
+              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
+                {"+"}
+              </span>
+            </h3>
+            <p className="mt-4 text-xl font-medium">Satisfied users</p>
+            <p className="mt-0.5 text-base">Across all projects</p>
           </div>
         </div>
 

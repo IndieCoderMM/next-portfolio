@@ -6,10 +6,13 @@ import ProjectSection from "@/features/home/sections/projects";
 import QuoteSection from "@/features/home/sections/quote";
 import ServiceSection from "@/features/home/sections/service";
 import TechnologySection from "@/features/home/sections/technology";
-import { getProfile } from "@/utils/data";
+import { getProducts, getProfile } from "@/sanity/lib/query";
 
-const HomePage = () => {
-  const profile = getProfile();
+const HomePage = async () => {
+  const profile = await getProfile();
+  const products = await getProducts();
+
+  console.log(JSON.stringify(profile, null, 2));
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
@@ -19,9 +22,9 @@ const HomePage = () => {
         services={services}
         heading={"Bring your ideas to reality"}
       />
-      <ProjectSection />
+      <ProjectSection products={products} />
       <QuoteSection />
-      <Metrics />
+      <Metrics metrics={profile?.metrics} />
     </div>
   );
 };

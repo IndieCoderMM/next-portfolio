@@ -2,12 +2,12 @@
 
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { products } from "@/config/projectData";
+import { ProductsQueryResult } from "@/sanity.types";
 import ProjectCard from "../components/project-card";
 
-const ProjectSection = () => {
+const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
   return (
-    <SectionContainer>
+    <SectionContainer className="bg-white dark:bg-transparent">
       <div className="mb-16">
         <Heading as="h3" className="mb-8 text-xl md:text-3xl lg:text-5xl">
           Recent Projects 🔥

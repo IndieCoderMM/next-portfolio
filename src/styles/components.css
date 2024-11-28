@@ -68,7 +68,7 @@
   }
 
   .outline-button {
-    @apply flex items-center justify-center gap-2 border-2 bg-white dark:bg-dark border-primary-800 px-8 py-2 text-center font-semibold text-primary-800 transition-colors hover:bg-primary-800 hover:text-light dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:text-lg md:px-10 md:py-3 md:text-xl;
+    @apply flex items-center justify-center gap-2 border-2 border-primary-800 px-8 py-2 text-center font-semibold text-primary-800 transition-colors hover:bg-primary-800 hover:text-light dark:border-primaryDark dark:text-primaryDark dark:hover:bg-primaryDark dark:hover:text-dark sm:text-lg md:px-10 md:py-3 md:text-xl;
   }
 
   .link {
