@@ -14,7 +14,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
       <div className="borderVr">
         <div className="text-center">
           <Heading as="h2">Proven Impact 📈 Through Numbers </Heading>
-          <p className="mt-4 text-center text-lg">
+          <p className="mt-4 text-center text-lg lg:text-xl">
             Here are some of the metrics that define my journey
           </p>
         </div>
@@ -55,7 +55,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
               />
               <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
-                {"+"}
+                {"K+"}
               </span>
             </h3>
             <p className="mt-4 text-xl font-medium">Satisfied users</p>
@@ -64,10 +64,10 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
         </div>
 
         <div className="inner-container mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
-          <Heading as="h3" className="text-lg md:text-xl lg:text-2xl">
+          <Heading as="h3" className="text-xl md:text-2xl lg:text-4xl">
             Interested in collaborating with me?
           </Heading>
-          <p className="text-md ld:text-xl font-medium">
+          <p className="text-lg lg:text-xl">
             I can translate these numbers into your project&apos;s success.
           </p>
           <button type="button" className="outline-button mt-8 rounded-full">

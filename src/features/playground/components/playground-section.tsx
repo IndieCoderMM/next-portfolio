@@ -14,6 +14,7 @@ import {
   IconDeviceGamepad,
   IconDeviceGamepad2,
   IconRoute,
+  IconWall,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
@@ -32,6 +33,7 @@ type Sandbox = {
   repository: string;
   icon: JSX.Element;
   content: JSX.Element;
+  liveUrl: string;
 };
 
 const sandBoxes: Sandbox[] = [
@@ -42,6 +44,7 @@ const sandBoxes: Sandbox[] = [
       "Ultra-fast pathfinding algorithm for 2D grid-based data structures.",
     repository: "algo-lab",
     icon: <IconRoute className={cn("my-2 h-16 w-16")} />,
+    liveUrl: "https://indiecodermm.github.io/algo-lab/Path-finder/index.html",
     content: (
       <iframe
         src={"https://indiecodermm.github.io/algo-lab/Path-finder/index.html"}
@@ -56,7 +59,8 @@ const sandBoxes: Sandbox[] = [
     description:
       "A cellular automaton devised by the British mathematician John Horton Conway in 1970.",
     icon: <IconDeviceGamepad className={cn("my-2 h-16 w-16")} />,
-    repository: "algo-lab/Path-finder",
+    repository: "algo-lab",
+    liveUrl: "https://indiecodermm.github.io/algo-lab/Game-of-life/index.html",
     content: (
       <iframe
         src={"https://indiecodermm.github.io/algo-lab/Game-of-life/index.html"}
@@ -67,29 +71,14 @@ const sandBoxes: Sandbox[] = [
   },
   {
     id: SandboxId.SortingVisualizer,
-    title: "Sorting Visualizer",
-    description: "Visualize how different sorting algorithms work.",
-    icon: <IconDeviceGamepad className={cn("my-2 h-16 w-16")} />,
-    repository: "algo-lab/Path-finder",
+    title: "WFC Map Generator",
+    description: "Generate random maps using Wave Function Collapse algorithm.",
+    icon: <IconWall className={cn("my-2 h-16 w-16")} />,
+    repository: "algo-lab",
+    liveUrl: "https://indiecodermm.github.io/algo-lab/Map-generator/index.html",
     content: (
       <iframe
-        src={
-          "https://indiecodermm.github.io/algo-lab/Sorting-visualizer/index.html"
-        }
-        width={600}
-        height={400}
-      />
-    ),
-  },
-  {
-    id: SandboxId.PathFinder,
-    title: "Path Finding Visualizer",
-    description: "Visualize how different path finding algorithms work.",
-    icon: <IconDeviceGamepad className={cn("my-2 h-16 w-16")} />,
-    repository: "algo-lab/Path-finder",
-    content: (
-      <iframe
-        src={"https://indiecodermm.github.io/algo-lab/Path-finder/index.html"}
+        src={"https://indiecodermm.github.io/algo-lab/Map-generator/index.html"}
         width={600}
         height={400}
       />
@@ -99,7 +88,7 @@ const sandBoxes: Sandbox[] = [
 
 const PlaygroundSection = () => {
   const [currentState, setCurrentState] = useState<SandboxId>(SandboxId.AStar);
-  const [currentTab, setCurrentTab] = useState<"content" | "github">("github");
+  const [currentTab, setCurrentTab] = useState<"content" | "github">("content");
 
   const currentSandbox = useMemo(() => {
     return sandBoxes.find((s) => s.id === currentState) ?? sandBoxes[0];
@@ -158,6 +147,7 @@ const PlaygroundSection = () => {
                       onClick: () => setCurrentTab("github"),
                     },
                   ]}
+                  liveUrl={currentSandbox.liveUrl}
                 >
                   {currentTab === "github" && (
                     <GitHubWireframe

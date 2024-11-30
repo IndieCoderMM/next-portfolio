@@ -1,6 +1,6 @@
 import {
-  IconBrandAppstore,
   IconBrandAws,
+  IconBrandCloudflare,
   IconBrandFirebase,
   IconBrandGit,
   IconBrandGooglePlay,
@@ -56,8 +56,8 @@ export const techs: Technology[] = [
   },
   {
     id: 10,
-    title: "App Store",
-    icon: <IconBrandAppstore className={iconClasses} />,
+    title: "Cloud Flare",
+    icon: <IconBrandCloudflare className={iconClasses} />,
   },
   {
     id: 11,

@@ -7,7 +7,7 @@ import ProjectTabs from "../components/project-tabs";
 
 const GallerySection = () => {
   return (
-    <SectionContainer className="bg-gradient-to-b from-white/30 via-white/80 to-white dark:bg-none">
+    <SectionContainer className="">
       <div className="borderVr mx-auto w-full">
         <div className="w-full pb-12">
           <div className="mb-8 flex items-center gap-10">

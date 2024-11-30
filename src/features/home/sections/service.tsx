@@ -62,11 +62,11 @@ const Service = ({
       {index >= 3 && (
         <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-neutral-800" />
       )}
-      <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
+      <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-200">
         {icon}
       </div>
       <div className="relative z-10 mb-2 px-10 text-lg font-bold">
-        <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-br-full rounded-tr-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-blue-500 dark:bg-neutral-700" />
+        <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-br-full rounded-tr-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-primary dark:bg-neutral-700 dark:group-hover/feature:bg-primaryDark" />
         <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
           {title}
         </span>

@@ -2,6 +2,7 @@ import { PrimaryButton } from "@/components/common";
 import { ProfileQueryResult } from "@/sanity.types";
 import { formatDate } from "@/utils/format-date";
 import { IconCalendarUp, IconMessage } from "@tabler/icons-react";
+import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
@@ -27,13 +28,7 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
           </div>
 
           <div className="flex w-full flex-col items-center gap-8 pt-8 lg:flex-row lg:justify-center">
-            <a
-              href={`${profile?.resumeURL}?dl=${profile?.fullName?.replaceAll(
-                " ",
-                "_",
-              )}_CV.pdf`}
-              className="w-full max-w-[250px] flex-1"
-            >
+            <Link href="/contact" className="w-full max-w-[250px] flex-1">
               <PrimaryButton>
                 <div className="flex w-full items-center justify-center gap-1 text-lg text-white">
                   <IconMessage className="h-7 w-7 text-white" />
@@ -42,7 +37,7 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
                   </span>
                 </div>
               </PrimaryButton>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

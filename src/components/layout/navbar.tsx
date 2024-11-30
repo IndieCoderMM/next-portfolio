@@ -1,8 +1,11 @@
+import { getProfile } from "@/sanity/lib/query";
 import { IconCode, IconDownload } from "@tabler/icons-react";
 import Link from "next/link";
 import SecondaryButton from "../common/secondary-button";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const profile = await getProfile();
+
   return (
     <div className="z-30 m-0 w-full border-0 p-0">
       <div className="max-container borderVr flex items-center justify-between p-4">
@@ -16,14 +19,20 @@ const Navbar = () => {
           </h1>
         </Link>
         <div className="flex items-center gap-4">
-          <div className="">
+          <a
+            href={`${profile?.resumeURL}?dl=${profile?.fullName?.replaceAll(
+              " ",
+              "_",
+            )}_CV.pdf`}
+            className=""
+          >
             <SecondaryButton className="flex items-center justify-center">
               <IconDownload className="h-5 w-5 font-bold text-primary group-hover:text-white dark:text-primaryDark" />
               <span className="text-md ml-4 font-semibold text-primary group-hover:text-white dark:text-primaryDark md:text-lg">
                 Get My CV
               </span>
             </SecondaryButton>
-          </div>
+          </a>
         </div>
       </div>
     </div>

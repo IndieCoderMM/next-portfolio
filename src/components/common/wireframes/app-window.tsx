@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 import { SkeletonMd } from "@/components/common/wireframes/skeletons";
 
+import { IconExternalLink } from "@tabler/icons-react";
 import type { PropsWithChildren, ReactNode } from "react";
 
 interface BrowserTabProps {
@@ -32,7 +33,7 @@ function BrowserTab({ icon, title, isActive, onClick }: BrowserTabProps) {
     >
       <div className={clsx("flex w-full gap-2 px-2 text-xs")}>
         {icon}
-        <div className={clsx("flex-1 truncate")}>{title}</div>
+        <div className={clsx("flex-1 truncate text-left")}>{title}</div>
       </div>
     </button>
   );
@@ -41,12 +42,14 @@ function BrowserTab({ icon, title, isActive, onClick }: BrowserTabProps) {
 interface AppWindowProps {
   type?: "browser" | "app";
   browserTabs?: Array<BrowserTabProps>;
+  liveUrl?: string;
 }
 
 function AppWindow({
   children = null,
   type = "app",
   browserTabs = [],
+  liveUrl,
 }: PropsWithChildren<AppWindowProps>) {
   const isWithBrowserTabs = type === "browser" && browserTabs;
 
@@ -105,6 +108,17 @@ function AppWindow({
                     onClick={onClick}
                   />
                 ))}
+                {liveUrl && (
+                  <a
+                    href={liveUrl}
+                    target="_blank"
+                    title="Open in new tab"
+                    rel="noopener noreferrer"
+                    className="h6 ml-auto self-center text-slate-500"
+                  >
+                    <IconExternalLink className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             )}
           </>

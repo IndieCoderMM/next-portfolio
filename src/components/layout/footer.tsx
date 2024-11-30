@@ -1,13 +1,15 @@
 import dayjs from "@/lib/dayjs";
+import { ProfileQueryResult } from "@/sanity.types";
+import { getProfile } from "@/sanity/lib/query";
 import {
   IconBrandGithub,
-  IconBrandLeetcode,
   IconBrandLinkedin,
   IconExternalLink,
+  IconMail,
 } from "@tabler/icons-react";
 import LinkUnderline from "../common/link";
 
-const LastUpdate = () => {
+const SiteMap = () => {
   return (
     <a
       href="https://github.com/indiecodermm/next-portfolio"
@@ -15,7 +17,7 @@ const LastUpdate = () => {
       rel="noreferrer nofollow"
       className={"hover:underline"}
     >
-      <span>see the recent update on GitHub</span>
+      <span>sitemap.xml</span>
     </a>
   );
 };
@@ -35,11 +37,15 @@ const FooterLink = ({
 }: FooterLinkProps) => {
   if (label === "soon") {
     return (
-      <span className={"footer-link footer-link--soon"}>
+      <span
+        className={
+          "footer-link footer-link--soon text-neutral-600 dark:text-neutral-400"
+        }
+      >
         {title}
         <span
           className={
-            "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 dark:bg-green-900 dark:text-green-200"
+            "rounded-full bg-green-50 px-2 py-1 text-xs uppercase text-green-500 dark:bg-green-900 dark:text-green-200"
           }
         >
           {label}
@@ -66,16 +72,19 @@ const FooterLink = ({
   }
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer nofollow"
-      className={"footer-link"}
-    >
-      {title}
-      <IconExternalLink className={"h-3.5 w-3.5"} />
-      {label && <span className={"footer-link__label"}>{label}</span>}
-    </a>
+    <div className="flex items-center gap-1">
+      <LinkUnderline href={href} className={"footer-link"} label={title} />
+      <IconExternalLink className="h-4 w-4" />
+      {label && (
+        <span
+          className={
+            "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 dark:bg-green-900 dark:text-green-200"
+          }
+        >
+          {label}
+        </span>
+      )}
+    </div>
   );
 };
 
@@ -108,7 +117,7 @@ const FooterGroup = ({ title, links }: FooterGroupProps) => {
   );
 };
 
-const FooterDescription = () => {
+const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
     <div className={"max-w-[348px]"}>
       <div className={"mb-3 text-[13px] text-slate-600 dark:text-slate-400"}>
@@ -121,7 +130,7 @@ const FooterDescription = () => {
       <ul className={"-ml-2 flex gap-1"}>
         <li>
           <a
-            href="https://linkedin.com/in/hthantoo"
+            href={profile?.socials?.linkedin ?? undefined}
             target="_blank"
             rel="noreferrer nofollow"
             className={"flex h-9 w-9 items-center justify-center"}
@@ -133,7 +142,7 @@ const FooterDescription = () => {
         </li>
         <li>
           <a
-            href="https://github.com/indiecodermm"
+            href={profile?.socials?.github ?? undefined}
             target="_blank"
             rel="noreferrer nofollow"
             className={"flex h-9 w-9 items-center justify-center"}
@@ -145,14 +154,14 @@ const FooterDescription = () => {
         </li>
         <li>
           <a
-            href="https://leetcode.com/indiecodermm"
+            href={`mailto:${profile?.email}`}
             target="_blank"
             rel="noreferrer nofollow"
             className={"flex h-9 w-9 items-center justify-center"}
             aria-label="My Leetcode profile"
-            title="My Leetcode profile"
+            title="Contact Me"
           >
-            <IconBrandLeetcode className={"h-5 w-5"} />
+            <IconMail className={"h-5 w-5"} />
           </a>
         </li>
       </ul>
@@ -160,7 +169,9 @@ const FooterDescription = () => {
   );
 };
 
-const Footer = () => {
+const Footer = async () => {
+  const profile = await getProfile();
+
   return (
     <footer
       className={
@@ -171,7 +182,7 @@ const Footer = () => {
         <div className={"py-10 font-semibold"}>
           <div className={"flex flex-col-reverse gap-16 lg:flex-row"}>
             <div className={"flex-1"}>
-              <FooterDescription />
+              <FooterDescription profile={profile} />
             </div>
             <div
               className={
@@ -182,35 +193,38 @@ const Footer = () => {
                 <FooterGroup
                   title="Work"
                   links={[
-                    { title: "Contact", href: "/work/contact" },
-                    { title: "Experience", href: "/work/experience" },
+                    { title: "Contact", href: "/contact" },
+                    { title: "Experience", href: "/about#experience" },
+                    { title: "Projects", href: "/projects" },
                     {
                       title: "Services",
-                      href: "/work/services",
+                      href: "/services",
                       label: "soon",
                     },
-                    {
-                      title: "Skills and Tools",
-                      href: "/work/skills-and-tools",
-                    },
-                    { title: "Studio", href: "/work/studio" },
+                    { title: "Studio", href: "/work/studio", label: "soon" },
                   ]}
                 />
                 <FooterGroup
-                  title="Learn"
+                  title="Explore"
                   links={[
                     {
-                      title: "Docs",
-                      href: "/docs",
+                      title: "Personal Blog",
+                      href: profile?.socials?.blog ?? "/",
+                      isInternal: false,
                     },
                     {
-                      title: "Personal Blog",
-                      href: "/blog",
+                      title: "Playground",
+                      href: "/playground",
+                    },
+                    {
+                      title: "Guest Book",
+                      href: "/guestbook",
+                      label: "soon",
                     },
                     {
                       title: "T.I.L",
                       href: "/today-i-learned",
-                      label: "new",
+                      label: "soon",
                     },
                   ]}
                 />
@@ -220,18 +234,13 @@ const Footer = () => {
                   title="This Site"
                   links={[
                     {
-                      title: "Design Concept",
-                      href: "https://www.figma.com/community/file/1176392613303840973",
-                      isInternal: false,
-                    },
-                    {
                       title: "Source Code",
                       href: "https://github.com/indiecodermm/next-portfolio",
                       isInternal: false,
                     },
                     {
-                      title: "Credits",
-                      href: "/credits",
+                      title: "Site Map",
+                      href: "/sitemap.xml",
                     },
                   ]}
                 />
@@ -248,7 +257,7 @@ const Footer = () => {
             &copy; {dayjs().format("YYYY")}, Hein Thant
           </div>
           <div className={"text-slate-500 dark:text-slate-400"}>
-            <LastUpdate />
+            <SiteMap />
           </div>
         </div>
       </div>

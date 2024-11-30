@@ -1,19 +1,28 @@
+import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { LinkPreview } from "@/components/ui/link-preview";
-import { TypewriterText } from "@/components/ui/typewriter";
-import { aboutData } from "@/config/aboutData";
+import { getProfile } from "@/sanity/lib/query";
 import ProfileCard from "../components/profile-card";
 
-const AboutMeSection = () => {
+const AboutMeSection = async () => {
+  const profile = await getProfile();
   return (
     <SectionContainer className="pt-10">
-      <TypewriterText words={aboutData.title} />
+      <Heading>About Me</Heading>
       <div className="grid grid-cols-12 px-4 py-10 md:px-8 lg:px-12">
-        <div className="col-span-12 md:col-span-6 lg:col-span-8">
-          <div className="text-md my-10 leading-loose md:text-lg lg:text-xl">
-            My coding journey began in 2020 when I started making simple games.
-            This hobby sparked my love for web development, leading me to join
-            the{" "}
+        <div className="text-md col-span-12 my-10 leading-loose md:col-span-6 md:text-lg lg:col-span-8 lg:text-xl">
+          <p className="mb-4">
+            Hi there! You can call me <strong>Hein</strong>. I'm a software
+            developer based in Myanmar. I specialize in the React ecosystem and
+            have been building native apps with Expo for 2+ years.
+          </p>
+          <p className="my-4">
+            I discovered my love for coding in 2019 when I made mobile apps with
+            MIT App Inventor. After leaving university in 2020, I started making
+            games with Python, which eventually led me into web development.
+          </p>
+          <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
+            In 2022, I joined the{" "}
             <LinkPreview
               url="https://www.microverse.org"
               isStatic={false}
@@ -21,24 +30,27 @@ const AboutMeSection = () => {
             >
               Microverse
             </LinkPreview>{" "}
-            program. I've collaborated with developers from around the world on
-            building 10+ real-world web apps.
+            program, where I had the opportunity to work with talented
+            developers from around the world. It was a life-changing experience
+            that helped me grow as a developer and a person, especially because
+            of the wonderful people I met along the way.
           </div>
-          <p className="text-md my-10 leading-loose md:text-lg lg:text-xl">
-            I specialize in designing user-friendly and responsive websites that
-            are optimized for performance and best SEO outcomes. I prioritize
-            high accessibility and make sure every user can easily navigate and
-            enjoy the content without any hassle.
-          </p>
-          <p className="text-md my-10 leading-loose md:text-lg lg:text-xl">
-            My main focus these days is building innovative projects that
-            showcase my skills. I'm actively working towards sharpening my
-            skills, making meaningful contributions, and positioning myself for
-            future opportunities.
-          </p>
-          <p className="text-md my-10 leading-loose md:text-lg lg:text-xl">
-            When I'm not coding, you'll likely find me mastering handstands,
-            spending time with my loved ones, or playing with my dogs.
+          <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
+            Over the years, I’ve dived deep into React Native and Node.js, even
+            launching apps that have reached thousands of users. I sometimes
+            write blog posts on{" "}
+            <LinkPreview
+              url={profile?.socials?.blog ?? "/"}
+              isStatic={false}
+              className="font-bold text-primary"
+            >
+              IndieCoder's Blog
+            </LinkPreview>{" "}
+            to share my knowledge.
+          </div>
+          <p>
+            In most of my free time, I'll be probably updating my Neovim
+            configs, or working on one of my unfinished side projects.
           </p>
         </div>
         <div className="col-span-12 p-4 md:col-span-6 md:p-8 lg:col-span-4">

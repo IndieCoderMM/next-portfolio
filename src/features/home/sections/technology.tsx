@@ -13,7 +13,9 @@ const TechnologySection = ({ techs }: { techs: Technology[] }) => {
           return (
             <Container key={tech.id} className="text-neutral-400">
               <div className="h-10 w-10">{tech.icon}</div>
-              <p className="text-lg font-semibold lg:text-2xl">{tech.title}</p>
+              <p className="font-nunito text-lg font-semibold lg:text-2xl">
+                {tech.title}
+              </p>
             </Container>
           );
         })}

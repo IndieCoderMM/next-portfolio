@@ -5,13 +5,15 @@ import Image from "next/image";
 const ProjectCard = ({ project }: { project: ProductsQueryResult[number] }) => {
   return (
     <div className="flex w-full min-w-[350px] max-w-[600px] flex-col items-center gap-8 overflow-hidden rounded-xl border border-light bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-dark lg:min-h-[200px]">
-      <header className="flex items-center gap-2">
-        <Image
-          src={project.logoImage.url ?? ""}
-          width={60}
-          height={60}
-          alt={project.logoImage.alt ?? ""}
-        />
+      <header className="flex items-center gap-1">
+        <div className="flex h-[40px] w-[40px] items-center">
+          <Image
+            src={project.logoImage.url ?? ""}
+            width={40}
+            height={40}
+            alt={project.logoImage.alt ?? ""}
+          />
+        </div>
         <h3 className="text-xl font-bold text-black dark:text-white md:text-xl lg:text-2xl">
           {project.name}
         </h3>

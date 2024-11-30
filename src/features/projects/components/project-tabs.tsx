@@ -1,5 +1,6 @@
 import Heading from "@/components/common/heading";
 import { Tabs } from "@/components/ui/tabs";
+import features from "@/config/features";
 import { cn } from "@/utils/cn";
 import {
   IconBrandAppstore,
@@ -140,15 +141,17 @@ const projectTabs = [
                   title={"App Store"}
                 />
               </div>
-              <div className="ml-4 flex items-center self-end">
-                <a
-                  href="/projects/0"
-                  className="flex items-center p-2 text-lg text-primary opacity-0 transition duration-500 hover:underline group-hover:opacity-100 lg:text-xl"
-                >
-                  <IconNote className="text-primary" />
-                  Learn More
-                </a>
-              </div>
+              {features.PROJECT_DETAIL && (
+                <div className="ml-4 flex items-center self-end">
+                  <a
+                    href="/projects/0"
+                    className="flex items-center p-2 text-lg text-primary opacity-0 transition duration-500 hover:underline group-hover:opacity-100 lg:text-xl"
+                  >
+                    <IconNote className="text-primary" />
+                    Learn More
+                  </a>
+                </div>
+              )}
             </div>
           </div>
           <div className="col-span-7">

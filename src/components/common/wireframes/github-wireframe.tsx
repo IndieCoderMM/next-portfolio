@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 import { SkeletonSm } from "@/components/common/wireframes/skeletons";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 interface GithubWireframeProps {
   author?: string;
@@ -27,21 +28,28 @@ function GitHubWireframe({
           <SkeletonSm />
         </div>
         {author ? (
-          <div className={clsx("-mt-0.5 text-blue-700", "dark:text-blue-500")}>
+          <LinkPreview
+            url={`https://github.com/${author}`}
+            isStatic={false}
+            className={clsx("-mt-0.5 text-blue-700", "dark:text-blue-500")}
+          >
             {author}
-          </div>
+          </LinkPreview>
         ) : (
           <SkeletonSm w={64} />
         )}
         <div className={clsx("-mt-0.5")}>/</div>
-        <div
+        <a
+          href={`https://github.com/${author}/${repository}`}
+          target="_blank"
+          title="Checkout source code"
           className={clsx(
             "-mt-0.5 font-bold text-blue-700",
             "dark:font-semibold dark:text-blue-500",
           )}
         >
           {repository}
-        </div>
+        </a>
         <div
           className={clsx(
             "border-divider-light ml-1 rounded-full border px-2 py-0.5 text-xs",

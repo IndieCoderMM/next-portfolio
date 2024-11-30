@@ -6,13 +6,13 @@ import localFont from "next/font/local";
 const nunito = localFont({
   src: "./fonts/NunitoVF.ttf",
   variable: "--font-nunito",
-  weight: "400 600 900",
+  weight: "400 500 600 900",
 });
 
 const openSans = localFont({
   src: "./fonts/OpenSansVF.ttf",
   variable: "--font-open-sans",
-  weight: "400 600 900",
+  weight: "400 500 600 900",
 });
 
 export const metadata: Metadata = {

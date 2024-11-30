@@ -6,9 +6,9 @@ import { ProjectsGrid } from "../components/projects-grid";
 
 const ProjectSection = () => {
   return (
-    <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white/50 via-white/90 to-white py-0 dark:bg-none">
+    <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden py-10 dark:bg-none">
       <ProjectsGrid projects={products} />
-      <div className="inner-container mt-10 flex flex-col items-center gap-4 text-center lg:mt-20 lg:gap-8">
+      <div className="inner-container mt-10 flex flex-col items-center gap-4 py-10 pb-20 text-center dark:bg-none lg:mt-20 lg:gap-8">
         <Heading as="h3" className="text-xl md:text-3xl lg:text-5xl">
           Have a project 💡idea?
         </Heading>
