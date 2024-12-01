@@ -41,7 +41,7 @@ export const navLinks = [
     icon: (
       <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://www.linkedin.com/in/hthantoo/",
+    href: "https://www.linkedin.com/in/hthantoo",
   },
   {
     title: "GitHub",

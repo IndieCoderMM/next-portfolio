@@ -1,43 +1,77 @@
+import { LinkPreview } from "@/components/ui/link-preview";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
 
 const data = [
   {
-    title: "2024",
+    title: "2023",
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
-          Built and launched Easy2Success, a personal development & e-learning
-          app for Myanmar youths.
+        <div className="mb-4 text-lg font-semibold lg:text-xl">
+          Full-Stack Developer{" "}
+          <LinkPreview
+            url="https://pandoratech.io"
+            isStatic={false}
+            className="text-primary underline dark:text-primaryDark"
+          >
+            @Pandora Technology
+          </LinkPreview>
+        </div>
+        <p className="mb-4">
+          <span className="font-medium">Pandora Technology</span> is an
+          innovative startup in Myanmar dedicated to developing digital products
+          that empower youth to enhance productivity and achieve success.
         </p>
+        <ul className="mb-8 list-disc">
+          <li className="mb-2">
+            Led the end-to-end development of <strong>Easy2Success</strong>, a
+            multi-featured productivity app that includes goal-setting tools,
+            blogs, podcasts, and classrooms. Handle everything from design and
+            tech stack selection to system architecture and native app
+            development.
+          </li>
+          <li className="mb-2">
+            Integrated OpenAI's API to provide personalized suggestions for user
+            goals, helping improve success rates through intelligent
+            recommendations.
+          </li>
+          <li className="mb-2">
+            Built multiple internal dashboards to streamline the management of
+            Pandora’s digital products and user subscriptions.
+          </li>
+          <li className="mb-2">
+            Launched{" "}
+            <a
+              href="https://tasmoti.com"
+              target="_blank"
+              className="font-medium text-primary underline dark:text-primaryDark"
+            >
+              tasmoti.com
+            </a>{" "}
+            website, a platform for watching and downloading motivational
+            videos. Optimized for mobile devices and low-latency networks to
+            ensure seamless access and high server responsiveness.
+          </li>
+          <li className="mb-2">
+            Developed an online exam platform enabling students to take exams
+            and earn certificates. Implemented randomized question generation,
+            automated answer evaluation, and certificate generation.
+          </li>
+        </ul>
         <div className="grid grid-cols-2 gap-4">
           <Image
-            src="https://assets.aceternity.com/templates/startup-1.webp"
-            alt="startup template"
+            src="/screenshots/e2s-playstore.png"
+            alt="Easy2Success on Play Store"
             width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            height={400}
+            className="h-20 w-full object-contain md:h-44 lg:h-60"
           />
           <Image
-            src="https://assets.aceternity.com/templates/startup-2.webp"
-            alt="startup template"
+            src="/screenshots/tas.png"
+            alt="TAS Motivational Videos"
             width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <Image
-            src="https://assets.aceternity.com/templates/startup-3.webp"
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <Image
-            src="https://assets.aceternity.com/templates/startup-4.webp"
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            height={400}
+            className="h-20 w-full object-contain md:h-44 lg:h-60"
           />
         </div>
       </div>
