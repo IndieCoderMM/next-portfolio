@@ -3,6 +3,7 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { ProductsQueryResult } from "@/sanity.types";
+import { IconRocket } from "@tabler/icons-react";
 import ProjectCard from "../components/project-card";
 
 const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
@@ -21,6 +22,10 @@ const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
           <ProjectCard key={index} project={p} />
         ))}
       </div>
+      <button type="button" className="outline-button mt-8 rounded-full">
+        <IconRocket />
+        <span>See More Projects</span>
+      </button>
     </SectionContainer>
   );
 };

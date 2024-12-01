@@ -1,10 +1,11 @@
+import Heading from "@/components/common/heading";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
 
 const data = [
   {
-    title: "2023",
+    title: "2024",
     content: (
       <div>
         <div className="mb-4 text-lg font-semibold lg:text-xl">
@@ -82,35 +83,49 @@ const data = [
     content: (
       <div>
         <p className="mb-8">
-          Collaborated with developers around the world in building real-world
-          projects. Gaining hands-on experience in building web applications,
-          utilizing technologies like React, Ruby on Rails, and PostgreSQL.
+          Focused on expanding my skills through diverse projects, open-source
+          contributions and sharing knowledge with the community.
         </p>
+        <ul className="mb-8 list-disc">
+          <li className="mb-2">
+            Built a personal blog website to share my journey and knowledge with
+            the community. Wrote articles on web development, programming, and
+            productivity tips.
+          </li>
+          <li className="mb-2">
+            Contributed to open-source projects, worked extensively with Next.js
+            and explored large-scale system design.
+          </li>
+          <li className="mb-2">
+            Designed and developed responsive, user-friendly websites using
+            modern frameworks and tools.
+          </li>
+        </ul>
         <div className="grid grid-cols-2 gap-4">
           <Image
-            src="https://assets.aceternity.com/pro/hero-sections.png"
-            alt="hero template"
+            src="/screenshots/blog-full.webp"
+            alt="IndieCoder's Blog"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <Image
-            src="https://assets.aceternity.com/features-section.png"
-            alt="feature template"
+            src="/screenshots/convoz-full.webp"
+            alt="Convoz Chat App"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <Image
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
+            src="/screenshots/iptracker-full.webp"
+            alt="IP Address Tracker"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <Image
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
+            src="/screenshots/billio-full.webp"
+            alt="Modern landing page"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -120,45 +135,73 @@ const data = [
     ),
   },
   {
-    title: "Late 2022",
+    title: "2022",
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
-          Joined Microverse as a full-time software developer. Microverse is a
-          global school for remote software developers.
+        <div className="mb-4 text-lg font-semibold lg:text-xl">
+          Full-Stack Developer{" "}
+          <LinkPreview
+            url="https://www.microverse.org"
+            isStatic={false}
+            className="text-primary underline dark:text-primaryDark"
+          >
+            @Microverse
+          </LinkPreview>
+        </div>
+        <p className="mb-2 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+          Microverse is a global, remote learning program that connects aspiring
+          developers to collaborative, real-world experiences.
         </p>
-        <p className="mb-8 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
-          Mastered the full-stack development through a comprehensive curriculum
-          which covered front-end and back-end technologies.{" "}
+        <p className="mb-4 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+          Joining Microverse was a life-changing opportunity that shaped both my
+          technical and professional skills.
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <ul className="mb-8 list-disc">
+          <li className="mb-2">
+            Collaborated with developers from across the world to build
+            full-stack applications using React and Ruby on Rails.
+          </li>
+          <li className="mb-2">
+            Developed a strong understanding of industry standards, including
+            best practices for clean code, version control, and scalable
+            architecture.
+          </li>
+          <li className="mb-2">
+            Worked in a professional remote environment, utilizing tools like
+            Kanban boards, daily stand-ups, and time-blocking techniques to stay
+            organized and productive.
+          </li>
+          <li className="mb-2">
+            Improved problem-solving skills through pair programming, code
+            reviews, and collaborative problem solving.
+          </li>
+          <li className="mb-2">
+            Gained experience in balancing technical tasks with effective
+            communication, laying a solid foundation for working in diverse,
+            distributed teams.
+          </li>
+        </ul>
+        <div className="grid grid-cols-3 place-items-center gap-4">
           <Image
-            src="https://assets.aceternity.com/pro/hero-sections.png"
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <Image
-            src="https://assets.aceternity.com/features-section.png"
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <Image
-            src="https://assets.aceternity.com/pro/bento-grids.png"
+            src="/assets/badge-full-stack.png"
             alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            width={200}
+            height={200}
+            className="lg:w-50 h-auto w-20 object-contain md:w-40"
           />
           <Image
-            src="https://assets.aceternity.com/cards.png"
+            src="/assets/badge-capstone.png"
             alt="cards template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            width={200}
+            height={200}
+            className="lg:w-50 h-auto w-20 object-contain md:w-40"
+          />
+          <Image
+            src="/assets/badge-ror.png"
+            alt="cards template"
+            width={200}
+            height={200}
+            className="lg:w-50 h-auto w-20 object-contain md:w-40"
           />
         </div>
       </div>
@@ -168,83 +211,79 @@ const data = [
     title: "2020",
     content: (
       <div>
-        <p className="mb-4 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
-          My self-driven journey into programming as a Python Developer allowed
-          me to explore various aspects of the field. I created 2D games,
-          studied DSA to improve my coding skills and built websites with Django
-          framework.
+        <p className="mb-4">
+          I discovered my passion for coding while building games, which turned
+          into a fun way to learn. Along the way, I explored various algorithms
+          and improved my skills through hands-on projects from YouTube and
+          Coursera.
         </p>
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Built 5+ games with Pygame
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Learned Data Science with Python
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Learned Django and built a full-stack social website
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Built an AI assistant with Python
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Write tutorials about Python and game development
-          </div>
-        </div>
+        <ul className="mb-8 list-disc">
+          <li className="mb-2">
+            Built 10+ games using <em>Pygame</em> and <em>Raylib (C)</em>.
+          </li>
+          <li className="mb-2">
+            Learned Django frameworkd, and core data sciene concepts and tools
+            like Numpy and Pandas <strong>Coursera</strong>.
+          </li>
+          <li className="mb-2">
+            Developed an AI assistant with Python and OpenAI's Davinci engine.
+          </li>
+          <li className="mb-2">
+            Wrote tutorials about Python and game development.
+          </li>
+        </ul>
         <div className="grid grid-cols-2 gap-4">
           <Image
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src="/screenshots/smartone.png"
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <Image
-            src="https://assets.aceternity.com/features-section.png"
+            src="/screenshots/zombieland.png"
             alt="feature template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
+          <div className="col-span-2 grid grid-cols-3 place-items-center gap-4">
+            <Image
+              src="/screenshots/demo_tanks.gif"
+              alt="Top-down tank shooters"
+              width={300}
+              height={300}
+              className="h-44 w-auto object-cover md:h-56 lg:h-64"
+            />
+            <Image
+              src="/screenshots/demo_bridge.gif"
+              alt="BridgeHero Game"
+              width={300}
+              height={300}
+              className="h-44 w-auto object-cover md:h-56 lg:h-64"
+            />
+            <Image
+              src="/screenshots/demo_tictactoe.gif"
+              alt="Tictactoe AI"
+              width={300}
+              height={300}
+              className="h-44 w-auto object-cover md:h-56 lg:h-64"
+            />
+          </div>
           <Image
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
+            src="/screenshots/demo_gameboy.gif"
+            alt="Platformer game in raylib"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <Image
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
+            src="/screenshots/breakout.png"
+            alt="Breakout game"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "2017 - 2019",
-    content: (
-      <div>
-        <p className="mb-4 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
-          Studied Electronics Engineering at Yangon Technological University for
-          3 years.
-        </p>
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Learned C programming
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Built IoT and robotic projects with Arduino
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ 2nd place winner in Mini Rolympics 2017
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300 md:text-sm">
-            ⚡ Built a smart parking system with Arduino and MIT App Inventor
-          </div>
         </div>
       </div>
     ),
@@ -254,6 +293,19 @@ const data = [
 const ExperienceSection = () => {
   return (
     <section>
+      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
+        <Heading
+          as="h2"
+          className="mb-4 text-center text-lg font-semibold text-black dark:text-white md:text-4xl lg:text-5xl"
+        >
+          My Journey
+        </Heading>
+        <p className="mx-auto max-w-2xl text-center text-sm text-neutral-700 dark:text-neutral-300 md:text-base lg:text-xl">
+          These are the milestones that have defined my growth as a developer.
+          Every project and collaboration has been a chance to refine my skills
+          and contribute something meaningful.
+        </p>
+      </div>
       <Timeline data={data} />
     </section>
   );

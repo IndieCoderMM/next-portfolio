@@ -18,10 +18,7 @@ const HomePage = async () => {
     <div className="relative flex w-full flex-col items-center justify-center">
       <HeroSection profile={profile} />
       <TechnologySection techs={techs} />
-      <ServiceSection
-        services={services}
-        heading={"Bring your ideas to reality"}
-      />
+      <ServiceSection services={services} />
       <ProjectSection products={products} />
       <QuoteSection />
       <Metrics metrics={profile?.metrics} />

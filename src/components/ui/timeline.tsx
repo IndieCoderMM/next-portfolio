@@ -30,16 +30,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full md:px-10" ref={containerRef}>
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
-        <h2 className="mb-4 max-w-4xl text-lg text-black dark:text-white md:text-4xl">
-          My Journey
-        </h2>
-        <p className="max-w-sm text-sm text-neutral-700 dark:text-neutral-300 md:text-base">
-          I&apos;ve been working on a lot of projects, and here&apos;s a
-          timeline of my journey.
-        </p>
-      </div>
-
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
           <div
@@ -50,13 +40,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="absolute left-[14px] flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-[14px]">
                 <LiIcon />
               </div>
-              <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-neutral-500 md:block md:pl-20 md:text-5xl">
+              <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-neutral-200 md:block md:pl-20 md:text-5xl">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 dark:text-neutral-500 md:hidden">
+              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 dark:text-neutral-200 md:hidden">
                 {item.title}
               </h3>
               {item.content}{" "}
@@ -74,7 +64,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[4px] rounded-full bg-primary"
+            className="absolute inset-x-0 top-0 w-[4px] rounded-full bg-primary dark:bg-primaryDark"
           />
         </div>
       </div>
@@ -92,7 +82,7 @@ const LiIcon = () => {
   return (
     <figure
       ref={ref}
-      className="-translate-y-5 rotate-90 stroke-primary dark:stroke-primaryDark"
+      className="-translate-y-[19px] rotate-90 stroke-primary dark:stroke-primaryDark"
     >
       <svg
         width={75}

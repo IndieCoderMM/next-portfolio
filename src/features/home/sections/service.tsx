@@ -1,6 +1,5 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { HighlightText } from "@/components/ui/highlight-text";
 import { cn } from "@/utils/cn";
 
 type Service = {
@@ -9,20 +8,14 @@ type Service = {
   icon: React.ReactNode;
 };
 
-const ServiceSection = ({
-  heading,
-  services,
-}: {
-  heading: string;
-  services: Service[];
-}) => {
+const ServiceSection = ({ services }: { services: Service[] }) => {
   return (
     <SectionContainer className="bg-white dark:bg-transparent">
       <div className="borderVr mb-10 lg:mb-20">
-        <Heading as="h2">Skills you can rely on</Heading>
-        <p className="mt-4 text-center text-lg text-neutral-800 dark:text-neutral-100 md:text-xl lg:mt-10 lg:text-2xl">
-          See what I offer and let&apos;s{" "}
-          <HighlightText>build something great together</HighlightText>
+        <Heading as="h2">Skills You Can Rely on</Heading>
+        <p className="mx-uto mt-4 max-w-3xl text-center text-lg text-neutral-800 dark:text-neutral-100 md:text-xl lg:mt-10 lg:text-2xl">
+          From development to deployment, I deliver solutions tailored to your
+          needs. Let’s make your next project a success.{" "}
         </p>
       </div>
       <div className="shadow-blur relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

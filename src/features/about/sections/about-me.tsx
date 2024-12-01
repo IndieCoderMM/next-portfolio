@@ -26,7 +26,7 @@ const AboutMeSection = async () => {
             <LinkPreview
               url="https://www.microverse.org"
               isStatic={false}
-              className="inline-flex font-bold text-primary"
+              className="inline-flex font-bold text-primary dark:text-primaryDark"
             >
               Microverse
             </LinkPreview>{" "}
@@ -42,7 +42,7 @@ const AboutMeSection = async () => {
             <LinkPreview
               url={profile?.socials?.blog ?? "/"}
               isStatic={false}
-              className="font-bold text-primary"
+              className="font-bold text-primary dark:text-primaryDark"
             >
               IndieCoder's Blog
             </LinkPreview>{" "}
