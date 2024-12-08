@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${openSans.variable} font-open antialiased`}
+        className={`${nunito.variable} ${openSans.variable} w-full font-open antialiased`}
       >
         {children}
       </body>

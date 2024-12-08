@@ -7,19 +7,10 @@
   }
 
   html,
-  body,
-  #__next,
-  #__root {
+  body {
     @apply h-full;
   }
 
-  #__root {
-    @apply flex flex-col font-sans;
-  }
-
-  main {
-    @apply flex-1;
-  }
 
   body {
     @apply bg-white text-slate-900;

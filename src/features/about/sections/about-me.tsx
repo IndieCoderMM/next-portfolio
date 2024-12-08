@@ -16,11 +16,6 @@ const AboutMeSection = async () => {
             developer based in Myanmar. I specialize in the React ecosystem and
             have been building native apps with Expo for 2+ years.
           </p>
-          <p className="my-4">
-            I discovered my love for coding in 2019 when I made mobile apps with
-            MIT App Inventor. After leaving university in 2020, I started making
-            games with Python, which eventually led me into web development.
-          </p>
           <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
             In 2022, I joined the{" "}
             <LinkPreview

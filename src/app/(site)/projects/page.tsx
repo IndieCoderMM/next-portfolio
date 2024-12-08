@@ -1,5 +1,7 @@
 import GallerySection from "@/features/projects/sections/gallery";
 import ProjectGrid from "@/features/projects/sections/grid";
+import ProjectRepos from "@/features/projects/sections/repos";
+import { getProducts } from "@/sanity/lib/query";
 
 const skillGroups: SkillGroup[] = [
   {
@@ -23,11 +25,14 @@ const skillGroups: SkillGroup[] = [
   },
 ];
 
-const ProjectPage = () => {
+const ProjectPage = async () => {
+  const products = await getProducts();
+
   return (
     <div className="relative w-full">
       <GallerySection />
       <ProjectGrid />
+      <ProjectRepos products={products} />
     </div>
   );
 };

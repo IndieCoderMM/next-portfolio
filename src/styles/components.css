@@ -57,6 +57,10 @@
     }
   }
 
+  .social-icon {
+    @apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:bg-primary dark:text-primaryDark dark:hover:text-white hover:text-white dark:border-primaryDark dark:hover:bg-primaryDark;
+  }
+
 
   .headerbeat-button {
     @apply flex items-center justify-center animate-buttonheartbeat rounded-md bg-primary px-4 py-1;
@@ -103,5 +107,11 @@
       @apply cursor-not-allowed text-neutral-600;
       @apply dark:text-neutral-500;
     }
+  }
+
+  .section-badge {
+    @apply flex items-center justify-center mx-auto mb-8 select-none self-center;
+    @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit font-bold font-heading text-sm rounded-full bg-white dark:bg-dark/90;
+    @apply shadow-badge dark:shadow-badge-dark text-neutral-500 dark:bg-dark dark:text-primaryDark tracking-wider uppercase;
   }
 }

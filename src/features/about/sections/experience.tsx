@@ -293,7 +293,7 @@ const data = [
 const ExperienceSection = () => {
   return (
     <section>
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 lg:px-10">
         <Heading
           as="h2"
           className="mb-4 text-center text-lg font-semibold text-black dark:text-white md:text-4xl lg:text-5xl"

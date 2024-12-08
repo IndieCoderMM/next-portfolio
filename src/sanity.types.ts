@@ -110,6 +110,11 @@ export type Product = {
   developedAt?: string;
   tags?: Array<string>;
   stack?: Array<string>;
+  languages?: Array<{
+    language?: string;
+    percent?: number;
+    _key: string;
+  }>;
 };
 
 export type Project = {

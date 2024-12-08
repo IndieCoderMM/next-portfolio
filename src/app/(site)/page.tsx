@@ -3,7 +3,6 @@ import { techs } from "@/config/technology";
 import HeroSection from "@/features/home/sections/hero";
 import Metrics from "@/features/home/sections/metrics";
 import ProjectSection from "@/features/home/sections/projects";
-import QuoteSection from "@/features/home/sections/quote";
 import ServiceSection from "@/features/home/sections/service";
 import TechnologySection from "@/features/home/sections/technology";
 import { getProducts, getProfile } from "@/sanity/lib/query";
@@ -20,7 +19,6 @@ const HomePage = async () => {
       <TechnologySection techs={techs} />
       <ServiceSection services={services} />
       <ProjectSection products={products} />
-      <QuoteSection />
       <Metrics metrics={profile?.metrics} />
     </div>
   );

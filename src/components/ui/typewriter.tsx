@@ -55,7 +55,7 @@ export const TypewriterText = ({
                   initial={{}}
                   key={`char-${index}`}
                   className={cn(
-                    `hidden font-nunito text-black opacity-0 dark:text-white`,
+                    `font-primary hidden text-black opacity-0 dark:text-white`,
                     word.className,
                   )}
                 >

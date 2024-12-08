@@ -77,6 +77,29 @@ const productSchema = defineType({
       description: "Add the technologies used in this product",
       of: [{ type: "string" }],
     },
+    {
+      name: "languages",
+      title: "Languages",
+      type: "array",
+      description: "Add the languages & percent used in this product",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "language",
+              title: "Language",
+              type: "string",
+            },
+            {
+              name: "percent",
+              title: "Percent",
+              type: "number",
+            },
+          ],
+        },
+      ],
+    },
   ],
 });
 

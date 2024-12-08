@@ -1,8 +1,9 @@
 import AnimatedNumber from "@/components/common/animated-number";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
+import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
-import { IconMessage2 } from "@tabler/icons-react";
+import { IconBriefcase } from "@tabler/icons-react";
 
 type Metrics = NonNullable<ProfileQueryResult>["metrics"] | undefined;
 
@@ -12,16 +13,20 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
   return (
     <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
       <div className="borderVr">
-        <div className="text-center">
-          <Heading as="h2">Proven Impact 📈 Through Numbers </Heading>
-          <p className="mt-4 text-center text-lg lg:text-xl">
-            Here are some of the metrics that define my journey
-          </p>
+        <div className="mx-auto w-full text-center md:w-[80%]">
+          <Heading as="h2">
+            My Code compiled into
+            <br />
+            these Numbers{" "}
+            <span className="inline-block -rotate-6 transform shadow-sm">
+              📈
+            </span>
+          </Heading>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-14">
+        <div className="mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
           <div>
-            <h3 className="text-7xl font-bold">
+            <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={apps ?? 0}
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
@@ -30,12 +35,14 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
                 {"+"}
               </span>
             </h3>
-            <p className="mt-4 text-xl font-medium">Apps launched</p>
-            <p className="mt-0.5 text-base">In last {years ?? 0} years</p>
+            <p className="mt-4 font-medium sm:text-xl">Apps launched</p>
+            <p className="mt-0.5 text-xs sm:text-base">
+              In last {years ?? 0} years
+            </p>
           </div>
 
           <div>
-            <h3 className="text-7xl font-bold">
+            <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={websites ?? 0}
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
@@ -44,12 +51,14 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
                 {"+"}
               </span>
             </h3>
-            <p className="mt-4 text-xl font-medium">Projects</p>
-            <p className="mt-0.5 text-base">Completed and delivered</p>
+            <p className="mt-4 font-medium sm:text-xl">Projects</p>
+            <p className="mt-0.5 text-xs sm:text-base">
+              Completed and delivered
+            </p>
           </div>
 
-          <div>
-            <h3 className="text-7xl font-bold">
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={users ?? 0}
                 className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
@@ -58,8 +67,8 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
                 {"K+"}
               </span>
             </h3>
-            <p className="mt-4 text-xl font-medium">Satisfied users</p>
-            <p className="mt-0.5 text-base">Across all projects</p>
+            <p className="mt-4 font-medium sm:text-xl">Satisfied users</p>
+            <p className="mt-0.5 text-xs sm:text-base">Across all projects</p>
           </div>
         </div>
 
@@ -67,12 +76,14 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           <Heading as="h3" className="text-xl md:text-2xl lg:text-4xl">
             Interested in collaborating with me?
           </Heading>
-          <p className="text-lg lg:text-xl">
-            I can translate these numbers into your project&apos;s success.
+          <p className="text-lg font-medium md:text-xl lg:text-2xl">
+            Transform your ideas into reality. Next big thing starts with a
+            conversation.
           </p>
-          <button type="button" className="outline-button mt-8 rounded-full">
-            <IconMessage2 />
-            <span>Let's Chat</span>
+          <Socials />
+          <button type="button" className="outline-button mt-2 rounded-full">
+            <IconBriefcase />
+            <span>Let's Discuss Success</span>
           </button>
         </div>
       </div>

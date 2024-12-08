@@ -21,16 +21,20 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: ["var(--font-nunito)"],
-        open: ["var(--font-open-sans)"],
+        heading: ["var(--font-nunito)"],
+        body: ["var(--font-open-sans)"],
       },
       boxShadow: {
-        "shadow-blur": "10px 10px 20px 0 rgba(255, 255, 255, 0.5)",
+        blur: "10px 10px 20px 0 rgba(255, 255, 255, 0.5)",
+        badge:
+          "rgba(99, 99, 99, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15)",
+        "badge-dark":
+          "rgba(9, 9, 9, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.3), inset 0px -2px 0px rgba(0, 0, 0, 0.35)",
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        dark: "#2a2a2a",
+        dark: "#283138",
         light: "#f0f0f0",
         primary: "#6262f9",
         primaryDark: "#2bc578",

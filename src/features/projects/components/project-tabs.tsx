@@ -115,12 +115,11 @@ const projectTabs = [
     content: (
       <TabContent title="Easy2Success">
         <div className="group grid grid-cols-12">
-          <div className="col-span-5 pt-10">
+          <div className="col-span-6 pt-10">
             <p className="mb-4 leading-loose text-black dark:text-white lg:text-3xl">
               AI-Powered Personal Development & E-Learning App{" "}
               <span className="text-neutral-700 dark:text-neutral-200">
-                empowering users through personalized learning and development
-                plans.
+                empowering users to achieve their goals
               </span>
             </p>
             <div className="mb-8 flex items-center gap-4">
@@ -154,12 +153,12 @@ const projectTabs = [
               )}
             </div>
           </div>
-          <div className="col-span-7">
+          <div className="col-span-6">
             <Image
               src="/screenshots/e2s.webp"
               alt="dummy image"
-              width="900"
-              height="1600"
+              width="600"
+              height="1200"
               className="object-cover object-left-top"
             />
           </div>

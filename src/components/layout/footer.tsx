@@ -124,8 +124,8 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
         About Me
       </div>
       <p className={"mb-4 font-normal leading-relaxed"}>
-        I am a self-taught developer who believes in the power of the internet
-        and the community.
+        I am a self-taught developer who loves building stuffs. Always up for
+        solving problems and creating things people enjoy using.
       </p>
       <ul className={"-ml-2 flex gap-1"}>
         <li>
@@ -175,21 +175,21 @@ const Footer = async () => {
   return (
     <footer
       className={
-        "dark:border-divider-dark mt-24 w-full border-light pt-16 text-sm text-slate-900 dark:text-slate-200"
+        "dark:border-divider-dark mt-18 w-full border-light pt-16 text-sm text-slate-900 dark:text-slate-200 lg:mt-24"
       }
     >
       <div className={"max-container"}>
         <div className={"py-10 font-semibold"}>
           <div className={"flex flex-col-reverse gap-16 lg:flex-row"}>
-            <div className={"flex-1"}>
+            <div className={"flex-1 p-4"}>
               <FooterDescription profile={profile} />
             </div>
             <div
               className={
-                "-mx-2 flex flex-1 flex-col gap-8 sm:flex-row sm:justify-center sm:gap-16 lg:mx-0"
+                "flex flex-1 flex-col gap-8 sm:flex-row sm:justify-center sm:gap-16 lg:mx-0"
               }
             >
-              <div className={"flex sm:gap-16"}>
+              <div className={"flex p-4 sm:gap-16"}>
                 <FooterGroup
                   title="Work"
                   links={[
@@ -229,7 +229,7 @@ const Footer = async () => {
                   ]}
                 />
               </div>
-              <div className={"flex sm:gap-16"}>
+              <div className={"flex p-4 sm:gap-16"}>
                 <FooterGroup
                   title="This Site"
                   links={[
@@ -250,7 +250,7 @@ const Footer = async () => {
         </div>
         <div
           className={
-            "border-divider-light dark:border-divider-dark flex justify-between border-t py-6 text-xs"
+            "flex w-full justify-between border-t border-light px-4 py-6 text-xs dark:border-dark"
           }
         >
           <div className={"font-semibold"}>
