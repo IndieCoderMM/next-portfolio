@@ -21,6 +21,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        title: ["var(--font-poppins)"],
+        hand: ["var(--font-gochi-hand)"],
         heading: ["var(--font-nunito)"],
         body: ["var(--font-open-sans)"],
       },
@@ -30,6 +32,12 @@ const config: Config = {
           "rgba(99, 99, 99, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15)",
         "badge-dark":
           "rgba(9, 9, 9, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.3), inset 0px -2px 0px rgba(0, 0, 0, 0.35)",
+      },
+      backgroundImage: {
+        "gr-primary":
+          "linear-gradient(to right, var(--primary-900), var(--primary-800), var(--primary-900))",
+        "gr-primary-dark":
+          "linear-gradient(to right, #1c8550, #1ba568, #1c8550)",
       },
       colors: {
         background: "var(--background)",
@@ -44,14 +52,14 @@ const config: Config = {
       },
       animation: {
         move: "move 5s linear infinite",
-        buttonheartbeat: "buttonheartbeat 2s infinite ease-in-out",
+        heartbeat: "heartbeat 2s infinite ease-in-out",
       },
       keyframes: {
         move: {
           "0%": { transform: "translateX(-200px)" },
           "100%": { transform: "translateX(200px)" },
         },
-        buttonheartbeat: {
+        heartbeat: {
           "0%": {
             "box-shadow": '0 0 0 0 theme("colors.primary")',
             transform: "scale(1)",

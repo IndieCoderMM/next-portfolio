@@ -27,3 +27,9 @@
 .borderVr {
   @apply border-y-0 border-neutral-200 dark:border-neutral-700;
 }
+
+[prefers-color-scheme='dark'] {
+  .primaryBtn>span:nth-child(2) {
+    background: linear-gradient(to right, #10b981, #14e0a4, #10b981);
+  }
+}

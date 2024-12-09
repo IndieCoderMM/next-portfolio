@@ -10,10 +10,10 @@ const PrimaryButton = ({
   type?: "button" | "submit";
 }>) => {
   return (
-    <button className={styles.primaryBtn} type={type} onClick={onClick}>
+    <button className={`${styles.primaryBtn}`} type={type} onClick={onClick}>
       <span />
-      <span />
-      <div>{children}</div>
+      <span className="bg-gr-primary dark:bg-gr-primary-dark" />
+      <div className="bg-primary dark:bg-[#23b26a]">{children}</div>
     </button>
   );
 };

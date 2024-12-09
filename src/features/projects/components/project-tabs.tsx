@@ -27,7 +27,7 @@ const DummyContent = () => {
   );
 };
 
-const Chip = ({
+export const Chip = ({
   text,
   icon: Icon,
   color,
@@ -88,7 +88,7 @@ const TabContent = ({
   );
 };
 
-const Button = ({
+export const Button = ({
   icon,
   title,
   subtitle,
@@ -98,11 +98,13 @@ const Button = ({
   subtitle: string;
 }) => {
   return (
-    <button className="border-text flex items-center gap-[17px] rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:brightness-110 dark:bg-dark">
+    <button className="border-text flex items-center gap-2 rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:brightness-110 dark:bg-dark sm:gap-4">
       {icon}
       <div className="flex flex-col items-start">
-        <span className="text-text text-sm font-medium">{subtitle}</span>
-        <p className="mb-2 text-lg font-medium leading-[20px]">{title}</p>
+        <span className="text-text text-xs font-medium sm:text-sm">
+          {subtitle}
+        </span>
+        <p className="mb-2 font-medium leading-[20px] sm:text-lg">{title}</p>
       </div>
     </button>
   );

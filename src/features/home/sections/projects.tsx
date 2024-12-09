@@ -16,13 +16,16 @@ const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
         <Heading as="h3" className="mb-4 text-3xl md:text-4xl lg:text-5xl">
           Over 20+ <span className="inline-block rotate-6 transform">🚀</span>{" "}
           projects done, <br />
-          Here're a few of them
+          Here're some of them
         </Heading>
       </div>
       <div className="inner-container grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {products.slice(0, 6).map((p, index) => (
-          <ProjectCard key={index} project={p} />
-        ))}
+        {products
+          .filter((p) => p.slug != "next-portfolio")
+          .slice(0, 6)
+          .map((p, index) => (
+            <ProjectCard key={index} project={p} />
+          ))}
       </div>
       <Link href="/projects">
         <button type="button" className="outline-button mt-8 rounded-full">

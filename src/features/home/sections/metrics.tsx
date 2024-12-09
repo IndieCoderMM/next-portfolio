@@ -74,16 +74,16 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
 
         <div className="inner-container mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
           <Heading as="h3" className="text-xl md:text-2xl lg:text-4xl">
-            Interested in collaborating with me?
+            Want to work together?
           </Heading>
           <p className="text-lg font-medium md:text-xl lg:text-2xl">
-            Transform your ideas into reality. Next big thing starts with a
-            conversation.
+            Drop me a message and let’s see how we can build something great
+            together.
           </p>
           <Socials />
           <button type="button" className="outline-button mt-2 rounded-full">
             <IconBriefcase />
-            <span>Let's Discuss Success</span>
+            <span>Let's Talk Success</span>
           </button>
         </div>
       </div>

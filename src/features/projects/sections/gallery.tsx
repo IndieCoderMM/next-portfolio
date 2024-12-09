@@ -6,14 +6,17 @@ import ProjectTabs from "../components/project-tabs";
 
 const GallerySection = () => {
   return (
-    <SectionContainer className="">
+    <SectionContainer className="hidden sm:block">
       <div className="borderVr mx-auto w-full">
         <div className="w-full pb-12">
           <div className="mb-8 flex items-center gap-10">
-            <Heading className="text-left">Code in Action</Heading>
+            <Heading className="text-left">
+              Big Ideas into Impactful Products
+            </Heading>
           </div>
-          <p className="text-lg font-light md:text-xl lg:text-3xl">
-            Here are some of the cool projects that I've built.
+          <p className="text-lg font-light sm:w-[80%] md:text-xl lg:text-3xl">
+            Started with an idea, ended with something amazing. Here’s how I
+            turn concepts into code that delivers.
           </p>
         </div>
         <ProjectTabs />
@@ -21,12 +24,12 @@ const GallerySection = () => {
 
       <div className="inner-container mt-20 flex flex-col items-center gap-4 text-center lg:mt-32 lg:gap-8">
         <Heading as="h3" className="text-xl md:text-3xl lg:text-5xl">
-          Wanna see fun projects instead?
+          Want to see fun projects?
         </Heading>
-        <p className="ld:text-3xl font-medium md:text-xl">
-          Join the fun side of the playground and checkout more projects.
+        <p className="md:text-xl lg:text-2xl">
+          Games, algorithms, and some random things I've built.
         </p>
-        <Link href="/playground" className="outline-button mt-8 rounded-full">
+        <Link href="/playground" className="outline-button mt-4 rounded-full">
           <IconBuildingCastle />
           <span>Enter Playground</span>
         </Link>

@@ -58,6 +58,20 @@ const productSchema = defineType({
       ],
     },
     {
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      description: "Upload a cover image for this product",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "developedAt",
       title: "Developed At",
       type: "datetime",

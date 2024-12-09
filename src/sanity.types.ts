@@ -107,6 +107,18 @@ export type Product = {
     alt?: string;
     _type: "image";
   };
+  coverImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
   developedAt?: string;
   tags?: Array<string>;
   stack?: Array<string>;
@@ -391,17 +403,27 @@ export type ProfileQueryResult = {
   } | null;
 } | null;
 // Variable: productsQuery
-// Query: *[ _type == "product" ] | order(developedAt desc){      "id": _id,      name,      tagline,      "slug": slug.current,      tags,      stack,      githubURL,      liveURL,      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},      developedAt    }
+// Query: *[ _type == "product" ] | order(developedAt desc){      "id": _id,      name,      tagline,      "slug": slug.current,      tags,      languages[],      status,      stack,      githubURL,      liveURL,      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},      "coverImage": {"url": coverImage.asset->url, "alt": coverImage.alt},      developedAt    }
 export type ProductsQueryResult = Array<{
   id: string;
   name: string | null;
   tagline: string | null;
   slug: string | null;
   tags: Array<string> | null;
+  languages: Array<{
+    language?: string;
+    percent?: number;
+    _key: string;
+  }> | null;
+  status: string | null;
   stack: Array<string> | null;
   githubURL: string | null;
   liveURL: string | null;
   logoImage: {
+    url: string | null;
+    alt: string | null;
+  };
+  coverImage: {
     url: string | null;
     alt: string | null;
   };
@@ -413,6 +435,6 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[ _type == "profile" ]{\n      _id,\n      fullName,\n      bio,\n      about,\n      email,\n      "resumeURL": resumeURL.asset->url,\n      lastUpdated,\n      socials {github, linkedin, whatsapp, blog},\n      metrics {apps, websites, users, years},\n    }[0]': ProfileQueryResult;
-    '*[ _type == "product" ] | order(developedAt desc){\n      "id": _id,\n      name,\n      tagline,\n      "slug": slug.current,\n      tags,\n      stack,\n      githubURL,\n      liveURL,\n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      developedAt\n    }': ProductsQueryResult;
+    '*[ _type == "product" ] | order(developedAt desc){\n      "id": _id,\n      name,\n      tagline,\n      "slug": slug.current,\n      tags,\n      languages[],\n      status,\n      stack,\n      githubURL,\n      liveURL,\n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      "coverImage": {"url": coverImage.asset->url, "alt": coverImage.alt},\n      developedAt\n    }': ProductsQueryResult;
   }
 }

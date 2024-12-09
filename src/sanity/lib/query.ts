@@ -20,10 +20,13 @@ const productsQuery =
       tagline,
       "slug": slug.current,
       tags,
+      languages[],
+      status,
       stack,
       githubURL,
       liveURL,
       "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},
+      "coverImage": {"url": coverImage.asset->url, "alt": coverImage.alt},
       developedAt
     }`);
 

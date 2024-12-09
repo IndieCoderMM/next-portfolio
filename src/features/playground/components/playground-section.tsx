@@ -16,7 +16,6 @@ import {
   IconRoute,
   IconWall,
 } from "@tabler/icons-react";
-import Image from "next/image";
 import { useMemo, useState } from "react";
 
 enum SandboxId {
@@ -97,19 +96,12 @@ const PlaygroundSection = () => {
   return (
     <SectionContainer>
       <div className="w-full pb-12">
-        <div className="mb-4 flex items-center gap-10">
-          <Heading className="text-left text-xl font-medium lg:text-6xl">
-            Code in Action
-          </Heading>
-          <Image
-            src={"/assets/rocket.png"}
-            width={80}
-            height={80}
-            alt="rocket"
-          />
+        <div className="mb-8 gap-10">
+          <Heading className="text-left">Explore My Playground</Heading>
         </div>
-        <p className="text-lg font-light md:text-xl lg:text-3xl">
-          Here are some of the cool projects that I've built.
+        <p className="text-lg font-light sm:w-[80%] md:text-xl lg:text-3xl">
+          No deadlines, no clients — just me, some coffee, and a ton of ideas.
+          Here’s what came out of it.
         </p>
       </div>
       <SectionContent>
