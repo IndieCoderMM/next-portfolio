@@ -43,11 +43,13 @@ const MobileFeaturedProjects = () => {
           <div className="flex">
             <div className="mt-auto flex w-full justify-center gap-4 px-4 sm:flex-col">
               <Button
+                href="https://play.google.com/store/apps/details?id=com.pandoratech.easy2success"
                 icon={<IconBrandGooglePlay className="h-8 w-8" />}
                 subtitle="Get it on"
                 title={"Google Play"}
               />
               <Button
+                href="https://apps.apple.com/us/app/easy2success/id6496866939"
                 icon={<IconBrandAppstore className="h-8 w-8" />}
                 subtitle="Download on the"
                 title={"App Store"}
