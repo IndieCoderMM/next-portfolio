@@ -1,14 +1,8 @@
 import "@/styles/globals.css";
 import "easymde/dist/easymde.min.css";
 import type { Metadata } from "next";
-import { Gochi_Hand, Poppins } from "next/font/google";
+import { Gochi_Hand } from "next/font/google";
 import localFont from "next/font/local";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["700", "900"],
-});
 
 const gochiHand = Gochi_Hand({
   variable: "--font-gochi-hand",
@@ -29,8 +23,9 @@ const openSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Hein Thant Oo",
-  description: "Software Developer",
+  title: "Hein Thant · Full-Stack Developer",
+  description:
+    "My corner of the internet to share projects I’ve built and a bit about what drives me as a developer.",
 };
 
 export default function RootLayout({
@@ -41,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${openSans.variable} ${poppins.variable} ${gochiHand.variable} font-open w-full antialiased`}
+        className={`${nunito.variable} ${openSans.variable} ${gochiHand.variable} font-open w-full antialiased`}
       >
         {children}
       </body>

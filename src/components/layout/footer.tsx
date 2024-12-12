@@ -2,6 +2,7 @@ import dayjs from "@/lib/dayjs";
 import { ProfileQueryResult } from "@/sanity.types";
 import { getProfile } from "@/sanity/lib/query";
 import {
+  IconBrandBluesky,
   IconBrandGithub,
   IconBrandLinkedin,
   IconExternalLink,
@@ -61,7 +62,7 @@ const FooterLink = ({
         {label && (
           <span
             className={
-              "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 dark:bg-green-900 dark:text-green-200"
+              "rounded-full bg-green-50 px-2 py-1 text-xs uppercase text-green-500 dark:bg-green-900 dark:text-green-200"
             }
           >
             {label}
@@ -133,9 +134,11 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             href={profile?.socials?.linkedin ?? undefined}
             target="_blank"
             rel="noreferrer nofollow"
-            className={"flex h-9 w-9 items-center justify-center"}
-            aria-label="My Twitter profile"
-            title="My Twitter profile"
+            className={
+              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+            }
+            aria-label="My LinkedIn profile"
+            title="Connect on LinkedIn"
           >
             <IconBrandLinkedin className={"h-5 w-5"} />
           </a>
@@ -145,9 +148,11 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             href={profile?.socials?.github ?? undefined}
             target="_blank"
             rel="noreferrer nofollow"
-            className={"flex h-9 w-9 items-center justify-center"}
+            className={
+              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+            }
             aria-label="My GitHub profile"
-            title="My GitHub profile"
+            title="View my GitHub profile"
           >
             <IconBrandGithub className={"h-5 w-5"} />
           </a>
@@ -157,11 +162,27 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             href={`mailto:${profile?.email}`}
             target="_blank"
             rel="noreferrer nofollow"
-            className={"flex h-9 w-9 items-center justify-center"}
-            aria-label="My Leetcode profile"
-            title="Contact Me"
+            className={
+              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+            }
+            aria-label="Email Me"
+            title="Email Me"
           >
             <IconMail className={"h-5 w-5"} />
+          </a>
+        </li>
+        <li>
+          <a
+            href={profile?.socials?.bluesky ?? undefined}
+            target="_blank"
+            rel="noreferrer nofollow"
+            className={
+              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+            }
+            aria-label="My BlueSky account"
+            title="Visit my BlueSky account"
+          >
+            <IconBrandBluesky className={"h-5 w-5"} />
           </a>
         </li>
       </ul>
@@ -214,6 +235,7 @@ const Footer = async () => {
                     },
                     {
                       title: "Playground",
+                      label: "new",
                       href: "/playground",
                     },
                     {

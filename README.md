@@ -1,38 +1,18 @@
 # Portfolio Website
 
-This is my portfolio website, where I showcase my skills, projects, and developer experience.
+My corner of the internet to share projects I’ve built and a bit about what drives me as a developer.
 
-## 🚀 Visit Website: [www.heinthantoo.me](https://www.heinthantoo.me/)
-
-<img src="./screenshot.png" width="800px" >
+## 🚀 [Visit Website](https://heinthantoo.vercel.app/)
 
 ## Stack
 
 - Next.js
 - React.js
+- TypeScript
 - Tailwind CSS
 - Sanity.io
 - Framer Motion
 - Vercel
-
-
-## Inspirations
-
-My portfolio was inspired by these amazing websites:
-
-- [Minimal NextJS Portfolio](https://minimal-nextjs-portfolio-website.vercel.app/)
-- [Rafael Caferati's Awesome Portfolio](https://caferati.me/)
-- [Matt Farley's Personal Portfolio](https://mattfarley.ca/)
-
-
-## Resources
-
-- [Undraw](https://undraw.co/) - Open source illustrations
-- [Iconify](https://iconify.design/) - Open source icons
-- [Flaticon](https://www.flaticon.com/) - Free icons
-- [SVGR](https://react-svgr.com/) - SVG to React Component
-- [CSS Buttons](https://getcssscan.com/css-buttons-examples) - CSS Button Examples
-- [Get Waves](https://getwaves.io/) - SVG Wave Generator
 
 
 ## License

@@ -10,7 +10,6 @@ import {
 } from "@tabler/icons-react";
 import { motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 
 type Project = ProductsQueryResult[number];
 
@@ -34,7 +33,6 @@ const getLanguageColor = (language: string) => {
 const GitHubCard = ({ project }: { project: Project }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const [isInside, setIsInside] = useState(false);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = event;
@@ -60,13 +58,6 @@ const GitHubCard = ({ project }: { project: Project }) => {
 
     x.set(tooltipX);
     y.set(tooltipY);
-  };
-  const handleMouseLeave = () => {
-    setIsInside(false);
-  };
-
-  const handleMouseEnter = () => {
-    setIsInside(true);
   };
 
   return (
@@ -122,25 +113,25 @@ const GitHubCard = ({ project }: { project: Project }) => {
             href={project.githubURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs text-neutral-600 dark:bg-dark"
+            className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs dark:bg-dark"
           >
             <IconBrandGithub size={20} />
             <span>Public</span>
           </a>
         )}
-        {project.liveURL && (
+        {project.liveURL && project.status === "live" && (
           <a
             href={project.liveURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs text-neutral-600 dark:bg-dark"
+            className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs dark:bg-dark"
           >
             <IconRocket size={20} className="" />
             <span>Live</span>
           </a>
         )}
         {project.status === "archive" && (
-          <div className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs text-neutral-600 dark:bg-dark">
+          <div className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs dark:bg-dark">
             <IconArchive size={20} />
             <span>Archived</span>
           </div>
@@ -150,8 +141,6 @@ const GitHubCard = ({ project }: { project: Project }) => {
       {/*Language bar*/}
       <div
         onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
         className="absolute inset-x-0 bottom-0 mt-4 flex h-2 overflow-hidden rounded-b-lg bg-gray-400"
       >
         {project.languages?.filter(Boolean)?.map((lang) => (

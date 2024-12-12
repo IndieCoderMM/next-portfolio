@@ -21,7 +21,7 @@ const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
       </div>
       <div className="inner-container grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {products
-          .filter((p) => p.slug != "next-portfolio")
+          .filter((p) => p.slug != "next-portfolio" && p.status === "live")
           .slice(0, 6)
           .map((p, index) => (
             <ProjectCard key={index} project={p} />

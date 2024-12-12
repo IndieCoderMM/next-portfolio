@@ -3,7 +3,6 @@ import {
   IconBrandBluesky,
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandWhatsapp,
   IconMail,
 } from "@tabler/icons-react";
 
@@ -37,15 +36,7 @@ const Socials = async () => {
         <IconMail />
       </a>
       <a
-        href={profile?.socials?.whatsapp ?? undefined}
-        title="WhatsApp"
-        aria-label="WhatsApp"
-        className="social-icon"
-      >
-        <IconBrandWhatsapp />
-      </a>
-      <a
-        href={profile?.socials?.blog ?? undefined}
+        href={profile?.socials?.bluesky ?? undefined}
         title="Blue Sky"
         aria-label="Blue Sky"
         className="social-icon"

@@ -21,10 +21,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        title: ["var(--font-poppins)"],
-        hand: ["var(--font-gochi-hand)"],
         heading: ["var(--font-nunito)"],
         body: ["var(--font-open-sans)"],
+        hand: ["var(--font-gochi-hand)"],
       },
       boxShadow: {
         blur: "10px 10px 20px 0 rgba(255, 255, 255, 0.5)",

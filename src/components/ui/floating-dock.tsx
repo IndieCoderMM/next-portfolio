@@ -105,15 +105,21 @@ const FloatingDockDesktop = ({
 
   const isActive = (href: string) => activePath === href;
 
+  // [mask-image:linear-gradient(to_top,black_0%_60%,transparent_60%_100%)]
+  //
+
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 dark:bg-neutral-900 md:flex",
+        "relative mx-auto hidden h-16 items-end gap-4 rounded-2xl px-4 pb-3 md:flex",
         className,
       )}
     >
+      <div className="pointer-events-none absolute inset-0 h-[100%] transform rounded-2xl p-[3px] backdrop-blur-md backdrop-brightness-125 dark:bg-neutral-900/30">
+        <div className="h-[100%] w-full rounded-2xl backdrop-blur-lg" />
+      </div>
       {items.map((item) => (
         <IconContainer
           mouseX={mouseX}
@@ -122,7 +128,7 @@ const FloatingDockDesktop = ({
           isActive={isActive(item.href)}
         />
       ))}
-      <hr className="mt-3 h-[25px] w-[1px] self-center bg-neutral-500 dark:bg-neutral-800" />
+      <hr className="relative mt-3 h-[25px] w-[1px] self-center bg-neutral-600 dark:bg-neutral-400" />
       <button type="button" onClick={handleThemeToggle}>
         <IconContainer
           mouseX={mouseX}
@@ -197,7 +203,7 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
-  const Elem = href ? Link : "div";
+  const Elem = href.length > 0 ? Link : "div";
 
   return (
     <Elem
@@ -209,7 +215,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-900"
       >
         <AnimatePresence>
           {hovered && (
@@ -233,7 +239,7 @@ function IconContainer({
           <motion.div
             layoutId="activeTab"
             transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
-            className="absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg bg-primary brightness-110"
+            className="absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg bg-primary brightness-110 dark:bg-primaryDark"
           />
         )}
       </motion.div>

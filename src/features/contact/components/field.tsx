@@ -1,6 +1,5 @@
 import { cn } from "@/utils/cn";
 import { fadeIn } from "@/utils/motion";
-import { IconArrowDownLeft } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 type FieldProps = {
@@ -53,7 +52,8 @@ const Field = ({
             },
           )}
         >
-          <IconArrowDownLeft />
+          <span>&crarr;</span>
+
           <span className="pr-2 text-xs">Enter</span>
         </div>
       </motion.div>

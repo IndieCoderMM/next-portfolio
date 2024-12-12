@@ -1,29 +1,16 @@
+import ContactCTA from "@/features/projects/sections/contact-cta";
 import GallerySection from "@/features/projects/sections/gallery";
-import ProjectGrid from "@/features/projects/sections/grid";
+import MobileFeaturedProjects from "@/features/projects/sections/mobile-featured";
+import PlaygroundCTA from "@/features/projects/sections/playground-cta";
 import ProjectRepos from "@/features/projects/sections/repos";
 import { getProducts } from "@/sanity/lib/query";
+import { Metadata } from "next";
 
-const skillGroups: SkillGroup[] = [
-  {
-    id: "1",
-    title: "Frontend",
-    imageURL: "/assets/images/projects/frontend.svg",
-    list: [
-      {
-        name: "React",
-        logoURL: "/assets/images/skills/react.svg",
-      },
-      {
-        name: "Next.js",
-        logoURL: "/assets/images/skills/nextjs.svg",
-      },
-      {
-        name: "Redux",
-        logoURL: "/assets/images/skills/redux.svg",
-      },
-    ],
-  },
-];
+export const metadata: Metadata = {
+  title: "Projects — Hein Thant · Full-Stack Developer",
+  description:
+    "Showcase of apps and ideas I've brought to life. From games to web apps, and everything in between.",
+};
 
 const ProjectPage = async () => {
   const products = await getProducts();
@@ -31,8 +18,10 @@ const ProjectPage = async () => {
   return (
     <div className="relative w-full">
       <GallerySection />
-      <ProjectGrid />
+      <MobileFeaturedProjects />
+      <PlaygroundCTA />
       <ProjectRepos products={products} />
+      <ContactCTA />
     </div>
   );
 };

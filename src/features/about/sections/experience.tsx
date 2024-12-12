@@ -25,11 +25,9 @@ const data = [
         </p>
         <ul className="mb-8 list-disc">
           <li className="mb-2">
-            Led the end-to-end development of <strong>Easy2Success</strong>, a
-            multi-featured productivity app that includes goal-setting tools,
-            blogs, podcasts, and classrooms. Handle everything from design and
-            tech stack selection to system architecture and native app
-            development.
+            Led the development of <strong>Easy2Success</strong>, a feature-rich
+            productivity app that includes goal-setting tools, blogs, podcasts,
+            and classrooms.
           </li>
           <li className="mb-2">
             Integrated OpenAI's API to provide personalized suggestions for user
@@ -294,16 +292,18 @@ const ExperienceSection = () => {
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 lg:px-10">
+        <div className="section-badge">
+          <span>My Journey</span>
+        </div>
         <Heading
           as="h2"
           className="mb-4 text-center text-lg font-semibold text-black dark:text-white md:text-4xl lg:text-5xl"
         >
-          My Journey
+          How I got here
         </Heading>
         <p className="mx-auto max-w-2xl text-center text-sm text-neutral-700 dark:text-neutral-300 md:text-base lg:text-xl">
-          These are the milestones that have defined my growth as a developer.
-          Every project and collaboration has been a chance to refine my skills
-          and contribute something meaningful.
+          I have one simple rule: learn from every challenge and deliver my
+          best.
         </p>
       </div>
       <Timeline data={data} />

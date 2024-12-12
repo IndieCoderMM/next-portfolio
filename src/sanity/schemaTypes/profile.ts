@@ -68,6 +68,12 @@ const profileSchema = defineType({
           type: "url",
           initialValue: "https://wa.me/",
         },
+        {
+          name: "bluesky",
+          title: "BlueSky",
+          type: "url",
+          initialValue: "https://",
+        },
       ],
       options: {
         collapsed: false,

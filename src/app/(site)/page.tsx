@@ -11,8 +11,6 @@ const HomePage = async () => {
   const profile = await getProfile();
   const products = await getProducts();
 
-  console.log(JSON.stringify(profile, null, 2));
-
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
       <HeroSection profile={profile} />

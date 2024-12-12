@@ -24,6 +24,8 @@ const ProjectCard = ({ project }: { project: ProductsQueryResult[number] }) => {
       </p>
       <a
         href={project.liveURL ?? undefined}
+        target="_blank"
+        rel="noreferer"
         className="mt-auto flex items-center justify-center gap-2 rounded-lg bg-blue-50/20 p-2 text-primary hover:brightness-110 dark:border dark:border-primaryDark dark:bg-dark dark:text-primaryDark"
       >
         <IconExternalLink className="text-primary dark:text-primaryDark" />

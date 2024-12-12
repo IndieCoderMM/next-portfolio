@@ -4,6 +4,7 @@ import { SectionContainer } from "@/components/layout/section";
 import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
 import { IconBriefcase } from "@tabler/icons-react";
+import Link from "next/link";
 
 type Metrics = NonNullable<ProfileQueryResult>["metrics"] | undefined;
 
@@ -29,9 +30,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={apps ?? 0}
-                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
               />
-              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
                 {"+"}
               </span>
             </h3>
@@ -45,9 +46,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={websites ?? 0}
-                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
               />
-              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
                 {"+"}
               </span>
             </h3>
@@ -61,9 +62,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={users ?? 0}
-                className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
               />
-              <span className="bg-gradient-to-r from-fuchsia-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
                 {"K+"}
               </span>
             </h3>
@@ -81,10 +82,10 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             together.
           </p>
           <Socials />
-          <button type="button" className="outline-button mt-2 rounded-full">
+          <Link href="/contact" className="outline-button mt-2 rounded-full">
             <IconBriefcase />
             <span>Let's Talk Success</span>
-          </button>
+          </Link>
         </div>
       </div>
     </SectionContainer>

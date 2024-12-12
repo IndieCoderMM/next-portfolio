@@ -1936,6 +1936,13 @@
                 "type": "string"
               },
               "optional": true
+            },
+            "bluesky": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              },
+              "optional": true
             }
           }
         },

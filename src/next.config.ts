@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "aceternity.com",
       },
+      {
+        hostname: "cdn.sanity.io",
+      },
     ],
   },
 };

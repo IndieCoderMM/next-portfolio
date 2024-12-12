@@ -3,29 +3,20 @@ import { Tabs } from "@/components/ui/tabs";
 import features from "@/config/features";
 import { cn } from "@/utils/cn";
 import {
+  IconBalloon,
   IconBrandAppstore,
   IconBrandGooglePlay,
   IconBrandOpenai,
   IconChartBar,
   IconCode,
+  IconDeviceDesktop,
   IconDeviceMobile,
   IconNote,
+  IconPaint,
   IconRocket,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
-
-const DummyContent = () => {
-  return (
-    <Image
-      src="https://assets.aceternity.com/templates/startup-1.webp"
-      alt="dummy image"
-      width="1000"
-      height="1000"
-      className="absolute inset-x-0 -bottom-10 mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[90%]"
-    />
-  );
-};
 
 export const Chip = ({
   text,
@@ -89,16 +80,22 @@ const TabContent = ({
 };
 
 export const Button = ({
+  href,
   icon,
   title,
   subtitle,
 }: {
+  href: string;
   icon: React.ReactNode;
   title: string;
   subtitle: string;
 }) => {
   return (
-    <button className="border-text flex items-center gap-2 rounded-md border bg-white px-6 py-2 transition-colors duration-300 hover:brightness-110 dark:bg-dark sm:gap-4">
+    <a
+      href={href}
+      target="_blank"
+      className="border-text flex items-center gap-2 rounded-md border bg-white px-2 py-1 transition-colors duration-300 hover:brightness-110 dark:bg-dark sm:gap-4 sm:px-6 sm:py-2"
+    >
       {icon}
       <div className="flex flex-col items-start">
         <span className="text-text text-xs font-medium sm:text-sm">
@@ -106,14 +103,14 @@ export const Button = ({
         </span>
         <p className="mb-2 font-medium leading-[20px] sm:text-lg">{title}</p>
       </div>
-    </button>
+    </a>
   );
 };
 
 const projectTabs = [
   {
-    title: "Mobile App",
-    value: "mobile-app",
+    title: "Productivity",
+    value: "productivity-app",
     content: (
       <TabContent title="Easy2Success">
         <div className="group grid grid-cols-12">
@@ -132,11 +129,13 @@ const projectTabs = [
             <div className="flex">
               <div className="mt-auto flex w-fit flex-col gap-4">
                 <Button
+                  href="https://play.google.com/store/apps/details?id=com.pandoratech.easy2success"
                   icon={<IconBrandGooglePlay className="h-8 w-8" />}
                   subtitle="Get it on"
                   title={"Google Play"}
                 />
                 <Button
+                  href="https://apps.apple.com/us/app/easy2success/id6496866939"
                   icon={<IconBrandAppstore className="h-8 w-8" />}
                   subtitle="Download on the"
                   title={"App Store"}
@@ -155,13 +154,20 @@ const projectTabs = [
               )}
             </div>
           </div>
-          <div className="col-span-6">
+          <div className="relative col-span-6">
             <Image
-              src="/screenshots/e2s.webp"
-              alt="dummy image"
-              width="600"
-              height="1200"
-              className="object-cover object-left-top"
+              src="/screenshots/e2s4.png"
+              alt="E2S Screenshot 1"
+              width="400"
+              height="900"
+              className="absolute -bottom-[450px] right-10 -rotate-[10deg] object-contain object-center transition duration-500 group-hover:-translate-y-[150px]"
+            />
+            <Image
+              src="/screenshots/e2s1.png"
+              alt="E2S Screenshot 2"
+              width="400"
+              height="900"
+              className="absolute -left-[50px] top-[100px] -rotate-[10deg] object-contain object-left-top transition duration-500 group-hover:-translate-x-[50px] group-hover:-translate-y-[100px]"
             />
           </div>
         </div>
@@ -169,8 +175,8 @@ const projectTabs = [
     ),
   },
   {
-    title: "Product Landing",
-    value: "web-app",
+    title: "Animation",
+    value: "3d-web-app",
     content: (
       <TabContent title="Metaversus">
         <div className="group grid grid-cols-12">
@@ -182,17 +188,19 @@ const projectTabs = [
               </span>
             </p>
             <div className="mb-8 flex items-center gap-4">
-              <Chip text="AI" icon={IconBrandOpenai} color="green" />
-              <Chip text="Mobile" icon={IconDeviceMobile} color="blue" />
-              <Chip text="Productivity" icon={IconChartBar} color="red" />
+              <Chip text="Animation" icon={IconBalloon} color="red" />
+              <Chip text="Landing" icon={IconDeviceDesktop} color="green" />
+              <Chip text="UI" icon={IconPaint} color="blue" />
             </div>
             <div className="mt-auto flex w-fit flex-col justify-end gap-4">
               <Button
+                href="https://metaversus-one-silk.vercel.app/"
                 icon={<IconRocket className="h-8 w-8" />}
                 subtitle="Visit"
                 title={"Live Website"}
               />
               <Button
+                href="https://github.com/IndieCoderMM"
                 icon={<IconCode className="h-8 w-8" />}
                 subtitle="View"
                 title={"Source Code"}
@@ -220,29 +228,47 @@ const projectTabs = [
     ),
   },
   {
-    title: "Landing Page",
-    value: "landing-page",
+    title: "Web Tool",
+    value: "web-tool",
     content: (
-      <TabContent title="Web App">
-        <DummyContent />
+      <TabContent title="IP Tracker">
+        <Image
+          src="/screenshots/iptracker-full.webp"
+          alt="IP Tracker"
+          width="1000"
+          height="1000"
+          className="absolute inset-x-0 -bottom-10 mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[90%]"
+        />
       </TabContent>
     ),
   },
   {
-    title: "Playground",
-    value: "playground",
+    title: "App Landing",
+    value: "app-landing",
     content: (
-      <TabContent title="Web App">
-        <DummyContent />
+      <TabContent title="Billio">
+        <Image
+          src="/screenshots/billio-full.webp"
+          alt="Billio"
+          width="1000"
+          height="1000"
+          className="absolute inset-x-0 -bottom-10 mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[90%]"
+        />
       </TabContent>
     ),
   },
   {
-    title: "Random",
-    value: "random",
+    title: "Chat App",
+    value: "chat-app",
     content: (
-      <TabContent title="Web App">
-        <DummyContent />
+      <TabContent title="Convoz">
+        <Image
+          src="/screenshots/convoz-full.webp"
+          alt="Convoz"
+          width="1000"
+          height="1000"
+          className="absolute inset-x-0 -bottom-10 mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[90%]"
+        />
       </TabContent>
     ),
   },

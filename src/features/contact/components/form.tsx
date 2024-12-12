@@ -6,9 +6,9 @@ import {
   IconArrowLeft,
   IconBellRinging,
   IconMail,
+  IconNote,
   IconSend,
   IconUser,
-  IconWritingSign,
 } from "@tabler/icons-react";
 import { useState } from "react";
 import Field from "./field";
@@ -130,7 +130,7 @@ const ContactForm = () => {
             name="email"
             value={form.email}
             handleChange={handleChange}
-            placeholder="Enter your email address"
+            placeholder="Email to replay back"
             icon={IconMail}
           />
         )}
@@ -139,8 +139,8 @@ const ContactForm = () => {
             name="message"
             value={form.message}
             handleChange={handleChange}
-            placeholder="Write your awesome message here"
-            icon={IconWritingSign}
+            placeholder="Write anything here..."
+            icon={IconNote}
           />
         )}
         <div className="mt-10 flex justify-end">

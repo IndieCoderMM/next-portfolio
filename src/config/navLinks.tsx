@@ -2,7 +2,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconHome,
-  IconMessageChatbot,
+  IconMessage,
   IconTerminal2,
   IconUser,
 } from "@tabler/icons-react";
@@ -23,7 +23,7 @@ export const navLinks = [
     href: "/about",
   },
   {
-    title: "Works",
+    title: "My Works",
     icon: (
       <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
@@ -32,7 +32,7 @@ export const navLinks = [
   {
     title: "Say Hello",
     icon: (
-      <IconMessageChatbot className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconMessage className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "/contact",
   },

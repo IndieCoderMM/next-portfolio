@@ -303,6 +303,7 @@ export type Profile = {
     linkedin?: string;
     blog?: string;
     whatsapp?: string;
+    bluesky?: string;
   };
   metrics?: {
     apps?: number;
@@ -363,7 +364,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/query.ts
 // Variable: profileQuery
-// Query: *[ _type == "profile" ]{      _id,      fullName,      bio,      about,      email,      "resumeURL": resumeURL.asset->url,      lastUpdated,      socials {github, linkedin, whatsapp, blog},      metrics {apps, websites, users, years},    }[0]
+// Query: *[ _type == "profile" ]{      _id,      fullName,      bio,      about,      email,      "resumeURL": resumeURL.asset->url,      lastUpdated,      socials {github, linkedin, whatsapp, bluesky, blog},      metrics {apps, websites, users, years},    }[0]
 export type ProfileQueryResult = {
   _id: string;
   fullName: string | null;
@@ -393,6 +394,7 @@ export type ProfileQueryResult = {
     github: string | null;
     linkedin: string | null;
     whatsapp: string | null;
+    bluesky: string | null;
     blog: string | null;
   } | null;
   metrics: {
@@ -434,7 +436,7 @@ export type ProductsQueryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[ _type == "profile" ]{\n      _id,\n      fullName,\n      bio,\n      about,\n      email,\n      "resumeURL": resumeURL.asset->url,\n      lastUpdated,\n      socials {github, linkedin, whatsapp, blog},\n      metrics {apps, websites, users, years},\n    }[0]': ProfileQueryResult;
+    '*[ _type == "profile" ]{\n      _id,\n      fullName,\n      bio,\n      about,\n      email,\n      "resumeURL": resumeURL.asset->url,\n      lastUpdated,\n      socials {github, linkedin, whatsapp, bluesky, blog},\n      metrics {apps, websites, users, years},\n    }[0]': ProfileQueryResult;
     '*[ _type == "product" ] | order(developedAt desc){\n      "id": _id,\n      name,\n      tagline,\n      "slug": slug.current,\n      tags,\n      languages[],\n      status,\n      stack,\n      githubURL,\n      liveURL,\n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      "coverImage": {"url": coverImage.asset->url, "alt": coverImage.alt},\n      developedAt\n    }': ProductsQueryResult;
   }
 }

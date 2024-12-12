@@ -9,7 +9,7 @@ const profileQuery = defineQuery(`*[ _type == "profile" ]{
       email,
       "resumeURL": resumeURL.asset->url,
       lastUpdated,
-      socials {github, linkedin, whatsapp, blog},
+      socials {github, linkedin, whatsapp, bluesky, blog},
       metrics {apps, websites, users, years},
     }[0]`);
 
