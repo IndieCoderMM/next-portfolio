@@ -2,7 +2,7 @@
 
 import useTheme from "@/hooks/useTheme";
 import { cn } from "@/utils/cn";
-import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
+import { IconCategory } from "@tabler/icons-react";
 import {
   AnimatePresence,
   MotionValue,
@@ -41,6 +41,10 @@ const FloatingDockMobile = ({
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+  const [mode, setMode] = useTheme();
+  const handleThemeToggle = () =>
+    setMode((mode) => (mode === "dark" ? "light" : "dark"));
+
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -75,6 +79,39 @@ const FloatingDockMobile = ({
                 </Link>
               </motion.div>
             ))}
+
+            <motion.div
+              key={"theme-toggle-mobile"}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: 10,
+                transition: {
+                  delay: items.length * 0.05,
+                },
+              }}
+              transition={{ delay: (items.length - 1) * 0.05 }}
+            >
+              <button
+                type="button"
+                onClick={handleThemeToggle}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 p-2 dark:bg-neutral-900"
+              >
+                {mode === "dark" ? (
+                  <MoonIcon
+                    className={"h-4 w-4 text-neutral-500 dark:text-neutral-300"}
+                  />
+                ) : (
+                  <SunIcon
+                    className={"h-4 w-4 text-neutral-500 dark:text-neutral-300"}
+                  />
+                )}
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -82,7 +119,7 @@ const FloatingDockMobile = ({
         onClick={() => setOpen(!open)}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconCategory className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
       </button>
     </div>
   );

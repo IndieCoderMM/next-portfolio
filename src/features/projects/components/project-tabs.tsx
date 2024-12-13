@@ -98,7 +98,7 @@ export const Button = ({
     >
       {icon}
       <div className="flex flex-col items-start">
-        <span className="text-text text-xs font-medium sm:text-sm">
+        <span className="text-text text-xs font-light sm:text-sm">
           {subtitle}
         </span>
         <p className="mb-2 font-medium leading-[20px] sm:text-lg">{title}</p>

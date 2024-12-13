@@ -10,7 +10,7 @@ const ConstactFormSection = () => {
       <Heading className="mb-8">
         <span>Say Hi, Let's Collaborate</span>
       </Heading>
-      <p className="inner-container text-center text-lg leading-loose lg:text-2xl">
+      <p className="inner-container text-center font-light sm:text-lg sm:leading-loose lg:text-2xl">
         Questions, ideas or just hello? Send them my way!
         <br /> I promise I’ll reply 💌{" "}
         <small>(probably with too many emojis)</small>
@@ -18,7 +18,7 @@ const ConstactFormSection = () => {
       <div className="borderVr paddings w-full max-w-3xl">
         <ContactForm />
       </div>
-      <div className="mt-14 md:mt-20">
+      <div className="mt-16 md:mt-20">
         <div className="section-badge">
           <IconWorld />
           <span className="ml-2">Find Me Online</span>

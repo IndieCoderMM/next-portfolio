@@ -11,8 +11,10 @@ const AboutMeSection = async () => {
       <div className="section-badge">
         <span>About Me</span>
       </div>
-      <Heading>A Developer with a Curious Mind</Heading>
-      <div className="grid grid-cols-12 px-4 py-10 md:px-8 lg:px-12">
+      <Heading className="mx-auto px-4">
+        A Developer with a Curious Mind
+      </Heading>
+      <div className="grid grid-cols-12 px-4 py-4 sm:py-10 md:px-8 lg:px-12">
         <div className="text-md col-span-12 my-10 leading-loose md:col-span-6 md:text-lg lg:col-span-8 lg:text-xl">
           <p className="mb-4">
             Hi there! You can call me <strong>Hein</strong>. I'm a software

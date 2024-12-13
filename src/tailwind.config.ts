@@ -60,15 +60,15 @@ const config: Config = {
         },
         heartbeat: {
           "0%": {
-            "box-shadow": '0 0 0 0 theme("colors.primary")',
+            "box-shadow": '0 0 0 0 theme("colors.primaryDark")',
             transform: "scale(1)",
           },
           "50%": {
-            "box-shadow": '0 0 0 7px theme("colors.primary/0")',
+            "box-shadow": '0 0 0 7px theme("colors.primaryDark/0")',
             transform: "scale(1.05)",
           },
           "100%": {
-            "box-shadow": '0 0 0 0 theme("colors.primary/0")',
+            "box-shadow": '0 0 0 0 theme("colors.primaryDark/0")',
             transform: "scale(1)",
           },
         },

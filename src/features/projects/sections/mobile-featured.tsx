@@ -13,13 +13,15 @@ import { Button, Chip } from "../components/project-tabs";
 
 const MobileFeaturedProjects = () => {
   return (
-    <div className="w-full sm:hidden">
-      <Heading as="h2">Big Ideas into Impactful Products</Heading>
+    <div className="w-full pt-10 sm:hidden">
+      <Heading as="h2" className="px-4">
+        Big Ideas into Impactful Products
+      </Heading>
       <div className="group">
-        <div className="relative h-[400px] overflow-hidden">
+        <div className="relative">
           <Image
-            src="/screenshots/e2s.webp"
-            alt="dummy image"
+            src="/screenshots/e2s1.png"
+            alt="E2S screenshot"
             width="600"
             height="1200"
             className="object-cover object-left-top"
@@ -41,7 +43,7 @@ const MobileFeaturedProjects = () => {
             <Chip text="Productivity" icon={IconChartBar} color="red" />
           </div>
           <div className="flex">
-            <div className="mt-auto flex w-full justify-center gap-4 px-4 sm:flex-col">
+            <div className="mt-auto grid w-full grid-cols-2 gap-4 px-4">
               <Button
                 href="https://play.google.com/store/apps/details?id=com.pandoratech.easy2success"
                 icon={<IconBrandGooglePlay className="h-8 w-8" />}

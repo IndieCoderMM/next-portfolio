@@ -4,11 +4,11 @@ import { PrimaryButton } from "@/components/common";
 import emailjs from "@emailjs/browser";
 import {
   IconArrowLeft,
+  IconAt,
   IconBellRinging,
-  IconMail,
-  IconNote,
   IconSend,
-  IconUser,
+  IconSignature,
+  IconUserCircle,
 } from "@tabler/icons-react";
 import { useState } from "react";
 import Field from "./field";
@@ -93,22 +93,22 @@ const ContactForm = () => {
         {form.name && (
           <StateButton handleClick={() => setCurrent("name")}>
             <div className="flex h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
-              <IconUser />
+              <IconUserCircle />
             </div>
             <p className="text-xs md:text-sm">{form.name}</p>
           </StateButton>
         )}
         {form.email && (
           <StateButton handleClick={() => setCurrent("email")}>
-            <div className="flexx h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
-              <IconMail />
+            <div className="flex h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
+              <IconAt />
             </div>
             <p className="text-xs md:text-sm">{form.email}</p>
           </StateButton>
         )}
         {notification && (
           <StateButton handleClick={() => setNotification("")}>
-            <div className="flexx h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md text-primary dark:text-light">
               <IconBellRinging />
             </div>
             <p className="text-xs md:text-sm">{notification}</p>
@@ -122,7 +122,7 @@ const ContactForm = () => {
             value={form.name}
             handleChange={handleChange}
             placeholder="Let me know your name"
-            icon={IconUser}
+            icon={IconUserCircle}
           />
         )}
         {current === "email" && (
@@ -131,7 +131,7 @@ const ContactForm = () => {
             value={form.email}
             handleChange={handleChange}
             placeholder="Email to replay back"
-            icon={IconMail}
+            icon={IconAt}
           />
         )}
         {current === "message" && (
@@ -140,7 +140,7 @@ const ContactForm = () => {
             value={form.message}
             handleChange={handleChange}
             placeholder="Write anything here..."
-            icon={IconNote}
+            icon={IconSignature}
           />
         )}
         <div className="mt-10 flex justify-end">

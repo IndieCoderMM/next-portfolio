@@ -251,21 +251,21 @@ const data = [
               alt="Top-down tank shooters"
               width={300}
               height={300}
-              className="h-44 w-auto object-cover md:h-56 lg:h-64"
+              className="h-auto w-full rounded-lg object-cover sm:w-auto md:h-56 lg:h-64"
             />
             <Image
               src="/screenshots/demo_bridge.gif"
               alt="BridgeHero Game"
               width={300}
               height={300}
-              className="h-44 w-auto object-cover md:h-56 lg:h-64"
+              className="h-auto w-full rounded-lg object-cover sm:w-auto md:h-56 lg:h-64"
             />
             <Image
               src="/screenshots/demo_tictactoe.gif"
               alt="Tictactoe AI"
               width={300}
               height={300}
-              className="h-44 w-auto object-cover md:h-56 lg:h-64"
+              className="h-auto w-full rounded-lg object-cover sm:w-auto md:h-56 lg:h-64"
             />
           </div>
           <Image
@@ -295,10 +295,7 @@ const ExperienceSection = () => {
         <div className="section-badge">
           <span>My Journey</span>
         </div>
-        <Heading
-          as="h2"
-          className="mb-4 text-center text-lg font-semibold text-black dark:text-white md:text-4xl lg:text-5xl"
-        >
+        <Heading as="h2" id="experience" className="mb-4">
           How I got here
         </Heading>
         <p className="mx-auto max-w-2xl text-center text-sm text-neutral-700 dark:text-neutral-300 md:text-base lg:text-xl">

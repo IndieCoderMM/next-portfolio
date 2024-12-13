@@ -6,20 +6,20 @@ import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
-    <div className="borderHr w-full bg-gradient-to-b from-transparent via-white/10 to-white/50 pt-20 dark:bg-none sm:pt-20">
+    <div className="borderHr w-full bg-gradient-to-b from-transparent via-white/10 to-white/50 pt-10 dark:bg-none sm:pt-20">
       <section className="max-container borderVr mx-auto flex h-[60vh] flex-col items-center justify-center gap-8">
         <div className="flex flex-1 flex-col items-center justify-center space-y-4">
           <div className="section-badge gap-4 dark:bg-neutral-800">
             <div className="h-3 w-3 animate-heartbeat rounded-full bg-green-500" />
             <span>Available</span>
           </div>
-          <h1 className="mb-4 w-full text-center font-heading text-4xl font-bold leading-tight text-dark dark:text-light sm:w-[80%] sm:text-4xl sm:leading-normal md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 w-full px-4 text-center font-heading text-4xl font-bold leading-tight text-dark dark:text-light sm:text-4xl sm:leading-normal md:text-5xl lg:text-6xl">
             Shipping Ideas 💡 for
             <br /> Mobile and Web
           </h1>
           <p className="mx-auto w-[80%] text-center text-xl text-dark dark:text-light md:text-2xl lg:text-3xl">
-            I'm a coder, a learner, and a creator. I make software that solves
-            problem and gets results.
+            {profile?.bio ??
+              "I'm a coder, a learner, and a creator. I make software that solves problems and gets results."}
           </p>
 
           <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-300 sm:gap-4">

@@ -1,8 +1,8 @@
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconHome,
-  IconMessage,
+  IconMessageDots,
+  IconSmartHome,
   IconTerminal2,
   IconUser,
 } from "@tabler/icons-react";
@@ -11,7 +11,7 @@ export const navLinks = [
   {
     title: "Home",
     icon: (
-      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconSmartHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "/",
   },
@@ -32,19 +32,19 @@ export const navLinks = [
   {
     title: "Say Hello",
     icon: (
-      <IconMessage className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconMessageDots className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "/contact",
   },
   {
-    title: "LinkedIn",
+    title: "Professional Stuff",
     icon: (
       <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "https://www.linkedin.com/in/hthantoo",
   },
   {
-    title: "GitHub",
+    title: "More Codes",
     icon: (
       <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),

@@ -74,7 +74,12 @@ const FooterLink = ({
 
   return (
     <div className="flex items-center gap-1">
-      <LinkUnderline href={href} className={"footer-link"} label={title} />
+      <LinkUnderline
+        href={href}
+        target="_blank"
+        className={"footer-link"}
+        label={title}
+      />
       <IconExternalLink className="h-4 w-4" />
       {label && (
         <span
