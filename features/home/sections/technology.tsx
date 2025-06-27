@@ -1,8 +1,9 @@
 import { SectionContainer } from "@/components/layout/section";
+import { techs } from "@/config/content/technology";
 import { cn } from "@/utils/cn";
 import React from "react";
 
-const TechnologySection = ({ techs }: { techs: Technology[] }) => {
+const TechnologySection = () => {
   return (
     <SectionContainer className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white/50 via-white/90 to-white py-10 dark:bg-none">
       <p className="mb-4 text-sm uppercase text-neutral-400 lg:mb-8 lg:text-xl">

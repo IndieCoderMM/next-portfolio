@@ -1,15 +1,10 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { homepageContent } from "@/config/content/homepage";
+import { services } from "@/config/content/services";
 import { cn } from "@/utils/cn";
 
-type Service = {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-};
-
-const ServiceSection = ({ services }: { services: Service[] }) => {
+const ServiceSection = () => {
   return (
     <SectionContainer className="bg-white dark:bg-transparent">
       <div className="borderVr mb-10">

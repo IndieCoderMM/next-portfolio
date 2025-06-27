@@ -1,5 +1,3 @@
-import { services } from "@/config/services";
-import { techs } from "@/config/technology";
 import HeroSection from "@/features/home/sections/hero";
 import Metrics from "@/features/home/sections/metrics";
 import ProjectSection from "@/features/home/sections/projects";
@@ -14,8 +12,8 @@ const HomePage = async () => {
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
       <HeroSection profile={profile} />
-      <TechnologySection techs={techs} />
-      <ServiceSection services={services} />
+      <TechnologySection />
+      <ServiceSection />
       <ProjectSection products={products} />
       <Metrics metrics={profile?.metrics} />
     </div>

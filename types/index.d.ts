@@ -27,3 +27,9 @@ declare type TimelineEntry = {
   title: string;
   content: React.ReactNode;
 };
+
+declare type Service = {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+};

@@ -1,6 +1,6 @@
 "use client";
 
-import { timelineData } from "@/config/content/aboutpage";
+import { timelineData } from "@/config/content/timeline";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 

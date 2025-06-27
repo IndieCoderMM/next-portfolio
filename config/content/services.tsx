@@ -7,7 +7,7 @@ import {
   IconSchema,
 } from "@tabler/icons-react";
 
-export const services = [
+export const services: Service[] = [
   {
     title: "Mobile Development",
     description:
