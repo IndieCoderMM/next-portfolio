@@ -1,6 +1,5 @@
 import ContactCTA from "@/features/projects/sections/contact-cta";
 import GallerySection from "@/features/projects/sections/gallery";
-import MobileFeaturedProjects from "@/features/projects/sections/mobile-featured";
 import PlaygroundCTA from "@/features/projects/sections/playground-cta";
 import ProjectRepos from "@/features/projects/sections/repos";
 import { getProducts } from "@/sanity/lib/query";
@@ -18,7 +17,6 @@ const ProjectPage = async () => {
   return (
     <div className="relative w-full">
       <GallerySection />
-      <MobileFeaturedProjects />
       <PlaygroundCTA />
       <ProjectRepos products={products} />
       <ContactCTA />
