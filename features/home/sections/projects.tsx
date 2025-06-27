@@ -1,6 +1,7 @@
 "use client";
 
 import Heading from "@/components/common/heading";
+import { homepageContent } from "@/config/homepage";
 import { ProductsQueryResult } from "@/sanity.types";
 import { IconRocket } from "@tabler/icons-react";
 import Link from "next/link";
@@ -14,14 +15,12 @@ const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
           <span>Projects</span>
         </div>
         <Heading as="h3" className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-          Over 20+ <span className="inline-block rotate-6 transform">🚀</span>{" "}
-          projects done, <br />
-          Here're some of them
+          {homepageContent.serviceHeading}
         </Heading>
       </div>
       <div className="inner-container grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {products
-          .filter((p) => p.slug != "next-portfolio" && p.status === "live")
+          .filter((p) => p.status === "live")
           .slice(0, 6)
           .map((p, index) => (
             <ProjectCard key={index} project={p} />
@@ -30,7 +29,7 @@ const ProjectSection = ({ products }: { products: ProductsQueryResult }) => {
       <Link href="/projects">
         <button type="button" className="outline-button mt-8 rounded-full">
           <IconRocket />
-          <span>See More Projects</span>
+          <span>{homepageContent.projectCta}</span>
         </button>
       </Link>
     </section>

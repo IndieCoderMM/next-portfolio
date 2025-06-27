@@ -1,5 +1,6 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
+import { homepageContent } from "@/config/homepage";
 import { cn } from "@/utils/cn";
 
 type Service = {
@@ -15,9 +16,7 @@ const ServiceSection = ({ services }: { services: Service[] }) => {
         <div className="section-badge">
           <span>Services</span>
         </div>
-        <Heading as="h2">
-          I build products 0 &rarr; 1 <br /> tailored to your needs
-        </Heading>
+        <Heading as="h2">{homepageContent.serviceHeading}</Heading>
       </div>
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (

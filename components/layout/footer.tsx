@@ -1,4 +1,4 @@
-import dayjs from "@/lib/dayjs";
+import { profileInfo } from "@/config/profileInfo";
 import { ProfileQueryResult } from "@/sanity.types";
 import { getProfile } from "@/sanity/lib/query";
 import {
@@ -9,19 +9,6 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import LinkUnderline from "../common/link";
-
-const SiteMap = () => {
-  return (
-    <a
-      href="https://github.com/indiecodermm/next-portfolio"
-      target="_blank"
-      rel="noreferrer nofollow"
-      className={"hover:underline"}
-    >
-      <span>sitemap.xml</span>
-    </a>
-  );
-};
 
 interface FooterLinkProps {
   title: string;
@@ -129,10 +116,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
       <div className={"mb-3 text-[13px] text-slate-600 dark:text-slate-400"}>
         About Me
       </div>
-      <p className={"mb-4 font-normal leading-relaxed"}>
-        I am a self-taught developer who loves building stuffs. Always up for
-        solving problems and creating things people enjoy using.
-      </p>
+      <p className={"mb-4 font-normal leading-relaxed"}>{profile?.bio}</p>
       <ul className={"-ml-2 flex gap-1"}>
         <li>
           <a
@@ -280,12 +264,7 @@ const Footer = async () => {
             "flex w-full justify-between border-t border-light px-4 py-6 text-xs dark:border-dark"
           }
         >
-          <div className={"font-semibold"}>
-            &copy; {dayjs().format("YYYY")}, Hein Thant
-          </div>
-          <div className={"text-slate-500 dark:text-slate-400"}>
-            <SiteMap />
-          </div>
+          <div className={"font-semibold"}>{profileInfo.copyright}</div>
         </div>
       </div>
     </footer>

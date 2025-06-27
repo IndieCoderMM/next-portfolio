@@ -1,6 +1,7 @@
 import AnimatedNumber from "@/components/common/animated-number";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
+import { homepageContent } from "@/config/homepage";
 import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
 import { IconBriefcase } from "@tabler/icons-react";
@@ -15,14 +16,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
     <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
       <div className="borderVr">
         <div className="mx-auto w-full text-center md:w-[80%]">
-          <Heading as="h2">
-            My Code compiled into
-            <br />
-            these Numbers{" "}
-            <span className="inline-block -rotate-6 transform shadow-sm">
-              📈
-            </span>
-          </Heading>
+          <Heading as="h2">{homepageContent.metricHeading}</Heading>
         </div>
 
         <div className="mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
