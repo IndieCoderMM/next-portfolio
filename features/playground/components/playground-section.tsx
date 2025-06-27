@@ -8,6 +8,7 @@ import {
   SectionContainer,
   SectionContent,
 } from "@/components/layout/section";
+import { playgroundContent } from "@/config/content/playgroundpage";
 import { cn } from "@/utils/cn";
 import {
   IconBrandGithub,
@@ -97,11 +98,10 @@ const PlaygroundSection = () => {
     <SectionContainer>
       <div className="w-full pb-12">
         <div className="mb-8 gap-10">
-          <Heading className="text-left">Explore My Playground</Heading>
+          <Heading className="text-left">{playgroundContent.heading}</Heading>
         </div>
         <p className="text-lg font-light sm:w-[80%] md:text-xl lg:text-3xl">
-          No deadlines, no clients — just me, some coffee, and a ton of ideas.
-          Here’s what came out of it.
+          {playgroundContent.desc}
         </p>
       </div>
       <SectionContent>
