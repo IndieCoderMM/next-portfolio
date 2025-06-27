@@ -22,3 +22,8 @@ declare type SkillGroup = {
   imageURL: string;
   list: Skill[];
 };
+
+declare type TimelineEntry = {
+  title: string;
+  content: React.ReactNode;
+};

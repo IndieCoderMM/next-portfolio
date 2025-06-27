@@ -1,6 +1,6 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { homepageContent } from "@/config/homepage";
+import { homepageContent } from "@/config/content/homepage";
 import { cn } from "@/utils/cn";
 
 type Service = {

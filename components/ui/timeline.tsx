@@ -1,14 +1,10 @@
 "use client";
 
+import { timelineData } from "@/config/content/aboutpage";
 import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-interface TimelineEntry {
-  title: string;
-  content: React.ReactNode;
-}
-
-export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+export const Timeline = () => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -31,7 +27,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full md:px-10" ref={containerRef}>
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
-        {data.map((item, index) => (
+        {timelineData.map((item, index) => (
           <div
             key={index}
             className="flex justify-start pt-10 md:gap-10 md:pt-40"

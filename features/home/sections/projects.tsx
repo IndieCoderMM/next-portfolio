@@ -1,7 +1,7 @@
 "use client";
 
 import Heading from "@/components/common/heading";
-import { homepageContent } from "@/config/homepage";
+import { homepageContent } from "@/config/content/homepage";
 import { ProductsQueryResult } from "@/sanity.types";
 import { IconRocket } from "@tabler/icons-react";
 import Link from "next/link";

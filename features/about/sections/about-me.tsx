@@ -1,58 +1,20 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { LinkPreview } from "@/components/ui/link-preview";
-import { getProfile } from "@/sanity/lib/query";
+import { aboutContent } from "@/config/content/aboutpage";
 import ProfileCard from "../components/profile-card";
 
-const AboutMeSection = async () => {
-  const profile = await getProfile();
+const AboutMeSection = () => {
   return (
     <SectionContainer className="lg:pt-10">
       <div className="section-badge">
         <span>About Me</span>
       </div>
-      <Heading className="mx-auto px-4">
-        A Developer with a Curious Mind
-      </Heading>
+      <Heading className="mx-auto px-4">{aboutContent.heading}</Heading>
       <div className="grid grid-cols-12 px-4 py-4 sm:py-10 md:px-8 lg:px-12">
         <div className="text-md col-span-12 my-10 leading-loose md:col-span-6 md:text-lg lg:col-span-8 lg:text-xl">
-          <p className="mb-4">
-            Hi there! You can call me <strong>Hein</strong>. I'm a software
-            developer based in Myanmar. I specialize in the React ecosystem and
-            have been building native apps with Expo for 2+ years.
-          </p>
-          <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
-            In 2022, I joined the{" "}
-            <LinkPreview
-              url="https://www.microverse.org"
-              isStatic={false}
-              className="inline-flex font-bold text-primary dark:text-primaryDark"
-            >
-              Microverse
-            </LinkPreview>{" "}
-            program, where I had the opportunity to work with talented
-            developers from around the world. It was a life-changing experience
-            that helped me grow as a developer and a person, especially because
-            of the wonderful people I met along the way.
-          </div>
-          <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
-            Over the years, I’ve dived deep into React Native and Node.js, even
-            launching apps that have reached thousands of users. I sometimes
-            write blog posts on{" "}
-            <LinkPreview
-              url={profile?.socials?.blog ?? "/"}
-              isStatic={false}
-              className="font-bold text-primary dark:text-primaryDark"
-            >
-              IndieCoder's Blog
-            </LinkPreview>{" "}
-            to share my knowledge.
-          </div>
-          <p>
-            In most of my free time, I'll be probably updating my Neovim
-            configs, or working on one of my unfinished side projects.
-          </p>
+          {aboutContent.content}
         </div>
+
         <div className="col-span-12 p-4 md:col-span-6 md:p-8 lg:col-span-4">
           <ProfileCard />
         </div>

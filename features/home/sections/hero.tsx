@@ -1,5 +1,5 @@
 import { PrimaryButton } from "@/components/common";
-import { homepageContent } from "@/config/homepage";
+import { homepageContent } from "@/config/content/homepage";
 import { ProfileQueryResult } from "@/sanity.types";
 import { formatDate } from "@/utils/format-date";
 import { IconCalendarUp, IconMessage } from "@tabler/icons-react";

@@ -1,7 +1,7 @@
 import AnimatedNumber from "@/components/common/animated-number";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { homepageContent } from "@/config/homepage";
+import { homepageContent } from "@/config/content/homepage";
 import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
 import { IconBriefcase } from "@tabler/icons-react";
