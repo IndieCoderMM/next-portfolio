@@ -4,8 +4,6 @@ A modern developer portfolio website built with **Next.js**, packed with smooth 
 
 Perfect for developers who want a fast, beautiful, and fully customizable site to showcase their work.
 
----
-
 ## ✨ Features
 
 - **Clean, modern layout**  
@@ -29,8 +27,6 @@ Perfect for developers who want a fast, beautiful, and fully customizable site t
 - **Fully responsive**  
   Works across devices with zero extra effort.
 
----
-
 ## 🗂 Tech Stack
 
 - **Next.js** – React framework for SSR and performance
@@ -38,8 +34,6 @@ Perfect for developers who want a fast, beautiful, and fully customizable site t
 - **Framer Motion** – Animation library for React
 - **Tailwind CSS** – Utility-first CSS framework
 - **EmailJS** – Email service for handling contact form messages
-
----
 
 ## 🚀 Getting Started
 
@@ -72,29 +66,24 @@ npm run dev
 
 Your app should now be running at [http://localhost:3000](http://localhost:3000)
 
----
-
 ## 🧩 Customization
 
 All page content can be modified in the `/config/content/` folder. It includes:
 
 Just edit the files – no need to dig into components unless you want to.
 
----
-
 ## 📝 Content Management (Sanity)
 
 This template is integrated with [Sanity Studio](https://www.sanity.io/) for flexible content editing.
 
-To set up Sanity:
+- You can manage projects, skills, and other dynamic content through the Sanity dashboard.
+- The Sanity Studio is available at `/dashboard` once the project is running.
+- To set it up:
+  1. Create a project at [sanity.io](https://www.sanity.io/)
+  2. Copy the project ID and dataset name into your `.env.local` file
+  3. Run both frontend and Sanity Studio locally, or deploy them together
 
-1. Create a project at [sanity.io](https://www.sanity.io/)
-2. Copy the project ID and dataset name into your `.env.local` file
-3. Deploy your Sanity Studio or run locally alongside the frontend
-
-You can customize the schema and studio however you like.
-
----
+You can also customize the schema or extend it for additional content types as needed.
 
 ## 📬 Contact Form
 
@@ -104,8 +93,6 @@ The contact form uses **EmailJS** for sending messages.
 - Create a service, template, and public key
 - Add those to your `.env.local` file
 
----
-
 ## 🧪 Deploy
 
 Deploy anywhere Next.js is supported:
@@ -114,19 +101,15 @@ Deploy anywhere Next.js is supported:
 
 Make sure to set environment variables in your deployment settings.
 
----
-
 ## 🤝 Contributing
 
 Feel free to fork, customize, or contribute. Open an issue or PR if you have suggestions or improvements.
 
----
-
 ## 📄 License
 
-This project is open source under the [MIT License](LICENSE).
+This project is released under [The Unlicense](https://unlicense.org/), which means you can use, modify, and distribute it however you want—no restrictions, no conditions.
 
----
+Do whatever you like. No credit required (but appreciated).
 
 ## 🧠 Credits
 
@@ -136,8 +119,6 @@ Inspired by great dev portfolios and powered by modern tools. Clean structure, t
 
 ---
 
-## 👋 Final Note
+_This template is meant to be a launchpad. Tweak it, extend it, or totally redesign it—just make it yours._
 
-This template is meant to be a launchpad. Tweak it, extend it, or totally redesign it—just make it yours.
-
-Happy building 🚀
+_Happy building 🚀_
