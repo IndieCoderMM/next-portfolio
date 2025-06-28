@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import "easymde/dist/easymde.min.css";
 import type { Metadata } from "next";
-import { Biryani, Gochi_Hand, Rubik } from "next/font/google";
+import { Gochi_Hand, Open_Sans, Rubik } from "next/font/google";
 
 const gochiHand = Gochi_Hand({
   variable: "--font-gochi-hand",
@@ -9,16 +9,16 @@ const gochiHand = Gochi_Hand({
   weight: "400",
 });
 
-const nunito = Rubik({
+const rubik = Rubik({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["400"],
+  weight: ["400", "500", "600"],
 });
 
-const openSans = Biryani({
+const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${openSans.variable} ${gochiHand.variable} w-full antialiased`}
+        className={`${rubik.variable} ${openSans.variable} ${gochiHand.variable} w-full antialiased`}
       >
         {children}
       </body>

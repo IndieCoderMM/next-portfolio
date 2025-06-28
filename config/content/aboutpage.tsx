@@ -7,16 +7,16 @@ export const aboutContent = {
   photoLabel: "She insists on being in every photo. Who am I to argue?",
   content: (
     <>
-      <p className="mb-4">
-        Hi there! You can call me <strong>Hein</strong>. I'm a software
-        developer based in Myanmar. I specialize in the React ecosystem and have
-        been building native apps with Expo for 2+ years.
+      <p className="">
+        Hi there! I'm <strong>Hein</strong>. I'm a software developer based in
+        Myanmar. I specialize in the React ecosystem and have been building
+        native apps with Expo for 2+ years.
       </p>
-      <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
+      <div className="">
         In 2022, I joined the{" "}
         <a
           href="https://www.microverse.org"
-          className="inline-flex font-bold text-primary dark:text-primaryDark"
+          className="text-primary dark:text-primaryDark inline-flex font-bold"
         >
           Microverse
         </a>{" "}
@@ -25,7 +25,7 @@ export const aboutContent = {
         grow as a developer and a person, especially because of the wonderful
         people I met along the way.
       </div>
-      <div className="text-md my-4 leading-loose md:text-lg lg:text-xl">
+      <div className="">
         Over the years, I’ve dived deep into React Native and Node.js, even
         launching apps that have reached thousands of users. I sometimes write
         blog posts to share my knowledge.

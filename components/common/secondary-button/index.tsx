@@ -13,7 +13,7 @@ const SecondaryButton = ({
 }>) => {
   return (
     <button
-      className="group flex min-h-12 w-full select-none items-center justify-center rounded-xl border-2 border-primary bg-transparent px-4 py-1 transition duration-300 hover:-translate-y-1 hover:bg-primary hover:text-white hover:shadow-[rgba(0,0,0,0.24)_0_2px_10px] active:translate-y-0 dark:border-primaryDark dark:hover:bg-primaryDark"
+      className="group border-primary/50 hover:bg-primary dark:border-primaryDark dark:hover:bg-primaryDark flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl border bg-transparent px-4 py-1 transition duration-300 select-none hover:-translate-y-1 hover:text-white hover:shadow-[rgba(0,0,0,0.24)_0_2px_10px] active:translate-y-0"
       type={type}
       onClick={onClick}
     >

@@ -13,7 +13,7 @@ const PrimaryButton = ({
     <button className={`${styles.primaryBtn}`} type={type} onClick={onClick}>
       <span />
       <span className="bg-gr-primary dark:bg-gr-primary-dark" />
-      <div className="bg-primary dark:bg-[#23b26a]">{children}</div>
+      <div className="bg-primary">{children}</div>
     </button>
   );
 };

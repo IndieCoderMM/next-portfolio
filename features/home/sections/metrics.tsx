@@ -19,7 +19,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           <Heading as="h2">{homepageContent.metricHeading}</Heading>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
+        <div className="text-text-secondary font-heading mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
           <div>
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
@@ -56,9 +56,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={users ?? 0}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
+                className="font-heading bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
               />
-              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
+              <span className="font-heading bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
                 {"K+"}
               </span>
             </h3>
@@ -68,10 +68,13 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
         </div>
 
         <div className="inner-container mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
-          <Heading as="h3" className="text-xl md:text-2xl lg:text-4xl">
+          <Heading
+            as="h3"
+            className="text-text-main text-xl md:text-2xl lg:text-4xl"
+          >
             Want to work together?
           </Heading>
-          <p className="text-lg font-medium md:text-xl lg:text-2xl">
+          <p className="text-text-secondary text-lg font-medium md:text-xl lg:text-2xl">
             Drop me a message and let’s see how we can build something great
             together.
           </p>
