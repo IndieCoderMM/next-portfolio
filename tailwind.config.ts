@@ -21,8 +21,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["var(--font-nunito)"],
-        body: ["var(--font-open-sans)"],
+        heading: ["var(--font-heading)"],
+        body: ["var(--font-body)"],
         hand: ["var(--font-gochi-hand)"],
       },
       boxShadow: {
@@ -39,8 +39,6 @@ const config: Config = {
           "linear-gradient(to right, #1c8550, #1ba568, #1c8550)",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         dark: "#383838",
         light: "#f0f0f0",
         primary: "#6262f9",

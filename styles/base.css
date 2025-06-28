@@ -8,12 +8,12 @@
 
   html,
   body {
-    @apply h-full;
+    @apply h-full font-body;
   }
 
 
   body {
-    @apply bg-white text-slate-900;
+    @apply bg-white text-slate-800;
     @apply dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 

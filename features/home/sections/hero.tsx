@@ -7,17 +7,17 @@ import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
-    <div className="borderHr w-full bg-gradient-to-b from-transparent via-white/10 to-white/50 pb-10 pt-10 dark:bg-none sm:pt-20">
+    <div className="borderHr w-full bg-gradient-to-b from-transparent via-white/10 to-white/50 pb-10 pt-10 dark:bg-none sm:pt-14">
       <section className="max-container borderVr mx-auto flex h-[60vh] flex-col items-center justify-center gap-8">
         <div className="flex flex-1 flex-col items-center justify-center space-y-4">
           <div className="section-badge gap-4 dark:bg-neutral-800">
             <div className="h-3 w-3 animate-heartbeat rounded-full bg-green-500" />
             <span>{homepageContent.badge}</span>
           </div>
-          <h1 className="mb-4 w-full px-4 text-center font-heading text-4xl font-bold leading-tight text-dark dark:text-light sm:text-4xl sm:leading-normal md:text-5xl lg:text-6xl">
+          <h1 className="w-full px-4 text-center font-heading text-4xl font-medium leading-tight text-dark dark:text-light sm:text-4xl sm:leading-normal md:text-5xl lg:text-6xl">
             {homepageContent.heading}
           </h1>
-          <p className="mx-auto w-[80%] text-center text-xl text-dark dark:text-light md:text-2xl lg:text-3xl">
+          <p className="mx-auto w-[80%] text-center text-lg tracking-tighter text-neutral-500 dark:text-light md:text-xl lg:text-2xl">
             {profile?.bio}
           </p>
 

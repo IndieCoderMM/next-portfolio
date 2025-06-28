@@ -110,7 +110,7 @@
   }
 
   .section-badge {
-    @apply flex items-center justify-center mx-auto mb-8 select-none self-center;
+    @apply flex items-center justify-center mx-auto mb-2 select-none self-center;
     @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit font-bold font-heading text-sm rounded-full bg-white dark:bg-dark/90;
     @apply shadow-badge dark:shadow-badge-dark text-neutral-500 dark:bg-dark dark:text-primaryDark tracking-wider uppercase;
   }
