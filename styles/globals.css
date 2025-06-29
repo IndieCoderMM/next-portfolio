@@ -3,7 +3,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-heading: var(--font-heading);
   --font-body: var(--font-body);
   --font-hand: var(--font-gochi-hand);
 
@@ -24,7 +23,7 @@
       #1ba568,
       #1c8550);
 
-  --color-dark: #212529;
+  --color-dark: #181818;
   --color-light: #f0f0f0;
   --color-primary: #6262f9;
   --color-accent: #2bc578;
@@ -155,7 +154,7 @@
 }
 
 .outline-button {
-  @apply flex items-center justify-center gap-2 border border-primary/10 px-8 py-2 text-center font-semibold text-primary transition-colors hover:bg-primary hover:text-light dark:hover:text-dark sm:text-lg md:px-10 md:py-3 md:text-xl;
+  @apply flex items-center justify-center gap-2 border border-primary px-8 py-2 text-center font-medium text-primary transition-colors hover:bg-primary hover:text-light dark:hover:text-dark sm:text-lg md:px-10 md:py-3 md:text-xl;
 }
 
 .label {
@@ -175,8 +174,8 @@
 
 .section-badge {
   @apply flex items-center justify-center mx-auto mb-8 select-none self-center;
-  @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit font-heading text-sm rounded-full bg-white dark:bg-dark/90;
-  @apply shadow-badge dark:shadow-badge-dark text-text-muted dark:bg-dark/80 dark:text-primary tracking-wider uppercase;
+  @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit text-sm rounded-full bg-white dark:bg-dark/90;
+  @apply shadow-badge dark:shadow-badge-dark text-text-muted dark:bg-dark/80 dark:text-primary tracking-wider capitalize;
 }
 
 .link {
@@ -211,4 +210,8 @@
     @apply cursor-not-allowed text-neutral-600;
     @apply dark:text-neutral-500;
   }
+}
+
+.cta-desc {
+  @apply text-text-secondary text-sm md:text-lg lg:text-xl text-center;
 }

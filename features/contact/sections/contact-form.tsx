@@ -8,7 +8,7 @@ import Socials from "../components/socials";
 const ConstactFormSection = () => {
   return (
     <SectionContainer className="borderHr w-full px-4">
-      <Heading className="mb-8">{contactContent.heading}</Heading>
+      <Heading className="mb-4">{contactContent.heading}</Heading>
       <p className="inner-container text-center font-light sm:text-lg sm:leading-loose lg:text-2xl">
         {contactContent.desc}
       </p>

@@ -14,7 +14,7 @@ const Navbar = async () => {
             <IconCode className="h-5 w-5" />
           </div>
           {/* TODO: REPLACE Logo Text >>---------------------------------------- */}
-          <h1 className="font-heading text-2xl font-bold tracking-[-0.08rem]">
+          <h1 className="text-2xl font-medium tracking-[-0.08rem]">
             <span className="text-text-main">hein</span>
             <span className="text-primary">Thant</span>
           </h1>

@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import "easymde/dist/easymde.min.css";
 import type { Metadata } from "next";
-import { Gochi_Hand, Open_Sans, Rubik } from "next/font/google";
+import { Gochi_Hand, Poppins } from "next/font/google";
 
 const gochiHand = Gochi_Hand({
   variable: "--font-gochi-hand",
@@ -9,16 +9,10 @@ const gochiHand = Gochi_Hand({
   weight: "400",
 });
 
-const rubik = Rubik({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600"],
-});
-
-const openSans = Open_Sans({
+const openSans = Poppins({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} ${openSans.variable} ${gochiHand.variable} w-full antialiased`}
+        className={`${openSans.variable} ${gochiHand.variable} overflow-x-hidden antialiased`}
       >
         {children}
       </body>

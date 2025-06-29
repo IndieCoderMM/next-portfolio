@@ -12,7 +12,7 @@ const ExperienceSection = () => {
         <Heading as="h2" id="experience" className="mb-4">
           {aboutContent.experienceHeading}
         </Heading>
-        <p className="mx-auto max-w-2xl text-center text-sm text-neutral-700 dark:text-neutral-300 md:text-base lg:text-xl">
+        <p className="text-md text-text-secondary mx-auto max-w-2xl text-center md:text-lg lg:text-xl">
           {aboutContent.experienceDesc}
         </p>
       </div>

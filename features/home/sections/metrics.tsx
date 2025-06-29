@@ -19,7 +19,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           <Heading as="h2">{homepageContent.metricHeading}</Heading>
         </div>
 
-        <div className="text-text-secondary font-heading mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
+        <div className="text-text-secondary mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
           <div>
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
@@ -56,9 +56,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={users ?? 0}
-                className="font-heading bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
               />
-              <span className="font-heading bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
+              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
                 {"K+"}
               </span>
             </h3>
@@ -74,7 +74,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           >
             Want to work together?
           </Heading>
-          <p className="text-text-secondary text-lg font-medium md:text-xl lg:text-2xl">
+          <p className="cta-desc">
             Drop me a message and let’s see how we can build something great
             together.
           </p>

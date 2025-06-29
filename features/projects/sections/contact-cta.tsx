@@ -10,7 +10,7 @@ const ContactCTA = () => {
       <Heading as="h3" className="text-xl md:text-3xl lg:text-5xl">
         {projectContent.contactHeading}
       </Heading>
-      <p className="md:text-xl lg:text-2xl">{projectContent.contactDesc}</p>
+      <p className="cta-desc">{projectContent.contactDesc}</p>
       <Link href="/contact" className="outline-button mt-8 rounded-full">
         <IconMessage2 />
         <span>{projectContent.contactCta}</span>

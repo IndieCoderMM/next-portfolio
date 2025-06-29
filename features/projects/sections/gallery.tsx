@@ -11,7 +11,7 @@ const GallerySection = () => {
           <div className="mb-8 flex items-center gap-10">
             <Heading className="">{projectContent.heading}</Heading>
           </div>
-          <p className="text-center text-lg font-light sm:w-[80%] md:text-xl lg:text-3xl">
+          <p className="text-center text-lg font-light sm:w-[80%] md:text-xl lg:text-2xl">
             {projectContent.desc}
           </p>
         </div>

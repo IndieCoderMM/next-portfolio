@@ -11,7 +11,7 @@ const AboutMeSection = () => {
       </div>
       <Heading className="mx-auto px-4">{aboutContent.heading}</Heading>
       <div className="grid grid-cols-12 px-4 py-4 sm:py-10 md:px-8 lg:px-12">
-        <div className="text-md col-span-12 my-10 space-y-4 leading-normal tracking-tight md:col-span-6 md:text-lg lg:col-span-8 lg:text-xl">
+        <div className="text-md text-text-main col-span-12 my-10 space-y-4 leading-normal tracking-tight md:col-span-6 md:text-lg lg:col-span-8 lg:text-xl">
           {aboutContent.content}
         </div>
 

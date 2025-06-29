@@ -10,7 +10,7 @@ const PlaygroundCTA = () => {
       <Heading as="h3" className="text-xl md:text-3xl lg:text-5xl">
         {projectContent.playgroundHeading}
       </Heading>
-      <p className="md:text-xl lg:text-2xl">{projectContent.playgroundDesc}</p>
+      <p className="cta-desc">{projectContent.playgroundDesc}</p>
       <Link href="/playground" className="outline-button mt-8 rounded-full">
         <IconBuildingCastle />
         <span>{projectContent.playgroundCta}</span>

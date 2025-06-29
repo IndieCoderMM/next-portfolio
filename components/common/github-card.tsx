@@ -61,9 +61,9 @@ const GitHubCard = ({ project }: { project: Project }) => {
   };
 
   return (
-    <div className="relative flex min-h-[180px] w-full min-w-[300px] max-w-[500px] flex-col rounded-lg bg-white px-6 py-4 dark:border dark:border-neutral-700 dark:bg-dark">
-      <div className="mb-2 flex-1">
-        <div className="flex justify-between">
+    <div className="dark:bg-dark relative flex min-h-[150px] w-full max-w-[500px] min-w-[300px] flex-col rounded-lg border bg-white px-2 pt-2 pb-4 dark:border dark:border-neutral-700">
+      <div className="mb-1 flex-1">
+        <div className="flex w-full justify-between">
           <div>
             {project?.githubURL ? (
               <a
@@ -71,33 +71,33 @@ const GitHubCard = ({ project }: { project: Project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h3 className="text-lg font-semibold hover:underline sm:text-xl">
+                <h3 className="text-lg font-medium hover:underline">
                   {project.slug}
                 </h3>
               </a>
             ) : (
-              <h3 className="text-lg font-semibold sm:text-xl">
+              <h3 className="text-lg font-medium hover:underline">
                 {project.slug}
               </h3>
             )}
-            <p>{project.tagline}</p>
+            <p className="text-text-secondary text-xs">{project.tagline}</p>
           </div>
           {project.logoImage.url && (
             <Image
               src={project.logoImage.url}
-              width={60}
-              height={60}
+              width={40}
+              height={40}
               alt={project.logoImage.alt ?? ""}
-              className="h-[60px] w-[60px] dark:rounded-md dark:bg-white"
+              className="h-[40px] w-[40px] dark:rounded-md dark:bg-white"
             />
           )}
         </div>
         {/*Tags bar*/}
-        <div className="mt-1 flex flex-wrap gap-2">
+        <div className="mt-1 flex flex-wrap gap-1">
           {project.tags?.map((tag) => (
             <div
               key={tag}
-              className="flex items-center rounded-full border border-neutral-600 px-2 py-1 text-xs text-neutral-600 dark:border-neutral-300 dark:text-neutral-200"
+              className="text-text-secondary flex items-center rounded-full border border-neutral-400 px-1 py-0.5 text-xs dark:border-neutral-300"
             >
               <IconHash size={14} />
               <span>{tag}</span>
@@ -113,9 +113,9 @@ const GitHubCard = ({ project }: { project: Project }) => {
             href={project.githubURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs dark:bg-dark"
+            className="dark:bg-dark flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs"
           >
-            <IconBrandGithub size={20} />
+            <IconBrandGithub size={20} className="stroke-[1.5]" />
             <span>Public</span>
           </a>
         )}
@@ -124,15 +124,15 @@ const GitHubCard = ({ project }: { project: Project }) => {
             href={project.liveURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs dark:bg-dark"
+            className="dark:bg-dark flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs"
           >
-            <IconRocket size={20} className="" />
+            <IconRocket size={20} className="stroke-[1.5]" />
             <span>Live</span>
           </a>
         )}
         {project.status === "archive" && (
-          <div className="flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs dark:bg-dark">
-            <IconArchive size={20} />
+          <div className="dark:bg-dark flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs">
+            <IconArchive size={20} className="stroke-[1.5]" />
             <span>Archived</span>
           </div>
         )}
@@ -160,7 +160,7 @@ const GitHubCard = ({ project }: { project: Project }) => {
               }}
               className={cn(`fixed z-50 opacity-0 group-hover:opacity-100`)}
             >
-              <div className="rounded-lg bg-white p-1 text-xs dark:bg-dark">
+              <div className="dark:bg-dark rounded-lg bg-white p-1 text-xs">
                 <span>{lang.language}</span>
                 <span> {lang.percent}%</span>
               </div>

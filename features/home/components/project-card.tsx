@@ -15,13 +15,11 @@ const ProjectCard = ({ project }: { project: ProductsQueryResult[number] }) => {
             className="h-[40px] w-[40px] dark:rounded-lg dark:bg-white"
           />
         </div>
-        <h3 className="text-xl font-bold text-black md:text-xl lg:text-2xl dark:text-white">
+        <h3 className="text-text-main text-xl font-medium md:text-xl lg:text-2xl">
           {project.name}
         </h3>
       </header>
-      <p className="text-center text-neutral-700 dark:text-neutral-200">
-        {project.tagline}
-      </p>
+      <p className="text-text-secondary text-center">{project.tagline}</p>
       <a
         href={project.liveURL ?? undefined}
         target="_blank"

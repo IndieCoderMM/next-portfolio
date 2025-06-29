@@ -73,7 +73,7 @@ const Button = ({
     <a
       href={href}
       target="_blank"
-      className="border-text dark:bg-dark flex items-center gap-2 rounded-md border bg-white px-2 py-1 transition-colors duration-300 hover:brightness-110 sm:gap-4 sm:px-6 sm:py-2"
+      className="border-text-muted dark:bg-dark flex items-center gap-2 rounded-md border bg-white px-2 py-1 transition-colors duration-300 hover:brightness-110 sm:gap-4 sm:px-6 sm:py-2"
     >
       {icon}
       <div className="flex flex-col items-start">
@@ -92,7 +92,7 @@ const TabContent = ({
   return (
     <div className="border-light dark:border-text-muted dark:bg-dark relative h-full w-full overflow-hidden rounded-lg border bg-white p-10 shadow-sm">
       <div className="flex items-center">
-        <h2 className="text-primary dark:text-primaryDark text-left font-semibold lg:text-3xl">
+        <h2 className="text-primary dark:text-primaryDark text-left font-semibold lg:text-2xl">
           {title}
         </h2>
       </div>
@@ -109,7 +109,7 @@ export const projectTabs = [
       <TabContent title="Easy2Success">
         <div className="group grid grid-cols-12">
           <div className="col-span-6 pt-10">
-            <p className="mb-4 leading-loose text-black lg:text-3xl dark:text-white">
+            <p className="mb-4 leading-tight text-black lg:text-2xl dark:text-white">
               AI-Powered Personal Development & E-Learning App{" "}
               <span className="text-neutral-700 dark:text-neutral-200">
                 empowering users to achieve their goals
@@ -175,7 +175,7 @@ export const projectTabs = [
       <TabContent title="Metaversus">
         <div className="group grid grid-cols-12">
           <div className="col-span-5 pt-10">
-            <p className="mb-4 leading-loose text-black lg:text-3xl dark:text-white">
+            <p className="mb-4 leading-tight text-black lg:text-2xl dark:text-white">
               Modern Product Landing Page{" "}
               <span className="text-neutral-700 dark:text-neutral-100">
                 with interactive 3D animations and parallax effects.
