@@ -1,11 +1,11 @@
+import { metaTexts } from "@/config/metadata";
 import ConstactFormSection from "@/features/contact/sections/contact-form";
 
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Hein Thant · Full-Stack Developer",
-  description:
-    "Questions, ideas or just a quick hello, this is the place to react me. Let's connect!",
+  title: metaTexts.contact.title,
+  description: metaTexts.contact.description,
 };
 
 const ContactPage = () => {

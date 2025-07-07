@@ -3,12 +3,12 @@ import {
   IconBrandCloudflare,
   IconBrandFirebase,
   IconBrandGit,
-  IconBrandGooglePlay,
   IconBrandMysql,
   IconBrandNextjs,
   IconBrandNodejs,
   IconBrandReact,
   IconBrandRedux,
+  IconBrandThreejs,
 } from "@tabler/icons-react";
 
 const iconClasses = "h-full w-full text-text-muted stroke-[1.4]";
@@ -51,8 +51,8 @@ export const techs: Technology[] = [
   },
   {
     id: 9,
-    title: "Google Play",
-    icon: <IconBrandGooglePlay className={iconClasses} />,
+    title: "Three.js",
+    icon: <IconBrandThreejs className={iconClasses} />,
   },
   {
     id: 10,

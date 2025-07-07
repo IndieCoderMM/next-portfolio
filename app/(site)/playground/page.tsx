@@ -1,11 +1,11 @@
 import NotForMobile from "@/components/common/not-for-mobile";
+import { metaTexts } from "@/config/metadata";
 import PlaygroundSection from "@/features/playground/components/playground-section";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Playground — Hein Thant · Full-Stack Developer",
-  description:
-    "Fun projects, games, algorithms, and some random things I've built.",
+  title: metaTexts.playground.title,
+  description: metaTexts.playground.description,
 };
 
 const PlaygroundPage = () => {

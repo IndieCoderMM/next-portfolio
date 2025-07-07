@@ -67,16 +67,16 @@ export const timelineData: TimelineEntry[] = [
           <LinkPreview
             url="https://www.microverse.org"
             isStatic={false}
-            className="text-primary underline dark:text-primaryDark"
+            className="text-primary dark:text-primaryDark underline"
           >
             @Microverse
           </LinkPreview>
         </div>
-        <p className="mb-2 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+        <p className="mb-2 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
           Microverse is a global, remote learning program that connects aspiring
           developers to collaborative, real-world experiences.
         </p>
-        <p className="mb-4 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
           Joining Microverse was a life-changing opportunity that shaped both my
           technical and professional skills.
         </p>
@@ -109,9 +109,9 @@ export const timelineData: TimelineEntry[] = [
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="flex aspect-square w-20 items-center justify-center rounded-full border-[10px] border-accent bg-white object-contain shadow-sm md:w-40"
+              className="border-accent/40 flex aspect-square w-20 items-center justify-center rounded-full border-[10px] bg-white object-contain shadow-sm md:w-40"
             >
-              <p className="text-center text-xl text-black">Badge</p>
+              <p className="text-center text-black/20 sm:text-xl">Badge</p>
             </div>
           ))}
         </div>
@@ -162,9 +162,9 @@ export const timelineData: TimelineEntry[] = [
             {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
-                className="flex aspect-square w-full items-center justify-center rounded-lg bg-indigo-400"
+                className="flex aspect-square w-full items-center justify-center rounded-lg bg-indigo-400/40"
               >
-                <p className="text-center text-xl font-bold text-white">
+                <p className="text-center font-bold text-white sm:text-xl">
                   Project
                 </p>
               </div>

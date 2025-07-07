@@ -12,7 +12,7 @@ const TechnologySection = () => {
       <div className="borderVr inner-container flex flex-shrink-0 flex-row flex-wrap items-center justify-center gap-6 sm:gap-8">
         {techs.map((tech) => {
           return (
-            <Container key={tech.id} className="text-text-secondary">
+            <Container key={tech.id} className="text-text-secondary/60">
               <div className="h-8 w-8 sm:h-10 sm:w-10">{tech.icon}</div>
               <p className="text-lg lg:text-xl">{tech.title}</p>
             </Container>

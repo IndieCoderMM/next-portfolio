@@ -260,7 +260,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit -translate-x-1/2 whitespace-pre rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="absolute -top-8 left-1/2 w-fit -translate-x-1/2 rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
             >
               {title}
             </motion.div>
@@ -276,7 +276,7 @@ function IconContainer({
           <motion.div
             layoutId="activeTab"
             transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
-            className="absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg bg-primary brightness-110 dark:bg-primaryDark"
+            className="bg-primary dark:bg-primaryDark absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg brightness-110"
           />
         )}
       </motion.div>

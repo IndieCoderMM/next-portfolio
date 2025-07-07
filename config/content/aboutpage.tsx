@@ -3,8 +3,8 @@ export const aboutContent = {
   experienceHeading: "How I got here",
   experienceDesc:
     "I have one simple rule: learn from every challenge and deliver my best.",
-  photo: "/assets/selfie.jpg",
-  photoLabel: "She insists on being in every photo. Who am I to argue?",
+  photo: "/assets/profile.png",
+  photoLabel: "Here's me, in a cartoonish style",
   content: (
     <>
       <p className="">
