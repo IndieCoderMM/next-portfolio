@@ -6,26 +6,13 @@ Perfect for developers who want a fast, beautiful, and fully customizable site t
 
 ## ✨ Features
 
-- **Clean, modern layout**  
-  Minimal design with a focus on readability and structure.
-
-- **Smooth, subtle animations**  
-  Framer Motion brings pages to life without being distracting.
-
-- **Static site, SEO-friendly**  
-  All pages are statically generated for fast load times and better visibility.
-
-- **Live content editing**  
-  Connected to Sanity Studio — update data directly in production.
-
-- **Simple config-based customization**  
-  Easily customize page content through `/config/content` folder.
-
-- **Built-in contact form**  
-  Messages sent directly to your email using EmailJS.
-
-- **Fully responsive**  
-  Works across devices with zero extra effort.
+- **Clean, modern layout**: Minimal design with a focus on readability and structure.
+- **Smooth, subtle animations**: Framer Motion brings pages to life without being distracting.
+- **Static site, SEO-friendly**: All pages are statically generated for fast load times and better visibility.
+- **Live content editing**: Connected to Sanity Studio — update data directly in production.
+- **Simple config-based customization**: Easily customize page content through `/config/content` folder.
+- **Built-in contact form**: Messages sent directly to your email using EmailJS.
+- **Fully responsive**: Works across devices with zero extra effort.
 
 ## 🗂 Tech Stack
 
@@ -111,11 +98,9 @@ This project is released under [The Unlicense](https://unlicense.org/), which me
 
 Do whatever you like. No credit required (but appreciated).
 
-## 🧠 Credits
+## 💡 Credits
 
-Inspired by great dev portfolios and powered by modern tools. Clean structure, thoughtful animations, and content flexibility—so you can focus on building your brand.
-
-- [Aceternity UI](https://ui.aceternity.com/)
+Thanks to all the amazing developers and designers whose work have inspired me to create this project.
 
 ---
 
