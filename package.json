@@ -1,5 +1,6 @@
 {
-  "name": "src",
+  "name": "next-portfolio",
+  "description": "A minimal, personal portfolio template built with Next.js, Tailwind CSS, and Sanity CMS",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -48,5 +49,14 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
-  }
+  },
+  "keywords": [
+    "nextjs",
+    "portfolio",
+    "template",
+    "sanity",
+    "tailwind",
+    "vercel"
+  ],
+  "homepage": "https://heinthant.vercel.app"
 }

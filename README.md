@@ -1,6 +1,8 @@
 # 🚀 Ultimate Next.js Portfolio Template
 
-A modern developer portfolio website built with **Next.js**, packed with smooth animations, customizable content, and seamless **Sanity CMS** integration.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IndieCoderMM/next-portfolio)
+
+A modern developer portfolio website built with [Next.js](https://nextjs.org), packed with smooth animations, customizable content, and [Sanity CMS](https://www.sanity.io) integration.
 
 Perfect for developers who want a fast, beautiful, and fully customizable site to showcase their work.
 
@@ -55,9 +57,9 @@ Your app should now be running at [http://localhost:3000](http://localhost:3000)
 
 ## 🧩 Customization
 
-All page content can be modified in the `/config/content/` folder. It includes:
+All page content can be modified in the `/config/content/` folder.
 
-Just edit the files – no need to dig into components unless you want to.
+_No need to dig into components unless you want to._
 
 ## 📝 Content Management (Sanity)
 

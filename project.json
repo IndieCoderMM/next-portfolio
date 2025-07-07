@@ -1,0 +1,20 @@
+{
+  "name": "next-portfolio",
+  "description": "A minimal, personal portfolio template built with Next.js, Tailwind CSS, and Sanity CMS",
+  "framework": "nextjs",
+  "demoUrl": "https://heinthant.vercel.app",
+  "repositoryUrl": "https://github.com/IndieCoderMM/next-portfolio",
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "tailwind",
+    "minimal",
+    "developer",
+    "sanity",
+    "cms",
+    "personal",
+    "website",
+    "vercel",
+    "template"
+  ]
+}
