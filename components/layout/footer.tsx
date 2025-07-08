@@ -1,6 +1,7 @@
 import { profileInfo } from "@/config/profileInfo";
 import { ProfileQueryResult } from "@/sanity.types";
 import { getProfile } from "@/sanity/lib/query";
+import { formatTimeFromNow } from "@/utils/dayjs";
 import {
   IconBrandBluesky,
   IconBrandGithub,
@@ -33,7 +34,7 @@ const FooterLink = ({
         {title}
         <span
           className={
-            "rounded-full bg-green-50 px-2 py-1 text-xs uppercase text-green-500 dark:bg-green-900 dark:text-green-200"
+            "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
           }
         >
           {label}
@@ -49,7 +50,7 @@ const FooterLink = ({
         {label && (
           <span
             className={
-              "rounded-full bg-green-50 px-2 py-1 text-xs uppercase text-green-500 dark:bg-green-900 dark:text-green-200"
+              "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
             }
           >
             {label}
@@ -116,7 +117,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
       <div className={"mb-3 text-[13px] text-slate-600 dark:text-slate-400"}>
         About Me
       </div>
-      <p className={"mb-4 font-normal leading-relaxed"}>{profile?.bio}</p>
+      <p className={"mb-4 leading-relaxed font-normal"}>{profile?.bio}</p>
       <ul className={"-ml-2 flex gap-1"}>
         <li>
           <a
@@ -124,7 +125,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="My LinkedIn profile"
             title="Connect on LinkedIn"
@@ -138,7 +139,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="My GitHub profile"
             title="View my GitHub profile"
@@ -152,7 +153,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="Email Me"
             title="Email Me"
@@ -166,7 +167,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105 hover:text-primary dark:hover:text-primaryDark"
+              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="My BlueSky account"
             title="Visit my BlueSky account"
@@ -185,7 +186,7 @@ const Footer = async () => {
   return (
     <footer
       className={
-        "dark:border-divider-dark mt-18 w-full border-light pt-16 text-sm text-slate-900 dark:text-slate-200 lg:mt-24"
+        "dark:border-divider-dark border-light mt-18 w-full pt-16 text-sm text-slate-900 lg:mt-24 dark:text-slate-200"
       }
     >
       <div className={"max-container"}>
@@ -261,10 +262,17 @@ const Footer = async () => {
         </div>
         <div
           className={
-            "flex w-full justify-between border-t border-light px-4 py-6 text-xs dark:border-dark"
+            "border-light dark:border-dark flex w-full justify-between border-t px-4 py-6 text-xs"
           }
         >
           <div className={"font-semibold"}>{profileInfo.copyright}</div>
+          {profile?.lastUpdated ? (
+            <div className="text-text-muted flex items-center justify-center gap-2 text-xs">
+              <p className="">
+                Updated At: {formatTimeFromNow(profile.lastUpdated)}
+              </p>
+            </div>
+          ) : null}
         </div>
       </div>
     </footer>

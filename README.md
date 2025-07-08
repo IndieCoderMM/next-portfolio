@@ -1,4 +1,4 @@
-# 🚀 Ultimate Next.js Portfolio Template
+# Nextfolio: Ultimate Next.js Portfolio Starter
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IndieCoderMM/next-portfolio)
 
@@ -16,7 +16,7 @@ Perfect for developers who want a fast, beautiful, and fully customizable site t
 - **Built-in contact form**: Messages sent directly to your email using EmailJS.
 - **Fully responsive**: Works across devices with zero extra effort.
 
-## 🗂 Tech Stack
+## 🧰 Tech Stack
 
 - **Next.js** – React framework for SSR and performance
 - **Sanity.io** – Headless CMS for content management
@@ -24,7 +24,7 @@ Perfect for developers who want a fast, beautiful, and fully customizable site t
 - **Tailwind CSS** – Utility-first CSS framework
 - **EmailJS** – Email service for handling contact form messages
 
-## 🚀 Getting Started
+## 💻 Getting Started
 
 1. **Clone the repo**
 
@@ -44,7 +44,7 @@ npm install
 Copy the example env file and add your own config:
 
 ```bash
-cp env.example .env.local
+cp .env.example .env.local
 ```
 
 4. **Run the dev server**
@@ -57,7 +57,7 @@ Your app should now be running at [http://localhost:3000](http://localhost:3000)
 
 ## 🧩 Customization
 
-All page content can be modified in the `/config/content/` folder.
+All page content can be modified in the `/config/` folder.
 
 _No need to dig into components unless you want to._
 
@@ -82,7 +82,7 @@ The contact form uses **EmailJS** for sending messages.
 - Create a service, template, and public key
 - Add those to your `.env.local` file
 
-## 🧪 Deploy
+## 🚀 Deploy
 
 Deploy anywhere Next.js is supported:
 
@@ -94,9 +94,18 @@ Make sure to set environment variables in your deployment settings.
 
 Feel free to fork, customize, or contribute. Open an issue or PR if you have suggestions or improvements.
 
+<!--TODO:-->
+
+## Todos
+
+- [ ] Optimize sanity schema
+- [ ] Content revalidation
+- [ ] Generate og image
+- [ ]
+
 ## 📄 License
 
-This project is released under [The Unlicense](https://unlicense.org/), which means you can use, modify, and distribute it however you want—no restrictions, no conditions.
+This project is released under [The Unlicense](https://unlicense.org/), which means you can use, modify, and distribute it however you want.
 
 Do whatever you like. No credit required (but appreciated).
 

@@ -1,8 +1,7 @@
 import { PrimaryButton } from "@/components/common";
 import { homepageContent } from "@/config/content/homepage";
 import { ProfileQueryResult } from "@/sanity.types";
-import { formatDate } from "@/utils/format-date";
-import { IconMessage } from "@tabler/icons-react";
+import { IconMapPin, IconMessage } from "@tabler/icons-react";
 import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
@@ -37,11 +36,11 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
               </PrimaryButton>
             </Link>
           </div>
+          {/* TODO: Add location schema */}
           {profile?.lastUpdated ? (
-            <div className="text-text-muted flex items-center justify-center gap-2 text-xs">
-              <p className="">
-                Last Updated: {formatDate(profile.lastUpdated, "short")}
-              </p>
+            <div className="text-text-muted flex items-center justify-center gap-2 text-sm">
+              <IconMapPin />
+              <p className="">{"Yangon, Myanmar"}</p>
             </div>
           ) : null}
         </div>

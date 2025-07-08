@@ -3,7 +3,7 @@ import { SectionContainer } from "@/components/layout/section";
 import { aboutContent } from "@/config/content/aboutpage";
 import ProfileCard from "../components/profile-card";
 
-const AboutMeSection = () => {
+const AboutMeSection = ({ about }: { about: string }) => {
   return (
     <SectionContainer className="lg:pt-10">
       <div className="section-badge">

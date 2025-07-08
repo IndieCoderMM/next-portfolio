@@ -24,5 +24,6 @@ const ProjectPage = async () => {
   );
 };
 
-// <SkillSection skillGroups={skillGroups} />
+export const revalidate = 60;
+
 export default ProjectPage;

@@ -13,11 +13,12 @@ const profileQuery = defineQuery(`*[ _type == "profile" ]{
       metrics {apps, websites, users, years},
     }[0]`);
 
-const productsQuery =
-  defineQuery(`*[ _type == "product" ] | order(developedAt desc){
+const projectsQuery =
+  defineQuery(`*[ _type == "project" ] | order(developedAt desc){
       "id": _id,
       name,
       tagline,
+      description,
       "slug": slug.current,
       tags,
       languages[],
@@ -25,8 +26,8 @@ const productsQuery =
       stack,
       githubURL,
       liveURL,
+      about[], 
       "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},
-      "coverImage": {"url": coverImage.asset->url, "alt": coverImage.alt},
       developedAt
     }`);
 
@@ -37,7 +38,7 @@ export const getProfile = async () => {
 };
 
 export const getProducts = async () => {
-  const result = await client.fetch(productsQuery);
+  const result = await client.fetch(projectsQuery);
 
   return result;
 };

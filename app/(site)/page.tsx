@@ -5,6 +5,8 @@ import ServiceSection from "@/features/home/sections/service";
 import TechnologySection from "@/features/home/sections/technology";
 import { getProducts, getProfile } from "@/sanity/lib/query";
 
+export const revalidate = 60;
+
 const HomePage = async () => {
   const profile = await getProfile();
   const products = await getProducts();
