@@ -24,9 +24,7 @@ const Navbar = async () => {
           <div className="flex items-center gap-4">
             <a
               href={`${profile.resumeURL}?dl=${
-                profile?.fullName
-                  ? profile.fullName.replaceAll(" ", "_")
-                  : "AWESOME"
+                profile?.name ? profile.name.replaceAll(" ", "_") : "AWESOME"
               }_CV.pdf`}
               className=""
             >
