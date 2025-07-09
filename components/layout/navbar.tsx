@@ -7,8 +7,8 @@ const Navbar = async () => {
   const profile = await getProfile();
 
   return (
-    <div className="z-30 m-0 w-full border-0 p-0">
-      <div className="max-container borderVr flex items-center justify-between p-4">
+    <div className="z-30 w-full bg-white dark:bg-transparent">
+      <div className="max-container flex items-center justify-between p-4">
         <Link href="/" className="group flex items-baseline">
           <div className="bg-primary translate-y-1 rounded-lg p-1 text-white transition duration-300 group-hover:translate-y-0.5 group-hover:shadow-sm">
             <IconCode className="h-5 w-5" />

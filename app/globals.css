@@ -14,6 +14,8 @@
     rgba(9, 9, 9, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.3),
     inset 0px -2px 0px rgba(0, 0, 0, 0.35);
 
+  --blob-gradient: from 2.35rad, #c76000, rgba(7, 29, 228, 0.5);
+
   --background-image-gr-primary: linear-gradient(to right,
       #3e35b1,
       #4f46e5,
@@ -22,6 +24,24 @@
       #1c8550,
       #1ba568,
       #1c8550);
+
+  --color-bg: hsl(240, 5.79%, 76.27%);
+  --color-fg: hsl(240, 4.76%, 8.24%);
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+
+  --primary: 82.77deg 97.16% 72.35%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 225deg 6.67% 11.76%;
+
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.5rem;
+  --redis-gray: 183, 171, 152;
 
   --color-dark: #181818;
   --color-light: #f0f0f0;
@@ -81,15 +101,19 @@
 
   body {
     font-family: var(--font-body);
-    color: var(--color-text-main);
-    background-image: radial-gradient(circle at center, var(--color-grid) 1px, transparent 0);
-    background-size: 20px 20px;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-position: center;
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+    /*background-image: radial-gradient(circle at center, var(--color-grid) 1px, transparent 0);*/
+    /*background-size: 20px 20px;*/
+    /*background-repeat: repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
   }
 
   .dark {
+    --color-bg: hsl(240, 10%, 5%);
+    --color-fg: hsl(240, 5.79%, 76.27%);
+
     --color-primary: #2bc578;
     --color-primary-dark: #1ba568;
     --color-primary-darker: #1c8550;
@@ -209,6 +233,10 @@
 
 .cta-desc {
   @apply text-text-secondary text-sm md:text-lg lg:text-xl text-center;
+}
+
+.blob {
+  @apply bg-transparent dark:bg-conic-[var(--blob-gradient)];
 }
 
 /* From Uiverse.io by ZacharyCrespin2 */

@@ -184,9 +184,10 @@ const Footer = async () => {
   return (
     <footer
       className={
-        "dark:border-divider-dark border-light mt-8 w-full pt-16 text-sm text-slate-900 lg:mt-10 dark:text-slate-200"
+        "dark:border-divider-dark border-light relative mt-8 w-full pt-16 text-sm text-slate-900 lg:mt-10 dark:text-slate-200"
       }
     >
+      <span className="blob absolute top-0 right-0 size-1/2 blur-[200px]" />
       <div className={"max-container"}>
         <div className={"py-10"}>
           <div className={"flex flex-col-reverse gap-16 lg:flex-row"}>

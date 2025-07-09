@@ -13,13 +13,14 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
   let { apps, websites, users, years } = metrics ?? {};
 
   return (
-    <SectionContainer className="w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
-      <div className="borderVr">
+    <SectionContainer className="relative w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
+      <span className="blob absolute bottom-0 left-0 size-1/2 blur-[200px]" />
+      <div className="relative">
         <div className="mx-auto w-full text-center md:w-[80%]">
           <Heading as="h2">{homepageContent.metricHeading}</Heading>
         </div>
 
-        <div className="text-text-secondary mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
+        <div className="text-text-secondary relative mt-8 grid grid-cols-2 place-items-center gap-8 text-center sm:grid-cols-3 sm:gap-x-8 lg:mt-14">
           <div>
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
@@ -67,7 +68,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           </div>
         </div>
 
-        <div className="inner-container mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
+        <div className="inner-container relative mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
           <Heading
             as="h3"
             className="text-text-main text-xl md:text-2xl lg:text-4xl"

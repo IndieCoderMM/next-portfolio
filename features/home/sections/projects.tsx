@@ -9,8 +9,9 @@ import ProjectCard from "../components/project-card";
 
 const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
   return (
-    <section className="flex w-full flex-col items-center bg-white py-16 sm:py-20 dark:bg-transparent">
-      <div className="max-container mb-16">
+    <section className="relative flex w-full flex-col items-center bg-white py-16 sm:py-20 dark:bg-transparent">
+      <span className="blob absolute top-20 right-0 size-1/2 blur-[120px]" />
+      <div className="max-container relative mb-16">
         <div className="section-badge w-fit self-center">
           <span>Projects</span>
         </div>
@@ -18,7 +19,7 @@ const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
           {homepageContent.projectHeading}
         </Heading>
       </div>
-      <div className="inner-container grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="inner-container relative grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects
           .filter((p) => p.status === "live")
           .slice(0, 6)

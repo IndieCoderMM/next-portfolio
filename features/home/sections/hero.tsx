@@ -6,10 +6,11 @@ import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
-    <div className="borderHr w-full bg-gradient-to-b from-transparent via-white/10 to-white/50 pt-10 pb-10 sm:pt-14 dark:bg-none">
-      <section className="max-container borderVr mx-auto flex h-[60vh] flex-col items-center justify-center gap-8">
+    <div className="relative w-full bg-white pt-10 pb-10 sm:pt-14 dark:bg-transparent">
+      <span className="blob absolute top-20 left-0 size-1/2 blur-[140px]" />
+      <section className="max-container relative mx-auto flex h-[60vh] flex-col items-center justify-center gap-8">
         <div className="flex flex-1 flex-col items-center space-y-4 text-center">
-          <div className="section-badge gap-4 dark:bg-neutral-800">
+          <div className="section-badge gap-4">
             <div className="animate-heartbeat h-3 w-3 rounded-full bg-green-500" />
             <span>{homepageContent.badge}</span>
           </div>
