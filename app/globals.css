@@ -203,18 +203,8 @@
 }
 
 .footer-link {
-  @apply flex h-8 items-center gap-2 whitespace-nowrap px-2 py-1 text-sm text-neutral-900;
-  @apply dark:text-neutral-200;
-
-  &--label {
-    @apply border-light rounded-full border px-2 py-0 text-[10px] uppercase text-neutral-900;
-    @apply dark:text-neutral-200;
-  }
-
-  &--soon {
-    @apply cursor-not-allowed text-neutral-600;
-    @apply dark:text-neutral-500;
-  }
+  @apply flex h-8 items-center gap-2 px-2 py-1 text-sm font-medium whitespace-nowrap text-neutral-700 dark:text-neutral-200;
+  @apply hover:text-primary transition-colors;
 }
 
 .cta-desc {

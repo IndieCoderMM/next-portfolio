@@ -26,15 +26,11 @@ const FooterLink = ({
 }: FooterLinkProps) => {
   if (label === "soon") {
     return (
-      <span
-        className={
-          "footer-link footer-link--soon text-neutral-600 dark:text-neutral-400"
-        }
-      >
+      <span className={"footer-link cursor-not-allowed"}>
         {title}
         <span
           className={
-            "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
+            "rounded-full bg-green-50 px-1 py-0.5 text-[8px] text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
           }
         >
           {label}
@@ -50,7 +46,7 @@ const FooterLink = ({
         {label && (
           <span
             className={
-              "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
+              "rounded-full bg-green-50 px-1 py-0.5 text-[8px] text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
             }
           >
             {label}
@@ -72,7 +68,7 @@ const FooterLink = ({
       {label && (
         <span
           className={
-            "rounded-full bg-green-50 px-2 py-1 text-xs text-green-500 dark:bg-green-900 dark:text-green-200"
+            "rounded-full bg-green-50 px-1 py-0.5 text-[8px] text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
           }
         >
           {label}
@@ -90,11 +86,13 @@ interface FooterGroupProps {
 const FooterGroup = ({ title, links }: FooterGroupProps) => {
   return (
     <div className={"flex-1"}>
-      <div
-        className={"mb-2 px-2 text-[13px] text-slate-600 dark:text-slate-400"}
+      <h2
+        className={
+          "mb-2 px-2 text-sm font-normal text-slate-600 dark:text-slate-400"
+        }
       >
         {title}
-      </div>
+      </h2>
       <ul className={"flex flex-col"}>
         {links.map(({ title: linkTitle, href, label, isInternal }) => (
           <li key={href}>
@@ -114,7 +112,7 @@ const FooterGroup = ({ title, links }: FooterGroupProps) => {
 const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
     <div className={"max-w-[348px]"}>
-      <div className={"mb-3 text-[13px] text-slate-600 dark:text-slate-400"}>
+      <div className={"mb-3 text-sm text-slate-600 dark:text-slate-400"}>
         About Me
       </div>
       <p className={"mb-4 leading-relaxed font-normal"}>{profile?.bio}</p>
@@ -149,7 +147,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
         </li>
         <li>
           <a
-            href={`mailto:${profile?.email}`}
+            href={`mailto:${profile?.socials?.email}`}
             target="_blank"
             rel="noreferrer nofollow"
             className={
@@ -186,11 +184,11 @@ const Footer = async () => {
   return (
     <footer
       className={
-        "dark:border-divider-dark border-light mt-18 w-full pt-16 text-sm text-slate-900 lg:mt-24 dark:text-slate-200"
+        "dark:border-divider-dark border-light mt-8 w-full pt-16 text-sm text-slate-900 lg:mt-10 dark:text-slate-200"
       }
     >
       <div className={"max-container"}>
-        <div className={"py-10 font-semibold"}>
+        <div className={"py-10"}>
           <div className={"flex flex-col-reverse gap-16 lg:flex-row"}>
             <div className={"flex-1 p-4"}>
               <FooterDescription profile={profile} />

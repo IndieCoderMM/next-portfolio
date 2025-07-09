@@ -1,15 +1,16 @@
+import { IconAddressBook } from "@tabler/icons-react";
 import { defineField, defineType } from "sanity";
 
 const profileSchema = defineType({
   name: "profile",
   title: "Profile",
   type: "document",
+  icon: IconAddressBook,
   fields: [
     defineField({
       name: "name",
       type: "string",
       title: "Your Name",
-      description: "Enter your full name",
       initialValue: "Jim Awesome",
       validation: (rule) => rule.required().min(3).max(50),
     }),
@@ -58,6 +59,12 @@ const profileSchema = defineType({
       options: {
         accept: "application/pdf",
       },
+    }),
+    defineField({
+      name: "location",
+      title: "Location",
+      description: "Where are you currently located?",
+      type: "string",
     }),
     defineField({
       name: "socials",

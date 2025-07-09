@@ -3,7 +3,7 @@ import ContactCTA from "@/features/projects/sections/contact-cta";
 import GallerySection from "@/features/projects/sections/gallery";
 import PlaygroundCTA from "@/features/projects/sections/playground-cta";
 import ProjectRepos from "@/features/projects/sections/repos";
-import { getProducts } from "@/sanity/lib/query";
+import { getProjects } from "@/sanity/lib/query";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const ProjectPage = async () => {
-  const products = await getProducts();
+  const products = await getProjects();
 
   return (
     <div className="relative w-full">

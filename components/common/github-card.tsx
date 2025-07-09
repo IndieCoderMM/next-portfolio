@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductsQueryResult } from "@/sanity.types";
+import { ProjectsQueryResult } from "@/sanity.types";
 import { cn } from "@/utils/cn";
 import {
   IconArchive,
@@ -11,7 +11,7 @@ import {
 import { motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
 
-type Project = ProductsQueryResult[number];
+type Project = ProjectsQueryResult[number];
 
 const languageColors = {
   javascript: "#f1e05a",

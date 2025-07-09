@@ -244,7 +244,7 @@ function IconContainer({
 
   return (
     <Elem
-      href={href ?? undefined}
+      href={href.length > 0 ? href : "#"}
       target={href?.startsWith("http") ? "_blank" : "_self"}
     >
       <motion.div

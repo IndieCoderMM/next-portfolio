@@ -3,20 +3,27 @@ import Metrics from "@/features/home/sections/metrics";
 import ProjectSection from "@/features/home/sections/projects";
 import ServiceSection from "@/features/home/sections/service";
 import TechnologySection from "@/features/home/sections/technology";
-import { getProducts, getProfile } from "@/sanity/lib/query";
+import {
+  getProfile,
+  getProjects,
+  getServices,
+  getTech,
+} from "@/sanity/lib/query";
 
 export const revalidate = 60;
 
 const HomePage = async () => {
   const profile = await getProfile();
-  const products = await getProducts();
+  const projects = await getProjects();
+  const services = await getServices();
+  const techs = await getTech();
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
       <HeroSection profile={profile} />
-      <TechnologySection />
-      <ServiceSection />
-      <ProjectSection products={products} />
+      <TechnologySection techs={techs} />
+      <ServiceSection services={services} />
+      <ProjectSection projects={projects} />
       <Metrics metrics={profile?.metrics} />
     </div>
   );

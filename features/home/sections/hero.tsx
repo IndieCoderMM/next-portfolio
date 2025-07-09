@@ -37,10 +37,10 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
             </Link>
           </div>
           {/* TODO: Add location schema */}
-          {profile?.lastUpdated ? (
+          {profile?.location ? (
             <div className="text-text-muted flex items-center justify-center gap-2 text-sm">
               <IconMapPin />
-              <p className="">{"Yangon, Myanmar"}</p>
+              <p className="">{profile.location}</p>
             </div>
           ) : null}
         </div>

@@ -15,7 +15,7 @@ const AboutPage = async () => {
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
-      <AboutMeSection about={profile?.about} />
+      <AboutMeSection profile={profile} />
       <ExperienceSection />
     </div>
   );

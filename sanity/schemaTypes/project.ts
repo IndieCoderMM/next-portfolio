@@ -1,9 +1,11 @@
+import { IconBrowserCheck } from "@tabler/icons-react";
 import { defineField, defineType } from "sanity";
 
 const projectSchema = defineType({
   name: "project",
   title: "Project",
   type: "document",
+  icon: IconBrowserCheck,
   fields: [
     defineField({
       name: "name",
@@ -57,13 +59,6 @@ const projectSchema = defineType({
       title: "Upload Project Logo",
       type: "image",
       options: { hotspot: true },
-      fields: [
-        {
-          name: "alt",
-          title: "Alt",
-          type: "string",
-        },
-      ],
     }),
     defineField({
       name: "screenshots",
@@ -74,13 +69,6 @@ const projectSchema = defineType({
           title: "Upload Project Screenshot",
           type: "image",
           options: { hotspot: true },
-          fields: [
-            {
-              name: "alt",
-              title: "Alt",
-              type: "string",
-            },
-          ],
         },
       ],
     }),
@@ -101,7 +89,7 @@ const projectSchema = defineType({
       title: "Tech Stack",
       type: "array",
       description: "Add technologies used",
-      of: [{ type: "string" }],
+      of: [{ type: "reference", to: [{ type: "tech" }] }],
     }),
     defineField({
       name: "languages",

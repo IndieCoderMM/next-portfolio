@@ -32,7 +32,7 @@ const Socials = async () => {
         <IconBrandLinkedin />
       </a>
       <a
-        href={`mailto:${profile?.email}`}
+        href={`mailto:${profile?.socials?.email}`}
         target="_blank"
         rel="noopener noreferrer"
         title="Email"
