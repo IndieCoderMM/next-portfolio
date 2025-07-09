@@ -8,8 +8,8 @@ import Socials from "../components/socials";
 const ConstactFormSection = () => {
   return (
     <SectionContainer className="borderHr w-full px-4">
-      <Heading className="mb-4">{contactContent.heading}</Heading>
-      <p className="inner-container text-center font-light sm:text-lg sm:leading-loose lg:text-2xl">
+      <Heading className="mb-2">{contactContent.heading}</Heading>
+      <p className="inner-container text-center font-light tracking-tight sm:text-lg sm:leading-tight md:text-xl lg:text-2xl">
         {contactContent.desc}
       </p>
       <div className="borderVr paddings w-full max-w-3xl">

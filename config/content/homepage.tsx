@@ -2,7 +2,7 @@ export const homepageContent = {
   badge: "Available",
   heading: (
     <>
-      Shipping Ideas 💡 for
+      Shipping Ideas for
       <br /> Mobile and Web
     </>
   ),
@@ -14,8 +14,7 @@ export const homepageContent = {
   ),
   projectHeading: (
     <>
-      Over 20+ <span className="inline-block rotate-6 transform">🚀</span>{" "}
-      projects done, <br />
+      Over 20+ projects done, <br />
       Here're some of them
     </>
   ),
@@ -24,8 +23,7 @@ export const homepageContent = {
     <>
       My Code compiled into
       <br />
-      these Numbers{" "}
-      <span className="inline-block -rotate-6 transform shadow-sm">📈</span>
+      these Numbers
     </>
   ),
 };

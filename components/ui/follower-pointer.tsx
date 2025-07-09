@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import { AnimatePresence, motion, useMotionValue } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue } from "motion/react";
 import React, { useEffect, useState } from "react";
 
 export const FollowerPointerCard = ({
@@ -127,7 +127,7 @@ export const FollowPointer = ({
           opacity: 0,
         }}
         className={
-          "min-w-max whitespace-nowrap rounded-full bg-neutral-200 px-2 py-2 text-xs text-white"
+          "min-w-max rounded-full bg-neutral-200 px-2 py-2 text-xs whitespace-nowrap text-white"
         }
       >
         {title || `William Shakespeare`}

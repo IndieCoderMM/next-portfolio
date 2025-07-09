@@ -1,43 +1,66 @@
+"use client";
+
 import { ProjectsQueryResult } from "@/sanity.types";
-import { IconExternalLink } from "@tabler/icons-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
+import { motion } from "motion/react";
 import Image from "next/image";
+import { useState } from "react";
 
 const ProjectCard = ({ project }: { project: ProjectsQueryResult[number] }) => {
+  const [hover, setHover] = useState(false);
+
+  const mouseEnter = () => {
+    setHover(true);
+  };
+  const mouseLeave = () => {
+    setHover(false);
+  };
+
   return (
-    <div className="border-light dark:bg-dark flex w-full max-w-[500px] flex-col items-center gap-8 overflow-hidden rounded-xl border bg-white p-8 shadow-sm sm:min-w-[300px] lg:min-h-[200px] dark:border-neutral-700">
-      <header className="flex items-center gap-1">
-        <div className="flex h-[40px] w-[40px] items-center">
-          {project.logoImage.url ? (
-            <Image
-              src={project.logoImage.url ?? ""}
-              width={40}
-              height={40}
-              alt={project.logoImage.alt ?? ""}
-              className="h-[40px] w-[40px] dark:rounded-lg dark:bg-white"
-            />
-          ) : (
-            <div className="bg-primary/80 flex h-[40px] w-[40px] items-center justify-center rounded-full">
-              <span className="text-2xl font-bold text-white">
-                {project.name?.[0]}
-              </span>
-            </div>
-          )}
+    <motion.div
+      layout
+      className="bg-secondary/50 relative aspect-square overflow-hidden rounded-xl md:rounded-3xl md:px-4"
+      onMouseEnter={mouseEnter}
+      onMouseLeave={mouseLeave}
+    >
+      <div className="absolute top-2 right-2 flex h-full w-full justify-end md:hidden">
+        <div className="grid size-8 place-items-center rounded-full bg-white text-black">
+          <IconArrowUpRight />
         </div>
-        <h3 className="text-text-main text-xl font-medium md:text-xl lg:text-2xl">
-          {project.name}
-        </h3>
-      </header>
-      <p className="text-text-secondary text-center">{project.tagline}</p>
-      <a
-        href={project.liveURL ?? undefined}
-        target="_blank"
-        rel="noreferer"
-        className="text-text-main hover:border-primary dark:bg-dark hover:text-primary dark:border-primary/10 mt-auto flex items-center justify-center gap-2 rounded-lg bg-blue-50/20 p-2 hover:brightness-110 dark:border"
-      >
-        <IconExternalLink className="" />
-        Visit Website
-      </a>
-    </div>
+      </div>
+      <div className="relative md:py-8">
+        <motion.div
+          animate={{ y: hover ? -20 : 0 }}
+          className="flex items-center justify-between max-md:hidden"
+        >
+          <p className="text-sm font-semibold max-md:opacity-0 md:text-xl">
+            {project.name}
+          </p>
+          <button className="flex items-center justify-center gap-2 max-md:px-4">
+            Visit
+            <span className="rounded-full bg-black p-1 text-white/80">
+              <IconArrowUpRight />
+            </span>
+          </button>
+        </motion.div>
+        <div className="overflow-hidden max-md:hidden">
+          <motion.p
+            initial={{ y: 0, opacity: 0 }}
+            animate={{ y: hover ? -20 : 0, opacity: hover ? 1 : 0 }}
+            className="absolute text-white/50"
+          >
+            {project?.tagline}
+          </motion.p>
+        </div>
+      </div>
+      <Image
+        src={project.screenshots?.[0].url ?? ""}
+        width={500}
+        height={500}
+        alt={`screenshot-${project.name}`}
+        className="h-full w-full rounded-xl object-cover object-center md:rounded-t-3xl"
+      />
+    </motion.div>
   );
 };
 

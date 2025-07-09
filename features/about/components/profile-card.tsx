@@ -31,7 +31,7 @@ const ProfileCard = ({
         <div className="absolute top-0 left-0 h-full w-full bg-[#000000]/0 opacity-100 mix-blend-normal blur-[0px] grayscale-[100%] invert-[0%] sepia-[0%] backdrop-brightness-[110%] backdrop-contrast-[110%] backdrop-hue-rotate-[0deg] backdrop-saturate-[100%] transition duration-300 group-hover:opacity-0"></div>
       </div>
 
-      <p className="mt-4 rounded-lg border border-black/[0.2] px-2 py-1 text-sm font-light text-black dark:border-white/[0.2] dark:text-white">
+      <p className="mt-4 w-full rounded-lg border border-black/[0.2] px-2 py-1 text-center text-sm font-light text-black md:text-lg dark:border-white/[0.2] dark:text-white">
         {label}
       </p>
     </div>

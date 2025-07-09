@@ -25,17 +25,16 @@
       #1ba568,
       #1c8550);
 
-  --color-bg: hsl(240, 5.79%, 76.27%);
-  --color-fg: hsl(240, 4.76%, 8.24%);
-
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
+  --color-bg: hsl(0, 0%, 100%);
+  --color-fg: hsl(240, 4.76%, 28.24%);
+  --color-card: hsl(0, 0%, 100%);
+  --color-card-foreground: hsl(240, 10%, 3.9%);
 
   --primary: 82.77deg 97.16% 72.35%;
   --primary-foreground: 0 0% 98%;
 
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 225deg 6.67% 11.76%;
+  --color-secondary: hsl(240, 4.8%, 95.9%);
+  --color-secondary-fg: hsl(225deg, 6.67%, 11.76%);
 
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
@@ -103,16 +102,36 @@
     font-family: var(--font-body);
     color: var(--color-fg);
     background-color: var(--color-bg);
-    /*background-image: radial-gradient(circle at center, var(--color-grid) 1px, transparent 0);*/
-    /*background-size: 20px 20px;*/
-    /*background-repeat: repeat;*/
-    /*background-attachment: fixed;*/
-    /*background-position: center;*/
+    background-image: radial-gradient(circle at center, var(--color-grid) 1px, transparent 0);
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .dark body {
+    background-image: none;
   }
 
   .dark {
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --primary: 190.29deg 51.22% 59.8%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --border: 37, 18%, 66%, 0.5;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --opacity-color: 203, 203, 219;
+
     --color-bg: hsl(240, 10%, 5%);
     --color-fg: hsl(240, 5.79%, 76.27%);
+    --color-card: hsl(240, 10%, 3.9%);
+    --color-card-fg: hsl(0, 0%, 100%);
+
+    --color-secondary: hsl(225, 6.67%, 11.76%);
+    --color-secondary-fg: hsl(0 0% 98%);
 
     --color-primary: #2bc578;
     --color-primary-dark: #1ba568;
@@ -168,7 +187,7 @@
 }
 
 .max-container {
-  @apply mx-auto w-full max-w-[1200px];
+  @apply mx-auto w-full max-w-[1400px];
 }
 
 
@@ -197,14 +216,14 @@
 }
 
 .inner-container {
-  @apply mx-auto w-full px-2 sm:px-4 md:px-0 md:max-w-[80%];
+  @apply mx-auto w-full px-2 sm:px-4 md:px-0 md:max-w-[90%];
 }
 
 
 .section-badge {
   @apply flex items-center justify-center mx-auto mb-8 select-none self-center;
-  @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit text-sm rounded-full bg-white dark:bg-dark/90;
-  @apply shadow-badge dark:shadow-badge-dark text-text-muted dark:bg-dark/80 dark:text-primary tracking-wider capitalize;
+  @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit text-sm rounded-full bg-secondary/80;
+  @apply shadow-badge dark:shadow-badge-dark text-text-muted dark:text-primary tracking-wider capitalize;
 }
 
 .link {
@@ -237,6 +256,10 @@
 
 .blob {
   @apply bg-transparent dark:bg-conic-[var(--blob-gradient)];
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-white to-neutral-400 bg-clip-text bg-white/80 text-fg dark:text-transparent;
 }
 
 /* From Uiverse.io by ZacharyCrespin2 */

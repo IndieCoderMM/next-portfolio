@@ -6,7 +6,7 @@ import {
   useMotionTemplate,
   useMotionValue,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 import React, { useRef } from "react";
 
 export function BorderButton({

@@ -1,4 +1,6 @@
-export const textContainer = {
+import { AnimationGeneratorType, Variants } from "motion";
+
+export const textContainer: Variants = {
   hidden: {
     opacity: 0,
   },
@@ -8,7 +10,7 @@ export const textContainer = {
   }),
 };
 
-export const textVariant = {
+export const textVariant: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -31,7 +33,7 @@ type StaggerContainerProps = {
 export const staggerContainer = ({
   staggerChildren,
   delayChildren,
-}: StaggerContainerProps) => ({
+}: StaggerContainerProps): Variants => ({
   hidden: {},
   show: {
     transition: {
@@ -43,7 +45,7 @@ export const staggerContainer = ({
 
 type SlideInProps = {
   direction: "left" | "right" | "up" | "down";
-  type: string;
+  type: AnimationGeneratorType;
   delay: number;
   duration: number;
 };
@@ -53,7 +55,7 @@ export const slideIn = ({
   type,
   delay,
   duration,
-}: SlideInProps) => ({
+}: SlideInProps): Variants => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "-100%" : direction === "down" ? "100%" : 0,
@@ -72,12 +74,17 @@ export const slideIn = ({
 
 type FadeInProps = {
   direction: "left" | "right" | "up" | "down";
-  type: string;
+  type: AnimationGeneratorType;
   delay: number;
   duration: number;
 };
 
-export const fadeIn = ({ direction, type, delay, duration }: FadeInProps) => ({
+export const fadeIn = ({
+  direction,
+  type,
+  delay,
+  duration,
+}: FadeInProps): Variants => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
@@ -106,7 +113,7 @@ export const sphereVariant = ({
   direction,
   delay,
   duration,
-}: SphereVariantProps) => ({
+}: SphereVariantProps): Variants => ({
   hidden: {
     x: direction === "left" ? -300 : 300,
     rotate: 120,

@@ -1,6 +1,6 @@
 "use client";
 import { fadeIn, sphereVariant } from "@/utils/motion";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 type SkillCardProps = {
@@ -27,7 +27,7 @@ const SkillCard = ({
       onClick={handleClick}
       className={`relative ${
         isActive ? "flex-1 lg:flex-[3.5]" : "lg:flex-[1.5]"
-      } flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 border-dark bg-light text-dark transition-[flex] duration-700 ease-out lg:h-[500px]`}
+      } border-dark bg-light text-dark flex min-w-[170px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 transition-[flex] duration-700 ease-out lg:h-[500px]`}
     >
       <Image
         fill
@@ -37,11 +37,11 @@ const SkillCard = ({
         className="absolute object-cover"
       />
       {!isActive ? (
-        <div className="relative z-20 w-full self-stretch bg-light/70 backdrop-blur-sm dark:bg-dark/50">
-          <h3 className="left-0 whitespace-nowrap rounded-sm text-center text-2xl font-bold text-dark dark:text-light lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
+        <div className="bg-light/70 dark:bg-dark/50 relative z-20 w-full self-stretch backdrop-blur-sm">
+          <h3 className="text-dark dark:text-light left-0 rounded-sm text-center text-2xl font-bold whitespace-nowrap lg:absolute lg:bottom-10 lg:left-10 lg:origin-left lg:rotate-[-90deg] lg:text-4xl">
             {skillGroup?.title}
           </h3>
-          <ul className="bottom-0 right-0 top-4 flex flex-wrap gap-1 p-2 md:left-1/2 lg:absolute lg:flex-col-reverse lg:items-end">
+          <ul className="top-4 right-0 bottom-0 flex flex-wrap gap-1 p-2 md:left-1/2 lg:absolute lg:flex-col-reverse lg:items-end">
             {skillGroup?.list.map((item, index) => (
               <motion.li
                 variants={sphereVariant({
@@ -53,7 +53,7 @@ const SkillCard = ({
                 animate="show"
                 key={index}
               >
-                <div className="flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-full bg-dark/10 p-1 dark:bg-light/50 md:h-[50px] md:w-[50px]">
+                <div className="bg-dark/10 dark:bg-light/50 flex h-[30px] w-[30px] items-center justify-center overflow-hidden rounded-full p-1 md:h-[50px] md:w-[50px]">
                   <Image
                     src={item.logoURL}
                     width={30}
@@ -77,9 +77,9 @@ const SkillCard = ({
           })}
           initial="hidden"
           animate="show"
-          className="absolute bottom-0 left-0 right-0 flex h-full w-full flex-col justify-start gap-8 bg-dark/75 p-4 dark:bg-dark/90 lg:h-auto"
+          className="bg-dark/75 dark:bg-dark/90 absolute right-0 bottom-0 left-0 flex h-full w-full flex-col justify-start gap-8 p-4 lg:h-auto"
         >
-          <h3 className="text-lg font-bold text-light md:text-3xl">
+          <h3 className="text-light text-lg font-bold md:text-3xl">
             {skillGroup?.title}
           </h3>
           <ul className="flex flex-wrap items-start justify-center gap-2 md:gap-4">
@@ -93,7 +93,7 @@ const SkillCard = ({
                 key={idx}
                 className="flex flex-col items-center justify-center text-center"
               >
-                <div className="flex h-[50px] w-[50px] items-center justify-center overflow-hidden rounded-full bg-light p-1 md:h-[80px] md:w-[80px]">
+                <div className="bg-light flex h-[50px] w-[50px] items-center justify-center overflow-hidden rounded-full p-1 md:h-[80px] md:w-[80px]">
                   <Image
                     src={item.logoURL}
                     width={50}
@@ -102,7 +102,7 @@ const SkillCard = ({
                     className="object-contain"
                   />
                 </div>
-                <p className="text-sm text-light">{item.name}</p>
+                <p className="text-light text-sm">{item.name}</p>
               </motion.li>
             ))}
           </ul>

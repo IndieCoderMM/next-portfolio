@@ -1,6 +1,7 @@
 import AnimatedNumber from "@/components/common/animated-number";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 import { homepageContent } from "@/config/content/homepage";
 import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
@@ -13,8 +14,8 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
   let { apps, websites, users, years } = metrics ?? {};
 
   return (
-    <SectionContainer className="relative w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:bg-none">
-      <span className="blob absolute bottom-0 left-0 size-1/2 blur-[200px]" />
+    <SectionContainer className="relative w-full">
+      <ShootingStars />
       <div className="relative">
         <div className="mx-auto w-full text-center md:w-[80%]">
           <Heading as="h2">{homepageContent.metricHeading}</Heading>

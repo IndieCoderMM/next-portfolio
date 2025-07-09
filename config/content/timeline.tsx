@@ -5,7 +5,17 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "2023",
     content: (
-      <div>
+      <div className="text-md text-fg/90 leading-tight tracking-tight md:col-span-6 md:text-lg lg:col-span-8 lg:text-2xl">
+        <div className="text-fg mb-4 text-lg font-semibold md:text-xl lg:text-4xl">
+          Full-Stack Developer{" "}
+          <LinkPreview
+            url="https://heinthantoo.vercel.app"
+            isStatic={false}
+            className="text-primary dark:text-primaryDark underline"
+          >
+            @IndieCoder
+          </LinkPreview>
+        </div>
         <p className="mb-8">
           Focused on expanding my skills through diverse projects, open-source
           contributions and sharing knowledge with the community.
@@ -61,25 +71,17 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "2022",
     content: (
-      <div>
-        <div className="mb-4 text-lg font-semibold lg:text-xl">
+      <div className="text-md text-fg/90 leading-tight tracking-tight md:col-span-6 md:text-lg lg:col-span-8 lg:text-2xl">
+        <div className="text-fg mb-4 text-lg font-semibold md:text-xl lg:text-4xl">
           Full-Stack Developer{" "}
           <LinkPreview
-            url="https://www.microverse.org"
+            url="https://www.google.com"
             isStatic={false}
             className="text-primary dark:text-primaryDark underline"
           >
-            @Microverse
+            @Google
           </LinkPreview>
         </div>
-        <p className="mb-2 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Microverse is a global, remote learning program that connects aspiring
-          developers to collaborative, real-world experiences.
-        </p>
-        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Joining Microverse was a life-changing opportunity that shaped both my
-          technical and professional skills.
-        </p>
         <ul className="mb-8 list-disc">
           <li className="mb-2">
             Collaborated with developers from across the world to build
@@ -121,7 +123,7 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "2020",
     content: (
-      <div>
+      <div className="text-md text-fg/90 leading-tight tracking-tight md:col-span-6 md:text-lg lg:col-span-8 lg:text-2xl">
         <p className="mb-4">
           I discovered my passion for coding while building games, which turned
           into a fun way to learn. Along the way, I explored various algorithms

@@ -8,7 +8,7 @@ import {
   IconHash,
   IconRocket,
 } from "@tabler/icons-react";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue } from "motion/react";
 import Image from "next/image";
 
 type Project = ProjectsQueryResult[number];

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 
 type Tab = {
@@ -114,7 +114,7 @@ export const FadeInDiv = ({
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn("absolute left-0 top-0 h-full w-full", className)}
+          className={cn("absolute top-0 left-0 h-full w-full", className)}
         >
           {tab.content}
         </motion.div>

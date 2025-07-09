@@ -377,7 +377,7 @@ export type ProfileQueryResult = {
   } | null;
 } | null;
 // Variable: projectsQuery
-// Query: *[ _type == "project" ] | order(developedAt desc){      "id": _id,      name,      tagline,      description,      "slug": slug.current,      tags,      languages[],      status,      stack,      githubURL,      liveURL,      about[],       "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},      developedAt    }
+// Query: *[ _type == "project" ] | order(developedAt desc){      "id": _id,      name,      tagline,      description,      "slug": slug.current,      tags,      languages[],      status,      stack,      githubURL,      liveURL,      about[],       "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},      "screenshots": screenshots[]{        "url": asset->url,      },      developedAt    }
 export type ProjectsQueryResult = Array<{
   id: string;
   name: string | null;
@@ -422,6 +422,9 @@ export type ProjectsQueryResult = Array<{
     url: string | null;
     alt: null;
   };
+  screenshots: Array<{
+    url: string | null;
+  }> | null;
   developedAt: string | null;
 }>;
 // Variable: servicesQuery
@@ -454,7 +457,7 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[ _type == "profile" ]{\n      _id,\n      name,\n      bio,\n      about,\n      location,\n      "resumeURL": resumeURL.asset->url,\n      "photo": {"url": photo.asset->url, "alt": photo.alt, "label": photo.label},\n      lastUpdated,\n      socials {github, email, linkedin, whatsapp, bluesky, blog},\n      metrics {apps, websites, users, years},\n    }[0]': ProfileQueryResult;
-    '*[ _type == "project" ] | order(developedAt desc){\n      "id": _id,\n      name,\n      tagline,\n      description,\n      "slug": slug.current,\n      tags,\n      languages[],\n      status,\n      stack,\n      githubURL,\n      liveURL,\n      about[], \n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      developedAt\n    }': ProjectsQueryResult;
+    '*[ _type == "project" ] | order(developedAt desc){\n      "id": _id,\n      name,\n      tagline,\n      description,\n      "slug": slug.current,\n      tags,\n      languages[],\n      status,\n      stack,\n      githubURL,\n      liveURL,\n      about[], \n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      "screenshots": screenshots[]{\n        "url": asset->url,\n      },\n      developedAt\n    }': ProjectsQueryResult;
     '*[_type == "service"] | order(_createdAt asc){\n    _id,\n    title,\n    description,\n    icon { "url": asset->url, "alt": alt, "label": label }\n  }': ServicesQueryResult;
     '*[_type == "tech"] | order(_createdAt asc){\n    _id,\n    title,\n    hidden,\n    icon { "url": asset->url, "alt": alt, "label": label }\n  }': TechQueryResult;
   }

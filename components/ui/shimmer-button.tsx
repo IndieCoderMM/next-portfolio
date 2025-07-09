@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { PropsWithChildren } from "react";
 
 const ShimmerButton = ({ children }: PropsWithChildren) => {

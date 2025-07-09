@@ -10,44 +10,32 @@ import {
 export const navLinks = [
   {
     title: "Home",
-    icon: (
-      <IconSmartHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconSmartHome className="text-fg h-full w-full" />,
     href: "/",
   },
   {
     title: "Who Am I",
-    icon: (
-      <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconUser className="text-fg h-full w-full" />,
     href: "/about",
   },
   {
     title: "My Works",
-    icon: (
-      <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconTerminal2 className="text-fg h-full w-full" />,
     href: "/projects",
   },
   {
     title: "Say Hello",
-    icon: (
-      <IconMessageDots className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconMessageDots className="text-fg h-full w-full" />,
     href: "/contact",
   },
   {
     title: "Professional Stuff",
-    icon: (
-      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconBrandLinkedin className="text-fg h-full w-full" />,
     href: "https://www.linkedin.com/in/hthantoo",
   },
   {
     title: "More Codes",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconBrandGithub className="text-fg h-full w-full" />,
     href: "https://github.com/IndieCoderMM",
   },
 ];

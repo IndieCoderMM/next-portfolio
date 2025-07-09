@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
   return (
-    <SectionContainer className="bg-white dark:bg-transparent">
+    <SectionContainer className="">
       <div className="borderVr mb-10">
         <div className="section-badge">
           <span>Services</span>
@@ -72,7 +72,7 @@ const Service = ({
               alt={icon.alt ?? title ?? "Service"}
               width={32}
               height={32}
-              className="absolute inset-0 h-8 w-8 object-contain opacity-70 contrast-25 grayscale transition duration-300 group-hover/feature:contrast-100 group-hover/feature:grayscale-0"
+              className="absolute inset-0 h-8 w-8 object-contain opacity-70 contrast-25 grayscale transition duration-300 group-hover/feature:contrast-100 group-hover/feature:grayscale-0 dark:group-hover/feature:contrast-0"
             />
           </div>
         ) : (
@@ -81,7 +81,7 @@ const Service = ({
       </div>
       <div className="relative z-10 mb-2 px-10 text-lg font-bold">
         <div className="group-hover/feature:bg-primary absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8" />
-        <span className="inline-block text-neutral-700/90 transition duration-200 group-hover/feature:translate-x-2 group-hover/feature:text-neutral-700 dark:text-neutral-100">
+        <span className="inline-block text-lg text-neutral-700/90 transition duration-200 group-hover/feature:translate-x-2 group-hover/feature:text-neutral-700 md:text-xl lg:text-2xl dark:text-neutral-100">
           {title}
         </span>
       </div>

@@ -17,7 +17,7 @@ const Heading = ({
     <HeadingElem
       id={id}
       className={cn(
-        "font-body leading-tighter text-text-main text-center text-3xl font-medium tracking-tighter capitalize sm:leading-tight md:text-4xl lg:text-5xl",
+        "text-gradient font-body leading-tighter text-center text-3xl font-medium tracking-tighter capitalize sm:leading-tight md:text-4xl md:font-bold lg:text-5xl",
         className,
       )}
     >

@@ -1,7 +1,7 @@
 "use client";
 
 import { fadeIn } from "@/utils/motion";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { PropsWithChildren } from "react";
 
 const StateButton = ({

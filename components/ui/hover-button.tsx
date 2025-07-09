@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/utils/cn";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
@@ -68,7 +68,7 @@ export function HoverBorderButton({
     >
       <div
         className={cn(
-          "z-10 w-auto rounded-[inherit] bg-white px-4 py-2 text-dark",
+          "text-dark z-10 w-auto rounded-[inherit] bg-white px-4 py-2",
           className,
         )}
       >
@@ -92,7 +92,7 @@ export function HoverBorderButton({
         }}
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
-      <div className="z-1 absolute inset-[2px] flex-none rounded-[100px] bg-white" />
+      <div className="absolute inset-[2px] z-1 flex-none rounded-[100px] bg-white" />
     </Tag>
   );
 }

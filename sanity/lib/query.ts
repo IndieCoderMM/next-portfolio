@@ -31,6 +31,9 @@ const projectsQuery =
       liveURL,
       about[], 
       "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},
+      "screenshots": screenshots[]{
+        "url": asset->url,
+      },
       developedAt
     }`);
 

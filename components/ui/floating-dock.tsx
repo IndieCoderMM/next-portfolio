@@ -10,7 +10,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
@@ -252,7 +252,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-900"
+        className="bg-card relative flex aspect-square items-center justify-center rounded-full"
       >
         <AnimatePresence>
           {hovered && (
@@ -260,7 +260,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit -translate-x-1/2 rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="text-card-fg bg-card border-border absolute -top-8 left-1/2 w-fit -translate-x-1/2 rounded-md border px-2 py-0.5 text-xs whitespace-pre"
             >
               {title}
             </motion.div>
