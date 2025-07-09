@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client";
 import AnimatedNumber from "../common/animated-number";
 
-const Loader = ({ onComplete }: { onComplete?: () => void }) => {
+const Loader = ({}: { onComplete?: () => void }) => {
   return (
     <motion.div
       initial={{ y: 0 }}
