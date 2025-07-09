@@ -1,11 +1,7 @@
-import Loader from "@/components/layout/loader";
+import LoadingScreen from "@/components/layout/loading-screen";
 
-const LoadingScreen = () => {
-  return (
-    <div className="grid min-h-[80vh] place-items-center">
-      <Loader />
-    </div>
-  );
+const Page = () => {
+  return <LoadingScreen />;
 };
 
-export default LoadingScreen;
+export default Page;

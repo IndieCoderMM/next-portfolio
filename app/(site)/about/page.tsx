@@ -10,11 +10,10 @@ export const metadata: Metadata = {
 };
 
 const AboutPage = async () => {
-  // TODO: About me content renderer
   const profile = await getProfile();
 
   return (
-    <div className="relative flex w-full flex-col items-center justify-center">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center">
       <AboutMeSection profile={profile} />
       <ExperienceSection />
     </div>

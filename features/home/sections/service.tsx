@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
   return (
-    <SectionContainer className="">
-      <div className="borderVr mb-10">
+    <SectionContainer className="sm:py-16">
+      <div className="mb-10">
         <div className="section-badge">
           <span>Services</span>
         </div>

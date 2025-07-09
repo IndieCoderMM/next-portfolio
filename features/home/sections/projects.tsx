@@ -16,10 +16,10 @@ const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
         </div>
         <Heading as="h3">{homepageContent.projectHeading}</Heading>
       </div>
-      <div className="inner-container relative grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="inner-container relative mb-4 grid grid-cols-1 gap-10 md:mb-10 md:grid-cols-2">
         {projects
           .filter((p) => p.status === "live")
-          .slice(0, 6)
+          .slice(0, 4)
           .map((p, index) => (
             <ProjectCard key={index} project={p} />
           ))}

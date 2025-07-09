@@ -1,6 +1,13 @@
-const Loader = () => {
+import styles from "./spinner.module.css";
+
+const Spinner = () => {
   return (
-    <svg viewBox="0 0 240 240" height="240" width="240" className="loader">
+    <svg
+      viewBox="0 0 240 240"
+      height="240"
+      width="240"
+      className={`${styles.loader}`}
+    >
       <circle
         strokeLinecap="round"
         strokeDashoffset="-330"
@@ -11,7 +18,7 @@ const Loader = () => {
         r="105"
         cy="120"
         cx="120"
-        className="loader-ring loader-ring-a"
+        className={`${styles.loaderRing} ${styles.loaderRingA}`}
       ></circle>
       <circle
         strokeLinecap="round"
@@ -23,7 +30,7 @@ const Loader = () => {
         r="35"
         cy="120"
         cx="120"
-        className="loader-ring loader-ring-b"
+        className={`${styles.loaderRing} ${styles.loaderRingB}`}
       ></circle>
       <circle
         strokeLinecap="round"
@@ -34,7 +41,7 @@ const Loader = () => {
         r="70"
         cy="120"
         cx="85"
-        className="loader-ring loader-ring-c"
+        className={`${styles.loaderRing} ${styles.loaderRingC}`}
       ></circle>
       <circle
         strokeLinecap="round"
@@ -45,10 +52,10 @@ const Loader = () => {
         r="70"
         cy="120"
         cx="155"
-        className="loader-ring loader-ring-d"
+        className={`${styles.loaderRing} ${styles.loaderRingD}`}
       ></circle>
     </svg>
   );
 };
 
-export default Loader;
+export default Spinner;

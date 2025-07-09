@@ -19,7 +19,7 @@ const ProjectCard = ({ project }: { project: ProjectsQueryResult[number] }) => {
   return (
     <motion.div
       layout
-      className="bg-secondary/50 relative aspect-square overflow-hidden rounded-xl md:rounded-3xl md:px-4"
+      className="bg-secondary/50 relative aspect-3/2 overflow-hidden rounded-xl md:rounded-3xl md:px-4"
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
     >

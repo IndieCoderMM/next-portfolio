@@ -1,6 +1,6 @@
 "use client";
 
-import { PrimaryButton } from "@/components/common";
+import { HoverBorderButton } from "@/components/ui/hover-button";
 import emailjs from "@emailjs/browser";
 import {
   IconArrowLeft,
@@ -144,10 +144,10 @@ const ContactForm = () => {
           />
         )}
         <div className="mt-10 flex justify-end">
-          <PrimaryButton type="submit">
-            <div className="flex w-full items-center justify-center gap-1 text-lg text-white">
+          <HoverBorderButton type="submit">
+            <div className="text-fg flex w-full cursor-pointer items-center justify-center gap-2 px-2 py-0 text-lg">
               <span
-                className={`text-xl font-semibold text-white uppercase ${
+                className={`text-xl font-semibold uppercase ${
                   status === "submitting" ? "animate-pulse" : ""
                 }`}
               >
@@ -165,7 +165,7 @@ const ContactForm = () => {
                 )}
               </div>
             </div>
-          </PrimaryButton>
+          </HoverBorderButton>
         </div>
       </form>
     </div>

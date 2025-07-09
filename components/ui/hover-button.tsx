@@ -20,7 +20,7 @@ export function HoverBorderButton({
     className?: string;
     duration?: number;
     clockwise?: boolean;
-  } & React.HTMLAttributes<HTMLElement>
+  } & React.HTMLProps<HTMLButtonElement>
 >) {
   const [hovered, setHovered] = useState<boolean>(false);
   const [direction, setDirection] = useState<Direction>("TOP");
@@ -61,14 +61,14 @@ export function HoverBorderButton({
       }}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        "relative flex h-min w-fit flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border bg-white/30 decoration-clone p-px transition duration-500 hover:bg-black/10 dark:bg-white/20",
+        "relative flex h-min w-fit cursor-pointer flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border bg-white/30 decoration-clone p-px transition duration-500 hover:bg-black/10 dark:bg-white/20",
         containerClassName,
       )}
       {...props}
     >
       <div
         className={cn(
-          "text-dark z-10 w-auto rounded-[inherit] bg-white px-4 py-2",
+          "text-dark bg-bg z-10 w-auto rounded-[inherit] px-4 py-2",
           className,
         )}
       >
@@ -92,7 +92,7 @@ export function HoverBorderButton({
         }}
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
-      <div className="absolute inset-[2px] z-1 flex-none rounded-[100px] bg-white" />
+      <div className="bg-bg absolute inset-[2px] z-1 flex-none rounded-[100px]" />
     </Tag>
   );
 }

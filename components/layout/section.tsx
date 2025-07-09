@@ -14,9 +14,7 @@ export const SectionContainer = ({
 
 export const SectionContent = ({ children }: PropsWithChildren) => {
   return (
-    <div
-      className={cn("mt-20 border-t border-light", "dark:border-divider-dark")}
-    >
+    <div className={cn("border-light mt-20 border-t")}>
       <div className={cn("max-container pb-20")}>{children}</div>
     </div>
   );

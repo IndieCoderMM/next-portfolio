@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <div className="w-full">
+    <div className="relative w-full">
       <ConstactFormSection />
     </div>
   );
