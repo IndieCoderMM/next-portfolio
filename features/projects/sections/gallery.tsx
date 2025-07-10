@@ -6,7 +6,7 @@ import ProjectTabs from "../components/project-tabs";
 const GallerySection = () => {
   return (
     <SectionContainer className="hidden sm:block">
-      <div className="borderVr mx-auto w-full">
+      <div className="max-container mx-auto w-full">
         <div className="flex w-full flex-col items-center pb-12">
           <div className="mb-8 flex items-center gap-10">
             <Heading className="">{projectContent.heading}</Heading>

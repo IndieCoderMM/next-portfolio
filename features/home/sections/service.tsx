@@ -1,5 +1,6 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
+import { SlideIn } from "@/components/ui/transitions";
 import { homepageContent } from "@/config/content/homepage";
 import { ServicesQueryResult } from "@/sanity.types";
 import { cn } from "@/utils/cn";
@@ -18,7 +19,9 @@ const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
       {services.length > 0 ? (
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services?.map((service, index) => (
-            <Service key={service._id} {...service} index={index} />
+            <SlideIn>
+              <Service key={service._id} {...service} index={index} />
+            </SlideIn>
           ))}
         </div>
       ) : (

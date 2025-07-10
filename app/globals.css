@@ -226,25 +226,6 @@
   @apply shadow-badge dark:shadow-badge-dark text-text-muted dark:text-primary tracking-wider capitalize;
 }
 
-.link {
-  @apply text-primary relative inline-flex items-center gap-1;
-  @apply dark:text-primary;
-
-  svg {
-    @apply h-3.5 w-3.5;
-  }
-
-  &:hover {
-    &::after {
-      @apply scale-y-[1];
-    }
-  }
-
-  &::after {
-    @apply bg-primary/20 absolute bottom-1 left-0 right-0 z-[-1] h-2 origin-bottom scale-y-[.4] transition-transform content-[''];
-  }
-}
-
 .footer-link {
   @apply flex h-8 items-center gap-2 px-2 py-1 text-sm font-medium whitespace-nowrap text-neutral-700 dark:text-neutral-200;
   @apply hover:text-primary transition-colors;

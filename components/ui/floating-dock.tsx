@@ -142,9 +142,6 @@ const FloatingDockDesktop = ({
 
   const isActive = (href: string) => activePath === href;
 
-  // [mask-image:linear-gradient(to_top,black_0%_60%,transparent_60%_100%)]
-  //
-
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
@@ -154,7 +151,7 @@ const FloatingDockDesktop = ({
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-0 h-[100%] transform rounded-2xl p-[3px] backdrop-blur-md backdrop-brightness-125 dark:bg-neutral-900/30">
+      <div className="bg-secondary/40 pointer-events-none absolute inset-0 h-[100%] transform rounded-2xl p-[3px] shadow-sm backdrop-blur-md backdrop-brightness-125 dark:bg-neutral-900/30">
         <div className="h-[100%] w-full rounded-2xl backdrop-blur-lg" />
       </div>
       {items.map((item) => (
@@ -252,7 +249,9 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="bg-card relative flex aspect-square items-center justify-center rounded-full"
+        className={cn(
+          "bg-card relative flex aspect-square items-center justify-center rounded-full",
+        )}
       >
         <AnimatePresence>
           {hovered && (
@@ -260,7 +259,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="text-card-fg bg-card border-border absolute -top-8 left-1/2 w-fit -translate-x-1/2 rounded-md border px-2 py-0.5 text-xs whitespace-pre"
+              className="text-card-fg bg-card border-secondary/80 absolute -top-8 left-1/2 w-fit -translate-x-1/2 rounded-md border px-2 py-0.5 text-xs whitespace-pre"
             >
               {title}
             </motion.div>
@@ -272,13 +271,16 @@ function IconContainer({
         >
           {icon}
         </motion.div>
-        {isActive && (
-          <motion.div
-            layoutId="activeTab"
-            transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
-            className="bg-primary dark:bg-primaryDark absolute top-full h-[3px] w-[14px] translate-y-[3px] rounded-lg brightness-110"
-          />
-        )}
+        <AnimatePresence>
+          {isActive && (
+            <motion.div
+              layoutId="active-indicator"
+              transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
+              style={{ translateY: "3px" }}
+              className="bg-primary absolute top-full h-[3px] w-[14px] rounded-lg brightness-110"
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
     </Elem>
   );

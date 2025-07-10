@@ -18,12 +18,14 @@ const AnimatedNumber = ({
   useEffect(() => {
     if (isInView) {
       motionValue.set(value);
+    } else {
+      motionValue.set(0);
     }
   }, [isInView, value, motionValue]);
 
   useEffect(() => {
     springValue.on("change", (latest) => {
-      if (ref.current && latest <= value) {
+      if (ref.current) {
         ref.current.textContent = latest.toFixed(0);
       }
     });

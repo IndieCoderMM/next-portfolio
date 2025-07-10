@@ -265,10 +265,10 @@ const Footer = async () => {
           }
         >
           <div className={"font-semibold"}>{profileInfo.copyright}</div>
-          {profile?.lastUpdated ? (
+          {profile?._updatedAt ? (
             <div className="text-text-muted flex items-center justify-center gap-2 text-xs">
               <p className="">
-                Updated At: {formatTimeFromNow(profile.lastUpdated)}
+                Updated At: {formatTimeFromNow(profile._updatedAt)}
               </p>
             </div>
           ) : null}

@@ -18,13 +18,13 @@ const LinkUnderline = ({
       target={target}
       rel={target === "_blank" ? "noopener noreferrer" : ""}
       className={cn(
-        `group relative w-fit transition duration-100 hover:text-primary hover:brightness-110 dark:hover:text-primaryDark`,
+        `group hover:text-primary dark:hover:text-primaryDark relative w-fit transition duration-100 hover:brightness-110`,
         className,
       )}
     >
       {label}
       <span
-        className={`ease absolute bottom-1.5 left-1 inline-block h-[1.5px] w-0 rounded-full bg-primary transition-[width] duration-300 group-hover:w-[90%] dark:bg-primaryDark`}
+        className={`ease bg-primary dark:bg-primaryDark absolute bottom-1.5 left-2 inline-block h-[1.5px] w-0 rounded-full transition-[width] duration-300 group-hover:w-[80%]`}
       />
     </Link>
   );

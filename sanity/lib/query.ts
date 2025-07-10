@@ -5,6 +5,7 @@ const REVALIDATE_INTERVAL = 600; // every 10 minutes
 
 const profileQuery = defineQuery(`*[ _type == "profile" ]{
       _id,
+      _updatedAt,
       name,
       bio,
       about,
@@ -18,7 +19,7 @@ const profileQuery = defineQuery(`*[ _type == "profile" ]{
 
 const projectsQuery =
   defineQuery(`*[ _type == "project" ] | order(developedAt desc){
-      "id": _id,
+      _id,
       name,
       tagline,
       description,

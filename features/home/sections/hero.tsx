@@ -42,12 +42,14 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
               </HoverBorderButton>
             </SlideIn>
           </div>
-          {/* TODO: Add location schema */}
+
           {profile?.location ? (
-            <div className="text-text-muted flex items-center justify-center gap-2 text-sm">
-              <IconMapPin />
-              <p className="">{profile.location}</p>
-            </div>
+            <SlideIn>
+              <div className="text-text-muted flex items-center justify-center gap-2 text-sm">
+                <IconMapPin />
+                <p className="">{profile.location}</p>
+              </div>
+            </SlideIn>
           ) : null}
         </div>
       </section>
