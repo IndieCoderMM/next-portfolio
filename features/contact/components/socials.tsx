@@ -26,10 +26,14 @@ const SocialButton = ({
   icon: Icon,
   title,
 }: {
-  href: string;
+  href?: string;
   icon: React.ComponentType;
   title: string;
 }) => {
+  if (!href) {
+    return null;
+  }
+
   return (
     <motion.div
       variants={variants}

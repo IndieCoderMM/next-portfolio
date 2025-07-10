@@ -19,7 +19,7 @@ const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
       </div>
       <div className="my-10 grid w-full grid-cols-1 gap-2 md:grid-cols-3 lg:my-18 lg:gap-4">
         {products.map((product) => (
-          <GitHubCard key={product.id} project={product} />
+          <GitHubCard key={product._id} project={product} />
         ))}
       </div>
     </section>
