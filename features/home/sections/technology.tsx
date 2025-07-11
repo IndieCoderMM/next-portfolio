@@ -28,7 +28,7 @@ const TechStack = ({ techs }: { techs: TechQueryResult }) => {
           !tech.hidden && (
             <p
               key={tech._id}
-              className="text-fg/30 text-sm font-semibold tracking-tighter uppercase md:text-7xl md:font-bold"
+              className="text-fg/30 text-3xl font-semibold tracking-tighter uppercase md:text-7xl md:font-bold"
             >
               <span className="hover:text-fg">{tech.title}</span> •
             </p>

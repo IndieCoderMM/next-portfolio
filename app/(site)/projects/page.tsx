@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 };
 
 const ProjectPage = async () => {
-  const products = await getProjects();
+  const projects = await getProjects();
 
   return (
     <div className="relative w-full">
       <GallerySection />
       <PlaygroundCTA />
-      <ProjectRepos products={products} />
+      <ProjectRepos projects={projects} />
       <ContactCTA />
     </div>
   );

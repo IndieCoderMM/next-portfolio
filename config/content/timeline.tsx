@@ -1,3 +1,9 @@
+/**
+ * Timeline data for showcasing professional journey and achievements.
+ * @page about
+ *
+ * TODO: Add your experience, projects, and contributions to the timeline.
+ */
 import { LinkPreview } from "@/components/ui/link-preview";
 import Image from "next/image";
 

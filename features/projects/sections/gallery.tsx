@@ -5,15 +5,11 @@ import ProjectTabs from "../components/project-tabs";
 
 const GallerySection = () => {
   return (
-    <SectionContainer className="hidden sm:block">
+    <SectionContainer>
       <div className="max-container relative mx-auto w-full">
-        <div className="flex w-full flex-col items-center pb-12">
-          <div className="mb-8 flex items-center gap-10">
-            <Heading className="">{projectContent.heading}</Heading>
-          </div>
-          <p className="text-center text-lg font-light sm:w-[80%] md:text-xl lg:text-2xl">
-            {projectContent.desc}
-          </p>
+        <div className="flex w-full flex-col items-center px-4 md:pb-12">
+          <Heading className="mb-4 sm:mb-8">{projectContent.heading}</Heading>
+          <p className="description">{projectContent.desc}</p>
         </div>
         <ProjectTabs />
       </div>

@@ -136,9 +136,13 @@
   @apply mx-auto w-full px-2 sm:px-4 md:px-0 md:max-w-[90%];
 }
 
+.description {
+  @apply text-fg text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-tight;
+  @apply max-w-3xl sm:mx-auto text-left sm:text-center;
+}
 
 .section-badge {
-  @apply flex relative shadow-inner items-center justify-center mx-auto mb-8 select-none self-center;
+  @apply flex relative shadow-inner items-center justify-center sm:mx-auto mb-8 select-none self-start sm:self-center;
   @apply min-w-[150px] py-3 px-8 w-fit rounded-full bg-gradient-to-r from-primary/40 via-primary/10 to-primary/0;
   @apply text-fg font-medium tracking-wider text-sm capitalize;
 
@@ -153,8 +157,8 @@
   @apply hover:text-primary transition-colors;
 }
 
-.cta-desc {
-  @apply text-text-secondary text-sm md:text-lg lg:text-xl text-center;
+.section-label {
+  @apply text-fg text-lg md:text-xl lg:text-2xl sm:text-center;
 }
 
 .blob {

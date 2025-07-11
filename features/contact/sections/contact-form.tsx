@@ -15,10 +15,12 @@ const ConstactFormSection = () => {
       <div className="borderVr paddings w-full max-w-3xl">
         <ContactForm />
       </div>
-      <div className="mt-16 md:mt-20">
-        <div className="section-badge">
-          <IconWorld />
-          <span className="ml-2">{contactContent.socialHeading}</span>
+      <div className="mt-16 flex flex-col items-center gap-4 md:mt-20">
+        <div className="self-center">
+          <div className="section-badge">
+            <IconWorld />
+            <span className="ml-2">{contactContent.socialHeading}</span>
+          </div>
         </div>
         <p className="mb-4 text-center text-lg lg:text-xl">
           {contactContent.socialDesc}

@@ -10,8 +10,8 @@ import ProjectCard from "../components/project-card";
 const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
   return (
     <section className="relative flex w-full flex-col items-center py-16 sm:py-20">
-      <div className="max-container relative mb-16">
-        <div className="section-badge self-center">
+      <div className="max-container relative mb-8 px-4 sm:mb-16">
+        <div className="section-badge">
           <IconFolder className="mr-2" />
           <span>Projects</span>
         </div>

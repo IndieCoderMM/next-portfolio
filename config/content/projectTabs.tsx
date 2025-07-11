@@ -1,3 +1,10 @@
+/**
+ * Project Tabs Configuration
+ * @page projects
+ * @note This section is only displayed on DESKTOP devices, and will be hidden on smaller screens.
+ *
+ * TODO: Add your personal projects to highlight.
+ **/
 import { cn } from "@/utils/cn";
 import {
   IconBalloon,

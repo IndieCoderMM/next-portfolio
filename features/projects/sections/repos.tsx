@@ -2,6 +2,7 @@
 
 import GitHubCard from "@/components/common/github-card";
 import Heading from "@/components/common/heading";
+import { SectionContainer } from "@/components/layout/section";
 import { projectContent } from "@/config/content/projectPage";
 import { ProjectsQueryResult } from "@/sanity.types";
 import { IconCoffee, IconSortAscending } from "@tabler/icons-react";
@@ -19,20 +20,20 @@ const variants: Variants = {
   },
 };
 
-const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
+const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
   const [filtered, setFiltered] = useState<ProjectsQueryResult>([]);
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
 
   useEffect(() => {
     // Initial filter to show all projects
-    setFiltered(products);
-  }, [products]);
+    setFiltered(projects);
+  }, [projects]);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = event.target.value.toLowerCase();
 
     if (searchTerm.trim() === "") {
-      setFiltered(products);
+      setFiltered(projects);
       return;
     }
 
@@ -59,9 +60,9 @@ const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (debouncedSearch.trim() === "") {
-        setFiltered(products);
+        setFiltered(projects);
       } else {
-        const filteredProjects = products.filter(
+        const filteredProjects = projects.filter(
           (p) =>
             p.name?.toLowerCase().includes(debouncedSearch) ||
             p.tagline?.toLowerCase().includes(debouncedSearch) ||
@@ -80,8 +81,8 @@ const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
   }, [debouncedSearch]);
 
   return (
-    <section className="inner-container">
-      <div className="inner-container mt-16 mb-16">
+    <SectionContainer className="">
+      <div className="my-8 px-4 sm:mt-16 sm:mb-16">
         <div className="section-badge">
           <IconCoffee />
           <span className="ml-2">Personal Projects</span>
@@ -89,11 +90,11 @@ const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
         <Heading as="h3" className="mb-4 lg:mb-8">
           {projectContent.personalHeading}
         </Heading>
-        <p className="cta-desc">{projectContent.personalDesc}</p>
+        <p className="description">{projectContent.personalDesc}</p>
       </div>
       <div className="my-8 w-full gap-2">
         <div className="mb-2 flex w-full items-center justify-between gap-4">
-          <div className="flex-1">
+          <div className="nsm:block hidden flex-1">
             <input
               type="text"
               placeholder="Search projects..."
@@ -130,7 +131,7 @@ const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
           }}
           initial="hidden"
           animate="show"
-          className="relative grid w-full grid-cols-1 gap-2 md:grid-cols-3 lg:my-18 lg:gap-4"
+          className="relative grid w-full grid-cols-1 gap-4 md:grid-cols-3 lg:my-18 lg:gap-4"
         >
           {filtered.map((product) => (
             <motion.div
@@ -143,7 +144,7 @@ const ProjectRepos = ({ products }: { products: ProjectsQueryResult }) => {
           ))}
         </motion.div>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

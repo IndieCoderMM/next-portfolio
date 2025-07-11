@@ -12,19 +12,19 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
         <span className="blob absolute -top-20 left-0 size-1/2 blur-[120px]" />
       </Transition>
       <section className="max-container relative mx-auto flex h-full flex-col items-center justify-center gap-8">
-        <div className="flex flex-1 flex-col items-center space-y-2 text-center">
+        <div className="flex flex-1 flex-col space-y-2 px-4 sm:items-center sm:text-center">
           <div className="section-badge gap-4">
             <div className="animate-heartbeat h-3 w-3 rounded-full bg-green-500" />
             <span>{homepageContent.badge}</span>
           </div>
-          <h1 className="font-body text-gradient text-fg -mt-4 w-full px-4 text-center text-4xl font-medium tracking-tighter sm:text-4xl sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
+          <h1 className="font-body text-gradient text-fg -mt-4 w-full text-4xl font-medium tracking-tighter sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
             {homepageContent.heading}
           </h1>
-          <p className="text-text-main mx-auto w-[80%] text-lg md:text-xl">
+          <p className="text-fg mx-auto text-lg sm:w-[80%] md:text-xl">
             {profile?.bio}
           </p>
 
-          <div className="flex w-full flex-col items-center gap-8 pt-8 lg:flex-row lg:justify-center">
+          <div className="flex w-full flex-col gap-8 pt-8 sm:items-center">
             <SlideIn>
               <HoverBorderButton>
                 <Link

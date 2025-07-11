@@ -10,7 +10,7 @@ import Image from "next/image";
 const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
   return (
     <SectionContainer className="sm:py-16">
-      <div className="mb-10">
+      <div className="mb-10 w-full px-4">
         <div className="section-badge">
           <IconBriefcase className="mr-2" />
           <span>Services</span>
@@ -20,7 +20,7 @@ const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
       {services.length > 0 ? (
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services?.map((service, index) => (
-            <SlideIn>
+            <SlideIn key={service._id}>
               <Service key={service._id} {...service} index={index} />
             </SlideIn>
           ))}
