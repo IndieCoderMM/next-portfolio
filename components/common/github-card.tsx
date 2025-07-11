@@ -61,7 +61,7 @@ const GitHubCard = ({ project }: { project: Project }) => {
   };
 
   return (
-    <div className="dark:bg-dark relative flex min-h-[150px] w-full max-w-[500px] min-w-[300px] flex-col rounded-lg border bg-white px-2 pt-2 pb-4 dark:border dark:border-neutral-700">
+    <div className="bg-secondary/40 relative flex min-h-[150px] w-full max-w-[500px] min-w-[300px] flex-col rounded-lg px-4 pt-2 pb-4">
       <div className="mb-1 flex-1">
         <div className="flex w-full justify-between">
           <div>
@@ -88,7 +88,7 @@ const GitHubCard = ({ project }: { project: Project }) => {
               width={40}
               height={40}
               alt={project.logoImage.alt ?? ""}
-              className="h-[40px] w-[40px] dark:rounded-md dark:bg-white"
+              className="h-[40px] w-[40px]"
             />
           )}
         </div>
@@ -97,7 +97,7 @@ const GitHubCard = ({ project }: { project: Project }) => {
           {project.tags?.map((tag) => (
             <div
               key={tag}
-              className="text-text-secondary flex items-center rounded-full border border-neutral-400 px-1 py-0.5 text-xs dark:border-neutral-300"
+              className="text-secondary-fg border-fg/10 flex items-center rounded-full border px-1 py-0.5 text-xs"
             >
               <IconHash size={14} />
               <span>{tag}</span>
@@ -113,7 +113,7 @@ const GitHubCard = ({ project }: { project: Project }) => {
             href={project.githubURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="dark:bg-dark flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs"
+            className="bg-fg/10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs"
           >
             <IconBrandGithub size={20} className="stroke-[1.5]" />
             <span>Public</span>
@@ -124,14 +124,14 @@ const GitHubCard = ({ project }: { project: Project }) => {
             href={project.liveURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="dark:bg-dark flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs"
+            className="bg-fg/10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs"
           >
             <IconRocket size={20} className="stroke-[1.5]" />
             <span>Live</span>
           </a>
         )}
         {project.status === "archive" && (
-          <div className="dark:bg-dark flex items-center gap-1 rounded-lg bg-gray-100 px-2 py-1 text-xs">
+          <div className="bg-fg/10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs">
             <IconArchive size={20} className="stroke-[1.5]" />
             <span>Archived</span>
           </div>
@@ -141,12 +141,12 @@ const GitHubCard = ({ project }: { project: Project }) => {
       {/*Language bar*/}
       <div
         onMouseMove={handleMouseMove}
-        className="absolute inset-x-0 bottom-0 mt-4 flex h-2 overflow-hidden rounded-b-lg bg-gray-400"
+        className="absolute inset-x-0 bottom-0 mt-4 flex h-2 overflow-hidden rounded-b-lg"
       >
         {project.languages?.filter(Boolean)?.map((lang) => (
           <div
             key={lang.language}
-            className={`group relative h-2 bg-gray-200`}
+            className={`group bg-secondary relative h-2`}
             style={{
               width: `${lang.percent}%`,
               backgroundColor: getLanguageColor(lang.language ?? ""),
@@ -160,7 +160,7 @@ const GitHubCard = ({ project }: { project: Project }) => {
               }}
               className={cn(`fixed z-50 opacity-0 group-hover:opacity-100`)}
             >
-              <div className="dark:bg-dark rounded-lg bg-white p-1 text-xs">
+              <div className="bg-secondary rounded-lg p-1 text-xs">
                 <span>{lang.language}</span>
                 <span> {lang.percent}%</span>
               </div>
