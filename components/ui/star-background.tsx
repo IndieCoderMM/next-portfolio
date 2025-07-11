@@ -1,5 +1,4 @@
 "use client";
-import useTheme from "@/hooks/useTheme";
 import { cn } from "@/utils/cn";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
@@ -30,7 +29,6 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [theme] = useTheme();
 
   const generateStars = useCallback(
     (width: number, height: number): StarProps[] => {

@@ -6,54 +6,32 @@
   --font-body: var(--font-body);
   --font-hand: var(--font-gochi-hand);
 
-  --shadow-blur: 10px 10px 20px 0 rgba(255, 255, 255, 0.5);
-  --shadow-badge:
-    rgba(99, 99, 99, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1),
-    inset 0px -2px 0px rgba(0, 0, 0, 0.15);
-  --shadow-badge-dark:
-    rgba(9, 9, 9, 0.2) 0 2px 6px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.3),
-    inset 0px -2px 0px rgba(0, 0, 0, 0.35);
+  --blob-gradient: 97.86deg,
+    #a509ff 0%,
+    #34acc7 53.65%,
+    #a134c7 100%;
+  --color-bg: hsl(240, 10%, 5%);
+  --color-fg: hsl(240, 5.79%, 76.27%);
+  --color-card: hsl(240, 10%, 3.9%);
+  --color-card-fg: hsl(0, 0%, 100%);
 
-  --blob-gradient: from 2.35rad, #c76000, rgba(7, 29, 228, 0.5);
+  --color-secondary: hsl(225, 6.67%, 11.76%);
+  --color-secondary-fg: hsl(0 0% 98%);
 
-  --background-image-gr-primary: linear-gradient(to right,
-      #3e35b1,
-      #4f46e5,
-      #3e35b1);
-  --background-image-gr-primary-dark: linear-gradient(to right,
-      #1c8550,
-      #1ba568,
-      #1c8550);
+  --color-border: hsl(37, 18%, 66%, 0.5);
 
-  --color-bg: hsl(0, 0%, 100%);
-  --color-fg: hsl(240, 4.76%, 28.24%);
-  --color-card: hsl(0, 0%, 100%);
-  --color-card-foreground: hsl(240, 10%, 3.9%);
+  --color-primary: #2bc578;
+  --color-primary-dark: #1ba568;
+  --color-primary-darker: #1c8550;
 
-  --primary: 82.77deg 97.16% 72.35%;
-  --primary-foreground: 0 0% 98%;
-
-  --color-secondary: hsl(240, 4.8%, 95.9%);
-  --color-secondary-fg: hsl(225deg, 6.67%, 11.76%);
-
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
-  --radius: 0.5rem;
-  --redis-gray: 183, 171, 152;
+  --color-grid: #333;
+  --color-text-main: #f8f9fa;
+  --color-text-secondary: #adb5bd;
+  --color-text-muted: #6c757d;
 
   --color-dark: #181818;
   --color-light: #f0f0f0;
-  --color-primary: #6262f9;
   --color-accent: #2bc578;
-
-  --color-primary-dark: #4f46e5;
-  --color-primary-darker: #3e35b1;
-
-  --color-grid: #f3f3f3;
-  --color-text-main: #343A40;
-  --color-text-secondary: #495057;
-  --color-text-muted: #ADB5BD;
 
   --animate-move: move 5s linear infinite;
   --animate-heartbeat: heartbeat 2s infinite ease-in-out;
@@ -88,61 +66,10 @@
 }
 
 @layer base {
-
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-
-
   body {
     font-family: var(--font-body);
     color: var(--color-fg);
     background-color: var(--color-bg);
-    background-image: radial-gradient(circle at center, var(--color-grid) 1px, transparent 0);
-    background-size: 20px 20px;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-
-  .dark body {
-    background-image: none;
-  }
-
-  .dark {
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --primary: 190.29deg 51.22% 59.8%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --border: 37, 18%, 66%, 0.5;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --opacity-color: 203, 203, 219;
-
-    --color-bg: hsl(240, 10%, 5%);
-    --color-fg: hsl(240, 5.79%, 76.27%);
-    --color-card: hsl(240, 10%, 3.9%);
-    --color-card-fg: hsl(0, 0%, 100%);
-
-    --color-secondary: hsl(225, 6.67%, 11.76%);
-    --color-secondary-fg: hsl(0 0% 98%);
-
-    --color-primary: #2bc578;
-    --color-primary-dark: #1ba568;
-    --color-primary-darker: #1c8550;
-
-    --color-grid: #333;
-    --color-text-main: #f8f9fa;
-    --color-text-secondary: #adb5bd;
-    --color-text-muted: #6c757d;
-
-    background-color: var(--color-dark);
   }
 
   .scrollbar-hide {
@@ -187,7 +114,7 @@
 }
 
 .max-container {
-  @apply mx-auto w-full max-w-[1400px];
+  @apply mx-auto w-full max-w-[1200px];
 }
 
 
@@ -221,9 +148,14 @@
 
 
 .section-badge {
-  @apply flex items-center justify-center mx-auto mb-8 select-none self-center;
-  @apply min-w-[150px] py-[8px] px-[16px] pb-[14px] w-fit text-sm rounded-full bg-secondary/80;
-  @apply shadow-badge dark:shadow-badge-dark text-text-muted dark:text-primary tracking-wider capitalize;
+  @apply flex relative shadow-inner items-center justify-center mx-auto mb-8 select-none self-center;
+  @apply min-w-[150px] py-3 px-8 w-fit rounded-full bg-gradient-to-r from-primary/40 via-primary/10 to-primary/0;
+  @apply text-fg font-medium tracking-wider text-sm capitalize;
+
+  &::before {
+    @apply absolute -top-1 -left-1 -bottom-1 -right-1 rounded-full bg-gradient-to-r from-primary/20 to-primary/0;
+    content: '';
+  }
 }
 
 .footer-link {
@@ -236,7 +168,7 @@
 }
 
 .blob {
-  @apply bg-transparent dark:bg-conic-[var(--blob-gradient)];
+  @apply bg-linear-[var(--blob-gradient)];
 }
 
 .text-gradient {

@@ -33,16 +33,16 @@ export const Timeline = () => {
             className="flex justify-start pt-10 md:gap-10 md:pt-40"
           >
             <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
-              <div className="dark:bg-dark absolute left-[14px] flex h-10 w-10 items-center justify-center rounded-full bg-white md:left-[14px]">
+              <div className="bg-dark absolute left-[14px] flex h-10 w-10 items-center justify-center rounded-full md:left-[14px]">
                 <LiIcon />
               </div>
-              <h3 className="hidden text-xl font-bold text-neutral-500 md:block md:pl-20 md:text-5xl dark:text-neutral-200">
+              <h3 className="text-fg hidden text-xl font-bold md:block md:pl-20 md:text-5xl">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative w-full pr-4 pl-20 md:pl-4">
-              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 md:hidden dark:text-neutral-200">
+              <h3 className="text-fg mb-4 block text-left text-2xl font-bold md:hidden">
                 {item.title}
               </h3>
               {item.content}{" "}
@@ -53,14 +53,14 @@ export const Timeline = () => {
           style={{
             height: height + "px",
           }}
-          className="absolute top-0 left-8 w-[4px] overflow-hidden bg-white md:left-8 dark:bg-neutral-700"
+          className="bg-dark absolute top-0 left-8 w-[4px] overflow-hidden md:left-8"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="bg-primary dark:bg-primaryDark absolute inset-x-0 top-0 w-[4px] rounded-full"
+            className="bg-primary absolute inset-x-0 top-0 w-[4px] rounded-full"
           />
         </div>
       </div>

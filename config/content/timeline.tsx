@@ -11,7 +11,7 @@ export const timelineData: TimelineEntry[] = [
           <LinkPreview
             url="https://heinthantoo.vercel.app"
             isStatic={false}
-            className="text-primary dark:text-primaryDark underline"
+            className="text-primary underline"
           >
             @IndieCoder
           </LinkPreview>
@@ -77,7 +77,7 @@ export const timelineData: TimelineEntry[] = [
           <LinkPreview
             url="https://www.google.com"
             isStatic={false}
-            className="text-primary dark:text-primaryDark underline"
+            className="text-primary underline"
           >
             @Google
           </LinkPreview>
@@ -111,9 +111,9 @@ export const timelineData: TimelineEntry[] = [
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="border-accent/40 flex aspect-square w-20 items-center justify-center rounded-full border-[10px] bg-white object-contain shadow-sm md:w-40"
+              className="border-accent/20 bg-secondary/20 flex aspect-square w-20 items-center justify-center rounded-full border-[10px] object-contain shadow-sm md:w-40"
             >
-              <p className="text-center text-black/20 sm:text-xl">Badge</p>
+              <p className="text-fg/20 text-center sm:text-xl">Badge</p>
             </div>
           ))}
         </div>

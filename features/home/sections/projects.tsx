@@ -3,7 +3,7 @@
 import Heading from "@/components/common/heading";
 import { homepageContent } from "@/config/content/homepage";
 import { ProjectsQueryResult } from "@/sanity.types";
-import { IconRocket } from "@tabler/icons-react";
+import { IconFolder, IconRocket } from "@tabler/icons-react";
 import Link from "next/link";
 import ProjectCard from "../components/project-card";
 
@@ -11,7 +11,8 @@ const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
   return (
     <section className="relative flex w-full flex-col items-center py-16 sm:py-20">
       <div className="max-container relative mb-16">
-        <div className="section-badge w-fit self-center">
+        <div className="section-badge self-center">
+          <IconFolder className="mr-2" />
           <span>Projects</span>
         </div>
         <Heading as="h3">{homepageContent.projectHeading}</Heading>

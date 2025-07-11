@@ -12,6 +12,7 @@ const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
     <SectionContainer className="sm:py-16">
       <div className="mb-10">
         <div className="section-badge">
+          <IconBriefcase className="mr-2" />
           <span>Services</span>
         </div>
         <Heading as="h2">{homepageContent.serviceHeading}</Heading>
@@ -26,7 +27,7 @@ const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
         </div>
       ) : (
         <div className="flex h-96 items-center justify-center">
-          <p className="text-lg text-neutral-500 dark:text-neutral-400">
+          <p className="text-secondary text-lg">
             Add services to your portfolio to showcase your skills and
             offerings.
           </p>

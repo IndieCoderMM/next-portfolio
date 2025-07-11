@@ -26,9 +26,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={apps ?? 0}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
+                className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent"
               />
-              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
+              <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                 {"+"}
               </span>
             </h3>
@@ -42,9 +42,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={websites ?? 0}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
+                className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent"
               />
-              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
+              <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                 {"+"}
               </span>
             </h3>
@@ -58,9 +58,9 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
                 value={users ?? 0}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400"
+                className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent"
               />
-              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent dark:from-emerald-400 dark:to-green-400">
+              <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                 {"K+"}
               </span>
             </h3>

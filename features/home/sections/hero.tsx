@@ -2,22 +2,22 @@ import { HoverBorderButton } from "@/components/ui/hover-button";
 import { SlideIn, Transition } from "@/components/ui/transitions";
 import { homepageContent } from "@/config/content/homepage";
 import { ProfileQueryResult } from "@/sanity.types";
-import { IconMapPin, IconMessage } from "@tabler/icons-react";
+import { IconMessage } from "@tabler/icons-react";
 import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
-    <div className="relative min-h-[60vh] w-full pt-10 pb-4 sm:pt-14">
+    <div className="relative min-h-[60vh] w-full pt-10 pb-4 sm:pt-10">
       <Transition>
         <span className="blob absolute -top-20 left-0 size-1/2 blur-[120px]" />
       </Transition>
       <section className="max-container relative mx-auto flex h-full flex-col items-center justify-center gap-8">
-        <div className="flex flex-1 flex-col items-center space-y-4 text-center">
+        <div className="flex flex-1 flex-col items-center space-y-2 text-center">
           <div className="section-badge gap-4">
             <div className="animate-heartbeat h-3 w-3 rounded-full bg-green-500" />
             <span>{homepageContent.badge}</span>
           </div>
-          <h1 className="font-body text-gradient text-fg -mt-4 w-full px-4 text-center text-4xl font-medium tracking-tighter sm:text-4xl sm:leading-tight md:text-5xl md:font-bold lg:text-7xl">
+          <h1 className="font-body text-gradient text-fg -mt-4 w-full px-4 text-center text-4xl font-medium tracking-tighter sm:text-4xl sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
             {homepageContent.heading}
           </h1>
           <p className="text-text-main mx-auto w-[80%] text-lg md:text-xl">
@@ -42,15 +42,6 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
               </HoverBorderButton>
             </SlideIn>
           </div>
-
-          {profile?.location ? (
-            <SlideIn>
-              <div className="text-text-muted flex items-center justify-center gap-2 text-sm">
-                <IconMapPin />
-                <p className="">{profile.location}</p>
-              </div>
-            </SlideIn>
-          ) : null}
         </div>
       </section>
     </div>

@@ -9,9 +9,6 @@ import ProfileCard from "../components/profile-card";
 const AboutMeSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
     <SectionContainer className="lg:pt-10">
-      <div className="section-badge">
-        <span>About Me</span>
-      </div>
       <SlideIn>
         <Heading className="mx-auto mb-8 px-4">{aboutContent.heading}</Heading>
       </SlideIn>

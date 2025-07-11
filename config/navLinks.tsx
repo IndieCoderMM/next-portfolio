@@ -7,7 +7,7 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
   {
     title: "Home",
     icon: <IconSmartHome className="text-fg h-full w-full" />,
@@ -32,10 +32,12 @@ export const navLinks = [
     title: "Professional Stuff",
     icon: <IconBrandLinkedin className="text-fg h-full w-full" />,
     href: "https://www.linkedin.com/in/hthantoo",
+    type: "external",
   },
   {
     title: "More Codes",
     icon: <IconBrandGithub className="text-fg h-full w-full" />,
     href: "https://github.com/IndieCoderMM",
+    type: "external",
   },
 ];

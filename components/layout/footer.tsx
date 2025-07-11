@@ -7,9 +7,12 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconExternalLink,
+  IconHistory,
   IconMail,
+  IconMapPin,
 } from "@tabler/icons-react";
 import LinkUnderline from "../common/link";
+import { SlideIn } from "../ui/transitions";
 
 interface FooterLinkProps {
   title: string;
@@ -111,19 +114,19 @@ const FooterGroup = ({ title, links }: FooterGroupProps) => {
 
 const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
-    <div className={"max-w-[348px]"}>
+    <div className={"flex max-w-sm flex-col"}>
       <div className={"mb-3 text-sm text-slate-600 dark:text-slate-400"}>
         About Me
       </div>
       <p className={"mb-4 leading-relaxed font-normal"}>{profile?.bio}</p>
-      <ul className={"-ml-2 flex gap-1"}>
+      <ul className={"-ml-3 flex items-center gap-1"}>
         <li>
           <a
             href={profile?.socials?.linkedin ?? undefined}
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
+              "hover:text-primary flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="My LinkedIn profile"
             title="Connect on LinkedIn"
@@ -137,7 +140,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
+              "hover:text-primary flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="My GitHub profile"
             title="View my GitHub profile"
@@ -151,7 +154,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
+              "hover:text-primary flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="Email Me"
             title="Email Me"
@@ -165,7 +168,7 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             target="_blank"
             rel="noreferrer nofollow"
             className={
-              "hover:text-primary dark:hover:text-primaryDark flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
+              "hover:text-primary flex h-9 w-9 items-center justify-center transition duration-100 hover:scale-105"
             }
             aria-label="My BlueSky account"
             title="Visit my BlueSky account"
@@ -173,6 +176,17 @@ const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
             <IconBrandBluesky className={"h-5 w-5"} />
           </a>
         </li>
+
+        {profile?.location ? (
+          <li className="ml-auto">
+            <SlideIn>
+              <div className="text-text-muted flex items-center justify-center gap-0.5 text-sm">
+                <IconMapPin className="h-5 w-5" />
+                <p className="">{profile.location}</p>
+              </div>
+            </SlideIn>
+          </li>
+        ) : null}
       </ul>
     </div>
   );
@@ -267,8 +281,9 @@ const Footer = async () => {
           <div className={"font-semibold"}>{profileInfo.copyright}</div>
           {profile?._updatedAt ? (
             <div className="text-text-muted flex items-center justify-center gap-2 text-xs">
+              <IconHistory className="h-4 w-4" />
               <p className="">
-                Updated At: {formatTimeFromNow(profile._updatedAt)}
+                Updated {formatTimeFromNow(profile._updatedAt)}
               </p>
             </div>
           ) : null}

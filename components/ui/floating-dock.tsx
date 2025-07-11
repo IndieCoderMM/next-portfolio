@@ -1,6 +1,5 @@
 "use client";
 
-import useTheme from "@/hooks/useTheme";
 import { cn } from "@/utils/cn";
 import { IconCategory } from "@tabler/icons-react";
 import {
@@ -14,14 +13,13 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
-import { MoonIcon, SunIcon } from "../common/icons";
 
 export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: NavLink[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -37,13 +35,10 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: NavLink[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useTheme();
-  const handleThemeToggle = () =>
-    setMode((mode) => (mode === "dark" ? "light" : "dark"));
 
   return (
     <div className={cn("relative block md:hidden", className)}>
@@ -79,39 +74,6 @@ const FloatingDockMobile = ({
                 </Link>
               </motion.div>
             ))}
-
-            <motion.div
-              key={"theme-toggle-mobile"}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: 10,
-                transition: {
-                  delay: items.length * 0.05,
-                },
-              }}
-              transition={{ delay: (items.length - 1) * 0.05 }}
-            >
-              <button
-                type="button"
-                onClick={handleThemeToggle}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 p-2 dark:bg-neutral-900"
-              >
-                {mode === "dark" ? (
-                  <MoonIcon
-                    className={"h-4 w-4 text-neutral-500 dark:text-neutral-300"}
-                  />
-                ) : (
-                  <SunIcon
-                    className={"h-4 w-4 text-neutral-500 dark:text-neutral-300"}
-                  />
-                )}
-              </button>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -129,16 +91,11 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: NavLink[];
   className?: string;
 }) => {
-  const [mode, setMode] = useTheme();
   const activePath = usePathname();
-
   let mouseX = useMotionValue(Infinity);
-
-  const handleThemeToggle = () =>
-    setMode((mode) => (mode === "dark" ? "light" : "dark"));
 
   const isActive = (href: string) => activePath === href;
 
@@ -154,30 +111,27 @@ const FloatingDockDesktop = ({
       <div className="bg-secondary/40 pointer-events-none absolute inset-0 h-[100%] transform rounded-2xl p-[3px] shadow-sm backdrop-blur-md backdrop-brightness-125 dark:bg-neutral-900/30">
         <div className="h-[100%] w-full rounded-2xl backdrop-blur-lg" />
       </div>
-      {items.map((item) => (
-        <IconContainer
-          mouseX={mouseX}
-          key={item.title}
-          {...item}
-          isActive={isActive(item.href)}
-        />
-      ))}
+      {items
+        .filter((i) => i.type !== "external")
+        .map((item) => (
+          <IconContainer
+            mouseX={mouseX}
+            key={item.title}
+            {...item}
+            isActive={isActive(item.href)}
+          />
+        ))}
       <hr className="relative mt-3 h-[25px] w-[1px] self-center bg-neutral-600 dark:bg-neutral-400" />
-      <button type="button" onClick={handleThemeToggle}>
-        <IconContainer
-          mouseX={mouseX}
-          key={"theme-toggle"}
-          icon={
-            mode === "dark" ? (
-              <MoonIcon className={"text-neutral-500 dark:text-neutral-300"} />
-            ) : (
-              <SunIcon className={"text-neutral-500 dark:text-neutral-300"} />
-            )
-          }
-          title={mode === "dark" ? "See the light" : "Embrace the dark"}
-          href=""
-        />
-      </button>
+      {items
+        .filter((i) => i.type === "external")
+        .map((item) => (
+          <IconContainer
+            mouseX={mouseX}
+            key={item.title}
+            {...item}
+            isActive={isActive(item.href)}
+          />
+        ))}
     </motion.div>
   );
 };
