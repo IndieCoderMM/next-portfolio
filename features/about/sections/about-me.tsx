@@ -19,7 +19,7 @@ const AboutMeSection = ({ profile }: { profile: ProfileQueryResult }) => {
 
         <div className="col-span-12 flex justify-center md:col-span-6 lg:col-span-4">
           {profile ? (
-            <SlideIn>
+            <SlideIn className="overflow-visible">
               <ProfileCard
                 photo={profile.photo.url}
                 label={profile.photo.label}

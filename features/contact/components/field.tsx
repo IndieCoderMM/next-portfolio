@@ -18,7 +18,7 @@ const Field = ({
   icon: Icon,
 }: FieldProps) => {
   return (
-    <div className="border-dark dark:border-light w-full overflow-hidden border-b py-2 text-lg md:text-xl">
+    <div className="border-light w-full overflow-hidden border-b py-2 text-lg md:text-xl">
       <label className="sr-only">{name}</label>
       <motion.div
         variants={fadeIn({
@@ -31,7 +31,7 @@ const Field = ({
         animate="show"
         className="flex w-full items-center gap-3"
       >
-        <div className="text-primary dark:text-light flex h-10 w-10 shrink-0 items-center justify-center rounded-md border bg-gray-100 p-1 dark:bg-[#333]">
+        <div className="text-light flex h-10 w-10 shrink-0 items-center justify-center rounded-md border bg-[#333] p-1">
           <Icon />
         </div>
         <input
@@ -46,7 +46,7 @@ const Field = ({
         {/* Enter button icon */}
         <div
           className={cn(
-            "dark:bg-dark flex items-center gap-2 rounded-md border border-neutral-300 bg-white p-1 opacity-100 transition-[opacity] duration-200",
+            "bg-dark flex items-center gap-1 rounded-md border border-neutral-300 p-1 px-2 opacity-100 transition-[opacity] duration-200",
             {
               "opacity-0": value.length === 0,
             },
@@ -54,7 +54,7 @@ const Field = ({
         >
           <span>&crarr;</span>
 
-          <span className="pr-2 text-xs">Enter</span>
+          <span className="text-xs">Enter</span>
         </div>
       </motion.div>
     </div>

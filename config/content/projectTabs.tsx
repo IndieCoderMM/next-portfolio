@@ -21,19 +21,19 @@ const Chip = ({
   className?: string;
 }) => {
   const bgColor = {
-    green: "bg-green-100 dark:bg-green-900",
-    blue: "bg-blue-100 dark:bg-blue-900",
-    red: "bg-red-100 dark:bg-red-900",
+    green: "bg-green-700/20 ",
+    blue: "bg-blue-700/20",
+    red: "bg-red-700/20 ",
   };
   const textColor = {
-    green: "text-green-700 dark:text-green-200",
-    blue: "text-blue-700 dark:text-blue-200",
-    red: "text-red-700 dark:text-red-200",
+    green: "text-green-500 ",
+    blue: "text-blue-500 ",
+    red: "text-red-500 ",
   };
   const iconColor = {
-    green: "text-green-500 dark:text-green-200",
-    blue: "text-blue-500 dark:text-blue-200",
-    red: "text-red-500 dark:text-red-200",
+    green: "text-green-500 ",
+    blue: "text-blue-500 ",
+    red: "text-red-500 ",
   };
 
   return (
@@ -102,9 +102,9 @@ export const projectTabs = [
       <TabContent title="Metaversus">
         <div className="group grid grid-cols-12">
           <div className="col-span-5 pt-10">
-            <p className="mb-4 leading-tight text-black lg:text-2xl dark:text-white">
+            <p className="mb-4 leading-tight text-white lg:text-2xl">
               Modern Product Landing Page{" "}
-              <span className="text-neutral-700 dark:text-neutral-100">
+              <span className="text-neutral-200">
                 with interactive 3D animations and parallax effects.
               </span>
             </p>

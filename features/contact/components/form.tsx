@@ -92,7 +92,7 @@ const ContactForm = () => {
       <div className="mb-4 flex min-h-[80px] flex-wrap items-center gap-2 overflow-hidden">
         {form.name && (
           <StateButton handleClick={() => setCurrent("name")}>
-            <div className="text-primary dark:text-light flex h-7 w-7 items-center justify-center rounded-md">
+            <div className="text-primary flex h-7 w-7 items-center justify-center rounded-md">
               <IconUserCircle />
             </div>
             <p className="text-xs md:text-sm">{form.name}</p>
@@ -100,7 +100,7 @@ const ContactForm = () => {
         )}
         {form.email && (
           <StateButton handleClick={() => setCurrent("email")}>
-            <div className="text-primary dark:text-light flex h-7 w-7 items-center justify-center rounded-md">
+            <div className="text-primary flex h-7 w-7 items-center justify-center rounded-md">
               <IconAt />
             </div>
             <p className="text-xs md:text-sm">{form.email}</p>
@@ -108,7 +108,7 @@ const ContactForm = () => {
         )}
         {notification && (
           <StateButton handleClick={() => setNotification("")}>
-            <div className="text-primary dark:text-light flex h-7 w-7 items-center justify-center rounded-md">
+            <div className="text-primary flex h-7 w-7 items-center justify-center rounded-md">
               <IconBellRinging />
             </div>
             <p className="text-xs md:text-sm">{notification}</p>

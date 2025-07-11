@@ -7,7 +7,7 @@ const ProjectTabs = () => {
       <Tabs
         tabs={projectTabs}
         contentClassName="mt-14"
-        activeTabClassName="bg-violet-100"
+        activeTabClassName="bg-secondary"
       />
     </div>
   );

@@ -7,7 +7,7 @@ const Navbar = async () => {
   const profile = await getProfile();
 
   return (
-    <div className="z-30 w-full bg-white dark:bg-transparent">
+    <div className="z-30 w-full bg-transparent">
       <div className="relative flex w-full items-center justify-between p-4">
         <Link href="/" className="group flex items-baseline">
           <div className="bg-primary translate-y-1 rounded-lg p-1 text-white transition duration-300 group-hover:translate-y-0.5 group-hover:shadow-sm">

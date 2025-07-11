@@ -33,7 +33,7 @@ const FooterLink = ({
         {title}
         <span
           className={
-            "rounded-full bg-green-50 px-1 py-0.5 text-[8px] text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
+            "rounded-full bg-green-900 px-1 py-0.5 text-[8px] text-green-200 uppercase"
           }
         >
           {label}
@@ -49,7 +49,7 @@ const FooterLink = ({
         {label && (
           <span
             className={
-              "rounded-full bg-green-50 px-1 py-0.5 text-[8px] text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
+              "rounded-full bg-green-900 px-1 py-0.5 text-[8px] text-green-200 uppercase"
             }
           >
             {label}
@@ -71,7 +71,7 @@ const FooterLink = ({
       {label && (
         <span
           className={
-            "rounded-full bg-green-50 px-1 py-0.5 text-[8px] text-green-500 uppercase dark:bg-green-900 dark:text-green-200"
+            "rounded-full bg-green-900 px-1 py-0.5 text-[8px] text-green-200 uppercase"
           }
         >
           {label}
@@ -89,11 +89,7 @@ interface FooterGroupProps {
 const FooterGroup = ({ title, links }: FooterGroupProps) => {
   return (
     <div className={"flex-1"}>
-      <h2
-        className={
-          "mb-2 px-2 text-sm font-normal text-slate-600 dark:text-slate-400"
-        }
-      >
+      <h2 className={"mb-2 px-2 text-sm font-normal text-slate-400"}>
         {title}
       </h2>
       <ul className={"flex flex-col"}>
@@ -115,9 +111,7 @@ const FooterGroup = ({ title, links }: FooterGroupProps) => {
 const FooterDescription = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
     <div className={"flex max-w-sm flex-col"}>
-      <div className={"mb-3 text-sm text-slate-600 dark:text-slate-400"}>
-        About Me
-      </div>
+      <div className={"mb-3 text-sm text-slate-400"}>About Me</div>
       <p className={"mb-4 leading-relaxed font-normal"}>{profile?.bio}</p>
       <ul className={"-ml-3 flex items-center gap-1"}>
         <li>
@@ -198,7 +192,7 @@ const Footer = async () => {
   return (
     <footer
       className={
-        "dark:border-divider-dark border-light relative mt-8 w-full pt-16 text-sm text-slate-900 lg:mt-10 dark:text-slate-200"
+        "border-light relative mt-8 w-full pt-16 text-sm text-slate-200 lg:mt-10"
       }
     >
       <span className="blob absolute top-0 right-0 size-1/2 blur-[200px]" />
@@ -275,12 +269,12 @@ const Footer = async () => {
         </div>
         <div
           className={
-            "border-light dark:border-dark flex w-full justify-between border-t px-4 py-6 text-xs"
+            "border-light/10 flex w-full justify-between border-t px-4 py-6 text-xs"
           }
         >
           <div className={"font-semibold"}>{profileInfo.copyright}</div>
           {profile?._updatedAt ? (
-            <div className="text-text-muted flex items-center justify-center gap-2 text-xs">
+            <div className="text-fg flex items-center justify-center gap-2 text-xs">
               <IconHistory className="h-4 w-4" />
               <p className="">
                 Updated {formatTimeFromNow(profile._updatedAt)}

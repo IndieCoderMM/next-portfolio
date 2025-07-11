@@ -56,19 +56,19 @@ const Service = ({
   return (
     <div
       className={cn(
-        "group/feature relative flex flex-col py-10 dark:border-neutral-800",
-        (index === 0 || index === 3) && "border-0 dark:border-neutral-800",
-        index < 3 && "border-0 dark:border-neutral-800",
+        "group/feature relative flex flex-col border-neutral-800 py-10",
+        (index === 0 || index === 3) && "border-0 border-neutral-800",
+        index < 3 && "border-0 border-neutral-800",
         (index % 3 === 0 || index % 3 === 1) && "border-0",
       )}
     >
       {index < 3 && (
-        <div className="dark:from-primary/10 pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100" />
+        <div className="from-primary/10 pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100" />
       )}
       {index >= 3 && (
-        <div className="dark:from-primary/10 pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100" />
+        <div className="from-primary/10 pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100" />
       )}
-      <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-200">
+      <div className="relative z-10 mb-4 px-10 text-neutral-200">
         {icon?.url ? (
           <div className="relative h-8 w-8">
             <Image
@@ -76,20 +76,20 @@ const Service = ({
               alt={icon.alt ?? title ?? "Service"}
               width={32}
               height={32}
-              className="absolute inset-0 h-8 w-8 object-contain opacity-70 contrast-25 grayscale transition duration-300 group-hover/feature:contrast-100 group-hover/feature:grayscale-0 dark:group-hover/feature:contrast-0"
+              className="absolute inset-0 h-8 w-8 object-contain opacity-70 contrast-25 grayscale transition duration-300 group-hover/feature:contrast-0 group-hover/feature:grayscale-0"
             />
           </div>
         ) : (
-          <IconBriefcase className="h-8 w-8 text-neutral-600 dark:text-neutral-200" />
+          <IconBriefcase className="h-8 w-8 text-neutral-200" />
         )}
       </div>
       <div className="relative z-10 mb-2 px-10 text-lg font-bold">
         <div className="group-hover/feature:bg-primary absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8" />
-        <span className="inline-block text-lg text-neutral-700/90 transition duration-200 group-hover/feature:translate-x-2 group-hover/feature:text-neutral-700 md:text-xl lg:text-2xl dark:text-neutral-100">
+        <span className="group-hover/feature:text-primary inline-block text-lg text-neutral-100 transition duration-200 group-hover/feature:translate-x-2 md:text-xl lg:text-2xl">
           {title}
         </span>
       </div>
-      <p className="relative z-10 max-w-sm px-10 text-sm text-neutral-600 dark:text-neutral-300">
+      <p className="relative z-10 max-w-sm px-10 text-sm text-neutral-300">
         {description}
       </p>
     </div>
