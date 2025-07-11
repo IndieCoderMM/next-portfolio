@@ -7,17 +7,17 @@ import Link from "next/link";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
-    <div className="relative min-h-[60vh] w-full pt-10 pb-4 sm:pt-10">
+    <div className="relative min-h-[60vh] w-full pt-10 pb-4">
       <Transition>
-        <span className="blob absolute -top-20 left-0 size-1/2 blur-[120px]" />
+        <span className="blob-nova absolute -top-20 -left-40 size-1/2 opacity-80 blur-[150px]" />
       </Transition>
-      <section className="max-container relative mx-auto flex h-full flex-col items-center justify-center gap-8">
-        <div className="flex flex-1 flex-col space-y-2 px-4 sm:items-center sm:text-center">
+      <section className="max-container relative mx-auto flex h-full flex-col items-center justify-center gap-8 pt-10 sm:pt-0">
+        <div className="flex flex-1 flex-col space-y-8 px-4 sm:items-center sm:space-y-2 sm:text-center">
           <div className="section-badge gap-4">
             <div className="animate-heartbeat h-3 w-3 rounded-full bg-green-500" />
             <span>{homepageContent.badge}</span>
           </div>
-          <h1 className="font-body text-gradient text-fg -mt-4 w-full text-4xl font-medium tracking-tighter sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
+          <h1 className="font-body text-gradient text-fg w-full text-4xl font-medium tracking-tighter sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
             {homepageContent.heading}
           </h1>
           <p className="text-fg mx-auto text-lg sm:w-[80%] md:text-xl">

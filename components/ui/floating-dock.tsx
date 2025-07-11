@@ -225,16 +225,14 @@ function IconContainer({
         >
           {icon}
         </motion.div>
-        <AnimatePresence>
-          {isActive && (
-            <motion.div
-              layoutId="active-indicator"
-              transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
-              style={{ translateY: "3px" }}
-              className="bg-primary absolute top-full h-[3px] w-[14px] rounded-lg brightness-110"
-            />
-          )}
-        </AnimatePresence>
+        {/* Add layout animation */}
+        {isActive && (
+          <motion.div
+            transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
+            style={{ translateY: "3px" }}
+            className="bg-primary absolute top-full h-[3px] w-[14px] rounded-lg brightness-110"
+          />
+        )}
       </motion.div>
     </Elem>
   );

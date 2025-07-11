@@ -89,7 +89,7 @@ const ContactForm = () => {
 
   return (
     <div className="w-full">
-      <div className="mb-4 flex min-h-[80px] flex-wrap items-center gap-2 overflow-hidden">
+      <div className="mb-4 flex flex-wrap items-center gap-2 overflow-hidden sm:min-h-[80px]">
         {form.name && (
           <StateButton handleClick={() => setCurrent("name")}>
             <div className="text-primary flex h-7 w-7 items-center justify-center rounded-md">

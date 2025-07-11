@@ -14,7 +14,7 @@ const DownloadButton = ({
       type="button"
     >
       <div className="bg-primary absolute top-[3px] left-[3px] z-10 hidden h-[38px] w-1/4 items-center justify-center rounded-xl duration-500 group-hover:w-[172px] sm:flex">
-        <IconDownload className="h-6 w-6 transform text-white group-hover:scale-110" />
+        <IconDownload className="text-bg h-6 w-6 transform group-hover:scale-110" />
       </div>
       <p
         className={cn(

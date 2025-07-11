@@ -195,7 +195,6 @@ const Footer = async () => {
         "border-light relative mt-8 w-full pt-16 text-sm text-slate-200 lg:mt-10"
       }
     >
-      <span className="blob absolute top-0 right-0 size-1/2 blur-[200px]" />
       <div className={"max-container"}>
         <div className={"py-10"}>
           <div className={"flex flex-col-reverse gap-16 lg:flex-row"}>
@@ -232,7 +231,7 @@ const Footer = async () => {
                     },
                     {
                       title: "Playground",
-                      label: "new",
+                      label: "soon",
                       href: "/playground",
                     },
                     {

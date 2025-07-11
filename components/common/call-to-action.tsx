@@ -1,3 +1,4 @@
+import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 import Heading from "../common/heading";
@@ -15,10 +16,16 @@ const CTA = ({
   description,
   href,
   buttonContent,
+  className,
   children,
 }: CTAProps) => {
   return (
-    <div className="inner-container relative mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8">
+    <div
+      className={cn(
+        "inner-container relative mt-10 flex flex-col items-center gap-4 text-center lg:mt-24 lg:gap-8",
+        className,
+      )}
+    >
       <Heading
         as="h3"
         className="text-text-main text-xl md:text-2xl lg:text-4xl"

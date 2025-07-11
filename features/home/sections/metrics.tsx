@@ -2,7 +2,6 @@ import AnimatedNumber from "@/components/common/animated-number";
 import CTA from "@/components/common/call-to-action";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { ShootingStars } from "@/components/ui/shooting-stars";
 import { homepageContent } from "@/config/content/homepage";
 import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
@@ -15,13 +14,12 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
 
   return (
     <SectionContainer className="relative w-full">
-      <ShootingStars />
       <div className="relative">
         <div className="mx-auto w-full px-4 text-center md:w-[80%]">
           <Heading as="h2">{homepageContent.metricHeading}</Heading>
         </div>
 
-        <div className="text-text-secondary relative mt-8 grid grid-cols-3 gap-8 text-center sm:place-items-center sm:gap-x-8 lg:mt-14">
+        <div className="text-text-secondary relative my-8 grid grid-cols-3 gap-8 text-center sm:place-items-center sm:gap-x-8 lg:my-14">
           <div>
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber
@@ -74,6 +72,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           description="Drop me a message and let’s see how we can build something great
             together."
           href="/content"
+          className="mt-20"
           buttonContent={
             <>
               <IconBriefcase />

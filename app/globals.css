@@ -1,15 +1,12 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
-
 @theme {
   --font-body: var(--font-body);
   --font-hand: var(--font-gochi-hand);
 
-  --blob-gradient: 97.86deg,
-    #a509ff 0%,
-    #34acc7 53.65%,
-    #a134c7 100%;
+  --gr-nova: circle, #ffccf9, #fba8ff 30%, #d074ff 60%, #9700ff 95%;
+  --gr-burst: circle, #fff7f0, #ffd6d6 30%, #ff80b5 60%, #f72585 90%;
+
   --color-bg: hsl(240, 10%, 5%);
   --color-fg: hsl(240, 5.79%, 76.27%);
   --color-card: hsl(240, 10%, 3.9%);
@@ -20,7 +17,7 @@
 
   --color-border: hsl(37, 18%, 66%, 0.5);
 
-  --color-primary: #2bc578;
+  --color-primary: hsl(155, 100%, 72%);
   --color-primary-dark: #1ba568;
   --color-primary-darker: #1c8550;
 
@@ -115,20 +112,18 @@
 }
 
 .social-icon {
-  @apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:bg-primary dark:hover:text-white hover:text-white;
+  @apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:bg-primary hover:text-white;
 }
 
 .outline-button {
-  @apply flex items-center justify-center gap-2 border border-primary px-8 py-2 text-center font-medium text-primary transition-colors hover:bg-primary hover:text-light dark:hover:text-dark sm:text-lg md:px-10 md:py-3 md:text-xl;
+  @apply flex items-center justify-center gap-2 border border-primary px-8 py-2 text-center font-medium text-primary transition-colors hover:bg-primary hover:text-bg sm:text-lg md:px-10 md:py-3 md:text-xl;
 }
 
 .label {
   @apply relative overflow-hidden rounded-md bg-slate-100 px-3 py-1 pb-1.5 text-[13px] font-semibold;
-  @apply dark:bg-slate-800;
 
   &__indicator {
     @apply absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-primary;
-    @apply dark:bg-primary;
   }
 }
 
@@ -161,8 +156,8 @@
   @apply text-fg text-lg md:text-xl lg:text-2xl sm:text-center;
 }
 
-.blob {
-  @apply bg-linear-[var(--blob-gradient)];
+.blob-nova {
+  @apply bg-radial-[var(--gr-nova)];
 }
 
 .text-gradient {

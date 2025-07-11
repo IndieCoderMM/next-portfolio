@@ -1,6 +1,5 @@
 "use client";
 
-import GitHubCard from "@/components/common/github-card";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { projectContent } from "@/config/content/projectPage";
@@ -8,6 +7,7 @@ import { ProjectsQueryResult } from "@/sanity.types";
 import { IconCoffee, IconSortAscending } from "@tabler/icons-react";
 import { motion, Variants } from "motion/react";
 import { useEffect, useState } from "react";
+import GitHubCard from "../components/github-card";
 
 const variants: Variants = {
   hidden: {
@@ -92,14 +92,14 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
         </Heading>
         <p className="description">{projectContent.personalDesc}</p>
       </div>
-      <div className="my-8 w-full gap-2">
+      <div className="w-full gap-2">
         <div className="mb-2 flex w-full items-center justify-between gap-4">
-          <div className="nsm:block hidden flex-1">
+          <div className="hidden flex-1 sm:block">
             <input
               type="text"
               placeholder="Search projects..."
               onChange={handleSearch}
-              className="border-secondary-fg/20 bg-secondary focus:ring-primary w-full rounded-md border px-4 py-2 text-sm focus:ring-2 focus:outline-none md:text-lg lg:text-xl"
+              className="border-secondary-fg/20 bg-secondary/20 focus:ring-primary w-full rounded-md border px-4 py-2 text-sm focus:ring-2 focus:outline-none md:text-lg lg:text-xl"
             />
           </div>
           <div className="border-secondary-fg/20 bg-secondary flex h-full min-w-[120px] items-center justify-center rounded-md border px-4 py-2">
@@ -114,9 +114,12 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
               autoComplete="off"
               className="bg-secondary text-secondary-fg rounded-md text-sm focus:outline-none md:text-lg lg:text-xl"
             >
-              <option value="recent">Sort By Recent</option>
-              <option value="popular">Sort By Popularity</option>
-              <option value="alphabetical">Sort By Name</option>
+              <option value="recent" className="text-secondary-fg">
+                Sort By Recent
+              </option>
+              <option value="alphabetical" className="text-secondary-fg">
+                Sort By Name
+              </option>
             </select>
           </div>
         </div>
@@ -135,11 +138,12 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
         >
           {filtered.map((product) => (
             <motion.div
+              key={product._id}
               variants={variants}
               transition={{ type: "spring", bounce: 0.2 }}
               className="w-full"
             >
-              <GitHubCard key={product._id} project={product} />
+              <GitHubCard project={product} />
             </motion.div>
           ))}
         </motion.div>

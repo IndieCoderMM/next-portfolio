@@ -1,7 +1,6 @@
 import { metaTexts } from "@/config/metadata";
 import ContactCTA from "@/features/projects/sections/contact-cta";
 import GallerySection from "@/features/projects/sections/gallery";
-import PlaygroundCTA from "@/features/projects/sections/playground-cta";
 import ProjectRepos from "@/features/projects/sections/repos";
 import { getProjects } from "@/sanity/lib/query";
 import { Metadata } from "next";
@@ -17,7 +16,6 @@ const ProjectPage = async () => {
   return (
     <div className="relative w-full">
       <GallerySection />
-      <PlaygroundCTA />
       <ProjectRepos projects={projects} />
       <ContactCTA />
     </div>

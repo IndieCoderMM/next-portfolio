@@ -7,15 +7,15 @@ import Socials from "../components/socials";
 
 const ConstactFormSection = () => {
   return (
-    <SectionContainer className="borderHr w-full px-4">
+    <SectionContainer className="w-full px-4">
       <Heading className="mb-2">{contactContent.heading}</Heading>
       <p className="inner-container text-center font-light tracking-tight sm:text-lg sm:leading-tight md:text-xl lg:text-2xl">
         {contactContent.desc}
       </p>
-      <div className="borderVr paddings w-full max-w-3xl">
+      <div className="paddings w-full max-w-3xl">
         <ContactForm />
       </div>
-      <div className="mt-16 flex flex-col items-center gap-4 md:mt-20">
+      <div className="mt-26 flex flex-col items-center gap-4 md:mt-20">
         <div className="self-center">
           <div className="section-badge">
             <IconWorld />

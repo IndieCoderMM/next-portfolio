@@ -1,6 +1,6 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { SlideIn } from "@/components/ui/transitions";
+import { SlideIn, Transition } from "@/components/ui/transitions";
 import { aboutContent } from "@/config/content/aboutpage";
 import { ProfileQueryResult } from "@/sanity.types";
 import { PortableText } from "next-sanity";
@@ -21,13 +21,13 @@ const AboutMeSection = ({ profile }: { profile: ProfileQueryResult }) => {
 
         <div className="col-span-12 flex justify-center md:col-span-6 lg:col-span-4">
           {profile ? (
-            <SlideIn className="overflow-visible">
+            <Transition>
               <ProfileCard
                 photo={profile.photo.url}
                 label={profile.photo.label}
                 alt={profile.photo.alt}
               />
-            </SlideIn>
+            </Transition>
           ) : null}
         </div>
       </div>
