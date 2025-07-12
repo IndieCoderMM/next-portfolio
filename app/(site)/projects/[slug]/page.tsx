@@ -1,3 +1,4 @@
+import ProjectImages from "@/features/projects/components/project-image";
 import {
   getProjectDetail,
   getProjects,
@@ -135,16 +136,10 @@ export default async function ProjectPage({
         <section className="col-span-12 lg:col-span-8">
           {data.screenshots && data.screenshots?.length > 0 && (
             <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-1">
-              {data.screenshots.slice(0, 1).map((shot, i) => (
-                <Image
-                  key={i}
-                  src={shot.url || ""}
-                  alt={`Screenshot ${i + 1}`}
-                  width={800}
-                  height={600}
-                  className="border-secondary/20 h-auto w-full rounded-xl border object-cover"
-                />
-              ))}
+              <ProjectImages
+                title={data.name ?? "Project Screenshots"}
+                images={data.screenshots.map((s) => s.url ?? "") ?? []}
+              />
             </div>
           )}
 
