@@ -4,6 +4,7 @@ import { ProjectsQueryResult } from "@/sanity.types";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const ProjectCard = ({ project }: { project: ProjectsQueryResult[number] }) => {
@@ -36,12 +37,15 @@ const ProjectCard = ({ project }: { project: ProjectsQueryResult[number] }) => {
           <p className="text-sm font-semibold max-md:opacity-0 md:text-xl">
             {project.name}
           </p>
-          <button className="flex items-center justify-center gap-2 max-md:px-4">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="group flex items-center justify-center gap-2 max-md:px-4"
+          >
             Visit
-            <span className="rounded-full bg-black p-1 text-white/80">
+            <span className="group-hover:bg-primary group-hover:text-bg rounded-full bg-black p-1 text-white/80 transition group-hover:scale-120">
               <IconArrowUpRight />
             </span>
-          </button>
+          </Link>
         </motion.div>
         <div className="overflow-hidden max-md:hidden">
           <motion.p

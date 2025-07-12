@@ -19,7 +19,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           <Heading as="h2">{homepageContent.metricHeading}</Heading>
         </div>
 
-        <div className="text-text-secondary relative my-8 grid grid-cols-3 gap-8 text-center sm:place-items-center sm:gap-x-8 lg:my-14">
+        <div className="text-fg relative my-8 grid grid-cols-3 gap-8 text-center sm:place-items-center sm:gap-x-8 lg:my-14">
           <div>
             <h3 className="text-4xl font-bold sm:text-6xl md:text-7xl">
               <AnimatedNumber

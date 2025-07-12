@@ -22,12 +22,11 @@
   --color-primary-darker: #1c8550;
 
   --color-grid: #333;
-  --color-text-main: #f8f9fa;
   --color-text-secondary: #adb5bd;
   --color-text-muted: #6c757d;
 
   --color-dark: #181818;
-  --color-light: #f0f0f0;
+  --color-light: #f8f9fa;
   --color-accent: #2bc578;
 
   --animate-move: move 5s linear infinite;
@@ -112,7 +111,7 @@
 }
 
 .social-icon {
-  @apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:bg-primary hover:text-white;
+  @apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary p-2 text-primary transition hover:scale-110 hover:bg-primary hover:text-bg;
 }
 
 .outline-button {

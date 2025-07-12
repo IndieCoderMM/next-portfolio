@@ -27,7 +27,7 @@ const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
         </div>
       ) : (
         <div className="flex h-96 items-center justify-center">
-          <p className="text-secondary text-lg">
+          <p className="text-fg text-lg">
             Add services to your portfolio to showcase your skills and
             offerings.
           </p>

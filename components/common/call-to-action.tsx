@@ -26,10 +26,7 @@ const CTA = ({
         className,
       )}
     >
-      <Heading
-        as="h3"
-        className="text-text-main text-xl md:text-2xl lg:text-4xl"
-      >
+      <Heading as="h3" className="text-fg text-xl md:text-2xl lg:text-4xl">
         {heading}
       </Heading>
       {description && <p className="section-label">{description}</p>}

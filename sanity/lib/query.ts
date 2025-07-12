@@ -22,7 +22,6 @@ const projectsQuery =
       _id,
       name,
       tagline,
-      description,
       "slug": slug.current,
       tags,
       languages[],
@@ -30,12 +29,31 @@ const projectsQuery =
       stack,
       githubURL,
       liveURL,
-      about[], 
       "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},
       "screenshots": screenshots[]{
         "url": asset->url,
       },
       developedAt
+    }`);
+
+const projectDetailQuery =
+  defineQuery(`*[_type == "project" && slug.current == $slug][0]{
+      _id,
+      name,
+      tagline,
+      description,
+      slug,
+      tags,
+      languages,
+      status,
+      githubURL,
+      liveURL,
+      developedAt,
+      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},
+      "screenshots": screenshots[]{
+        "url": asset->url,
+      },
+      stack[]-> { title, icon { asset->{url} } }
     }`);
 
 const servicesQuery =
@@ -79,6 +97,20 @@ export const getProjects = async () => {
   );
 
   return result;
+};
+
+export const getProjectDetail = async ({ slug }: { slug: string }) => {
+  const data = await client.fetch(
+    projectDetailQuery,
+    { slug },
+    {
+      next: {
+        revalidate: REVALIDATE_INTERVAL,
+      },
+    },
+  );
+
+  return data;
 };
 
 export const getServices = async () => {
