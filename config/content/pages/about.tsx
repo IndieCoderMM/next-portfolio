@@ -1,4 +1,4 @@
-export const aboutContent = {
+export const aboutPage = {
   heading: "A Developer with a Curious Mind",
   experienceHeading: "How I got here",
   experienceDesc:

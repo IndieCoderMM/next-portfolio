@@ -1,9 +1,10 @@
 import { HoverBorderButton } from "@/components/ui/hover-button";
 import { SlideIn, Transition } from "@/components/ui/transitions";
-import { homepageContent } from "@/config/content/homepage";
+import { homepage } from "@/config/content/pages";
 import { ProfileQueryResult } from "@/sanity.types";
 import { IconMessage } from "@tabler/icons-react";
 import Link from "next/link";
+import HeroBadge from "../components/badge";
 
 const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
   return (
@@ -13,12 +14,9 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
       </Transition>
       <section className="max-container relative mx-auto flex h-full flex-col items-center justify-center gap-8 pt-10 sm:pt-0">
         <div className="flex flex-1 flex-col space-y-8 px-4 sm:items-center sm:space-y-2 sm:text-center">
-          <div className="section-badge gap-4">
-            <div className="animate-heartbeat h-3 w-3 rounded-full bg-green-500" />
-            <span>{homepageContent.badge}</span>
-          </div>
+          <HeroBadge text={homepage.badge} />
           <h1 className="font-body text-gradient text-fg w-full text-4xl font-medium tracking-tighter sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
-            {homepageContent.heading}
+            {homepage.heading}
           </h1>
           <p className="text-fg mx-auto text-lg sm:w-[80%] md:text-xl">
             {profile?.bio}
@@ -35,7 +33,7 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
                   <div className="text-fg flex w-full items-center justify-center gap-2 px-2 py-1 text-lg">
                     <IconMessage className="text-fg h-7 w-7" />
                     <span className="text-lg font-semibold md:text-2xl">
-                      {homepageContent.ctaText}
+                      {homepage.ctaText}
                     </span>
                   </div>
                 </Link>

@@ -1,4 +1,4 @@
-import { profileInfo } from "@/config/profileInfo";
+import { profile as profileInfo } from "@/config/profile";
 import { ProfileQueryResult } from "@/sanity.types";
 import { getProfile } from "@/sanity/lib/query";
 import { formatTimeFromNow } from "@/utils/dayjs";

@@ -61,6 +61,13 @@ const projectSchema = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: "isFeatured",
+      title: "Mark as Featured",
+      type: "boolean",
+      initialValue: false,
+      description: "If checked, this project will be shown on the homepage.",
+    }),
+    defineField({
       name: "screenshots",
       title: "Screenshots",
       type: "array",

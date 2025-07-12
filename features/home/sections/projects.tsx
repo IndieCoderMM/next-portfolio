@@ -1,7 +1,7 @@
 "use client";
 
 import Heading from "@/components/common/heading";
-import { homepageContent } from "@/config/content/homepage";
+import { homepage } from "@/config/content/pages";
 import { ProjectsQueryResult } from "@/sanity.types";
 import { IconFolder, IconRocket } from "@tabler/icons-react";
 import Link from "next/link";
@@ -15,12 +15,11 @@ const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
           <IconFolder className="mr-2" />
           <span>Projects</span>
         </div>
-        <Heading as="h3">{homepageContent.projectHeading}</Heading>
+        <Heading as="h3">{homepage.projectHeading}</Heading>
       </div>
       <div className="inner-container relative mb-4 grid grid-cols-1 gap-10 md:mb-10 md:grid-cols-2">
         {projects
-          .filter((p) => p.status === "live")
-          .slice(0, 4)
+          .filter((p) => p.isFeatured)
           .map((p, index) => (
             <ProjectCard key={index} project={p} />
           ))}
@@ -28,7 +27,7 @@ const ProjectSection = ({ projects }: { projects: ProjectsQueryResult }) => {
       <Link href="/projects">
         <button type="button" className="outline-button mt-8 rounded-full">
           <IconRocket />
-          <span>{homepageContent.projectCta}</span>
+          <span>{homepage.projectCta}</span>
         </button>
       </Link>
     </section>

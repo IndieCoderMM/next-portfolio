@@ -734,6 +734,13 @@
         },
         "optional": true
       },
+      "isFeatured": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
+      },
       "screenshots": {
         "type": "objectAttribute",
         "value": {

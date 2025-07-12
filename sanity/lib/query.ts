@@ -1,7 +1,7 @@
 import { defineQuery } from "next-sanity";
 import { client } from "./client";
 
-const REVALIDATE_INTERVAL = 600; // every 10 minutes
+const REVALIDATE_INTERVAL = 3600; // every hour
 
 const profileQuery = defineQuery(`*[ _type == "profile" ]{
       _id,
@@ -22,6 +22,7 @@ const projectsQuery =
       _id,
       name,
       tagline,
+      isFeatured,
       "slug": slug.current,
       tags,
       languages[],
@@ -71,6 +72,10 @@ const techQuery = defineQuery(`*[_type == "tech"] | order(_createdAt asc){
     icon { "url": asset->url, "alt": alt, "label": label }
   }`);
 
+const projectSlugsQuery = defineQuery(
+  `*[_type == "project" && defined(slug.current)][].slug.current`,
+);
+
 export const getProfile = async () => {
   const result = await client.fetch(
     profileQuery,
@@ -88,6 +93,20 @@ export const getProfile = async () => {
 export const getProjects = async () => {
   const result = await client.fetch(
     projectsQuery,
+    {},
+    {
+      next: {
+        revalidate: REVALIDATE_INTERVAL,
+      },
+    },
+  );
+
+  return result;
+};
+
+export const getProjectSlugs = async () => {
+  const result = await client.fetch(
+    projectSlugsQuery,
     {},
     {
       next: {

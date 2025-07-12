@@ -2,7 +2,7 @@ import AnimatedNumber from "@/components/common/animated-number";
 import CTA from "@/components/common/call-to-action";
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { homepageContent } from "@/config/content/homepage";
+import { homepage } from "@/config/content/pages";
 import Socials from "@/features/contact/components/socials";
 import { ProfileQueryResult } from "@/sanity.types";
 import { IconBriefcase } from "@tabler/icons-react";
@@ -16,7 +16,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
     <SectionContainer className="relative w-full">
       <div className="relative">
         <div className="mx-auto w-full px-4 text-center md:w-[80%]">
-          <Heading as="h2">{homepageContent.metricHeading}</Heading>
+          <Heading as="h2">{homepage.metricHeading}</Heading>
         </div>
 
         <div className="text-fg relative my-8 grid grid-cols-3 gap-8 text-center sm:place-items-center sm:gap-x-8 lg:my-14">

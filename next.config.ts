@@ -8,12 +8,6 @@ const nextConfig: NextConfig = {
         hostname: "api.microlink.io",
       },
       {
-        hostname: "assets.aceternity.com",
-      },
-      {
-        hostname: "aceternity.com",
-      },
-      {
         hostname: "cdn.sanity.io",
       },
     ],

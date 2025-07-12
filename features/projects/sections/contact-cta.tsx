@@ -1,17 +1,17 @@
 import CTA from "@/components/common/call-to-action";
-import { projectContent } from "@/config/content/projectPage";
+import { projectPage } from "@/config/content/pages";
 import { IconMessage2 } from "@tabler/icons-react";
 
 const ContactCTA = () => {
   return (
     <CTA
-      heading={projectContent.contactHeading}
-      description={projectContent.contactDesc}
+      heading={projectPage.contactHeading}
+      description={projectPage.contactDesc}
       href="/contact"
       buttonContent={
         <>
           <IconMessage2 />
-          <span>{projectContent.contactCta}</span>
+          <span>{projectPage.contactCta}</span>
         </>
       }
     />

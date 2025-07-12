@@ -2,12 +2,13 @@ import { metaTexts } from "@/config/metadata";
 import AboutMeSection from "@/features/about/sections/about-me";
 import ExperienceSection from "@/features/about/sections/experience";
 import { getProfile } from "@/sanity/lib/query";
+import { getMetadata } from "@/utils/meta";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: metaTexts.about.title,
-  description: metaTexts.about.description,
-};
+export const metadata: Metadata = getMetadata({
+  title: metaTexts.home.title,
+  description: metaTexts.home.description,
+});
 
 const AboutPage = async () => {
   const profile = await getProfile();

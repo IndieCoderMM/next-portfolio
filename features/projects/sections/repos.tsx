@@ -2,7 +2,7 @@
 
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
-import { projectContent } from "@/config/content/projectPage";
+import { projectPage } from "@/config/content/pages";
 import { ProjectsQueryResult } from "@/sanity.types";
 import { IconCoffee, IconSortAscending } from "@tabler/icons-react";
 import { motion, Variants } from "motion/react";
@@ -88,9 +88,9 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
           <span className="ml-2">Personal Projects</span>
         </div>
         <Heading as="h3" className="mb-4 lg:mb-8">
-          {projectContent.personalHeading}
+          {projectPage.personalHeading}
         </Heading>
-        <p className="description">{projectContent.personalDesc}</p>
+        <p className="description">{projectPage.personalDesc}</p>
       </div>
       <div className="w-full gap-2">
         <div className="mb-2 flex w-full items-center justify-between gap-4">

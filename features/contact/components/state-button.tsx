@@ -20,7 +20,7 @@ const StateButton = ({
       animate="show"
       type="button"
       onClick={handleClick}
-      className="flex items-center gap-2 rounded-md border bg-[#333] px-4 py-1 transition hover:brightness-110"
+      className="border-light/20 bg-secondary/20 flex items-center gap-0.5 rounded-full border px-2 py-0.5 transition hover:brightness-110"
     >
       {children}
     </motion.button>

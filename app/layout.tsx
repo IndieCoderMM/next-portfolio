@@ -1,14 +1,9 @@
 import { metaTexts } from "@/config/metadata";
+import { getMetadata } from "@/utils/meta";
 import "easymde/dist/easymde.min.css";
 import type { Metadata } from "next";
-import { Gochi_Hand, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-
-const gochiHand = Gochi_Hand({
-  variable: "--font-gochi-hand",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const openSans = Poppins({
   subsets: ["latin"],
@@ -16,10 +11,10 @@ const openSans = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getMetadata({
   title: metaTexts.home.title,
   description: metaTexts.home.description,
-};
+});
 
 export default function RootLayout({
   children,
@@ -28,11 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${openSans.variable} ${gochiHand.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${openSans.variable} antialiased`}>{children}</body>
     </html>
   );
 }

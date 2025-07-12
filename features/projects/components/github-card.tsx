@@ -8,6 +8,7 @@ import {
   IconRocket,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 import LanguageBar from "./language-bar";
 
 type Project = ProjectsQueryResult[number];
@@ -18,21 +19,11 @@ const GitHubCard = ({ project }: { project: Project }) => {
       <div className="mb-1 flex-1">
         <div className="flex w-full justify-between">
           <div>
-            {project?.githubURL ? (
-              <a
-                href={project.githubURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h3 className="text-lg font-medium hover:underline">
-                  {project.slug}
-                </h3>
-              </a>
-            ) : (
+            <Link href={`/projects/${project.slug}`}>
               <h3 className="text-lg font-medium hover:underline">
                 {project.slug}
               </h3>
-            )}
+            </Link>
             <p className="text-secondary-fg text-xs">{project.tagline}</p>
           </div>
           {project.logoImage.url && (

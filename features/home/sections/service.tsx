@@ -1,7 +1,7 @@
 import Heading from "@/components/common/heading";
 import { SectionContainer } from "@/components/layout/section";
 import { SlideIn } from "@/components/ui/transitions";
-import { homepageContent } from "@/config/content/homepage";
+import { homepage } from "@/config/content/pages";
 import { ServicesQueryResult } from "@/sanity.types";
 import { cn } from "@/utils/cn";
 import { IconBriefcase } from "@tabler/icons-react";
@@ -15,7 +15,7 @@ const ServiceSection = ({ services }: { services: ServicesQueryResult }) => {
           <IconBriefcase className="mr-2" />
           <span>Services</span>
         </div>
-        <Heading as="h2">{homepageContent.serviceHeading}</Heading>
+        <Heading as="h2">{homepage.serviceHeading}</Heading>
       </div>
       {services.length > 0 ? (
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

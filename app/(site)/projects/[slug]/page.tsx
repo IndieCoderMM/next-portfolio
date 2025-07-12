@@ -1,18 +1,52 @@
-import { getProjectDetail } from "@/sanity/lib/query";
+import {
+  getProjectDetail,
+  getProjects,
+  getProjectSlugs,
+} from "@/sanity/lib/query";
+import { getMetadata } from "@/utils/meta";
 import { PortableText } from "@portabletext/react";
-import { IconArrowLeft, IconBrandGithub, IconGlobe } from "@tabler/icons-react";
+import {
+  IconArrowLeft,
+  IconBrandGithub,
+  IconGlobe,
+  IconLink,
+  IconTag,
+} from "@tabler/icons-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 export const revalidate = 3600; // Revalidate every hour
 
-//export async function generateStaticParams() {
-//  const slugs = await sanityFetch<string>(
-//    groq`*[_type == "project" && defined(slug.current)].slug.current`
-//  );
-//
-//  return slugs.map((slug) => ({ slug }));
-//}
+export async function generateStaticParams() {
+  const slugs = (await getProjectSlugs()) as string[];
+
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string | string[] }>;
+}): Promise<Metadata> {
+  const routeParams = await params;
+  const slugPath = Array.isArray(routeParams.slug)
+    ? routeParams.slug.join("/")
+    : routeParams.slug || "";
+
+  const project = await getProjectDetail({ slug: slugPath });
+
+  if (!project?.name)
+    return {
+      title: "Project Not Found",
+    };
+
+  return getMetadata({
+    title: project.name,
+    description: project.tagline ?? "",
+    image: `/api/og?title=${encodeURIComponent(project.name)}`,
+  });
+}
 
 export default async function ProjectPage({
   params,
@@ -21,6 +55,7 @@ export default async function ProjectPage({
 }) {
   const { slug } = await params;
   const data = await getProjectDetail({ slug });
+  const allProjects = await getProjects();
 
   if (!data)
     return <div className="text-fg text-center">Project not found</div>;
@@ -30,7 +65,7 @@ export default async function ProjectPage({
       <nav className="mb-2 text-sm tracking-wider">
         <Link
           href="/projects"
-          className="text-text-secondary flex items-center gap-1 hover:text-white"
+          className="text-text-secondary flex w-fit items-center gap-1 hover:text-white"
         >
           <IconArrowLeft className="mr-1 inline-block" />
           Projects
@@ -38,21 +73,21 @@ export default async function ProjectPage({
       </nav>
 
       <header className="mb-4">
-        <div className="flex items-center gap-3">
-          <h1 className="text-gradient text-4xl font-bold md:text-5xl lg:text-6xl">
+        <div className="mb-2 flex items-center gap-3">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
             {data.name}
           </h1>
-          <span className="bg-card text-card-fg border-fg/10 inline-block rounded border px-3 py-1 text-sm capitalize">
+          <span className="bg-card text-card-fg border-fg/20 inline-block rounded-full border px-3 py-1 text-sm capitalize">
             {data.status}
           </span>
         </div>
-        <p className="text-secondary-fg text-lg tracking-tight md:text-2xl lg:text-3xl">
+        <p className="text-secondary-fg/80 tracking-tight md:text-lg lg:text-xl">
           {data.tagline}
         </p>
       </header>
 
-      <div className="border-secondary/40 mb-10 flex items-center justify-between border-b pb-2">
-        {data.stack?.length > 0 && (
+      <div className="border-secondary/40 mb-10 flex flex-col justify-between gap-4 border-b pb-2 md:flex-row md:items-center md:gap-1">
+        {data.stack && data.stack.length > 0 && (
           <div className="flex flex-1 gap-2 overflow-x-auto">
             {data.stack.map((tech, i) => (
               <div
@@ -62,7 +97,7 @@ export default async function ProjectPage({
                 {tech.icon?.asset?.url && (
                   <Image
                     src={tech.icon.asset.url}
-                    alt={tech.title}
+                    alt={tech.title || "Tech Icon"}
                     width={30}
                     height={30}
                     className="object-contain"
@@ -77,9 +112,9 @@ export default async function ProjectPage({
             <a
               href={data.githubURL}
               target="_blank"
-              className="text-secondary-fg border-secondary-fg/20 flex cursor-pointer items-center justify-center gap-1 rounded border bg-transparent px-4 py-2 hover:opacity-90"
+              className="text-secondary-fg/80 hover:text-secondary-fg flex cursor-pointer items-center justify-center gap-1 text-lg"
             >
-              <IconBrandGithub />
+              <IconBrandGithub className="h-4 w-4" />
               GitHub
             </a>
           )}
@@ -87,54 +122,101 @@ export default async function ProjectPage({
             <a
               href={data.liveURL}
               target="_blank"
-              className="border-secondary-fg/20 text-secondary-fg flex cursor-pointer items-center justify-center gap-1 rounded border bg-transparent px-4 py-2 hover:opacity-90"
+              className="text-secondary-fg/80 hover:text-secondary-fg flex cursor-pointer items-center justify-center gap-1 text-lg"
             >
-              <IconGlobe />
+              <IconGlobe className="h-4 w-4" />
               Live Site
             </a>
           )}
         </div>
       </div>
 
-      {data.screenshots?.length > 0 && (
-        <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {data.screenshots.map((shot, i) => (
-            <Image
-              key={i}
-              src={shot.url || ""}
-              alt={`Screenshot ${i + 1}`}
-              width={800}
-              height={600}
-              className="border-secondary/20 rounded-xl border"
-            />
-          ))}
-        </div>
-      )}
+      <section className="grid grid-cols-12">
+        <section className="col-span-12 lg:col-span-8">
+          {data.screenshots && data.screenshots?.length > 0 && (
+            <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-1">
+              {data.screenshots.slice(0, 1).map((shot, i) => (
+                <Image
+                  key={i}
+                  src={shot.url || ""}
+                  alt={`Screenshot ${i + 1}`}
+                  width={800}
+                  height={600}
+                  className="border-secondary/20 h-auto w-full rounded-xl border object-cover"
+                />
+              ))}
+            </div>
+          )}
 
-      <article className="prose prose-invert text-fg max-w-none text-lg leading-tight md:text-xl lg:text-2xl">
-        <h2 className="mb-4 text-lg font-medium md:text-xl lg:text-2xl">
-          About the Project
-        </h2>
-        <PortableText value={data.description} />
-      </article>
+          {data.description && (
+            <article className="prose prose-invert text-fg max-w-none lg:text-lg">
+              <h2 className="border-primary mb-4 border-l-4 pl-4 text-lg font-medium capitalize md:text-xl lg:text-2xl">
+                Project Description
+              </h2>
+              <PortableText value={data.description} />
+            </article>
+          )}
 
-      {data.languages && data.languages.length > 0 && (
-        <div className="mt-10">
-          <h2 className="mb-4 text-lg font-medium md:text-xl lg:text-2xl">
-            Languages Used
-          </h2>
-          <ul className="flex list-inside list-disc flex-wrap gap-4">
-            {data.languages.map((lang) => (
-              <li
-                key={lang.language}
-                className="text-secondary-fg text-md md:text-lg lg:text-xl"
-              >
-                {lang.language} ({lang.percent}%)
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+          {data.languages && data.languages.length > 0 && (
+            <div className="mt-10">
+              <h2 className="border-primary mb-4 border-l-4 pl-4 text-lg font-medium capitalize md:text-xl lg:text-2xl">
+                Languages Used
+              </h2>
+              <ul className="flex list-inside list-disc flex-col gap-1">
+                {data.languages.map((lang) => (
+                  <li
+                    key={lang.language}
+                    className="text-secondary-fg text-md lg:text-lg"
+                  >
+                    {lang.language} ({lang.percent}%)
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+        <section className="col-span-12 flex justify-end lg:col-span-4 lg:px-8">
+          <div className="lg:border-secondary-fg/10 lg:bg-card/50 top-20 h-fit w-full rounded-lg lg:sticky lg:border lg:p-4">
+            <div className="bg-border mt-10 mb-4 h-px w-full lg:hidden" />
+            <div className="flex items-center gap-2">
+              <IconTag className="text-secondary-fg/80 h-4 w-4" />
+              <h2 className="text-fg text-lg font-medium">Tags</h2>
+            </div>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {data.tags?.map((tag) => (
+                <li
+                  key={tag}
+                  className="bg-secondary-fg/10 text-secondary-fg rounded-full px-3 py-1 text-sm"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+
+            <div className="bg-border my-4 h-px w-full" />
+
+            <div className="flex items-center gap-2">
+              <IconLink className="text-secondary-fg/80 h-4 w-4" />
+              <h2 className="text-fg text-lg font-medium">Other Projects</h2>
+            </div>
+            <ul className="mt-4 flex w-full flex-col">
+              {allProjects
+                .filter((p) => p.slug !== data.slug)
+                .slice(0, 5)
+                .map((project) => (
+                  <li key={project.slug} className="w-full">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="text-fg/80 block w-full rounded px-2 py-1 text-lg hover:text-white hover:underline"
+                    >
+                      {project.name}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </section>
+      </section>
     </main>
   );
 }

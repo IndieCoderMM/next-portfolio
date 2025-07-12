@@ -1,4 +1,4 @@
-export const contactContent = {
+export const contactPage = {
   heading: "Say Hi, Let's Collaborate",
   desc: "Questions, ideas or just hello? Send them my way! I promise I’ll reply💌",
   socialHeading: "Find Me Online",

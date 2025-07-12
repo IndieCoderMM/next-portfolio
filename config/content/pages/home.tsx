@@ -1,4 +1,4 @@
-export const homepageContent = {
+export const homepage = {
   badge: "Available",
   heading: (
     <>

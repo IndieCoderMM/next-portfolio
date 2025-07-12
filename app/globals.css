@@ -2,18 +2,17 @@
 
 @theme {
   --font-body: var(--font-body);
-  --font-hand: var(--font-gochi-hand);
 
   --gr-nova: circle, #ffccf9, #fba8ff 30%, #d074ff 60%, #9700ff 95%;
   --gr-burst: circle, #fff7f0, #ffd6d6 30%, #ff80b5 60%, #f72585 90%;
 
   --color-bg: hsl(240, 10%, 5%);
-  --color-fg: hsl(240, 5.79%, 76.27%);
+  --color-fg: hsl(240, 5.79%, 78%);
   --color-card: hsl(240, 10%, 3.9%);
   --color-card-fg: hsl(0, 0%, 100%);
 
   --color-secondary: hsl(225, 6.67%, 11.76%);
-  --color-secondary-fg: hsl(0 0% 98%);
+  --color-secondary-fg: hsl(0, 0%, 88%);
 
   --color-border: hsl(37, 18%, 66%, 0.5);
 
@@ -97,10 +96,15 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #888;
   }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+  }
 }
 
 .max-container {
-  @apply mx-auto w-full max-w-[1200px];
+  @apply mx-auto w-full max-w-6xl;
 }
 
 

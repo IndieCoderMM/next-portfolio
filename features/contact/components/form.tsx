@@ -1,22 +1,17 @@
 "use client";
 
 import { HoverBorderButton } from "@/components/ui/hover-button";
-import emailjs from "@emailjs/browser";
+import { sendEmail } from "@/utils/email";
 import {
   IconArrowLeft,
   IconAt,
   IconBellRinging,
   IconSend,
-  IconSignature,
   IconUserCircle,
 } from "@tabler/icons-react";
 import { useState } from "react";
 import Field from "./field";
 import StateButton from "./state-button";
-
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
-const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string;
 
 const ContactForm = () => {
   const [current, setCurrent] = useState("name");
@@ -40,7 +35,7 @@ const ContactForm = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (current === "name") {
       if (form.name.length === 0) {
@@ -50,7 +45,7 @@ const ContactForm = () => {
       setCurrent("email");
     } else if (current === "email") {
       if (form.email.length === 0) {
-        setNotification("I need your email to contact back!");
+        setNotification("I need your email to reply!");
         return;
       }
       setCurrent("message");
@@ -61,29 +56,15 @@ const ContactForm = () => {
       }
       setStatus("submitting");
 
-      // Send email
-      emailjs
-        .send(
-          SERVICE_ID,
-          TEMPLATE_ID,
-          {
-            ...form,
-            from_name: form.name,
-          },
-          USER_ID,
-        )
-        .then(
-          (result) => {
-            setStatus("success");
-            setForm((form) => ({ ...form, message: "" }));
-            setNotification("Great! I've got your message.");
-          },
-          (error) => {
-            setStatus("error");
-            setNotification("Something went wrong!");
-            console.log(error.text);
-          },
-        );
+      try {
+        await sendEmail(form);
+        setStatus("success");
+        setForm((form) => ({ ...form, message: "" }));
+        setNotification("Great! I've got your message.");
+      } catch (error: any) {
+        setStatus("error");
+        setNotification("Something went wrong!");
+      }
     }
   };
 
@@ -130,7 +111,7 @@ const ContactForm = () => {
             name="email"
             value={form.email}
             handleChange={handleChange}
-            placeholder="Email to replay back"
+            placeholder="Your email address"
             icon={IconAt}
           />
         )}
@@ -139,8 +120,8 @@ const ContactForm = () => {
             name="message"
             value={form.message}
             handleChange={handleChange}
-            placeholder="Write anything here..."
-            icon={IconSignature}
+            placeholder="Write your message here..."
+            icon={IconSend}
           />
         )}
         <div className="mt-10 flex justify-end">

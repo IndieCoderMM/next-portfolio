@@ -1,6 +1,6 @@
 import Heading from "@/components/common/heading";
 import { Timeline } from "@/components/ui/timeline";
-import { aboutContent } from "@/config/content/aboutpage";
+import { aboutPage } from "@/config/content/pages";
 
 const ExperienceSection = () => {
   return (
@@ -10,9 +10,9 @@ const ExperienceSection = () => {
           <span>My Journey</span>
         </div>
         <Heading as="h2" id="experience" className="mb-4">
-          {aboutContent.experienceHeading}
+          {aboutPage.experienceHeading}
         </Heading>
-        <p className="description">{aboutContent.experienceDesc}</p>
+        <p className="description">{aboutPage.experienceDesc}</p>
       </div>
       <Timeline />
     </section>
