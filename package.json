@@ -1,6 +1,6 @@
 {
-  "name": "next-portfolio",
-  "description": "A minimal, personal portfolio template built with Next.js, Tailwind CSS, and Sanity CMS",
+  "name": "stellar-portfolio",
+  "description": "Sleek, modern developer portfolio template built with Next.js, Tailwind CSS, and Sanity CMS",
   "version": "0.1.0",
   "private": true,
   "scripts": {

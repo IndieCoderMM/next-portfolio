@@ -6,8 +6,8 @@ import { getMetadata } from "@/utils/meta";
 import { Metadata } from "next";
 
 export const metadata: Metadata = getMetadata({
-  title: metaTexts.home.title,
-  description: metaTexts.home.description,
+  title: metaTexts.about.title,
+  description: metaTexts.about.description,
 });
 
 const AboutPage = async () => {

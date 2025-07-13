@@ -15,7 +15,7 @@ export const getMetadata = ({
     description,
     metadataBase: new URL(siteUrl),
     openGraph: {
-      images: [image ?? "/api/og?title=Personal+Website"],
+      images: [image ?? "/api/og?title=Portfolio+Website"],
     },
   };
 };

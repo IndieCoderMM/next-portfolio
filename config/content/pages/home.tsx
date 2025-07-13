@@ -2,7 +2,7 @@ export const homepage = {
   badge: "Built for developers",
   heading: (
     <>
-      Steller Portfolio from
+      Stellar Portfolio from
       <br /> Galaxies Far Far Away
     </>
   ),

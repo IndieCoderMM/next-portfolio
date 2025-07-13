@@ -38,7 +38,7 @@ export const footerLinks: { title: string; links: FooterLink[] }[] = [
     links: [
       {
         title: "Source Code",
-        href: "https://github.com/indiecodermm/next-portfolio",
+        href: "https://github.com/indiecodermm/stellar-portfolio",
         isInternal: false,
       },
       {

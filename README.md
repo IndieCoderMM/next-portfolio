@@ -2,23 +2,23 @@
 
 # Nextfolio: Ultimate Next.js Portfolio Starter
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IndieCoderMM/next-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IndieCoderMM/stellar-portfolio)
 
 A modern developer portfolio website built with [Next.js](https://nextjs.org), packed with smooth animations, customizable content, and [Sanity CMS](https://www.sanity.io) integration.
 
 Perfect for developers who want a fast, unique, and fully customizable site to showcase their work.
 
-## ✨ Features
+## Features
 
-- **Clean, modern layout**: Minimal design with a focus on readability and structure.
-- **Smooth, subtle animations**: Framer Motion brings pages to life without being distracting.
-- **Static site, SEO-friendly**: All pages are statically generated for fast load times and better visibility.
-- **Live content editing**: Connected to Sanity Studio — update data directly in production.
-- **Simple config-based customization**: Easily customize page content through `/config/content` folder.
-- **Built-in contact form**: Messages sent directly to your email using EmailJS.
-- **Fully responsive**: Works across devices with zero extra effort.
+- Minimal, modern layout – Clean design focused on clarity and structure.
+- Subtle motion effects – Thoughtful animations add life without getting in the way.
+- Optimized for SEO – Static pages with built-in Open Graph support via `next/og`.
+- Live content editing – Integrated with Sanity Studio for real-time content updates.
+- Easy customization – Tweak site content and structure through easitly.
+- Built-in contact form – Emails are delivered instantly with EmailJS integration.
+- Responsive by default – Designed to look great on all screen sizes out of the box.
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Next.js** – React framework for SSR and performance
 - **Sanity.io** – Headless CMS for content management
@@ -26,13 +26,13 @@ Perfect for developers who want a fast, unique, and fully customizable site to s
 - **Tailwind CSS** – Utility-first CSS framework
 - **EmailJS** – Email service for handling contact form messages
 
-## 💻 Getting Started
+## Getting Started
 
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/indiecodermm/next-portfolio.git
-cd next-portfolio
+git clone https://github.com/indiecodermm/stellar-portfolio.git
+cd stellar-portfolio
 ```
 
 2. **Install dependencies**
@@ -64,13 +64,13 @@ Once the app is running, you can access the Sanity Studio at [http://localhost:3
 > [!NOTE]
 > Make sure to add your data to the Sanity dataset before deploying or using the site.
 
-## 🧩 Customization
+## Customization
 
 All page content can be modified in the `/config/` folder.
 
 _No need to dig into components unless you want to._
 
-## 📝 Content Management (Sanity)
+## Content Management (Sanity)
 
 This template is integrated with [Sanity Studio](https://www.sanity.io/) for flexible content editing.
 
@@ -86,13 +86,17 @@ You can also customize the schema or extend it for additional content types as n
 > [!NOTE]
 > If you want to change the refresh frequency, customize `contentRefreshInterval` in `/config/index.ts` to set how often the content is fetched from Sanity. _Default is 3600 seconds (1 hr)._
 
-## 📬 Contact Form
+## Contact Form
 
 The contact form uses **EmailJS** for sending messages.
 
 - Sign up at [emailjs.com](https://www.emailjs.com/)
 - Create a service and connect it to an email account
-- Create an email template for the contact form. Here’s a sample template you can use:
+- Create an email template for the contact form.
+
+<details>
+
+<summary>Sample Email Template</summary>
 
 ```
 Hello,
@@ -106,10 +110,12 @@ Message:
 {{message}}
 ```
 
+</details>
+
 - Get your EmailJS service ID, template ID, and user ID (public key)
 - Add those to your `.env.local` file
 
-## 🚀 Deploy
+## Deploy
 
 Deploy anywhere Next.js is supported:
 
@@ -117,22 +123,27 @@ Deploy anywhere Next.js is supported:
 
 Make sure to set environment variables in your deployment settings.
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork, customize, or contribute. Open an issue or PR if you have suggestions or improvements.
 
-## 📄 License
+## License
 
 This project is released under [The Unlicense](https://unlicense.org/), which means you can use, modify, and distribute it however you want.
 
 Do whatever you like. No credit required (but appreciated).
 
-## 💡 Credits
+## Credits
 
 Thanks to all the amazing developers and designers whose work have inspired me to create this project.
 
+Animattions and UI elements are from these awesome resources:
+
+- Acternity UI – for the elegant components and design inspiration.
+- Uiverse.io – for the open-source UI interactions and effects.
+
 ---
 
-_This template is meant to be a launchpad. Tweak it, extend it, or totally redesign it—just make it yours._
+_I hope this template helps you build your own stunning portfolio site!_
 
 _Happy building 🚀_
