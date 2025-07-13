@@ -96,8 +96,44 @@ export type Project = {
   _rev: string;
   name?: string;
   tagline?: string;
-  status?: string;
+  status?: "live" | "archived" | "development";
   description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  features?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  development?: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -392,7 +428,7 @@ export type ProjectsQueryResult = Array<{
     percent?: number;
     _key: string;
   }> | null;
-  status: string | null;
+  status: "archived" | "development" | "live" | null;
   stack: Array<{
     _ref: string;
     _type: "reference";
@@ -412,12 +448,48 @@ export type ProjectsQueryResult = Array<{
   developedAt: string | null;
 }>;
 // Variable: projectDetailQuery
-// Query: *[_type == "project" && slug.current == $slug][0]{      _id,      name,      tagline,      description,      slug,      tags,      languages,      status,      githubURL,      liveURL,      developedAt,      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},      "screenshots": screenshots[]{        "url": asset->url,      },      stack[]-> { title, icon { asset->{url} } }    }
+// Query: *[_type == "project" && slug.current == $slug][0]{      _id,      name,      tagline,      description,      features,      development,      slug,      tags,      languages,      status,      githubURL,      liveURL,      developedAt,      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},      "screenshots": screenshots[]{        "url": asset->url,      },      stack[]-> { title, icon { asset->{url} } }    }
 export type ProjectDetailQueryResult = {
   _id: string;
   name: string | null;
   tagline: string | null;
   description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  features: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  development: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -442,7 +514,7 @@ export type ProjectDetailQueryResult = {
     percent?: number;
     _key: string;
   }> | null;
-  status: string | null;
+  status: "archived" | "development" | "live" | null;
   githubURL: string | null;
   liveURL: string | null;
   developedAt: string | null;
@@ -486,6 +558,9 @@ export type TechQueryResult = Array<{
     label: null;
   } | null;
 }>;
+// Variable: projectSlugsQuery
+// Query: *[_type == "project" && defined(slug.current)][].slug.current
+export type ProjectSlugsQueryResult = Array<string | null>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -493,8 +568,9 @@ declare module "@sanity/client" {
   interface SanityQueries {
     '*[ _type == "profile" ]{\n      _id,\n      _updatedAt,\n      name,\n      bio,\n      about,\n      location,\n      "resumeURL": resumeURL.asset->url,\n      "photo": {"url": photo.asset->url, "alt": photo.alt, "label": photo.label},\n      lastUpdated,\n      socials {github, email, linkedin, whatsapp, bluesky, blog},\n      metrics {apps, websites, users, years},\n    }[0]': ProfileQueryResult;
     '*[ _type == "project" ] | order(developedAt desc){\n      _id,\n      name,\n      tagline,\n      isFeatured,\n      "slug": slug.current,\n      tags,\n      languages[],\n      status,\n      stack,\n      githubURL,\n      liveURL,\n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      "screenshots": screenshots[]{\n        "url": asset->url,\n      },\n      developedAt\n    }': ProjectsQueryResult;
-    '*[_type == "project" && slug.current == $slug][0]{\n      _id,\n      name,\n      tagline,\n      description,\n      slug,\n      tags,\n      languages,\n      status,\n      githubURL,\n      liveURL,\n      developedAt,\n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      "screenshots": screenshots[]{\n        "url": asset->url,\n      },\n      stack[]-> { title, icon { asset->{url} } }\n    }': ProjectDetailQueryResult;
+    '*[_type == "project" && slug.current == $slug][0]{\n      _id,\n      name,\n      tagline,\n      description,\n      features,\n      development,\n      slug,\n      tags,\n      languages,\n      status,\n      githubURL,\n      liveURL,\n      developedAt,\n      "logoImage": {"url": logoImage.asset->url, "alt": logoImage.alt},\n      "screenshots": screenshots[]{\n        "url": asset->url,\n      },\n      stack[]-> { title, icon { asset->{url} } }\n    }': ProjectDetailQueryResult;
     '*[_type == "service"] | order(_createdAt asc){\n    _id,\n    title,\n    description,\n    icon { "url": asset->url, "alt": alt, "label": label }\n  }': ServicesQueryResult;
     '*[_type == "tech"] | order(_createdAt asc){\n    _id,\n    title,\n    hidden,\n    icon { "url": asset->url, "alt": alt, "label": label }\n  }': TechQueryResult;
+    '*[_type == "project" && defined(slug.current)][].slug.current': ProjectSlugsQueryResult;
   }
 }

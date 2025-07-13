@@ -14,7 +14,7 @@
   --color-secondary: hsl(225, 6.67%, 11.76%);
   --color-secondary-fg: hsl(0, 0%, 88%);
 
-  --color-border: hsl(37, 18%, 66%, 0.5);
+  --color-border: hsl(37, 18%, 66%, 0.3);
 
   --color-primary: hsl(155, 100%, 72%);
   --color-primary-dark: #1ba568;
@@ -119,7 +119,7 @@
 }
 
 .outline-button {
-  @apply flex items-center justify-center gap-2 border border-primary px-8 py-2 text-center font-medium text-primary transition-colors hover:bg-primary hover:text-bg sm:text-lg md:px-10 md:py-3 md:text-xl;
+  @apply flex items-center justify-center cursor-pointer gap-2 border border-primary px-8 py-2 text-center font-medium text-primary transition-colors hover:bg-primary hover:text-bg sm:text-lg md:px-10 md:py-3 md:text-xl;
 }
 
 .label {

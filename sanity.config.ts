@@ -18,7 +18,7 @@ export default defineConfig({
   basePath: "/dashboard",
   projectId,
   dataset,
-  // Add and edit the content schema in the './sanity/schemaTypes' folder
+  // Add and edit the content schema in the './sanity/schemas' folder
   schema,
   plugins: [
     structureTool({ structure }),

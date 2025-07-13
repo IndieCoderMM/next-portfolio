@@ -1,4 +1,4 @@
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { IconChevronLeft, IconChevronRight, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { memo, useCallback, useEffect, useState } from "react";
@@ -47,18 +47,14 @@ const ImageViewer = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed top-[20px] right-0 bottom-[20px] left-[20px] z-[99] hidden items-center justify-center bg-black/95 backdrop-blur-xl md:flex"
+          className="fixed top-0 right-0 bottom-0 left-0 z-[999] hidden items-center justify-center bg-black/95 backdrop-blur-xl md:flex"
         >
           <button
             type="button"
             onClick={onClose}
-            className={`doner-menu active absolute top-4 right-5 z-[99]`}
+            className={`absolute top-4 right-5 z-[99]`}
           >
-            <div>
-              <span className="line" />
-              <span className="line" />
-              <span className="line" />
-            </div>
+            <IconX className="h-6 w-6" />
           </button>
 
           <button

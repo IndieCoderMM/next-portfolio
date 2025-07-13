@@ -1,5 +1,5 @@
 export const homepage = {
-  badge: "Available",
+  badge: "Full Stack Developer",
   heading: (
     <>
       Shipping Ideas for

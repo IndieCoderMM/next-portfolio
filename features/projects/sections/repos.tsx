@@ -5,7 +5,7 @@ import { SectionContainer } from "@/components/layout/section";
 import { projectPage } from "@/config/content/pages";
 import { ProjectsQueryResult } from "@/sanity.types";
 import { IconCoffee, IconSortAscending } from "@tabler/icons-react";
-import { motion, Variants } from "motion/react";
+import { Variants } from "motion/react";
 import { useEffect, useState } from "react";
 import GitHubCard from "../components/github-card";
 
@@ -92,7 +92,7 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
         </Heading>
         <p className="description">{projectPage.personalDesc}</p>
       </div>
-      <div className="w-full gap-2">
+      <div className="w-full gap-2 overflow-x-hidden">
         <div className="mb-2 flex w-full items-center justify-between gap-4">
           <div className="hidden flex-1 sm:block">
             <input
@@ -124,29 +124,11 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
           </div>
         </div>
 
-        <motion.div
-          variants={{
-            show: {
-              transition: {
-                staggerChildren: 0.05,
-              },
-            },
-          }}
-          initial="hidden"
-          animate="show"
-          className="relative grid w-full grid-cols-1 gap-4 md:grid-cols-3 lg:my-18 lg:gap-4"
-        >
+        <div className="relative grid w-full grid-cols-1 gap-2 md:grid-cols-3 lg:my-18 lg:gap-4">
           {filtered.map((product) => (
-            <motion.div
-              key={product._id}
-              variants={variants}
-              transition={{ type: "spring", bounce: 0.2 }}
-              className="w-full"
-            >
-              <GitHubCard project={product} />
-            </motion.div>
+            <GitHubCard key={product._id} project={product} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </SectionContainer>
   );

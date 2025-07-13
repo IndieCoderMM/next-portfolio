@@ -43,6 +43,8 @@ const projectDetailQuery =
       name,
       tagline,
       description,
+      features,
+      development,
       slug,
       tags,
       languages,
