@@ -1,6 +1,6 @@
-![Nextfolio Screenshot](/.github/screenshot.png)
+![Screenshot](/.github/screenshot.png)
 
-# Nextfolio: Ultimate Next.js Portfolio Starter
+# Stellar Portfolio
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IndieCoderMM/stellar-portfolio)
 
@@ -10,7 +10,7 @@ Perfect for developers who want a fast, unique, and fully customizable site to s
 
 ## Features
 
-- Minimal, modern layout – Clean design focused on clarity and structure.
+- Sleek, modern layout – Clean design focused on clarity and structure.
 - Subtle motion effects – Thoughtful animations add life without getting in the way.
 - Optimized for SEO – Static pages with built-in Open Graph support via `next/og`.
 - Live content editing – Integrated with Sanity Studio for real-time content updates.
@@ -20,11 +20,11 @@ Perfect for developers who want a fast, unique, and fully customizable site to s
 
 ## Tech Stack
 
-- **Next.js** – React framework for SSR and performance
-- **Sanity.io** – Headless CMS for content management
-- **Motion.dev** – Animation library for React
-- **Tailwind CSS** – Utility-first CSS framework
-- **EmailJS** – Email service for handling contact form messages
+- Next.js – React framework for SSR and performance
+- Sanity.io – Headless CMS for content management
+- Motion.dev – Animation library for React
+- Tailwind CSS – Utility-first CSS framework
+- EmailJS – Email service for handling contact form messages
 
 ## Getting Started
 
