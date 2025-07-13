@@ -1,10 +1,12 @@
+![Nextfolio Screenshot](/.github/screenshot.png)
+
 # Nextfolio: Ultimate Next.js Portfolio Starter
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IndieCoderMM/next-portfolio)
 
 A modern developer portfolio website built with [Next.js](https://nextjs.org), packed with smooth animations, customizable content, and [Sanity CMS](https://www.sanity.io) integration.
 
-Perfect for developers who want a fast, beautiful, and fully customizable site to showcase their work.
+Perfect for developers who want a fast, unique, and fully customizable site to showcase their work.
 
 ## ✨ Features
 
@@ -20,7 +22,7 @@ Perfect for developers who want a fast, beautiful, and fully customizable site t
 
 - **Next.js** – React framework for SSR and performance
 - **Sanity.io** – Headless CMS for content management
-- **Framer Motion** – Animation library for React
+- **Motion.dev** – Animation library for React
 - **Tailwind CSS** – Utility-first CSS framework
 - **EmailJS** – Email service for handling contact form messages
 
@@ -55,6 +57,13 @@ npm run dev
 
 Your app should now be running at [http://localhost:3000](http://localhost:3000)
 
+5. **Open Sanity Dashboard**
+
+Once the app is running, you can access the Sanity Studio at [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to manage your content.
+
+> [!NOTE]
+> Make sure to add your data to the Sanity dataset before deploying or using the site.
+
 ## 🧩 Customization
 
 All page content can be modified in the `/config/` folder.
@@ -74,12 +83,30 @@ This template is integrated with [Sanity Studio](https://www.sanity.io/) for fle
 
 You can also customize the schema or extend it for additional content types as needed.
 
+> [!NOTE]
+> If you want to change the refresh frequency, customize `contentRefreshInterval` in `/config/index.ts` to set how often the content is fetched from Sanity. _Default is 3600 seconds (1 hr)._
+
 ## 📬 Contact Form
 
 The contact form uses **EmailJS** for sending messages.
 
 - Sign up at [emailjs.com](https://www.emailjs.com/)
-- Create a service, template, and public key
+- Create a service and connect it to an email account
+- Create an email template for the contact form. Here’s a sample template you can use:
+
+```
+Hello,
+
+You’ve received a new message from your website. Here’s what they had to say:
+
+Name: {{name}}
+Email: {{email}}
+
+Message:
+{{message}}
+```
+
+- Get your EmailJS service ID, template ID, and user ID (public key)
 - Add those to your `.env.local` file
 
 ## 🚀 Deploy
@@ -93,15 +120,6 @@ Make sure to set environment variables in your deployment settings.
 ## 🤝 Contributing
 
 Feel free to fork, customize, or contribute. Open an issue or PR if you have suggestions or improvements.
-
-<!--TODO:-->
-
-## Todos
-
-- [ ] Optimize sanity schema
-- [ ] Content revalidation
-- [ ] Generate og image
-- [ ]
 
 ## 📄 License
 

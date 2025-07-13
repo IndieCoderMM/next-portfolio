@@ -1,6 +1,7 @@
 import { HoverBorderButton } from "@/components/ui/hover-button";
 import { StarsBackground } from "@/components/ui/star-background";
 import { IconChevronLeft } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -15,13 +16,13 @@ export default function NotFound() {
         on track.
       </p>
       <HoverBorderButton>
-        <a
+        <Link
           href="/"
           className="text-fg flex items-center gap-1 px-2 py-px transition"
         >
           <IconChevronLeft />
           Take me home
-        </a>
+        </Link>
       </HoverBorderButton>
     </div>
   );

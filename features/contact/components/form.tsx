@@ -9,7 +9,7 @@ import {
   IconSend,
   IconUserCircle,
 } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Field from "./field";
 import StateButton from "./state-button";
 
@@ -22,6 +22,18 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => {
+        setStatus("idle");
+        setCurrent("name");
+        setForm({ name: "", email: "", message: "" });
+        setNotification("");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   const handleChange = (name: string, value: string) => {
     if (notification) setNotification("");
