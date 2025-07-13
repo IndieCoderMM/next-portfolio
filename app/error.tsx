@@ -1,5 +1,5 @@
 "use client";
-import { IconChevronLeft } from "@tabler/icons-react"; // adjust if you use a different icon lib
+import { IconChevronRight } from "@tabler/icons-react"; // adjust if you use a different icon lib
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -30,8 +30,7 @@ export default function Error({
   return (
     <div className="bg-bg relative flex h-screen flex-col items-center justify-center px-4 text-center">
       <h1 className="text-gradient text-6xl font-bold sm:text-8xl">Error</h1>
-      <p className="text-fg mt-4 text-xl sm:text-2xl">Something went wrong!</p>
-      <pre className="text-text-muted bg-secondary/10 mt-2 mb-8 max-w-md rounded p-4 text-left whitespace-pre-wrap sm:text-lg">
+      <pre className="text-text-muted bg-secondary/10 mt-2 mb-8 max-w-md rounded p-4 text-left text-xs whitespace-pre-wrap sm:text-base">
         {error?.message}
       </pre>
 
@@ -43,13 +42,20 @@ export default function Error({
       </button>
 
       {isLocalhost && (
-        <Link
-          href="/dashboard"
-          className="text-fg flex items-center gap-1 px-2 py-px transition hover:underline"
-        >
-          <IconChevronLeft />
-          Open Dashboard
-        </Link>
+        <>
+          <p className="text-text-muted text-center italic">
+            If this is your first time running the app, the error might be due
+            to data missing on Sanity dataset.
+          </p>
+
+          <Link
+            href="/dashboard"
+            className="text-fg flex items-center gap-1 px-2 py-px transition hover:underline"
+          >
+            Open Dashboard
+            <IconChevronRight />
+          </Link>
+        </>
       )}
     </div>
   );
