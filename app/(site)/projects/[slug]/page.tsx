@@ -10,8 +10,8 @@ import { getLanguageColor } from "@/utils/get-language-color";
 import { getMetadata } from "@/utils/meta";
 import {
   IconArchive,
-  IconArrowLeft,
   IconBrandGithub,
+  IconChevronLeft,
   IconCircleDotted,
   IconCode,
   IconExternalLink,
@@ -96,7 +96,7 @@ export default async function ProjectPage({
           href="/projects"
           className="text-text-secondary flex w-fit items-center gap-1 hover:text-white"
         >
-          <IconArrowLeft className="mr-1 inline-block" />
+          <IconChevronLeft className="mr-1 inline-block" />
           Projects
         </Link>
       </nav>

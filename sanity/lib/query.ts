@@ -12,7 +12,6 @@ const profileQuery = defineQuery(`*[ _type == "profile" ]{
       location,
       "resumeURL": resumeURL.asset->url,
       "photo": {"url": photo.asset->url, "alt": photo.alt, "label": photo.label},
-      lastUpdated,
       socials {github, email, linkedin, whatsapp, bluesky, blog},
       metrics {apps, websites, users, years},
     }[0]`);
@@ -20,6 +19,7 @@ const profileQuery = defineQuery(`*[ _type == "profile" ]{
 const projectsQuery =
   defineQuery(`*[ _type == "project" ] | order(developedAt desc){
       _id,
+      _updatedAt,
       name,
       tagline,
       isFeatured,
@@ -40,6 +40,7 @@ const projectsQuery =
 const projectDetailQuery =
   defineQuery(`*[_type == "project" && slug.current == $slug][0]{
       _id,
+      _updatedAt,
       name,
       tagline,
       description,

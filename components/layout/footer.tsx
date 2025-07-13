@@ -1,3 +1,4 @@
+import { footerLinks } from "@/config/footerLinks";
 import { profile as profileInfo } from "@/config/profile";
 import { ProfileQueryResult } from "@/sanity.types";
 import { getProfile } from "@/sanity/lib/query";
@@ -14,19 +15,12 @@ import {
 import LinkUnderline from "../common/link";
 import { SlideIn } from "../ui/transitions";
 
-interface FooterLinkProps {
-  title: string;
-  href: string;
-  label?: "new" | "soon";
-  isInternal?: boolean;
-}
-
 const FooterLink = ({
   title,
   href,
   label = undefined,
   isInternal = true,
-}: FooterLinkProps) => {
+}: FooterLink) => {
   if (label === "soon") {
     return (
       <span className={"footer-link cursor-not-allowed"}>
@@ -83,7 +77,7 @@ const FooterLink = ({
 
 interface FooterGroupProps {
   title: string;
-  links: Array<FooterLinkProps>;
+  links: Array<FooterLink>;
 }
 
 const FooterGroup = ({ title, links }: FooterGroupProps) => {
@@ -207,60 +201,18 @@ const Footer = async () => {
               }
             >
               <div className={"flex p-4 sm:gap-16"}>
-                <FooterGroup
-                  title="Work"
-                  links={[
-                    { title: "Contact", href: "/contact" },
-                    { title: "Experience", href: "/about#experience" },
-                    { title: "Projects", href: "/projects" },
-                    {
-                      title: "Services",
-                      href: "/services",
-                      label: "soon",
-                    },
-                    { title: "Studio", href: "/work/studio", label: "soon" },
-                  ]}
-                />
-                <FooterGroup
-                  title="Explore"
-                  links={[
-                    {
-                      title: "Personal Blog",
-                      href: profile?.socials?.blog ?? "/",
-                      isInternal: false,
-                    },
-                    {
-                      title: "Playground",
-                      label: "soon",
-                      href: "/playground",
-                    },
-                    {
-                      title: "Guest Book",
-                      href: "/guestbook",
-                      label: "soon",
-                    },
-                    {
-                      title: "T.I.L",
-                      href: "/today-i-learned",
-                      label: "soon",
-                    },
-                  ]}
-                />
+                {footerLinks.slice(0, 2).map((group) => (
+                  <FooterGroup
+                    key={group.title}
+                    title={group.title}
+                    links={group.links}
+                  />
+                ))}
               </div>
               <div className={"flex p-4 sm:gap-16"}>
                 <FooterGroup
-                  title="This Site"
-                  links={[
-                    {
-                      title: "Source Code",
-                      href: "https://github.com/indiecodermm/next-portfolio",
-                      isInternal: false,
-                    },
-                    {
-                      title: "Site Map",
-                      href: "/sitemap.xml",
-                    },
-                  ]}
+                  title={footerLinks[2].title}
+                  links={footerLinks[2].links}
                 />
               </div>
             </div>

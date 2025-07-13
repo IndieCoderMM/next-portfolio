@@ -9,3 +9,10 @@ declare type NavLink = {
   href: string;
   type?: "internal" | "external";
 };
+
+declare type FooterLink = {
+  title: string;
+  href: string;
+  label?: "new" | "soon";
+  isInternal?: boolean;
+};

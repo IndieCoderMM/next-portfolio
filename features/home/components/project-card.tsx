@@ -57,13 +57,19 @@ const ProjectCard = ({ project }: { project: ProjectsQueryResult[number] }) => {
           </motion.p>
         </div>
       </div>
-      <Image
-        src={project.screenshots?.[0].url ?? ""}
-        width={500}
-        height={500}
-        alt={`screenshot-${project.name}`}
-        className="h-full w-full rounded-xl object-cover object-center md:rounded-t-3xl"
-      />
+      {project.screenshots?.[0].url ? (
+        <Image
+          src={project.screenshots?.[0].url}
+          width={500}
+          height={500}
+          alt={`screenshot-${project.name}`}
+          className="h-full w-full rounded-xl object-cover object-center md:rounded-t-3xl"
+        />
+      ) : (
+        <div className="bg-secondary flex h-full w-full items-center justify-center rounded-xl">
+          <p className="text-gray-500">No screenshot available</p>
+        </div>
+      )}
     </motion.div>
   );
 };
