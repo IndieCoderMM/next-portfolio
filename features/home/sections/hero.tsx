@@ -15,7 +15,7 @@ const HeroSection = ({ profile }: { profile: ProfileQueryResult }) => {
       <section className="max-container relative mx-auto flex h-full flex-col items-center justify-center gap-8 pt-10 sm:pt-0">
         <div className="flex flex-1 flex-col space-y-8 px-4 sm:items-center sm:space-y-2 sm:text-center">
           <HeroBadge text={homepage.badge} />
-          <h1 className="font-body text-gradient text-fg w-full text-4xl font-medium tracking-tighter sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl">
+          <h1 className="font-body text-gradient text-fg mb-4 w-full text-4xl font-medium tracking-tighter sm:leading-tight md:text-5xl md:font-semibold lg:text-7xl lg:leading-[1.1]">
             {homepage.heading}
           </h1>
           <p className="text-fg mx-auto text-lg sm:w-[80%] md:text-xl">

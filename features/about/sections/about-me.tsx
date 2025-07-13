@@ -12,7 +12,7 @@ const AboutMeSection = ({ profile }: { profile: ProfileQueryResult }) => {
       <Heading className="mb-4 px-4 sm:mx-auto sm:mb-8">
         {aboutPage.heading}
       </Heading>
-      <div className="max-container grid grid-cols-12 px-4 py-4 sm:py-10 md:px-8 lg:px-12">
+      <div className="grid w-full grid-cols-12 px-4 py-4 sm:py-10 md:px-8 lg:px-12">
         <div className="text-md text-fg col-span-12 space-y-4 leading-tight tracking-tight md:col-span-6 md:text-lg lg:col-span-8 lg:text-3xl">
           <PortableText value={profile?.about ?? []} />
         </div>

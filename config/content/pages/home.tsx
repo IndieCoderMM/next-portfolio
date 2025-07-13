@@ -1,15 +1,15 @@
 export const homepage = {
-  badge: "Full Stack Developer",
+  badge: "Built for developers",
   heading: (
     <>
-      Shipping Ideas for
-      <br /> Mobile and Web
+      Steller Portfolio from
+      <br /> Galaxies Far Far Away
     </>
   ),
-  ctaText: "Say Hello",
+  ctaText: "Get in touch",
   serviceHeading: (
     <>
-      I build products 0 &rarr; 1 <br /> tailored to your needs
+      I build digital products <br /> tailored to your needs
     </>
   ),
   projectHeading: (

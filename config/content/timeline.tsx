@@ -81,11 +81,11 @@ export const timelineData: TimelineEntry[] = [
         <div className="text-fg mb-4 text-lg font-semibold md:text-xl lg:text-4xl">
           Full-Stack Developer{" "}
           <LinkPreview
-            url="https://www.google.com"
+            url="https://github.com/IndieCoderMM"
             isStatic={false}
             className="text-primary underline"
           >
-            @Google
+            @Github
           </LinkPreview>
         </div>
         <ul className="mb-8 list-disc">
@@ -170,9 +170,9 @@ export const timelineData: TimelineEntry[] = [
             {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
-                className="flex aspect-square w-full items-center justify-center rounded-lg bg-indigo-400/40"
+                className="flex aspect-square w-full items-center justify-center rounded-lg bg-indigo-400/20"
               >
-                <p className="text-center font-bold text-white sm:text-xl">
+                <p className="text-center font-bold text-white/80 sm:text-xl">
                   Project
                 </p>
               </div>

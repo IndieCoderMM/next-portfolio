@@ -76,7 +76,7 @@ const Service = ({
               alt={icon.alt ?? title ?? "Service"}
               width={32}
               height={32}
-              className="absolute inset-0 h-8 w-8 object-contain opacity-70 contrast-25 grayscale transition duration-300 group-hover/feature:contrast-0 group-hover/feature:grayscale-0"
+              className="absolute inset-0 h-8 w-8 object-contain transition duration-300"
             />
           </div>
         ) : (

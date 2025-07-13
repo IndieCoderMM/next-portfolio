@@ -4,7 +4,7 @@ import { IconChevronLeft } from "@tabler/icons-react";
 
 export default function NotFound() {
   return (
-    <div className="bg-background relative flex h-screen flex-col items-center justify-center px-4 text-center">
+    <div className="bg-bg relative flex h-screen flex-col items-center justify-center px-4 text-center">
       <StarsBackground />
       <h1 className="text-gradient text-6xl font-bold sm:text-8xl">404</h1>
       <p className="text-fg mt-4 text-xl sm:text-2xl">

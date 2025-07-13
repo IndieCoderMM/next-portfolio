@@ -1,7 +1,6 @@
+import { contentRefreshInterval } from "@/config";
 import { defineQuery } from "next-sanity";
 import { client } from "./client";
-
-const REVALIDATE_INTERVAL = 3600; // every hour
 
 const profileQuery = defineQuery(`*[ _type == "profile" ]{
       _id,
@@ -85,7 +84,7 @@ export const getProfile = async () => {
     {},
     {
       next: {
-        revalidate: REVALIDATE_INTERVAL,
+        revalidate: contentRefreshInterval,
       },
     },
   );
@@ -99,7 +98,7 @@ export const getProjects = async () => {
     {},
     {
       next: {
-        revalidate: REVALIDATE_INTERVAL,
+        revalidate: contentRefreshInterval,
       },
     },
   );
@@ -113,7 +112,7 @@ export const getProjectSlugs = async () => {
     {},
     {
       next: {
-        revalidate: REVALIDATE_INTERVAL,
+        revalidate: contentRefreshInterval,
       },
     },
   );
@@ -127,7 +126,7 @@ export const getProjectDetail = async ({ slug }: { slug: string }) => {
     { slug },
     {
       next: {
-        revalidate: REVALIDATE_INTERVAL,
+        revalidate: contentRefreshInterval,
       },
     },
   );
@@ -141,7 +140,7 @@ export const getServices = async () => {
     {},
     {
       next: {
-        revalidate: REVALIDATE_INTERVAL,
+        revalidate: contentRefreshInterval,
       },
     },
   );
@@ -155,7 +154,7 @@ export const getTech = async () => {
     {},
     {
       next: {
-        revalidate: REVALIDATE_INTERVAL,
+        revalidate: contentRefreshInterval,
       },
     },
   );
