@@ -1,6 +1,6 @@
 const HeroBadge = ({ text }: { text: string }) => {
   return (
-    <button className="group bg-secondary relative overflow-hidden rounded-full p-px">
+    <div className="group bg-secondary relative w-fit overflow-hidden rounded-full p-px">
       <span className="absolute inset-0 overflow-hidden rounded-full">
         <span className="pointer-events-none absolute inset-0 select-none">
           <span
@@ -91,7 +91,7 @@ const HeroBadge = ({ text }: { text: string }) => {
           {text}
         </span>
       </span>
-    </button>
+    </div>
   );
 };
 

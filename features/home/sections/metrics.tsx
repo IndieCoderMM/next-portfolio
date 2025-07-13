@@ -71,7 +71,7 @@ const Metrics = ({ metrics }: { metrics: Metrics }) => {
           heading="Want to work together?"
           description="Drop me a message and let’s see how we can build something great
             together."
-          href="/content"
+          href="/contact"
           className="mt-20"
           buttonContent={
             <>

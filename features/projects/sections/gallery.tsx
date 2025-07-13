@@ -9,7 +9,7 @@ const GallerySection = () => {
       <Heading className="mb-4 px-4 sm:mx-auto sm:mb-8">
         {projectPage.heading}
       </Heading>
-      <p className="description mb-10">{projectPage.desc}</p>
+      <p className="description px-4 md:mb-10">{projectPage.desc}</p>
       <ProjectTabs />
     </SectionContainer>
   );

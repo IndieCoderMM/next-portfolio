@@ -82,7 +82,7 @@ const ProjectRepos = ({ projects }: { projects: ProjectsQueryResult }) => {
 
   return (
     <SectionContainer className="">
-      <div className="my-8 px-4 sm:mt-16 sm:mb-16">
+      <div className="my-8 px-4 md:mt-16 md:mb-16">
         <div className="section-badge">
           <IconCoffee />
           <span className="ml-2">Personal Projects</span>

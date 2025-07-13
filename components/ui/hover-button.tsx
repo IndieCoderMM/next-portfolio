@@ -61,7 +61,7 @@ export function HoverBorderButton({
       }}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        "border-light/20 relative flex h-min w-fit cursor-pointer flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-xl border bg-white/20 decoration-clone p-px transition duration-500 hover:bg-black/10",
+        "border-light/20 focus:bg-primary relative flex h-min w-fit cursor-pointer flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-xl border bg-white/20 decoration-clone p-px transition duration-500 hover:bg-black/10 focus:outline-none",
         containerClassName,
       )}
       {...props}
