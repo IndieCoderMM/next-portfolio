@@ -1,4 +1,4 @@
-![Screenshot](/.github/screenshot.png)
+![Screenshot](/.github/banner.png)
 
 # Stellar Portfolio
 
@@ -12,8 +12,8 @@ Perfect for developers who want a fast, unique, and fully customizable site to s
 
 - Sleek, modern layout – Clean design focused on clarity and structure.
 - Subtle motion effects – Thoughtful animations add life without getting in the way.
-- Optimized for SEO – Static pages with built-in Open Graph support via `next/og`.
-- Live content editing – Integrated with Sanity Studio for real-time content updates.
+- Optimized for SEO – Static pages, auto-generated sitemap and built-in Open Graph support via `next/og`.
+- Live content editing – Change content live using integrated Sanity dashboard.
 - Easy customization – Tweak site content and structure through easitly.
 - Built-in contact form – Emails are delivered instantly with EmailJS integration.
 - Responsive by default – Designed to look great on all screen sizes out of the box.
