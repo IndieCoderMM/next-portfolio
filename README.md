@@ -14,7 +14,7 @@ Perfect for developers who want a fast, unique, and fully customizable site to s
 - Subtle motion effects – Thoughtful animations add life without getting in the way.
 - Optimized for SEO – Static pages, auto-generated sitemap and built-in Open Graph support via `next/og`.
 - Live content editing – Change content live using integrated Sanity dashboard.
-- Easy customization – Tweak site content and structure through easitly.
+- Easy customization – Personalize site content and structure easily.
 - Built-in contact form – Emails are delivered instantly with EmailJS integration.
 - Responsive by default – Designed to look great on all screen sizes out of the box.
 
