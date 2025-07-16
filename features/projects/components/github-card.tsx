@@ -8,6 +8,7 @@ import {
   IconBrandGithub,
   IconCircleDotted,
   IconCode,
+  IconLock,
   IconWorld,
 } from "@tabler/icons-react";
 import Image from "next/image";
@@ -89,16 +90,15 @@ const GitHubCard = ({ project }: { project: Project }) => {
 
           {/*Icons bar*/}
           <div className="mt-auto flex gap-2">
-            {project.githubURL && (
+            {project.githubURL ? (
               <div className="bg-fg/10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs">
                 <IconBrandGithub size={20} className="stroke-[1.5]" />
                 <span>Public</span>
               </div>
-            )}
-            {project.liveURL && (
-              <div className="bg-fg/10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs hover:brightness-110">
-                <IconWorld size={20} className="stroke-[1.5]" />
-                <span>Live</span>
+            ) : (
+              <div className="bg-fg/10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs">
+                <IconLock size={20} className="stroke-[1.5]" />
+                <span>Private</span>
               </div>
             )}
             {project.status && (
